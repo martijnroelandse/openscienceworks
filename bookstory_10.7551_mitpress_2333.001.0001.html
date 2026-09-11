@@ -1,0 +1,2570 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>BookStory - Democratizing Innovation</title>
+    <style>
+
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        /* AuthorStory links on story pages */
+        a.author-link,
+        .hero-meta a[href^="authorstory_"],
+        .card strong a[href^="authorstory_"],
+        #sec-citing strong a[href^="authorstory_"] {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a.author-link:hover,
+        .hero-meta a[href^="authorstory_"]:hover,
+        .card strong a[href^="authorstory_"]:hover,
+        #sec-citing strong a[href^="authorstory_"]:hover {
+            text-decoration: underline;
+        }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+
+
+/* ── UX Enhancements ── */
+
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+.sticky-nav-more{display:inline-block;position:relative;}
+.sticky-nav-more>summary{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;cursor:pointer;list-style:none;border-bottom:2px solid transparent;}
+.sticky-nav-more>summary::-webkit-details-marker{display:none;}
+.sticky-nav-more[open]>summary,.sticky-nav-more>summary:hover{color:#111827;}
+.sticky-nav-more-menu{position:absolute;right:0;top:100%;min-width:10rem;background:#fff;
+  border:1px solid #e5e7eb;border-radius:.6rem;box-shadow:0 8px 24px rgba(15,23,42,.12);
+  padding:.35rem 0;z-index:120;}
+.sticky-nav-more-menu a{display:block;padding:.5rem .9rem;font-size:.78rem;font-weight:600;
+  color:#374151;text-decoration:none;white-space:nowrap;}
+.sticky-nav-more-menu a:hover{background:#f8fafc;color:#111827;}
+[id^="sec-"]{scroll-margin-top:4.75rem;}
+@media print{.sticky-nav{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
+
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
+
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;
+  border:1px solid transparent;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#f7ebeb;color:#B34444;border-color:#f1d5d5;}
+.sig-slate {background:#f3f4f6;color:#6b7280;border-color:#e5e7eb;}
+.sig-indigo{background:#f0ecf9;color:#6A4FA3;border-color:#ddd6fe;}
+.sig-teal  {background:#e8f2ef;color:#34675A;border-color:#cfe7df;}
+.sig-amber {background:#fef3c7;color:#92400e;border-color:#fde68a;}
+.sig-blue  {background:#ebf0f7;color:#3C5A7F;border-color:#cbdcf2;}
+.sig-green {background:#e8f2ef;color:#34675A;border-color:#cfe7df;}
+.sig-risk{background:#fee2e2;color:#b91c1c;border-color:#fca5a5;}
+.sig-warning{background:#fff7ed;color:#c2410c;border-color:#fdba74;}
+.sig-correction{background:#fef3c7;color:#92400e;border-color:#fde68a;}
+.sig-data{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe;}
+.sig-peer{background:#dcfce7;color:#166534;border-color:#bbf7d0;}
+.sig-preprint{background:#f5f3ff;color:#5b21b6;border-color:#ddd6fe;}
+.sig-repo-open{background:#f8fafc;color:#334155;border-color:#cbd5e1;}
+.sig-repo-certified{background:#ecfdf5;color:#047857;border-color:#a7f3d0;}
+.sig-oa-gold{background:#fef3c7;color:#92400e;border-color:#fde68a;}
+.sig-oa-hybrid{background:#e0f2fe;color:#0369a1;border-color:#bae6fd;}
+.sig-oa-green{background:#dcfce7;color:#166534;border-color:#bbf7d0;}
+.sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
+.sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
+.sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
+}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
+  </div>
+</nav>
+
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="bookstories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">Democratizing Innovation</h1>
+                        <div class="discipline-badge">Stem</div>
+                        <div class="im-signals-pills" style="margin-top: 0.75rem; margin-bottom: 0.5rem;">
+
+
+
+
+                                <span class="sig-pill sig-oa-gold" title="Open access: Gold">
+                                    <svg class="sig-oa-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <rect x="5" y="11" width="14" height="10" rx="2"/>
+                                        <path d="M7 11V7a5 5 0 0 1 9.5-2.2"/>
+                                        <path d="M16.5 4.8V11"/>
+                                    </svg>
+                                    Access · Gold
+                                </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong>
+
+                                    Eric von Hippel
+
+                            </div>
+
+
+
+
+
+
+                            <div><strong>Publisher:</strong>
+
+
+
+                                <span id="publisher-value" data-publisher-label="The MIT Press">The MIT Press</span>
+                            </div>
+
+                            <div><strong>Publication year:</strong>
+
+                                    2005
+
+                            </div>
+
+
+
+                            <div><strong>DOI:</strong>
+                                <a href="https://doi.org/10.7551/mitpress/2333.001.0001" target="_blank">10.7551/mitpress/2333.001.0001</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="cover-wrap">
+
+
+
+
+
+
+
+
+
+
+                    <div class="gen-jacket" style="--jh: 85;"
+                         role="img" aria-label="Democratizing Innovation by Eric von Hippel, The MIT Press. Cover image not available.">
+                        <span class="gj-pub">The MIT Press</span>
+                        <span class="gj-rule"></span>
+                        <span class="gj-title">Democratizing Innovation</span>
+                        <span class="gj-foot">
+                            <span class="gj-auth">Eric von Hippel</span>
+                            <span class="gj-year">2005</span>
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+        </header>
+
+
+
+
+        <!-- Sticky nav (built from story_nav — only sections present on this page) -->
+
+        <nav aria-label="Page sections" class="sticky-nav no-print" id="story-sticky-nav">
+            <div class="sticky-nav-inner">
+
+                <a href="#sec-hero" data-sec="sec-hero">Overview</a>
+
+                <a href="#sec-story" data-sec="sec-story">Story</a>
+
+                <a href="#sec-impact" data-sec="sec-impact">Impact</a>
+
+                <a href="#sec-roles" data-sec="sec-roles">Roles</a>
+
+                <a href="#sec-access" data-sec="sec-access">Access</a>
+
+                <a href="#sec-mentions" data-sec="sec-mentions">Mentions</a>
+
+
+
+                <details class="sticky-nav-more">
+                    <summary>More</summary>
+                    <div class="sticky-nav-more-menu">
+
+                        <a href="#sec-teaching" data-sec="sec-teaching">Teaching</a>
+
+                        <a href="#sec-citing" data-sec="sec-citing">Who's Citing</a>
+
+                        <a href="#sec-downloads" data-sec="sec-downloads">Downloads</a>
+
+                    </div>
+                </details>
+
+            </div>
+        </nav>
+
+
+
+
+
+
+        <section class="card" id="sec-story">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">Democratizing Innovation (2005), published by The MIT Press, has been cited 3,729 times — enough that OpenAlex puts it in the top 1% of works in its field and year.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">Democratizing Innovation by Eric von Hippel was published by The MIT Press in 2005. Conceptually, the work connects to User innovation, Open innovation, Business, Product (mathematics) and Product innovation.</p>
+<p class="story-text">OpenAlex records 3,729 citations. That places it in the top 1% of works in its field and year of publication. Citations peaked in 2016 with 271 citing works. Notable citing venues include SSRN Electronic Journal, IGI Global eBooks and International Journal of Innovation Management. Of the citation statements scite has classified, 40 support its claims and 3 contradict them. The citing works include 2,094 journal articles, 858 book chapters and 207 preprints. They come from 40 countries, led by the United States, Germany and the United Kingdom.</p>
+<p class="story-text">Open Library reports a combined count of 6 reading logs and catalog editions.</p></div>
+            <div class="muted" style="margin-top:0.6rem;">
+                Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
+            </div>
+        </section>
+
+
+
+
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+
+
+            <p class="muted">Crossref Event Data: historical records unavailable locally—not zero events. The public API was retired on 23 April 2026. Other attention sources may still be shown.</p>
+
+            <div class="im-wrapper">
+
+
+
+
+
+
+
+
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+
+                                <div class="im-num">3,729</div>
+                                <div class="im-label">Total Citations</div>
+
+                                <div class="im-top-badge">🏆 Top 1% Cited</div>
+
+                            </div>
+
+
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="impactSparkline"
+                                        data-labels="[2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]"
+                                        data-values="[248, 271, 217, 215, 204, 179, 151, 137, 148, 82, 97, 71]"></canvas>
+                                </div>
+                                <div class="im-spark-range">2005–2026</div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+
+
+                    <!-- scite (only when references exist) -->
+
+                    <div class="im-card">
+                        <div class="im-num">2,364</div>
+                        <div class="im-label">scite References</div>
+
+
+
+
+
+
+                        <div class="im-scite-compact">
+                            <div class="im-scite-title">Citation context <span class="im-scite-via">via scite</span></div>
+                            <div class="im-scite-bar">
+                                <div class="im-scite-seg im-scite-sup" data-w="2"></div>
+                                <div class="im-scite-seg im-scite-men" data-w="98"></div>
+                                <div class="im-scite-seg im-scite-con" data-w="0"></div>
+                            </div>
+                            <div class="im-scite-leg">
+                                <span><span class="im-scite-dot" style="background:#22c55e;"></span>40</span>
+                                <span><span class="im-scite-dot" style="background:#94a3b8;"></span>2129</span>
+                                <span><span class="im-scite-dot" style="background:#f87171;"></span>3</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+                <div class="muted" style="margin-top:.7rem; font-size:.8rem;">
+                    Some signals aren’t recorded for this volume yet (online mentions) — these typically accrue after publication.
+                </div>
+
+
+
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+
+
+
+
+
+
+
+
+
+
+
+
+                        <a class="sig-pill sig-slate" href="https://www.worldcat.org/search?q=bn:9780262285636" target="_blank" style="text-decoration:none;">📚 WorldCat search</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <a class="sig-pill sig-amber" href="#sec-mentions" style="text-decoration:none;" title="Expert newsletters, blogs, podcasts">
+                            📰 Scholarly web · 1
+                        </a>
+
+
+
+
+
+
+
+
+
+
+
+
+                        <span class="sig-pill sig-green" title="scite: supporting citation statements">✓ scite · 40 supporting</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 40 countries</a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section class="card" id="sec-roles">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#1d4ed8">🎓 Academic & Scientific</div>
+                    <div class="roles-row">
+
+
+
+
+
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Reference point for synthesis — Often cited by reviews and synthesis work. (score 0.90)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Reference point for synthesis
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+
+
+
+
+
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Evidence-bearing reference — Backed by evidence-linked citations or stewardship signals. (score 0.85)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Evidence-bearing reference
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
+            </div>
+        </section>
+
+
+        <div class="grid-2">
+
+
+            <section class="card" style="margin-bottom:0;" id="sec-access">
+                <h2 style="margin-top:0;"><span>Access</span> <span class="badge" style="background:#f3f4f6; color:#4b5563;">Availability</span></h2>
+                <ul class="metric-list" style="line-height: 1.8;">
+
+
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.7551/mitpress/2333.001.0001" target="_blank" style="word-break: break-all;">https://doi.org/10.7551/mitpress/2333.001.0001</a></li>
+
+
+                    <li><strong>OA status:</strong>
+
+                            Gold
+
+                    </li>
+
+                    <li><strong>OA source:</strong> DOAB</li>
+
+
+
+
+
+
+                    <li><strong>OA basis:</strong> DOAB record found for this title</li>
+
+                        <li><strong>OA evidence chain:</strong> DOAB → Publisher-claimed → OpenAlex/Crossref</li>
+
+
+
+                        <li><strong>Landing page:</strong> <a href="https://doi.org/10.7551/mitpress/2333.001.0001" target="_blank" style="word-break: break-all;">https://doi.org/10.7551/mitpress/2333.001.0001</a></li>
+
+
+
+
+
+                        <li><strong>DOAB:</strong> <a href="https://directory.doabooks.org/handle/20.500.12854/77862" target="_blank" style="word-break: break-all;">https://directory.doabooks.org/handle/20.500.12854/77862</a></li>
+
+                </ul>
+            </section>
+
+
+
+
+
+        </div>
+
+        <div class="grid-2" style="align-items: start;">
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Reader reception</span> <span class="badge">Books</span></h2>
+                <ul class="metric-list">
+
+
+
+
+
+
+
+
+
+                </ul>
+            </section>
+
+                <section class="card" style="margin-bottom:0;">
+                    <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+
+                    <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                        <li><strong>Total:</strong> 2364</li>
+                        <li><strong>Supporting:</strong> 40</li>
+                        <li><strong>Mentioning:</strong> 2129</li>
+                        <li><strong>Contradicting:</strong> 3</li>
+                    </ul>
+
+                </section>
+
+
+
+
+
+
+        </div>
+
+
+
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>3729</strong> citing works.
+                        <strong>11.2%</strong> come from the Top 10 institutions.
+                        <a href="https://openalex.org/works?page=1&filter=cites%3AW4229502521&sort=publication_date%3Adesc" target="_blank" rel="noopener">See the full list on OpenAlex &rarr;</a>
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        <span class="tag tag-soft" style="font-size:.75rem;">article (2094)</span><span class="tag tag-soft" style="font-size:.75rem;">book-chapter (858)</span><span class="tag tag-soft" style="font-size:.75rem;">conference-paper (326)</span><span class="tag tag-soft" style="font-size:.75rem;">preprint (207)</span><span class="tag tag-soft" style="font-size:.75rem;">reference-entry (60)</span>
+                        <span class="tag" style="font-size:.75rem;">SSRN Electronic Journal</span><span class="tag" style="font-size:.75rem;">IGI Global eBooks</span><span class="tag" style="font-size:.75rem;">International Journal of Innovation Management</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="[2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]"
+                    data-values="[13, 57, 89, 155, 163, 206, 268, 261, 259, 232, 248, 271, 217, 215, 204, 179, 151, 137, 148, 82, 97, 71]">
+                </canvas>
+            </div>
+
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
+
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United States (747)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Germany (438)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United Kingdom (370)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">France (300)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Italy (254)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Netherlands (190)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Finland (181)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Denmark (156)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Spain (146)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Sweden (146)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Austria (143)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Canada (130)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Australia (126)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Switzerland (101)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">China (89)</span>
+
+                </div>
+
+                <div style="margin-top:1rem;">
+                    <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (3004)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (352)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Nonprofit (176)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Company (172)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Government (154)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Other (89)</span>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Massachusetts Institute of Technology</strong>
+
+                        <span class="muted">(55)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Copenhagen Business School</strong>
+
+                        <span class="muted">(54)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Utrecht University</strong>
+
+                        <span class="muted">(48)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Technical University of Munich</strong>
+
+                        <span class="muted">(43)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Aalto University</strong>
+
+                        <span class="muted">(43)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Vienna University of Economics and Business</strong>
+
+                        <span class="muted">(42)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>RWTH Aachen University</strong>
+
+                        <span class="muted">(36)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Universität Hamburg</strong>
+
+                        <span class="muted">(33)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Friedrich-Alexander-Universität Erlangen-Nürnberg</strong>
+
+                        <span class="muted">(33)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Centre National de la Recherche Scientifique</strong>
+
+                        <span class="muted">(31)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Aarhus University</strong>
+
+                        <span class="muted">(30)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Hamburg University of Technology</strong>
+
+                        <span class="muted">(30)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Politecnico di Milano</strong>
+
+                        <span class="muted">(30)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Bocconi University</strong>
+
+                        <span class="muted">(29)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Colorado Boulder</strong>
+
+                        <span class="muted">(28)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Universität Innsbruck</strong>
+
+                        <span class="muted">(28)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Cambridge</strong>
+
+                        <span class="muted">(28)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Technische Universität Berlin</strong>
+
+                        <span class="muted">(27)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Stanford University</strong>
+
+                        <span class="muted">(27)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of St.Gallen</strong>
+
+                        <span class="muted">(26)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Lappeenranta-Lahti University of Technology</strong>
+
+                        <span class="muted">(26)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Delft University of Technology</strong>
+
+                        <span class="muted">(25)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Helsinki</strong>
+
+                        <span class="muted">(24)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>VTT Technical Research Centre of Finland</strong>
+
+                        <span class="muted">(24)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of California, Berkeley</strong>
+
+                        <span class="muted">(24)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Southern Denmark</strong>
+
+                        <span class="muted">(23)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>George Washington University</strong>
+
+                        <span class="muted">(23)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Lancaster University</strong>
+
+                        <span class="muted">(23)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Erasmus University Rotterdam</strong>
+
+                        <span class="muted">(23)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Tampere University</strong>
+
+                        <span class="muted">(22)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Gothenburg</strong>
+
+                        <span class="muted">(22)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Queensland University of Technology</strong>
+
+                        <span class="muted">(21)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Harvard University</strong>
+
+                        <span class="muted">(20)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>RMIT University</strong>
+
+                        <span class="muted">(20)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Aalborg University</strong>
+
+                        <span class="muted">(20)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Pennsylvania State University</strong>
+
+                        <span class="muted">(19)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>New York University</strong>
+
+                        <span class="muted">(19)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Edinburgh</strong>
+
+                        <span class="muted">(19)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Southern California</strong>
+
+                        <span class="muted">(18)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Copenhagen</strong>
+
+                        <span class="muted">(18)</span>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Gerhard Fischer</strong>
+
+                        <span class="muted">(28)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Frank T. Piller</strong>
+
+                        <span class="muted">(25)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jeroen P.J. de Jong</strong>
+
+                        <span class="muted">(23)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Eric von Hippel</strong>
+
+                        <span class="muted">(22)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Sampsa Hyysalo</strong>
+
+                        <span class="muted">(19)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jason Potts</strong>
+
+                        <span class="muted">(18)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Henry Chesbrough</strong>
+
+                        <span class="muted">(18)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Elias G. Carayannis</strong>
+
+                        <span class="muted">(17)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Martin Schreier</strong>
+
+                        <span class="muted">(16)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kathrin M. Möslein</strong>
+
+                        <span class="muted">(16)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jan Marco Leimeister</strong>
+
+                        <span class="muted">(15)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Johann Füller</strong>
+
+                        <span class="muted">(15)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Christopher Lettl</strong>
+
+                        <span class="muted">(15)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Marcel Bogers</strong>
+
+                        <span class="muted">(15)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>William H. Dutton</strong>
+
+                        <span class="muted">(14)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Nikolaus Franke</strong>
+
+                        <span class="muted">(14)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Björn Remneland Wikhamn</strong>
+
+                        <span class="muted">(14)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Shenja van der Graaf</strong>
+
+                        <span class="muted">(13)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Joel West</strong>
+
+                        <span class="muted">(13)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Cornelius Herstatt</strong>
+
+                        <span class="muted">(12)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>David F. J. Campbell</strong>
+
+                        <span class="muted">(12)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>John Bessant</strong>
+
+                        <span class="muted">(11)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Eric A. von Hippel</strong>
+
+                        <span class="muted">(11)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Christina Raasch</strong>
+
+                        <span class="muted">(10)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Christoph Ihl</strong>
+
+                        <span class="muted">(10)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Albrecht Fritzsche</strong>
+
+                        <span class="muted">(10)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Marc Pallot</strong>
+
+                        <span class="muted">(10)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kathrin M. Moeslein</strong>
+
+                        <span class="muted">(10)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Helmut Krcmar</strong>
+
+                        <span class="muted">(10)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ralf Reichwald</strong>
+
+                        <span class="muted">(10)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Per Kristensson</strong>
+
+                        <span class="muted">(9)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Youngjin Yoo</strong>
+
+                        <span class="muted">(9)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Arthur M. Diamond</strong>
+
+                        <span class="muted">(9)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Thierry Burger‐Helmchen</strong>
+
+                        <span class="muted">(8)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ann Majchrzak</strong>
+
+                        <span class="muted">(8)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Sabina Jeschke</strong>
+
+                        <span class="muted">(8)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Christoph Hienerth</strong>
+
+                        <span class="muted">(8)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Bastien Soulé</strong>
+
+                        <span class="muted">(8)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Hakikur Rahman</strong>
+
+                        <span class="muted">(8)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Katharina Schuster</strong>
+
+                        <span class="muted">(8)</span>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+
+        <div class="grid-2">
+
+
+
+
+
+
+
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Open Science Signals</span> <span class="badge" title="PRISM is a structured metadata feed used by DOAB for book-level peer-review context where publishers provide it.">PRISM</span></h2>
+                <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Open peer review and repository accessibility signals for this work.</p>
+
+
+
+
+                <h3 style="font-size:0.95rem;margin:1rem 0 0.6rem;">Open Peer Review <span class="badge" style="background:#eef2ff;color:#4338ca;">PRISM</span></h3>
+                <ul class="metric-list">
+
+                    <li><strong>Status:</strong> <span class="badge" style="background:#f3f4f6;color:#4b5563;border:1px solid #e5e7eb;">No explicit PRISM review record returned</span></li>
+                    <li class="muted" style="margin-top:0.25rem;">Interpretation: neutral signal — this does <strong>not</strong> mean the book had no peer review; only that PRISM returned no explicit title-level review metadata.</li>
+
+
+                    <li><strong>Publisher context:</strong> The MIT Press</li>
+
+                </ul>
+
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <section class="card " style="margin-bottom:0;" id="sec-mentions">
+                <h2><span>Online mentions &amp; public discourse</span> <span class="badge">Open Web</span></h2>
+                <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.5rem; font-size:0.85rem;">
+                    Community platforms and curated expert sources (newsletters, blogs, podcasts), plus
+
+                    historical Crossref Event Data where locally archived.
+
+                </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div style="margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb;">
+        <h3 style="font-size: 1.1rem; color: #1f2937; margin: 0 0 0.35rem 0; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+            <span>Scholarly web mentions</span>
+            <span class="badge" style="background:#fef3c7; color:#92400e; border:1px solid #fde68a; font-size:0.65rem;">Pilot</span>
+        </h3>
+
+    <p class="muted" style="margin-top:0; margin-bottom:1rem;">
+        Expert newsletters, subject blogs, and science podcasts from <code>pilot_sources.tsv</code>
+         — <strong>1</strong> hit
+         · 📧 1
+    </p>
+
+
+
+
+    <div id="wm-all" class="wm-tab-pane" style="display:block;">
+        <div class="wm-row" data-source-type="substack" style="position:relative; margin-bottom:1.35rem; padding-left:0.25rem; border-bottom:1px solid #f3f4f6; padding-bottom:1rem;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem; margin-bottom:0.35rem;">
+        <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+
+            <span style="font-size:1rem;" title="Substack">📧</span>
+            <span class="badge" style="background:#fff7ed; color:#c2410c; font-size:0.65rem;">Substack</span>
+
+            <strong style="font-size:0.9rem;">engineeringideas.substack.com</strong>
+
+            <span class="muted" style="font-size:0.75rem;">· 2024-01-23</span>
+
+        </div>
+
+        <a href="https://engineeringideas.substack.com/p/institutional-economics-through-the" target="_blank" style="font-size:0.8rem; color:#2563eb; font-weight:600; white-space:nowrap; text-decoration:none;">Read post →</a>
+
+    </div>
+
+    <div style="font-weight:600; font-size:0.95rem; color:#1e293b; margin-bottom:0.35rem;">Institutional economics through the lens of scale-free regulative development, morphogenesis, and cognitive science</div>
+
+
+    <p style="font-size:0.85rem; color:#475569; line-height:1.5; margin:0; font-style:italic;">…t7f 3 Levin, M. (2023). Collective Intelligence of Morphogenesis as a Teleonomic Process (pp. 175–198). https://doi.org/10.7551/mitpress/14642.003.0013 4 Levin, M. (2022). Technological Approach to Mind Everywhere: An Experimentally-Grounded Framework for…</p>
+
+
+</div>
+    </div>
+    <div id="wm-substack" class="wm-tab-pane" style="display:none;"><div class="wm-row" data-source-type="substack" style="position:relative; margin-bottom:1.35rem; padding-left:0.25rem; border-bottom:1px solid #f3f4f6; padding-bottom:1rem;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem; margin-bottom:0.35rem;">
+        <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+
+            <span style="font-size:1rem;" title="Substack">📧</span>
+            <span class="badge" style="background:#fff7ed; color:#c2410c; font-size:0.65rem;">Substack</span>
+
+            <strong style="font-size:0.9rem;">engineeringideas.substack.com</strong>
+
+            <span class="muted" style="font-size:0.75rem;">· 2024-01-23</span>
+
+        </div>
+
+        <a href="https://engineeringideas.substack.com/p/institutional-economics-through-the" target="_blank" style="font-size:0.8rem; color:#2563eb; font-weight:600; white-space:nowrap; text-decoration:none;">Read post →</a>
+
+    </div>
+
+    <div style="font-weight:600; font-size:0.95rem; color:#1e293b; margin-bottom:0.35rem;">Institutional economics through the lens of scale-free regulative development, morphogenesis, and cognitive science</div>
+
+
+    <p style="font-size:0.85rem; color:#475569; line-height:1.5; margin:0; font-style:italic;">…t7f 3 Levin, M. (2023). Collective Intelligence of Morphogenesis as a Teleonomic Process (pp. 175–198). https://doi.org/10.7551/mitpress/14642.003.0013 4 Levin, M. (2022). Technological Approach to Mind Everywhere: An Experimentally-Grounded Framework for…</p>
+
+
+</div></div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+            </section>
+
+        </div>
+
+
+        <section class="card" id="sec-teaching">
+            <h2><span>Teaching, Practice & Library Adoption</span></h2>
+            <div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem;">
+                Evidence of structured teaching use, reading lists, and library availability.
+            </div>
+
+            <div class="grid-2" style="align-items: start;">
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        OpenCourseWare Mentions <span class="badge" style="float: right;">Google Custom Search</span>
+                    </h3>
+
+                        <p class="muted" style="font-size: 0.85rem; font-style: italic;">No verified course syllabi found in open university repositories.</p>
+
+
+
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        Library & Community Access <span class="badge" style="float: right; background: #f0fdf4; color: #166534;">Open Library</span>
+                    </h3>
+
+                    <ul class="metric-list" style="margin-top: 0;">
+
+
+                        <li style="margin-bottom: 0.8rem;">
+                            <strong>Repository Reach (OpenAIRE):</strong>
+                            <span class="badge" style="background:#e0f2fe; color:#075985; border:1px solid #bae6fd;">
+                                7 indexed instances · 6 open
+                            </span>
+                            <div class="muted" style="font-size: 0.8rem; margin-top: 0.2rem;">Repository distribution and availability across indexed hosts.</div>
+                        </li>
+
+
+                        <li style="margin-bottom: 0.8rem;">
+                            <strong>Community Reach:</strong>
+                            <a href="https://openlibrary.org/search?title=Democratizing%20Innovation" target="_blank" class="badge" style="background:#fef2f2; color:#dc2626; text-decoration: none; display: inline-flex; align-items: center; gap: 0.2rem;">
+                                6 logs/editions ↗
+                            </a>
+                            <div class="muted" style="font-size: 0.8rem; margin-top: 0.2rem;">Tracked across Open Library community reading lists and catalog editions.</div>
+                        </li>
+
+
+
+                        <li style="margin-bottom: 0.8rem;">
+                            <strong>Institutional Availability:</strong>
+                            <div style="margin-top: 0.4rem;">
+                                <a href="https://www.worldcat.org/search?q=bn:9780262285636" target="_blank" class="tag" style="background:#e5f2ff; color:#1d4ed8; font-weight: 600; text-decoration: none;">
+                                    Search Global Libraries (WorldCat) ↗
+                                </a>
+                            </div>
+                        </li>
+
+
+
+                        <li style="margin-bottom: 0.8rem;">
+                            <strong>Library Classification Subjects:</strong>
+                            <div style="display:flex; flex-wrap:wrap; gap:0.3rem; margin-top: 0.4rem;">
+
+                                    <span class="tag tag-soft" style="font-size: 0.75rem;">Diffusion of innovations</span>
+
+                                    <span class="tag tag-soft" style="font-size: 0.75rem;">Democracy</span>
+
+                                    <span class="tag tag-soft" style="font-size: 0.75rem;">Economic aspects of Technological innovations</span>
+
+                                    <span class="tag tag-soft" style="font-size: 0.75rem;">Technological innovations</span>
+
+                                    <span class="tag tag-soft" style="font-size: 0.75rem;">Economic aspects</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 author · 0 institutions</div>
+
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+
+
+
+
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Eric von Hippel</strong>
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0002-7235-1032" target="_blank">ORCID</a>
+                    </li>
+
+                </ul>
+
+
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>10 specific concepts identified.</div>
+
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">User innovation</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Open innovation</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Business</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Product (mathematics)</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Product innovation</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Knowledge management</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Marketing</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Geometry</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Mathematics</span>
+
+
+                </div>
+
+
+            </section>
+        </div>
+
+
+
+
+
+        <section class="card" id="sec-downloads">
+            <h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
+            <div id="metrics-widget"></div>
+            <script type="application/json" id="operas-metrics-config">{"settings": {"locale": "en-US", "element_id": "metrics-widget", "load_graph_data_immediately": true}, "options": {"open_first_tab_by_default": true}, "tabs": [{"id": "tab1", "title": "Downloads", "scopes": {"m1": {"title": "OAPEN \u00b7 downloads", "works": ["info:doi:10.7551/mitpress/2333.001.0001"], "measures": ["https://metrics.operas-eu.org/oapen/downloads/v1"]}}, "graphs": [{"id": "g1", "type": "line", "title": "Downloads over time", "scopes": ["m1"], "config": {"stacked": true, "cumulative": false}}]}]}</script>
+            <script src="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.js" async></script>
+        </section>
+
+
+
+
+
+        <section class="card no-print" id="sec-citations-table">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.35rem;"
+                 data-total="50">
+                50 most recent citing works (newest first)
+            </div>
+
+
+            <div class="muted" style="margin-bottom:0.75rem; font-size:0.85rem;">
+                This table lists only the 50 most recent citing works; OpenAlex records 3,729 in total &mdash;
+                <a href="https://openalex.org/works?page=1&filter=cites%3AW4229502521&sort=publication_date%3Adesc" target="_blank" rel="noopener">browse the full citation corpus on OpenAlex &rarr;</a>
+            </div>
+
+            <div class="table-scroll-wrapper">
+                <table id="cit-table">
+                    <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Network Positions and Knowledge Coordination in Multi-Actor Innovation Systems: Evidence from EIP-AGRI Operational Groups</td>
+                        <td>Journal of the Knowledge Economy</td>
+                        <td><a href="https://doi.org/10.1007/s13132-026-03451-3" target="_blank" style="word-break: break-all;">10.1007/s13132-026-03451-3</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Understanding Cognitive Processing in Real‐World DIY Learning: Effects of Instructional Design and Task Complexity on Cognitive Elaboration and Task Replication Intention</td>
+                        <td>Applied Cognitive Psychology</td>
+                        <td><a href="https://doi.org/10.1002/acp.70282" target="_blank" style="word-break: break-all;">10.1002/acp.70282</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Affordance entrenchment analysis: A diagnostic tool for technology foresight</td>
+                        <td>Technology in Society</td>
+                        <td><a href="https://doi.org/10.1016/j.techsoc.2026.103511" target="_blank" style="word-break: break-all;">10.1016/j.techsoc.2026.103511</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>The Role of Interactive New‐Media Arts Applications in Managing Knowledge in the Public Domain</td>
+                        <td>Wiley Interdisciplinary Reviews Data Mining and Knowledge Discovery</td>
+                        <td><a href="https://doi.org/10.1002/widm.70125" target="_blank" style="word-break: break-all;">10.1002/widm.70125</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Notes</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1017/9781009762380.019" target="_blank" style="word-break: break-all;">10.1017/9781009762380.019</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>De la transferencia a la co-creación: protocolo de co-diseño comunitario en agricultura inteligente para el proyecto AgroHub (Magdalena, Colombia)</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.59410/preprint-uea-v2026ep08-1208" target="_blank" style="word-break: break-all;">10.59410/preprint-uea-v2026ep08-1208</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Customer-perceived supplier innovativeness in B2B services: evaluative cues across ecosystem interactions</td>
+                        <td>Journal of Service Theory and Practice</td>
+                        <td><a href="https://doi.org/10.1108/jstp-03-2025-0075" target="_blank" style="word-break: break-all;">10.1108/jstp-03-2025-0075</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Retrofit as ecological citizenship towards participatory resilient and regenerative design</td>
+                        <td>Proceedings of the Design Society</td>
+                        <td><a href="https://doi.org/10.1017/pds.2026.10485" target="_blank" style="word-break: break-all;">10.1017/pds.2026.10485</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Designing an interregional innovation community for the circular economy</td>
+                        <td>Proceedings of the Design Society</td>
+                        <td><a href="https://doi.org/10.1017/pds.2026.10494" target="_blank" style="word-break: break-all;">10.1017/pds.2026.10494</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>DIY Practices and New Anthropological Sensibilities</td>
+                        <td>Kultura i Społeczeństwo</td>
+                        <td><a href="https://doi.org/10.35757/kis.2026.70.2.6" target="_blank" style="word-break: break-all;">10.35757/kis.2026.70.2.6</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>A Historical Perspective on Open Innovation: A Critical Overview of the Precursors</td>
+                        <td>Minerva</td>
+                        <td><a href="https://doi.org/10.1007/s11024-026-09649-8" target="_blank" style="word-break: break-all;">10.1007/s11024-026-09649-8</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Outsider innovation in digital investor communities: How meme coordination reshapes market participation</td>
+                        <td>Technology in Society</td>
+                        <td><a href="https://doi.org/10.1016/j.techsoc.2026.103439" target="_blank" style="word-break: break-all;">10.1016/j.techsoc.2026.103439</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>The interplay between strategic design and market orientations in achieving new product advantage</td>
+                        <td>European Journal of Marketing</td>
+                        <td><a href="https://doi.org/10.1108/ejm-02-2025-0085" target="_blank" style="word-break: break-all;">10.1108/ejm-02-2025-0085</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Mindsets, cultures, and technologies: supporting end-user development in the AI era</td>
+                        <td>Behaviour and Information Technology</td>
+                        <td><a href="https://doi.org/10.1080/0144929x.2026.2682289" target="_blank" style="word-break: break-all;">10.1080/0144929x.2026.2682289</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Integrated management for long-term performance improvement in complex systems</td>
+                        <td>Industrial and Corporate Change</td>
+                        <td><a href="https://doi.org/10.1093/icc/dtag039" target="_blank" style="word-break: break-all;">10.1093/icc/dtag039</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>The 3D Printer as a Sewing Machine: Untaming Fabrication Narratives for Material Exploration</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1145/3800645.3812821" target="_blank" style="word-break: break-all;">10.1145/3800645.3812821</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Institutional Complementarities in the Governance of Corporate Knowledge Commons</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781009431859.005" target="_blank" style="word-break: break-all;">10.1017/9781009431859.005</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Faith Seeking Prompting: Reimagining Theological Education in the Era of Generative AI</td>
+                        <td>Teaching Theology & Religion</td>
+                        <td><a href="https://doi.org/10.1111/teth.70033" target="_blank" style="word-break: break-all;">10.1111/teth.70033</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Formation and institutionalization of innovation communities in the context of the transformation of affected territories</td>
+                        <td>Herald of the Economic Sciences of Ukraine</td>
+                        <td><a href="https://doi.org/10.37405/3041-1629.2026.1(50).91-98" target="_blank" style="word-break: break-all;">10.37405/3041-1629.2026.1(50).91-98</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Designing Innovation for Equity</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.4018/979-8-3373-6355-4.ch006" target="_blank" style="word-break: break-all;">10.4018/979-8-3373-6355-4.ch006</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>The Decline of the Digital Commons</td>
+                        <td>Theory Culture & Society</td>
+                        <td><a href="https://doi.org/10.1177/02632764261432877" target="_blank" style="word-break: break-all;">10.1177/02632764261432877</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>How does network centrality shape the impact of electronic word-of-mouth? A moderation effect in the gaming industry</td>
+                        <td>Asia Pacific Journal of Marketing and Logistics</td>
+                        <td><a href="https://doi.org/10.1108/apjml-03-2025-0430" target="_blank" style="word-break: break-all;">10.1108/apjml-03-2025-0430</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Object‐Interactive Transvections: A Theory for Addressing Persistent Retail Supply Chain Problems</td>
+                        <td>Journal of Business Logistics</td>
+                        <td><a href="https://doi.org/10.1111/jbl.70070" target="_blank" style="word-break: break-all;">10.1111/jbl.70070</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Conclusions – achieving open social science</td>
+                        <td>LSE Press eBooks</td>
+                        <td><a href="https://doi.org/10.31389/lsepress.dos.p" target="_blank" style="word-break: break-all;">10.31389/lsepress.dos.p</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>The impact of design thinking on entrepreneurial competencies among university students in Peru</td>
+                        <td>Problems and Perspectives in Management</td>
+                        <td><a href="https://doi.org/10.21511/ppm.24(2).2026.12" target="_blank" style="word-break: break-all;">10.21511/ppm.24(2).2026.12</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Innovation and its enduring relevance in (the Journal of ) Economic Geography : shifting perspectives on the semantics, actors, and spaces of entrepreneurial practices</td>
+                        <td>Journal of Economic Geography</td>
+                        <td><a href="https://doi.org/10.1093/jeg/lbag036" target="_blank" style="word-break: break-all;">10.1093/jeg/lbag036</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Opportunity Identification by Entrepreneurs with Different Knowledge Sources: A Social Capital Perspective</td>
+                        <td>The Journal of Entrepreneurship</td>
+                        <td><a href="https://doi.org/10.1177/09713557261444145" target="_blank" style="word-break: break-all;">10.1177/09713557261444145</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Exploring Theories and Competencies of Innovation in Engineering Education: A Scoping Review</td>
+                        <td>Education Sciences</td>
+                        <td><a href="https://doi.org/10.3390/educsci16050695" target="_blank" style="word-break: break-all;">10.3390/educsci16050695</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Integrating Crowdsourcing, Value Co-creation, and Leadership for Innovation Excellence</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1108/978-1-80592-601-620261002" target="_blank" style="word-break: break-all;">10.1108/978-1-80592-601-620261002</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Rethinking Innovation Ecosystems Beyond Metro Hubs in an Aging Economy</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.4018/979-8-2600-1428-8.ch007" target="_blank" style="word-break: break-all;">10.4018/979-8-2600-1428-8.ch007</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>The Aging Creative Class</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.4018/979-8-2600-1428-8.ch008" target="_blank" style="word-break: break-all;">10.4018/979-8-2600-1428-8.ch008</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Examining a boundary condition of customer co-creation: customer engagement</td>
+                        <td>Management Decision</td>
+                        <td><a href="https://doi.org/10.1108/md-03-2025-0830" target="_blank" style="word-break: break-all;">10.1108/md-03-2025-0830</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>A Feminist Reading of Substitute Animal Food Patent Decisions: Of Cheating Cheeses and Mock Meats</td>
+                        <td>GRURRR. Gewerblicher Rechtsschutz und Urheberrecht, Rechtsprechungs-Report/GRUR-DVD/GRUR-CD/IIC/Gewerblicher Rechtsschutz und Urheberrecht/Gewerblicher Rechtsschutz und Urheberrecht. Internationaler Teil</td>
+                        <td><a href="https://doi.org/10.1007/s40319-026-01720-x" target="_blank" style="word-break: break-all;">10.1007/s40319-026-01720-x</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>SMART-CROWD: A System Architecture for Intelligent Assessment of Crowdsourcing Maturity in Urban Mobility Governance</td>
+                        <td>Applied System Innovation</td>
+                        <td><a href="https://doi.org/10.3390/asi9040077" target="_blank" style="word-break: break-all;">10.3390/asi9040077</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Inteligencia artificial e Innovación social</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.22199/fic400586050_ei" target="_blank" style="word-break: break-all;">10.22199/fic400586050_ei</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Assessing the impact of homophily on knowledge collaboration and innovative outcomes</td>
+                        <td>Economics of Innovation and New Technology</td>
+                        <td><a href="https://doi.org/10.1080/10438599.2026.2641458" target="_blank" style="word-break: break-all;">10.1080/10438599.2026.2641458</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Unraveling the aspired identity and diffusion effort of user innovators</td>
+                        <td>European Journal of Innovation Management</td>
+                        <td><a href="https://doi.org/10.1108/ejim-05-2025-0676" target="_blank" style="word-break: break-all;">10.1108/ejim-05-2025-0676</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>MakeDevice: Easing the path from hardware prototyping toolkits to manufacturable devices</td>
+                        <td>Lancaster EPrints (Lancaster University)</td>
+                        <td><a href="https://doi.org/10.1145/3731459.3773298" target="_blank" style="word-break: break-all;">10.1145/3731459.3773298</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Collaborative design for social resilience: lessons from the Indian Sundarbans Delta</td>
+                        <td>CoDesign</td>
+                        <td><a href="https://doi.org/10.1080/15710882.2026.2632233" target="_blank" style="word-break: break-all;">10.1080/15710882.2026.2632233</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Quantifying the gig economy’s evolution: A bibliometric exploration of historical patterns and future projections</td>
+                        <td>Electronic Markets</td>
+                        <td><a href="https://doi.org/10.1007/s12525-026-00878-z" target="_blank" style="word-break: break-all;">10.1007/s12525-026-00878-z</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Beyond Platform Capitalism: Artificial Intelligence and the Metaverse as Drivers of Inclusive Knowledge Ecosystems and Socio-Economic Value Creation</td>
+                        <td>Journal of Knowledge Management</td>
+                        <td><a href="https://doi.org/10.1108/jkm-03-2025-0380" target="_blank" style="word-break: break-all;">10.1108/jkm-03-2025-0380</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Preference clustering reveals divergent pathways for transfer-board design in a Living-Lab co-design study</td>
+                        <td>Disability and Rehabilitation Assistive Technology</td>
+                        <td><a href="https://doi.org/10.1080/17483107.2026.2631059" target="_blank" style="word-break: break-all;">10.1080/17483107.2026.2631059</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Rethinking iterative design: A case study of a design team’s handling of user representations</td>
+                        <td>Designing</td>
+                        <td><a href="https://doi.org/10.1177/30497671261428015" target="_blank" style="word-break: break-all;">10.1177/30497671261428015</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Connecting the dots: examining the link between creativity-enhancing methods and open innovation in the EU business landscape</td>
+                        <td>Central European Management Journal</td>
+                        <td><a href="https://doi.org/10.1108/cemj-06-2025-0162" target="_blank" style="word-break: break-all;">10.1108/cemj-06-2025-0162</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Co‐Design Methods That Foster Collaboration Among Highly Distant Actors: Insights From the Earth Observation Ecosystem</td>
+                        <td>Creativity and Innovation Management</td>
+                        <td><a href="https://doi.org/10.1111/caim.70039" target="_blank" style="word-break: break-all;">10.1111/caim.70039</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>A theory of co-production as joint household production with illustrations from the arts</td>
+                        <td>Journal of Cultural Economics</td>
+                        <td><a href="https://doi.org/10.1007/s10824-026-09577-1" target="_blank" style="word-break: break-all;">10.1007/s10824-026-09577-1</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>2294 Produktinnovation durch Produktmanagement</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1515/9783111558806-004" target="_blank" style="word-break: break-all;">10.1515/9783111558806-004</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Employee User Innovation Generated from Routine Improvement Activities:</td>
+                        <td>Quarterly Journal of Marketing</td>
+                        <td><a href="https://doi.org/10.7222/marketing.2026.019" target="_blank" style="word-break: break-all;">10.7222/marketing.2026.019</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Living Labs as Innovation Catalysts in the Silver Economy</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.4018/979-8-3373-6117-8.ch004" target="_blank" style="word-break: break-all;">10.4018/979-8-3373-6117-8.ch004</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Balancing economic rationality and social responsibility under resource constraints: findings on doctors’ knowledge and timing in medical device innovation</td>
+                        <td>Journal of Responsible Innovation</td>
+                        <td><a href="https://doi.org/10.1080/23299460.2025.2611505" target="_blank" style="word-break: break-all;">10.1080/23299460.2025.2611505</a></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div id="cit-pagination" class="cit-pagination" style="display:none;" aria-label="Citation table pages">
+                <div class="cit-pagination-info" id="cit-pagination-info"></div>
+                <div class="cit-pagination-btns" id="cit-pagination-btns"></div>
+            </div>
+        </section>
+
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-09-11T09:24:41+00:00
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        }
+
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' most recent citing works (newest first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
+
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' most recent citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
+
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+        .wm-tab-btn {
+            border: none;
+            background: #f3f4f6;
+            color: #4b5563;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .wm-tab-btn.wm-tab-active {
+            outline: 2px solid #3b82f6;
+            outline-offset: 1px;
+        }
+    </style>
+
+    <script>
+        function citeSwitchTab(btn, paneId) {
+            var panes = document.querySelectorAll('#sec-citing .cite-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].classList.remove('active');
+            }
+            var btns = document.querySelectorAll('#sec-citing .cite-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('active');
+            }
+            var pane = document.getElementById(paneId);
+            if (pane) pane.classList.add('active');
+            if (btn) btn.classList.add('active');
+        }
+        function openWebMentionTab(evt, tabId) {
+            var panes = document.querySelectorAll('.wm-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].style.display = 'none';
+            }
+            var btns = document.querySelectorAll('.wm-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('wm-tab-active');
+            }
+            var pane = document.getElementById(tabId);
+            if (pane) pane.style.display = 'block';
+            if (evt && evt.currentTarget) evt.currentTarget.classList.add('wm-tab-active');
+        }
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+<script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
+(function() {
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
+<script>
+(function() {
+    var nav = document.getElementById('story-sticky-nav');
+    if (!nav) return;
+    var links = nav.querySelectorAll('a[href^="#sec-"]');
+    var sectionIds = [];
+    links.forEach(function(a) {
+        var id = (a.getAttribute('href') || '').slice(1);
+        if (id && document.getElementById(id)) sectionIds.push(id);
+    });
+    if (!sectionIds.length) return;
+
+    function setActive(id) {
+        links.forEach(function(a) {
+            a.classList.toggle('snav-active', a.getAttribute('href') === '#' + id);
+        });
+    }
+
+    links.forEach(function(a) {
+        a.addEventListener('click', function(e) {
+            var id = (a.getAttribute('href') || '').slice(1);
+            var target = id ? document.getElementById(id) : null;
+            if (!target) return;
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.replaceState(null, '', '#' + id);
+            setActive(id);
+            var more = nav.querySelector('.sticky-nav-more');
+            if (more) more.removeAttribute('open');
+        });
+    });
+
+    if (!('IntersectionObserver' in window)) return;
+    var visible = new Map();
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            visible.set(entry.target.id, entry.intersectionRatio);
+        });
+        var bestId = null;
+        var bestRatio = 0;
+        sectionIds.forEach(function(id) {
+            var ratio = visible.get(id) || 0;
+            if (ratio > bestRatio) {
+                bestRatio = ratio;
+                bestId = id;
+            }
+        });
+        if (bestId) setActive(bestId);
+    }, { rootMargin: '-40% 0px -50% 0px', threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] });
+
+    sectionIds.forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) observer.observe(el);
+    });
+})();
+</script>
+<script>
+(function() {
+    var el = document.getElementById('publisher-value');
+    if (!el) return;
+
+    var label = (el.getAttribute('data-publisher-label') || '').trim();
+    if (!label || label.toLowerCase() === 'unknown') return;
+
+    function norm(s) {
+        return String(s || '').trim().toLowerCase().replace(/\s+/g, ' ');
+    }
+
+    function parseStoriesData(jsText) {
+        var marker = 'window.STORIES_DATA =';
+        var markerIdx = jsText.indexOf(marker);
+        if (markerIdx === -1) return [];
+        var start = jsText.indexOf('[', markerIdx);
+        if (start === -1) return [];
+        var endMarker = 'window.STORIES_STATS =';
+        var endMarkerIdx = jsText.indexOf(endMarker, start);
+        if (endMarkerIdx === -1) return [];
+        var end = jsText.lastIndexOf(';', endMarkerIdx - 1);
+        if (end === -1 || end <= start) return [];
+        var raw = jsText.slice(start, end).trim();
+        try {
+            var data = JSON.parse(raw);
+            return Array.isArray(data) ? data : [];
+        } catch (_err) {
+            return [];
+        }
+    }
+
+    function enablePublisherLink(count) {
+        var link = document.createElement('a');
+        link.href = 'index.html?view=publisher&publisher=' + encodeURIComponent(label);
+        link.textContent = label;
+        link.style.color = '#1d4ed8';
+        link.style.textDecoration = 'none';
+        if (typeof count === 'number' && count > 1) {
+            link.title = 'Open publisher dashboard (' + count + ' stories)';
+        } else {
+            link.title = 'Open publisher dashboard';
+        }
+        el.textContent = '';
+        el.appendChild(link);
+    }
+
+    // Local file previews (file://) often block fetch(). In that case we still
+    // provide direct navigation to the publisher dashboard.
+    if (window.location.protocol === 'file:') {
+        enablePublisherLink();
+        return;
+    }
+
+    fetch('stories_data.js')
+        .then(function(res) { return res.ok ? res.text() : ''; })
+        .then(function(jsText) {
+            if (!jsText) {
+                enablePublisherLink();
+                return;
+            }
+            var stories = parseStoriesData(jsText);
+            if (!stories.length) {
+                enablePublisherLink();
+                return;
+            }
+
+            var target = norm(label);
+            var matches = stories.filter(function(story) {
+                var publisher = norm(story.publisher || story.venue || '');
+                return publisher && publisher === target;
+            }).length;
+
+            if (matches <= 1) return;
+            enablePublisherLink(matches);
+        })
+        .catch(function() {
+            enablePublisherLink();
+        });
+})();
+</script>
+</body>
+</html>

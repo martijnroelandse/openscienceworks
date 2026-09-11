@@ -1,0 +1,2347 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ArticleStory - Brain tumor detection and classification using machine learning: a comprehensive survey</title>
+    <style>
+
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        /* AuthorStory links on story pages */
+        a.author-link,
+        .hero-meta a[href^="authorstory_"],
+        .card strong a[href^="authorstory_"],
+        #sec-citing strong a[href^="authorstory_"] {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a.author-link:hover,
+        .hero-meta a[href^="authorstory_"]:hover,
+        .card strong a[href^="authorstory_"]:hover,
+        #sec-citing strong a[href^="authorstory_"]:hover {
+            text-decoration: underline;
+        }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+
+
+/* ── UX Enhancements ── */
+
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+.sticky-nav-more{display:inline-block;position:relative;}
+.sticky-nav-more>summary{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;cursor:pointer;list-style:none;border-bottom:2px solid transparent;}
+.sticky-nav-more>summary::-webkit-details-marker{display:none;}
+.sticky-nav-more[open]>summary,.sticky-nav-more>summary:hover{color:#111827;}
+.sticky-nav-more-menu{position:absolute;right:0;top:100%;min-width:10rem;background:#fff;
+  border:1px solid #e5e7eb;border-radius:.6rem;box-shadow:0 8px 24px rgba(15,23,42,.12);
+  padding:.35rem 0;z-index:120;}
+.sticky-nav-more-menu a{display:block;padding:.5rem .9rem;font-size:.78rem;font-weight:600;
+  color:#374151;text-decoration:none;white-space:nowrap;}
+.sticky-nav-more-menu a:hover{background:#f8fafc;color:#111827;}
+[id^="sec-"]{scroll-margin-top:4.75rem;}
+@media print{.sticky-nav{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
+
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
+
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;
+  border:1px solid transparent;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#f7ebeb;color:#B34444;border-color:#f1d5d5;}
+.sig-slate {background:#f3f4f6;color:#6b7280;border-color:#e5e7eb;}
+.sig-indigo{background:#f0ecf9;color:#6A4FA3;border-color:#ddd6fe;}
+.sig-teal  {background:#e8f2ef;color:#34675A;border-color:#cfe7df;}
+.sig-amber {background:#fef3c7;color:#92400e;border-color:#fde68a;}
+.sig-blue  {background:#ebf0f7;color:#3C5A7F;border-color:#cbdcf2;}
+.sig-green {background:#e8f2ef;color:#34675A;border-color:#cfe7df;}
+.sig-risk{background:#fee2e2;color:#b91c1c;border-color:#fca5a5;}
+.sig-warning{background:#fff7ed;color:#c2410c;border-color:#fdba74;}
+.sig-correction{background:#fef3c7;color:#92400e;border-color:#fde68a;}
+.sig-data{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe;}
+.sig-peer{background:#dcfce7;color:#166534;border-color:#bbf7d0;}
+.sig-preprint{background:#f5f3ff;color:#5b21b6;border-color:#ddd6fe;}
+.sig-repo-open{background:#f8fafc;color:#334155;border-color:#cbd5e1;}
+.sig-repo-certified{background:#ecfdf5;color:#047857;border-color:#a7f3d0;}
+.sig-oa-gold{background:#fef3c7;color:#92400e;border-color:#fde68a;}
+.sig-oa-hybrid{background:#e0f2fe;color:#0369a1;border-color:#bae6fd;}
+.sig-oa-green{background:#dcfce7;color:#166534;border-color:#bbf7d0;}
+.sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
+.sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
+.sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
+}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
+  </div>
+</nav>
+
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">Brain tumor detection and classification using machine learning: a comprehensive survey</h1>
+
+                        <div class="im-signals-pills" style="margin-top: 0.75rem; margin-bottom: 0.5rem;">
+
+
+
+
+                                <span class="sig-pill sig-oa-gold" title="Open access: Gold">
+                                    <svg class="sig-oa-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <rect x="5" y="11" width="14" height="10" rx="2"/>
+                                        <path d="M7 11V7a5 5 0 0 1 9.5-2.2"/>
+                                        <path d="M16.5 4.8V11"/>
+                                    </svg>
+                                    Access · Gold
+                                </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong>
+
+                                    Javaria Amin, Muhammad Sharif, Anandakumar Haldorai, Mussarat Yasmin, Ramesh Sundar Nayak
+
+                            </div>
+
+
+
+
+
+                            <div><strong>Journal:</strong>
+                                Complex & Intelligent Systems
+                            </div>
+
+
+                            <div><strong>Publisher:</strong>
+
+
+
+                                <span id="publisher-value" data-publisher-label="Springer Nature">Springer Nature</span>
+                            </div>
+
+                            <div><strong>Publication year:</strong>
+
+                                    2021
+
+                            </div>
+
+
+
+                            <div><strong>DOI:</strong>
+                                <a href="https://doi.org/10.1007/s40747-021-00563-y" target="_blank">10.1007/s40747-021-00563-y</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </header>
+
+
+
+
+        <!-- Sticky nav (built from story_nav — only sections present on this page) -->
+
+        <nav aria-label="Page sections" class="sticky-nav no-print" id="story-sticky-nav">
+            <div class="sticky-nav-inner">
+
+                <a href="#sec-hero" data-sec="sec-hero">Overview</a>
+
+                <a href="#sec-story" data-sec="sec-story">Story</a>
+
+                <a href="#sec-impact" data-sec="sec-impact">Impact</a>
+
+                <a href="#sec-roles" data-sec="sec-roles">Roles</a>
+
+                <a href="#sec-access" data-sec="sec-access">Access</a>
+
+                <a href="#sec-citing" data-sec="sec-citing">Who's Citing</a>
+
+
+
+            </div>
+        </nav>
+
+
+
+
+
+
+        <section class="card" id="sec-story">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">Brain tumor detection and classification using machine learning: a comprehensive survey (2021) in Complex & Intelligent Systems. 500 citations.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">Brain tumor detection and classification using machine learning: a comprehensive survey (2021) in Complex & Intelligent Systems is authored by Javaria Amin, Muhammad Sharif and Anandakumar Haldorai. Topics: Brain tumor, Computer science, Segmentation, Artificial intelligence and Deep learning.</p>
+<p class="story-text">500 citations (OpenAlex). Citations peaked in 2025 with 153 citing works. Citing venues include Lecture notes in networks and systems, Scientific Reports and IEEE Access.</p>
+<p class="story-text">Limited online visibility beyond citations.</p></div>
+            <div class="muted" style="margin-top:0.6rem;">
+                Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
+            </div>
+        </section>
+
+
+
+
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+
+
+            <p class="muted">Crossref Event Data: historical records unavailable locally—not zero events. The public API was retired on 23 April 2026. Other attention sources may still be shown.</p>
+
+            <div class="im-wrapper">
+
+
+
+
+
+
+
+
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+
+                                <div class="im-num">500</div>
+                                <div class="im-label">Total Citations</div>
+
+                                <div class="im-top-badge">🏆 Top 1% Cited</div>
+
+                            </div>
+
+
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="impactSparkline"
+                                        data-labels="[2022, 2023, 2024, 2025, 2026]"
+                                        data-values="[48, 81, 151, 153, 65]"></canvas>
+                                </div>
+                                <div class="im-spark-range">2022–2026</div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+
+
+                    <!-- scite (only when references exist) -->
+
+                    <div class="im-card">
+                        <div class="im-num">141</div>
+                        <div class="im-label">scite References</div>
+
+
+
+
+
+
+                        <div class="im-scite-compact">
+                            <div class="im-scite-title">Citation context <span class="im-scite-via">via scite</span></div>
+                            <div class="im-scite-bar">
+                                <div class="im-scite-seg im-scite-sup" data-w="0"></div>
+                                <div class="im-scite-seg im-scite-men" data-w="100"></div>
+                                <div class="im-scite-seg im-scite-con" data-w="0"></div>
+                            </div>
+                            <div class="im-scite-leg">
+                                <span><span class="im-scite-dot" style="background:#22c55e;"></span>0</span>
+                                <span><span class="im-scite-dot" style="background:#94a3b8;"></span>141</span>
+                                <span><span class="im-scite-dot" style="background:#f87171;"></span>0</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+                <div class="muted" style="margin-top:.7rem; font-size:.8rem;">
+                    Some signals aren’t recorded for this volume yet (online mentions) — these typically accrue after publication.
+                </div>
+
+
+
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 40 countries</a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section class="card" id="sec-roles">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#1d4ed8">🎓 Academic & Scientific</div>
+                    <div class="roles-row">
+
+
+
+
+
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Scholarly uptake — Frequently cited in scholarly literature. (score 1.00)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Scholarly uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+
+
+
+
+
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="High-visibility uptake — Appears in high-visibility channels or outlets. (score 0.85)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            High-visibility uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
+            </div>
+        </section>
+
+
+        <div class="grid-2">
+
+
+            <section class="card" style="margin-bottom:0;" id="sec-access">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1007/s40747-021-00563-y" target="_blank">10.1007/s40747-021-00563-y</a></li>
+                    <li><strong>OA status:</strong> Gold</li>
+
+                    <li><strong>OA source:</strong> Publisher-claimed</li>
+
+
+
+
+
+
+
+
+
+
+                    <li><strong>OA basis:</strong> OpenAlex/Crossref access flag is OA, OpenAlex/Crossref OA status: GOLD</li>
+
+                    <li><strong>OA evidence chain:</strong> Publisher-claimed → OpenAlex/Crossref</li>
+
+
+
+                    <li><strong>Repository reach (OpenAIRE):</strong> 5 indexed instances (2 open)</li>
+
+
+
+
+
+                </ul>
+            </section>
+
+
+
+
+        </div>
+
+        <div class="grid-2" style="align-items: start;">
+
+
+
+
+
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 141</li>
+                                <li><strong>Supporting:</strong> 0</li>
+                                <li><strong>Mentioning:</strong> 141</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+
+                        </section>
+
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+
+
+
+                </div>
+
+        </div>
+
+
+
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>500</strong> citing works.
+                        <strong>24.1%</strong> come from the Top 10 institutions.
+                        <a href="https://openalex.org/works?page=1&filter=cites%3AW3211740276&sort=publication_date%3Adesc" target="_blank" rel="noopener">See the full list on OpenAlex &rarr;</a>
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        <span class="tag tag-soft" style="font-size:.75rem;">conference-paper (234)</span><span class="tag tag-soft" style="font-size:.75rem;">article (219)</span><span class="tag tag-soft" style="font-size:.75rem;">book-chapter (20)</span><span class="tag tag-soft" style="font-size:.75rem;">preprint (15)</span><span class="tag tag-soft" style="font-size:.75rem;">review (8)</span>
+                        <span class="tag" style="font-size:.75rem;">Lecture notes in networks and systems</span><span class="tag" style="font-size:.75rem;">Scientific Reports</span><span class="tag" style="font-size:.75rem;">IEEE Access</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="[2022, 2023, 2024, 2025, 2026]"
+                    data-values="[48, 81, 151, 153, 65]">
+                </canvas>
+            </div>
+
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
+
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">India (288)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Saudi Arabia (42)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">China (33)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United States (30)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Pakistan (25)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Bangladesh (16)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United Kingdom (15)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Egypt (14)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Turkey (12)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Malaysia (11)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">South Korea (10)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Iran (9)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Jordan (8)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Sweden (7)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Australia (6)</span>
+
+                </div>
+
+                <div style="margin-top:1rem;">
+                    <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (453)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Company (30)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (27)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Healthcare (27)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Nonprofit (10)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Government (7)</span>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Vellore Institute of Technology University</strong>
+
+                        <span class="muted">(21)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>SRM Institute of Science and Technology</strong>
+
+                        <span class="muted">(17)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Saveetha University</strong>
+
+                        <span class="muted">(15)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology</strong>
+
+                        <span class="muted">(13)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Chandigarh University</strong>
+
+                        <span class="muted">(11)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Chitkara University</strong>
+
+                        <span class="muted">(11)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Galgotias University</strong>
+
+                        <span class="muted">(8)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Barkatullah University</strong>
+
+                        <span class="muted">(8)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Koneru Lakshmaiah Education Foundation</strong>
+
+                        <span class="muted">(8)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kalasalingam Academy of Research and Education</strong>
+
+                        <span class="muted">(8)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Princess Nourah bint Abdulrahman University</strong>
+
+                        <span class="muted">(7)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>King Khalid University</strong>
+
+                        <span class="muted">(7)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Institute of Management Technology</strong>
+
+                        <span class="muted">(6)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Taif University</strong>
+
+                        <span class="muted">(6)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>King Saud University</strong>
+
+                        <span class="muted">(6)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Bennett University</strong>
+
+                        <span class="muted">(6)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Sathyabama Institute of Science and Technology</strong>
+
+                        <span class="muted">(6)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Sri Eshwar College of Engineering</strong>
+
+                        <span class="muted">(6)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Al-Ahliyya Amman University</strong>
+
+                        <span class="muted">(5)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Lovely Professional University</strong>
+
+                        <span class="muted">(5)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Vignan's Foundation for Science, Technology & Research</strong>
+
+                        <span class="muted">(5)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Amity University</strong>
+
+                        <span class="muted">(5)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Symbiosis International University</strong>
+
+                        <span class="muted">(5)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Anna University, Chennai</strong>
+
+                        <span class="muted">(5)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>KPR Institute of Engineering and Technology</strong>
+
+                        <span class="muted">(5)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Hindustan Institute of Technology and Science</strong>
+
+                        <span class="muted">(5)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Sharda University</strong>
+
+                        <span class="muted">(5)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Amrita Vishwa Vidyapeetham</strong>
+
+                        <span class="muted">(5)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Savitribai Phule Pune University</strong>
+
+                        <span class="muted">(5)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jain University</strong>
+
+                        <span class="muted">(4)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Karunya University</strong>
+
+                        <span class="muted">(4)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>King Abdulaziz City for Science and Technology</strong>
+
+                        <span class="muted">(4)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Vels University</strong>
+
+                        <span class="muted">(4)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Prince Sattam Bin Abdulaziz University</strong>
+
+                        <span class="muted">(4)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>COMSATS University Islamabad</strong>
+
+                        <span class="muted">(4)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Sri Venkateswara University</strong>
+
+                        <span class="muted">(4)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Marwadi University</strong>
+
+                        <span class="muted">(4)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Birla Institute of Technology and Science - Hyderabad Campus</strong>
+
+                        <span class="muted">(4)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Higher Institute of Engineering</strong>
+
+                        <span class="muted">(4)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>SRM University</strong>
+
+                        <span class="muted">(4)</span>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Khalid K. Almuzaini</strong>
+
+                        <span class="muted">(4)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Chander Prabha</strong>
+
+                        <span class="muted">(3)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Muneera Altayeb</strong>
+
+                        <span class="muted">(3)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Meenakshi Sood</strong>
+
+                        <span class="muted">(3)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Peter Lundberg</strong>
+
+                        <span class="muted">(3)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>J. S. Nisha</strong>
+
+                        <span class="muted">(3)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Iulian Emil Tampu</strong>
+
+                        <span class="muted">(3)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Per Olof Nyman</strong>
+
+                        <span class="muted">(3)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Muhammad E. H. Chowdhury</strong>
+
+                        <span class="muted">(3)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Bhawna Sachdeva</strong>
+
+                        <span class="muted">(3)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ida Blystad</strong>
+
+                        <span class="muted">(3)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Neha Bhardwaj</strong>
+
+                        <span class="muted">(3)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Anders Eklund</strong>
+
+                        <span class="muted">(3)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Neda Haj‐Hosseini</strong>
+
+                        <span class="muted">(3)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Tamara Bianchessi</strong>
+
+                        <span class="muted">(3)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Retinderdeep Singh</strong>
+
+                        <span class="muted">(3)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>R. Preetha</strong>
+
+                        <span class="muted">(3)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ajay B. Gadicha</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Mohiuddin Ahmad</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Nagwan Abdel Samee</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Orestis Papadimitriou</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Muhammad Irfan</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ruby Bhatt</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Shahab S. Band</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Sanjeev Jain</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Deepa Gupta</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Manolis Μaragoudakis</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>K. Vijayakumar</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Faisal Ahmmed</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jyostna Devi Bodapati</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Deepak Kumar Verma</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Taha Alfakih</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ahmed A. Elngar</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Edeh Michael Onyema</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Vinay Kukreja</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kumod Kumar Gupta</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jeebananda Panda</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Gouri Sankar Mishra</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Nagur Shareef Shaik</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Alberto Nogales</strong>
+
+                        <span class="muted">(2)</span>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+
+        <div class="grid-2">
+
+
+
+
+
+
+
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Open Science Signals</span> <span class="badge" title="PRISM is a structured metadata feed used by DOAB for book-level peer-review context where publishers provide it.">Crossref / OpenAIRE</span></h2>
+                <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Open peer review and repository accessibility signals for this work.</p>
+
+
+
+
+
+
+
+
+
+
+                <h3 style="font-size:0.95rem;margin:1rem 0 0.6rem;">Repository Reach &amp; Accessibility <span class="badge" style="background:#e0f2fe;color:#075985;">OpenAIRE · Moderate</span></h3>
+                <ul class="metric-list">
+                    <li><strong>Indexed repository instances:</strong> 5 (2 open)</li>
+
+
+                </ul>
+
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>5 authors · 0 institutions</div>
+
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+
+
+
+
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Javaria Amin</strong>
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0003-1080-5446" target="_blank">ORCID</a>
+                    </li>
+
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Muhammad Sharif</strong>
+
+
+                        <a class="orcid-badge" href="0000-0002-1355-2168" target="_blank">ORCID</a>
+                    </li>
+
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Anandakumar Haldorai</strong>
+
+
+                        <a class="orcid-badge" href="0000-0001-9975-6462" target="_blank">ORCID</a>
+                    </li>
+
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Mussarat Yasmin</strong>
+
+
+                        <a class="orcid-badge" href="0000-0001-8604-276X" target="_blank">ORCID</a>
+                    </li>
+
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Ramesh Sundar Nayak</strong>
+
+
+
+                    </li>
+
+                </ul>
+
+
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>13 specific concepts identified.</div>
+
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Brain tumor</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Segmentation</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Artificial intelligence</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Deep learning</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Transfer of learning</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Feature extraction</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Magnetic resonance imaging</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Machine learning</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Pattern recognition (psychology)</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Medicine</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Pathology</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Radiology</span>
+
+
+                </div>
+
+
+            </section>
+        </div>
+
+
+
+
+
+
+
+        <section class="card no-print" id="sec-citations-table">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.35rem;"
+                 data-total="50">
+                50 most recent citing works (newest first)
+            </div>
+
+
+            <div class="muted" style="margin-bottom:0.75rem; font-size:0.85rem;">
+                This table lists only the 50 most recent citing works; OpenAlex records 500 in total &mdash;
+                <a href="https://openalex.org/works?page=1&filter=cites%3AW3211740276&sort=publication_date%3Adesc" target="_blank" rel="noopener">browse the full citation corpus on OpenAlex &rarr;</a>
+            </div>
+
+            <div class="table-scroll-wrapper">
+                <table id="cit-table">
+                    <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Altitudinal Visual Field Defect as the Presenting Sign of a Brain Tumor: A Case Report</td>
+                        <td>Clinical Case Reports</td>
+                        <td><a href="https://doi.org/10.1002/ccr3.73451" target="_blank" style="word-break: break-all;">10.1002/ccr3.73451</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>A precise ensemble machine learning framework for improved glioma grading and classification with explainable AI</td>
+                        <td>Computer Methods and Programs in Biomedicine Update</td>
+                        <td><a href="https://doi.org/10.1016/j.cmpbup.2026.100265" target="_blank" style="word-break: break-all;">10.1016/j.cmpbup.2026.100265</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>A denoising autoencoder–enhanced ResNet 50 framework for explainable brain tumor classification using MRI</td>
+                        <td>Frontiers in Oncology</td>
+                        <td><a href="https://doi.org/10.3389/fonc.2026.1806663" target="_blank" style="word-break: break-all;">10.3389/fonc.2026.1806663</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Deep Learning-Based Automated Detection and Multiclass Classification of Brain Tumors in MRI Using YOLOv8 and VGG</td>
+                        <td>Lecture notes in networks and systems</td>
+                        <td><a href="https://doi.org/10.1007/978-3-032-31526-7_4" target="_blank" style="word-break: break-all;">10.1007/978-3-032-31526-7_4</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Brain Tumor Detection Using MRI Images</td>
+                        <td>International Journal on Robotics Automation and Sciences</td>
+                        <td><a href="https://doi.org/10.33093/ijoras.2026.8.2.13" target="_blank" style="word-break: break-all;">10.33093/ijoras.2026.8.2.13</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Joint learning with shared parameters-based dual-encoder network for brain tumor classification from undersampled MRI</td>
+                        <td>Biomedical Signal Processing and Control</td>
+                        <td><a href="https://doi.org/10.1016/j.bspc.2026.111091" target="_blank" style="word-break: break-all;">10.1016/j.bspc.2026.111091</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>A Systematic Review of Convolutional Neural Networks for Multimodal MRI Brain Tumor Segmentation and Classification</td>
+                        <td>Archives of Computational Methods in Engineering</td>
+                        <td><a href="https://doi.org/10.1007/s11831-026-10736-y" target="_blank" style="word-break: break-all;">10.1007/s11831-026-10736-y</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>CAE-BrainNet: a statistically validated class-adaptive attention ensemble model for explainable brain tumor classification from MRI</td>
+                        <td>Brain Informatics</td>
+                        <td><a href="https://doi.org/10.1186/s40708-026-00325-x" target="_blank" style="word-break: break-all;">10.1186/s40708-026-00325-x</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Comparing Explainable Artificial Intelligence and Deep Learning Models for MRI-Based Brain Tumor Diagnosis</td>
+                        <td>Computers and electronics in medicine.</td>
+                        <td><a href="https://doi.org/10.69882/adba.cem.2026075" target="_blank" style="word-break: break-all;">10.69882/adba.cem.2026075</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Performance Comparison of Lightweight Neural Networks for Brain Tumor Classification on Magnetic Resonance Imaging (MRI)</td>
+                        <td>Applied Sciences</td>
+                        <td><a href="https://doi.org/10.3390/app16147196" target="_blank" style="word-break: break-all;">10.3390/app16147196</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Region-Wise Bézier Intensity Augmentation for Domain-Generalized Brain Tumor Segmentation with a Mamba U-Net</td>
+                        <td>Journal of Clinical Medicine</td>
+                        <td><a href="https://doi.org/10.3390/jcm15145508" target="_blank" style="word-break: break-all;">10.3390/jcm15145508</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Evaluating the detection of small brain lesions in magnetic resonance using deep learning</td>
+                        <td>Frontiers in Neuroscience</td>
+                        <td><a href="https://doi.org/10.3389/fnins.2026.1833713" target="_blank" style="word-break: break-all;">10.3389/fnins.2026.1833713</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Towards Interpretable Deep Learning for Early Alzheimer’s Diagnosis: An Improved YOLOv8 Framework with Grad-CAM Validation</td>
+                        <td>Lecture notes in computer science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-032-25035-3_17" target="_blank" style="word-break: break-all;">10.1007/978-3-032-25035-3_17</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Enhancing Reliability in Deep Learning Diagnosis of Brain Tumors Using Grad-CAM</td>
+                        <td>Türk doğa ve fen dergisi :/Türk doğa ve fen dergisi</td>
+                        <td><a href="https://doi.org/10.46810/tdfd.1749282" target="_blank" style="word-break: break-all;">10.46810/tdfd.1749282</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>DHFuse-BTC: Deep–Handcrafted Feature Fusion for MRI-Based Brain Tumor Classification with Adaptive Denoising</td>
+                        <td>Franklin Open</td>
+                        <td><a href="https://doi.org/10.1016/j.fraope.2026.100690" target="_blank" style="word-break: break-all;">10.1016/j.fraope.2026.100690</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Metodologia para Geração de Datasets de Segmentação Multimodal a partir de Atributos Geométricos e Prompts Sintéticos</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.5753/sbcas.2026.21617" target="_blank" style="word-break: break-all;">10.5753/sbcas.2026.21617</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Brain Tumor Detected by Generative AI: A Review</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/evst69093.2026.11660644" target="_blank" style="word-break: break-all;">10.1109/evst69093.2026.11660644</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Optimized Hybrid Quantum–Classical GAN with Case-based Reasoning Feature Fusion for Multiclass Brain Tumor Classification</td>
+                        <td>IETE Journal of Research</td>
+                        <td><a href="https://doi.org/10.1080/03772063.2026.2660810" target="_blank" style="word-break: break-all;">10.1080/03772063.2026.2660810</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Hybrid quantum–classical learning for MRI-based brain tumour diagnosis</td>
+                        <td>Discover Computing</td>
+                        <td><a href="https://doi.org/10.1007/s10791-026-10165-2" target="_blank" style="word-break: break-all;">10.1007/s10791-026-10165-2</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>An Optimized KNN Classification Approach for Brain Tumor Prediction Using Order Statistic Techniques</td>
+                        <td>International Journal of Science Technology and Society</td>
+                        <td><a href="https://doi.org/10.11648/j.ijsts.20261403.11" target="_blank" style="word-break: break-all;">10.11648/j.ijsts.20261403.11</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>An improved CNN model for characterizing brain tumors using deep learning</td>
+                        <td>Multimedia Tools and Applications</td>
+                        <td><a href="https://doi.org/10.1007/s11042-026-21666-z" target="_blank" style="word-break: break-all;">10.1007/s11042-026-21666-z</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Chitosan-Based Nanoparticles for Nose-to-Brain Drug Delivery: A Real Path toward Effective CNS Therapy?</td>
+                        <td>ACS Biomaterials Science & Engineering</td>
+                        <td><a href="https://doi.org/10.1021/acsbiomaterials.6c00137" target="_blank" style="word-break: break-all;">10.1021/acsbiomaterials.6c00137</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Hyperparameter Optimization of Convolutional Neural Networks for Robust Tumor Image Classification</td>
+                        <td>Diagnostics</td>
+                        <td><a href="https://doi.org/10.3390/diagnostics16081215" target="_blank" style="word-break: break-all;">10.3390/diagnostics16081215</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>A Novel CNN-ViT-LSTM Model for Bridging Temporal and Spatial Features in Brain Tumor Diagnosis Using MRI Imaging</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/qpain69676.2026.11546615" target="_blank" style="word-break: break-all;">10.1109/qpain69676.2026.11546615</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Deep learning for brain tumor segmentation and classification: A comprehensive review of evolution and state-of-the-art methods</td>
+                        <td>Computer Science Review</td>
+                        <td><a href="https://doi.org/10.1016/j.cosrev.2026.100982" target="_blank" style="word-break: break-all;">10.1016/j.cosrev.2026.100982</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Computational Approaches for Brain Tumor Detection and Classification in MRI: A Review of Machine Learning and Deep Learning Models</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/etaact69135.2026.11541444" target="_blank" style="word-break: break-all;">10.1109/etaact69135.2026.11541444</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Deep Learning Based Brain Tumor Classification Using CT-Scan and MRI</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/ic-aida68291.2026.11564298" target="_blank" style="word-break: break-all;">10.1109/ic-aida68291.2026.11564298</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>A Deep Learning-Based Model for the Detection and Classification of Brain Tumors</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icetes68504.2026.11518665" target="_blank" style="word-break: break-all;">10.1109/icetes68504.2026.11518665</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Multi-Class Brain Tumor Type Classification Using Convolutional Autoencoder (CAE) With CNN-VGG19: An Experimental Study</td>
+                        <td>Premier journal of science.</td>
+                        <td><a href="https://doi.org/10.70389/pjs.100270" target="_blank" style="word-break: break-all;">10.70389/pjs.100270</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Aktivasyon fonksiyonları ve derin öğrenme mimarilerinin beyin MRI görüntüleri üzerindeki sınıflandırma performanslarının incelenmesi</td>
+                        <td>Gazi Üniversitesi Mühendislik-Mimarlık Fakültesi Dergisi</td>
+                        <td><a href="https://doi.org/10.17341/gazimmfd.1631531" target="_blank" style="word-break: break-all;">10.17341/gazimmfd.1631531</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Brain Tumor Classification using Hybrid QCNN with ResNet</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/ic-icns68863.2026.11537847" target="_blank" style="word-break: break-all;">10.1109/ic-icns68863.2026.11537847</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>NeuroFusion: Intelligent MRI Modality Imputation and Cross-Modal Learning for Accurate Brain Tumor Diagnosis</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/ic-icns68863.2026.11537921" target="_blank" style="word-break: break-all;">10.1109/ic-icns68863.2026.11537921</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Brain Tumor Detection Through Medical Imaging Using State-of-the-art Advanced Deep Learning Techniques</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/ic-icns68863.2026.11537782" target="_blank" style="word-break: break-all;">10.1109/ic-icns68863.2026.11537782</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>A deep transfer learning and ensemble learning framework for brain tumor detection and classification in MRI images</td>
+                        <td>Discover Artificial Intelligence</td>
+                        <td><a href="https://doi.org/10.1007/s44163-026-01080-y" target="_blank" style="word-break: break-all;">10.1007/s44163-026-01080-y</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Red nucleus region segmentation-based brain tumor classification and stage estimation using GLRN-SGNet and Deep-2C-MHONN</td>
+                        <td>Multimedia Tools and Applications</td>
+                        <td><a href="https://doi.org/10.1007/s11042-026-21201-0" target="_blank" style="word-break: break-all;">10.1007/s11042-026-21201-0</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Brain Tumour Status Prediction Using Advance Machine Learning Approach</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icmlas67792.2026.11483643" target="_blank" style="word-break: break-all;">10.1109/icmlas67792.2026.11483643</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Explainable brain tumor diagnosis with SHAP-enhanced graph wavelet features on FPGA</td>
+                        <td>Computers & Electrical Engineering</td>
+                        <td><a href="https://doi.org/10.1016/j.compeleceng.2026.111102" target="_blank" style="word-break: break-all;">10.1016/j.compeleceng.2026.111102</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>FRE-Net: A Fuzzy Richards Functions-Based Ensemble Network for Brain Tumor Detection</td>
+                        <td>Journal of Bionic Engineering</td>
+                        <td><a href="https://doi.org/10.1007/s42235-026-00850-9" target="_blank" style="word-break: break-all;">10.1007/s42235-026-00850-9</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>NeuroFusionNet: A Hybrid Deep Learning Framework for Multimodal Brain Tumor Classification</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icvadv67766.2026.11470444" target="_blank" style="word-break: break-all;">10.1109/icvadv67766.2026.11470444</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Next generation sparse Transformer framework for precision detection and Dynamic stage classification of rare tumors in ultra high ResolutionMedicalImaging</td>
+                        <td>Biomedical Signal Processing and Control</td>
+                        <td><a href="https://doi.org/10.1016/j.bspc.2026.109832" target="_blank" style="word-break: break-all;">10.1016/j.bspc.2026.109832</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Cutting Edge Deep Learning Models for Brain Tumor Classification</td>
+                        <td>GAZI UNIVERSITY JOURNAL OF SCIENCE</td>
+                        <td><a href="https://doi.org/10.35378/gujs.1684696" target="_blank" style="word-break: break-all;">10.35378/gujs.1684696</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Brain tumor classification model guided by class activation mapping</td>
+                        <td>Computerized Medical Imaging and Graphics</td>
+                        <td><a href="https://doi.org/10.1016/j.compmedimag.2026.102726" target="_blank" style="word-break: break-all;">10.1016/j.compmedimag.2026.102726</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Automated Segmentation of Brain Tumor MRI Images Using Machine Learning</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.4018/979-8-3693-4070-7.ch009" target="_blank" style="word-break: break-all;">10.4018/979-8-3693-4070-7.ch009</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>An intelligent hybrid efficient residual transfer learning approach for multiclass brain tumor classification</td>
+                        <td>Multimedia Tools and Applications</td>
+                        <td><a href="https://doi.org/10.1007/s11042-026-21176-y" target="_blank" style="word-break: break-all;">10.1007/s11042-026-21176-y</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>A scalable and reliable deep learning framework for enhanced brain tumor detection and diagnosis using AI-based medical imaging</td>
+                        <td>Frontiers in Medicine</td>
+                        <td><a href="https://doi.org/10.3389/fmed.2026.1738796" target="_blank" style="word-break: break-all;">10.3389/fmed.2026.1738796</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>FPGA-Based Optimal Realisation of FFT with CNN Architecture for Brain Tumor Identification</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icses66558.2026.11478879" target="_blank" style="word-break: break-all;">10.1109/icses66558.2026.11478879</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Real-Time Detection Transformer Model Based Brain Tumor Detection and Classification Using MRI Image Analysis</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icoecit68303.2026.11497877" target="_blank" style="word-break: break-all;">10.1109/icoecit68303.2026.11497877</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Intelligent Information Processing for Corporate Performance Prediction: A Hybrid Natural Language Processing (NLP) and Deep Learning Approach</td>
+                        <td>Electronics</td>
+                        <td><a href="https://doi.org/10.3390/electronics15020443" target="_blank" style="word-break: break-all;">10.3390/electronics15020443</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>A CNN Transformer Hybrid Framework to Multi-Class Brain Tumor Localization by MRI images</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icauc68182.2026.11441113" target="_blank" style="word-break: break-all;">10.1109/icauc68182.2026.11441113</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>A Multi-stage Hybrid Deep Learning Model for Brain Tumor Classification</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icsft66733.2026.11506962" target="_blank" style="word-break: break-all;">10.1109/icsft66733.2026.11506962</a></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div id="cit-pagination" class="cit-pagination" style="display:none;" aria-label="Citation table pages">
+                <div class="cit-pagination-info" id="cit-pagination-info"></div>
+                <div class="cit-pagination-btns" id="cit-pagination-btns"></div>
+            </div>
+        </section>
+
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-09-11T09:24:51+00:00
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        }
+
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' most recent citing works (newest first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
+
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' most recent citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
+
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+        .wm-tab-btn {
+            border: none;
+            background: #f3f4f6;
+            color: #4b5563;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .wm-tab-btn.wm-tab-active {
+            outline: 2px solid #3b82f6;
+            outline-offset: 1px;
+        }
+    </style>
+
+    <script>
+        function citeSwitchTab(btn, paneId) {
+            var panes = document.querySelectorAll('#sec-citing .cite-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].classList.remove('active');
+            }
+            var btns = document.querySelectorAll('#sec-citing .cite-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('active');
+            }
+            var pane = document.getElementById(paneId);
+            if (pane) pane.classList.add('active');
+            if (btn) btn.classList.add('active');
+        }
+        function openWebMentionTab(evt, tabId) {
+            var panes = document.querySelectorAll('.wm-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].style.display = 'none';
+            }
+            var btns = document.querySelectorAll('.wm-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('wm-tab-active');
+            }
+            var pane = document.getElementById(tabId);
+            if (pane) pane.style.display = 'block';
+            if (evt && evt.currentTarget) evt.currentTarget.classList.add('wm-tab-active');
+        }
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+<script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
+(function() {
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
+<script>
+(function() {
+    var nav = document.getElementById('story-sticky-nav');
+    if (!nav) return;
+    var links = nav.querySelectorAll('a[href^="#sec-"]');
+    var sectionIds = [];
+    links.forEach(function(a) {
+        var id = (a.getAttribute('href') || '').slice(1);
+        if (id && document.getElementById(id)) sectionIds.push(id);
+    });
+    if (!sectionIds.length) return;
+
+    function setActive(id) {
+        links.forEach(function(a) {
+            a.classList.toggle('snav-active', a.getAttribute('href') === '#' + id);
+        });
+    }
+
+    links.forEach(function(a) {
+        a.addEventListener('click', function(e) {
+            var id = (a.getAttribute('href') || '').slice(1);
+            var target = id ? document.getElementById(id) : null;
+            if (!target) return;
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.replaceState(null, '', '#' + id);
+            setActive(id);
+            var more = nav.querySelector('.sticky-nav-more');
+            if (more) more.removeAttribute('open');
+        });
+    });
+
+    if (!('IntersectionObserver' in window)) return;
+    var visible = new Map();
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            visible.set(entry.target.id, entry.intersectionRatio);
+        });
+        var bestId = null;
+        var bestRatio = 0;
+        sectionIds.forEach(function(id) {
+            var ratio = visible.get(id) || 0;
+            if (ratio > bestRatio) {
+                bestRatio = ratio;
+                bestId = id;
+            }
+        });
+        if (bestId) setActive(bestId);
+    }, { rootMargin: '-40% 0px -50% 0px', threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] });
+
+    sectionIds.forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) observer.observe(el);
+    });
+})();
+</script>
+<script>
+(function() {
+    var el = document.getElementById('publisher-value');
+    if (!el) return;
+
+    var label = (el.getAttribute('data-publisher-label') || '').trim();
+    if (!label || label.toLowerCase() === 'unknown') return;
+
+    function norm(s) {
+        return String(s || '').trim().toLowerCase().replace(/\s+/g, ' ');
+    }
+
+    function parseStoriesData(jsText) {
+        var marker = 'window.STORIES_DATA =';
+        var markerIdx = jsText.indexOf(marker);
+        if (markerIdx === -1) return [];
+        var start = jsText.indexOf('[', markerIdx);
+        if (start === -1) return [];
+        var endMarker = 'window.STORIES_STATS =';
+        var endMarkerIdx = jsText.indexOf(endMarker, start);
+        if (endMarkerIdx === -1) return [];
+        var end = jsText.lastIndexOf(';', endMarkerIdx - 1);
+        if (end === -1 || end <= start) return [];
+        var raw = jsText.slice(start, end).trim();
+        try {
+            var data = JSON.parse(raw);
+            return Array.isArray(data) ? data : [];
+        } catch (_err) {
+            return [];
+        }
+    }
+
+    function enablePublisherLink(count) {
+        var link = document.createElement('a');
+        link.href = 'index.html?view=publisher&publisher=' + encodeURIComponent(label);
+        link.textContent = label;
+        link.style.color = '#1d4ed8';
+        link.style.textDecoration = 'none';
+        if (typeof count === 'number' && count > 1) {
+            link.title = 'Open publisher dashboard (' + count + ' stories)';
+        } else {
+            link.title = 'Open publisher dashboard';
+        }
+        el.textContent = '';
+        el.appendChild(link);
+    }
+
+    // Local file previews (file://) often block fetch(). In that case we still
+    // provide direct navigation to the publisher dashboard.
+    if (window.location.protocol === 'file:') {
+        enablePublisherLink();
+        return;
+    }
+
+    fetch('stories_data.js')
+        .then(function(res) { return res.ok ? res.text() : ''; })
+        .then(function(jsText) {
+            if (!jsText) {
+                enablePublisherLink();
+                return;
+            }
+            var stories = parseStoriesData(jsText);
+            if (!stories.length) {
+                enablePublisherLink();
+                return;
+            }
+
+            var target = norm(label);
+            var matches = stories.filter(function(story) {
+                var publisher = norm(story.publisher || story.venue || '');
+                return publisher && publisher === target;
+            }).length;
+
+            if (matches <= 1) return;
+            enablePublisherLink(matches);
+        })
+        .catch(function() {
+            enablePublisherLink();
+        });
+})();
+</script>
+</body>
+</html>
