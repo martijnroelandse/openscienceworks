@@ -18572,6 +18572,146 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.3828_978-0-85323-426-5.html",
+"title": "The Goths in the Fourth Century",
+"type": "BookStory",
+"doi": "10.3828/978-0-85323-426-5",
+"year": 1991,
+"venue": "Liverpool University Press",
+"venue_name": "",
+"publisher": "Liverpool University Press",
+"concepts": [
+"History",
+"Philosophy"
+],
+"roles": [
+"Reference Point for Synthesis",
+"Sustainability & Policy Relevance"
+],
+"is_oa": false,
+"oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
+"citation_count": 331,
+"event_count": 0,
+"event_data_status": "archive_unavailable",
+"archived_event_count": null,
+"has_sdgs": true,
+"sdg_ids": [
+"Quality Education"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 1,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary The Goths in the Fourth Century (1991), published by Liverpool University Press, has been cited 331 times.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780853234265&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Peter Heather, John Matthews",
+"all_authors": [
+"Peter Heather",
+"John Matthews"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 174
+},
+{
+"label": "Government",
+"count": 4
+},
+{
+"label": "Archive",
+"count": 3
+},
+{
+"label": "Company",
+"count": 2
+},
+{
+"label": "Funder",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 92
+},
+{
+"label": "United States",
+"count": 49
+},
+{
+"label": "Australia",
+"count": 22
+},
+{
+"label": "France",
+"count": 4
+},
+{
+"label": "Canada",
+"count": 3
+}
+],
+"citing_institutions": [
+{
+"label": "University of Oxford",
+"count": 18
+},
+{
+"label": "Macquarie University",
+"count": 18
+},
+{
+"label": "University of Cambridge",
+"count": 14
+},
+{
+"label": "University of Warwick",
+"count": 13
+},
+{
+"label": "University of Alabama in Huntsville",
+"count": 12
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3828/978-0-85323-426-5"
+]
+},
+{
 "file": "softwarestory_10.5281_zenodo.1480624.html",
 "title": "Effsize - a package for efficient effect size computation",
 "type": "SoftwareStory",
@@ -21504,6 +21644,146 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.5880/gfz.2.1.2017.001"
+]
+},
+{
+"file": "bookstory_10.3828_978-0-85323-368-8.html",
+"title": "Caesarius of Arles: Life, Testament, Letters",
+"type": "BookStory",
+"doi": "10.3828/978-0-85323-368-8",
+"year": 1994,
+"venue": "Liverpool University Press",
+"venue_name": "",
+"publisher": "Liverpool University Press",
+"concepts": [
+"Art",
+"History",
+"Literature"
+],
+"roles": [
+"Reference Point for Synthesis",
+"Sustainability & Policy Relevance"
+],
+"is_oa": false,
+"oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
+"citation_count": 211,
+"event_count": 0,
+"event_data_status": "archive_unavailable",
+"archived_event_count": null,
+"has_sdgs": true,
+"sdg_ids": [
+"Gender equality"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 1,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Caesarius of Arles: Life, Testament, Letters (1994), published by Liverpool University Press, has been cited 211 times.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780853233688&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "William E. Klingshirn",
+"all_authors": [
+"William E. Klingshirn"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 118
+},
+{
+"label": "Archive",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 55
+},
+{
+"label": "United Kingdom",
+"count": 51
+},
+{
+"label": "Australia",
+"count": 3
+},
+{
+"label": "Germany",
+"count": 3
+},
+{
+"label": "Israel",
+"count": 3
+}
+],
+"citing_institutions": [
+{
+"label": "University of Oklahoma",
+"count": 14
+},
+{
+"label": "Ohio University",
+"count": 11
+},
+{
+"label": "University of Bristol",
+"count": 10
+},
+{
+"label": "University of Kent",
+"count": 9
+},
+{
+"label": "University of Warwick",
+"count": 8
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3828/978-0-85323-368-8"
 ]
 },
 {
@@ -30707,6 +30987,154 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.3828_liverpool_9781789620979.001.0001.html",
+"title": "Introduction to a Poetics of Diversity",
+"type": "BookStory",
+"doi": "10.3828/liverpool/9781789620979.001.0001",
+"year": 2020,
+"venue": "Liverpool University Press",
+"venue_name": "",
+"publisher": "Liverpool University Press",
+"concepts": [
+"Poetics",
+"Creolization",
+"Identity (music)",
+"Literature",
+"TRACE (psycholinguistics)",
+"Art",
+"Humanities",
+"History"
+],
+"roles": [
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
+"citation_count": 54,
+"event_count": 0,
+"event_data_status": "archive_unavailable",
+"archived_event_count": null,
+"has_sdgs": true,
+"sdg_ids": [
+"Reduced inequalities"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Introduction to a Poetics of Diversity (2020), published by Liverpool University Press, has been cited 54 times — enough that OpenAlex puts it in the top 10% of works in its field…",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781789620979&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Édouard Glissant",
+"all_authors": [
+"Édouard Glissant"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 18
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Archive",
+"count": 1
+},
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Other",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Germany",
+"count": 6
+},
+{
+"label": "United States",
+"count": 5
+},
+{
+"label": "United Kingdom",
+"count": 3
+},
+{
+"label": "Australia",
+"count": 2
+},
+{
+"label": "France",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "Goethe University Frankfurt",
+"count": 2
+},
+{
+"label": "University of London",
+"count": 1
+},
+{
+"label": "Western University",
+"count": 1
+},
+{
+"label": "Vassar College",
+"count": 1
+},
+{
+"label": "Goethe-Institute United Kingdom",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3828/liverpool/9781789620979.001.0001"
+]
+},
+{
 "file": "articlestory_10.1073_pnas.1607187113.html",
 "title": "Early somatic mosaicism is a rare cause of long-QT syndrome",
 "type": "ArticleStory",
@@ -36611,6 +37039,138 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.3828_liverpool_9781911325239.001.0001.html",
+"title": "Folk Horror",
+"type": "BookStory",
+"doi": "10.3828/liverpool/9781911325239.001.0001",
+"year": 2017,
+"venue": "Liverpool University Press",
+"venue_name": "",
+"publisher": "Liverpool University Press",
+"concepts": [
+"Art",
+"Demon",
+"Art history",
+"Literature",
+"History"
+],
+"roles": [
+"Commercial Linkage",
+"Pedagogical Anchor",
+"Scholarly Uptake"
+],
+"is_oa": false,
+"oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
+"citation_count": 22,
+"event_count": 0,
+"event_data_status": "archive_unavailable",
+"archived_event_count": null,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 1,
+"ta_ol_holdings": 3,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Folk Horror (2017), published by Liverpool University Press, has been cited 22 times.",
+"cover_url": "",
+"authors": "Adam Scovell",
+"all_authors": [
+"Adam Scovell"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Status",
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": 7.8,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 15
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 4
+},
+{
+"label": "Spain",
+"count": 3
+},
+{
+"label": "United States",
+"count": 3
+},
+{
+"label": "Canada",
+"count": 1
+},
+{
+"label": "China",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Universitat de Miguel Hernández d'Elx",
+"count": 1
+},
+{
+"label": "Diponegoro University",
+"count": 1
+},
+{
+"label": "Universidad Complutense de Madrid",
+"count": 1
+},
+{
+"label": "Libera Università Maria SS. Assunta",
+"count": 1
+},
+{
+"label": "Wenzhou University",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3828/liverpool/9781911325239.001.0001"
+]
+},
+{
 "file": "articlestory_10.1038_s41467-025-67869-0.html",
 "title": "Deep Mutational Scanning of FDX1 Identifies Key Structural Determinants of Lipoylation and Cuproptosis",
 "type": "ArticleStory",
@@ -38086,6 +38646,150 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.1525/luminos.209"
+]
+},
+{
+"file": "bookstory_10.3828_liverpool_9781789621723.001.0001.html",
+"title": "Science Fiction and Climate Change",
+"type": "BookStory",
+"doi": "10.3828/liverpool/9781789621723.001.0001",
+"year": 2020,
+"venue": "Liverpool University Press",
+"venue_name": "",
+"publisher": "Liverpool University Press",
+"concepts": [
+"Skepticism",
+"Climate change",
+"Materialism",
+"Subject (documents)",
+"History",
+"Sociology",
+"Media studies",
+"Epistemology"
+],
+"roles": [
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"oa_provenance_source": "OAPEN",
+"oa_provenance_sources": [
+"OAPEN",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
+"citation_count": 17,
+"event_count": 0,
+"event_data_status": "archive_unavailable",
+"archived_event_count": null,
+"has_sdgs": true,
+"sdg_ids": [
+"Climate action"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": true,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": true,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Science Fiction and Climate Change (2020), published by Liverpool University Press, has been cited 17 times — enough that OpenAlex puts it in the top 10% of works in its field and…",
+"cover_url": "https://library.oapen.org/rest/bitstreams/79f58e31-40cf-4730-b9b2-37fc2ed0bb78/retrieve",
+"authors": "Andrew Milner, J.R. Burgmann",
+"all_authors": [
+"Andrew Milner",
+"J.R. Burgmann"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Status"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 10
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "France",
+"count": 2
+},
+{
+"label": "United Kingdom",
+"count": 2
+},
+{
+"label": "Australia",
+"count": 1
+},
+{
+"label": "Germany",
+"count": 1
+},
+{
+"label": "India",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Centre National de la Recherche Scientifique",
+"count": 1
+},
+{
+"label": "University of Nottingham",
+"count": 1
+},
+{
+"label": "Duke University",
+"count": 1
+},
+{
+"label": "University of Wollongong",
+"count": 1
+},
+{
+"label": "Berlin-Brandenburg Academy of Sciences and Humanities",
+"count": 1
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3828/liverpool/9781789621723.001.0001"
 ]
 },
 {
@@ -43552,6 +44256,147 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.3828_liverpool_9781789620665.001.0001.html",
+"title": "Postcolonial Realms of Memory",
+"type": "BookStory",
+"doi": "10.3828/liverpool/9781789620665.001.0001",
+"year": 2020,
+"venue": "Liverpool University Press",
+"venue_name": "",
+"publisher": "Liverpool University Press",
+"concepts": [
+"Colonialism",
+"Collective memory",
+"Inscribed figure",
+"Historiography",
+"History",
+"The Imaginary",
+"Cultural memory",
+"Aesthetics"
+],
+"roles": [
+"Pedagogical Anchor",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
+"citation_count": 10,
+"event_count": 0,
+"event_data_status": "archive_unavailable",
+"archived_event_count": null,
+"has_sdgs": true,
+"sdg_ids": [
+"Sustainable cities and communities"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 1,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Postcolonial Realms of Memory (2020), published by Liverpool University Press, has been cited 10 times — enough that OpenAlex puts it in the top 10% of works in its field and year…",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781789620665&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Etienne Achille, Charles Forsdick, Lydie Moudileno",
+"all_authors": [
+"Etienne Achille",
+"Charles Forsdick",
+"Lydie Moudileno"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Status"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 7
+},
+{
+"label": "Facility",
+"count": 3
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 3
+},
+{
+"label": "France",
+"count": 2
+},
+{
+"label": "Australia",
+"count": 1
+},
+{
+"label": "Canada",
+"count": 1
+},
+{
+"label": "Chile",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Stirling",
+"count": 1
+},
+{
+"label": "The University of Sydney",
+"count": 1
+},
+{
+"label": "University of Wisconsin System",
+"count": 1
+},
+{
+"label": "University of Leeds",
+"count": 1
+},
+{
+"label": "Pontificia Universidad Católica de Chile",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3828/liverpool/9781789620665.001.0001"
+]
+},
+{
 "file": "bookstory_10.5744_9781683401988.html",
 "title": "Writing the New World: The Politics of Natural History in the Early Spanish Empire",
 "type": "BookStory",
@@ -44444,6 +45289,141 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.3726/b21634"
+]
+},
+{
+"file": "bookstory_10.3828_liverpool_9781786940889.001.0001.html",
+"title": "Commemorating Race and Empire in the First World War Centenary",
+"type": "BookStory",
+"doi": "10.3828/liverpool/9781786940889.001.0001",
+"year": 2018,
+"venue": "Liverpool University Press",
+"venue_name": "",
+"publisher": "Liverpool University Press",
+"concepts": [
+"Empire",
+"Tragedy (event)",
+"Race (biology)",
+"Context (archaeology)",
+"History",
+"Civilization",
+"State (computer science)",
+"Political science"
+],
+"roles": [
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
+"citation_count": 9,
+"event_count": 0,
+"event_data_status": "archive_unavailable",
+"archived_event_count": null,
+"has_sdgs": true,
+"sdg_ids": [
+"Gender equality"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 1,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": true,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Commemorating Race and Empire in the First World War Centenary (2018), published by Liverpool University Press, has been cited 9 times.",
+"cover_url": "",
+"authors": "Ben Wellings, Shanti Sumartojo",
+"all_authors": [
+"Ben Wellings",
+"Shanti Sumartojo"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Status"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 9
+}
+],
+"countries": [
+{
+"label": "Poland",
+"count": 3
+},
+{
+"label": "Ireland",
+"count": 2
+},
+{
+"label": "Belgium",
+"count": 1
+},
+{
+"label": "Netherlands",
+"count": 1
+},
+{
+"label": "New Zealand",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Nicolaus Copernicus University",
+"count": 3
+},
+{
+"label": "National University of Ireland, Maynooth",
+"count": 1
+},
+{
+"label": "Stockholm University",
+"count": 1
+},
+{
+"label": "University College Cork",
+"count": 1
+},
+{
+"label": "Indiana University Bloomington",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3828/liverpool/9781786940889.001.0001"
 ]
 },
 {
@@ -48766,6 +49746,138 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.1515/9780295753317"
+]
+},
+{
+"file": "bookstory_10.3828_liverpool_9781904113836.001.0001.html",
+"title": "Jews in Poland and Russia: 1881-1914 v. 2",
+"type": "BookStory",
+"doi": "10.3828/liverpool/9781904113836.001.0001",
+"year": 2010,
+"venue": "Liverpool University Press",
+"venue_name": "",
+"publisher": "Liverpool University Press",
+"concepts": [
+"Judaism",
+"Politics",
+"Empire",
+"Zionism",
+"Socialism",
+"Context (archaeology)",
+"Haskalah",
+"Political science"
+],
+"roles": [
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
+],
+"is_oa": false,
+"oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
+"citation_count": 6,
+"event_count": 0,
+"event_data_status": "archive_unavailable",
+"archived_event_count": null,
+"has_sdgs": true,
+"sdg_ids": [
+"Sustainable cities and communities"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 1,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Jews in Poland and Russia: 1881-1914 v.",
+"cover_url": "",
+"authors": "Antony Polonsky",
+"all_authors": [
+"Antony Polonsky"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": 10.0,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 3
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Estonia",
+"count": 1
+},
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "Poland",
+"count": 1
+},
+{
+"label": "Ukraine",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Scottish Agricultural Science Agency",
+"count": 1
+},
+{
+"label": "Tallinn University",
+"count": 1
+},
+{
+"label": "Lviv University",
+"count": 1
+},
+{
+"label": "University of Cambridge",
+"count": 1
+},
+{
+"label": "University of Warsaw",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3828/liverpool/9781904113836.001.0001"
 ]
 },
 {
@@ -53444,6 +54556,123 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.3726/b16046"
+]
+},
+{
+"file": "bookstory_10.3828_liverpool_9781802078053.001.0001.html",
+"title": "Fables of Development",
+"type": "BookStory",
+"doi": "10.3828/liverpool/9781802078053.001.0001",
+"year": 2023,
+"venue": "Liverpool University Press",
+"venue_name": "",
+"publisher": "Liverpool University Press",
+"concepts": [
+"Computer science"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": false,
+"oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
+"citation_count": 4,
+"event_count": 0,
+"event_data_status": "archive_unavailable",
+"archived_event_count": null,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 1,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Fables of Development (2023), published by Liverpool University Press, has been cited 4 times.",
+"cover_url": "",
+"authors": "Ana Fernandez-Cebrian",
+"all_authors": [
+"Ana Fernandez-Cebrian"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Status"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 3
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Spain",
+"count": 2
+},
+{
+"label": "United Kingdom",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Generalitat de Catalunya",
+"count": 1
+},
+{
+"label": "Instituto de Historia",
+"count": 1
+},
+{
+"label": "Universidad Autónoma de Madrid",
+"count": 1
+},
+{
+"label": "Universitat de Barcelona",
+"count": 1
+},
+{
+"label": "University of Edinburgh",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3828/liverpool/9781802078053.001.0001"
 ]
 },
 {
@@ -85175,6 +86404,90 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.3828_liverpool_9781802077322.001.0001.html",
+"title": "Refugees and Forced Displacement in Northern Ireland's Troubles",
+"type": "BookStory",
+"doi": "10.3828/liverpool/9781802077322.001.0001",
+"year": 2023,
+"venue": "Liverpool University Press",
+"venue_name": "",
+"publisher": "Liverpool University Press",
+"concepts": [
+"Forced migration",
+"Refugee",
+"Silence",
+"Displacement (psychology)",
+"Harm",
+"Northern ireland",
+"Gender studies",
+"Perspective (graphical)"
+],
+"roles": [
+"Sustainability & Policy Relevance"
+],
+"is_oa": false,
+"oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
+"citation_count": 0,
+"event_count": 0,
+"event_data_status": "archive_unavailable",
+"archived_event_count": null,
+"has_sdgs": true,
+"sdg_ids": [
+"Peace, Justice and strong institutions"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Refugees and Forced Displacement in Northern Ireland's Troubles (2023), published by Liverpool University Press, has no recorded citations, downloads or public discussion yet.",
+"cover_url": "",
+"authors": "Niall Gilmartin, Brendan Ciaran Browne",
+"all_authors": [
+"Niall Gilmartin",
+"Brendan Ciaran Browne"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Status"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3828/liverpool/9781802077322.001.0001"
+]
+},
+{
 "file": "bookstory_10.3998_mpub.14469549.html",
 "title": "Abortion Pills",
 "type": "BookStory",
@@ -89037,4 +90350,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
-window.STORIES_STATS = {"total": 677, "total_articles": 290, "total_books": 300, "total_data": 61, "total_software": 26, "total_oa": 615, "pct_oa": 91, "total_citations": 1354653, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 687, "total_articles": 290, "total_books": 310, "total_data": 61, "total_software": 26, "total_oa": 619, "pct_oa": 90, "total_citations": 1355317, "num_disciplines": 30};
