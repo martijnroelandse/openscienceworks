@@ -543,6 +543,36 @@
       display: flex; gap: 0.75rem; flex-wrap: wrap; }
     .pf-risk-item { display: flex; align-items: center; gap: 0.3rem; }
     .pf-risk-n { font-weight: 800; }
+
+    /* ── Digital bookshelf (pre-computed portfolio export) ── */
+    .bookshelf-block { margin-bottom: 1.4rem; }
+    .bookshelf-block:last-child { margin-bottom: 0; }
+    .bookshelf-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+        letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.6rem; }
+    .bookshelf-row { display: flex; gap: 1.1rem; overflow-x: auto; padding: 0.2rem 0.2rem 0.6rem; }
+    .shelf-slot { flex: 0 0 auto; width: 92px; display: flex; flex-direction: column; align-items: center; }
+    .shelf-slot a { width: 100%; text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; }
+    .shelf-cover-img, .gen-jacket-sm { width: 88px; height: 128px; border-radius: 3px;
+        box-shadow: 0 4px 10px rgba(15,23,42,.16), 0 1px 2px rgba(15,23,42,.10); object-fit: cover; }
+    .gen-jacket-sm { --js: 24%; position: relative; overflow: hidden; padding: .6rem .5rem .5rem;
+        display: flex; flex-direction: column; color: #f4efe4; box-sizing: border-box;
+        background: linear-gradient(158deg, hsl(var(--jh,214) var(--js) 31%) 0%,
+            hsl(var(--jh,214) var(--js) 24%) 55%, hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%); }
+    .gen-jacket-sm::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+        background: hsl(var(--jh,214) 26% 15%); }
+    .gen-jacket-sm .gj-title-sm { font-family: Georgia, 'Times New Roman', serif; font-weight: 600;
+        font-size: .62rem; line-height: 1.15; margin: auto 0; overflow: hidden;
+        display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; }
+    .shelf-plank { width: 88px; height: 14px; margin-top: -1px; border-radius: 3px;
+        background: linear-gradient(180deg, #c88a52 0%, #a86b36 55%, #8a5426 100%);
+        box-shadow: 0 6px 10px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.25); }
+    .shelf-title { width: 100%; font-size: .68rem; color: var(--muted); text-align: center; margin-top: .45rem;
+        line-height: 1.25; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+    .shelf-chips { width: 100%; display: flex; justify-content: center; gap: .3rem; margin-top: .35rem; }
+    .shelf-chip { font-size: .62rem; font-weight: 700; border-radius: 999px; padding: .05rem .4rem; white-space: nowrap; }
+    .shelf-chip-cite { background: #eff6ff; color: #1d4ed8; }
+    .shelf-chip-mention { background: #f5f3ff; color: #6d28d9; }
+    .shelf-chip-edu { background: #f0fdf4; color: #166534; }
     .pf-qa-box {
       margin-top: 0.45rem;
       border-radius: 0.65rem;
@@ -1838,6 +1868,72 @@ function renderPortfolioCard(p, groupLabel, groupKey) {
     </div>`;
 }
 
+// ── Digital bookshelf ────────────────────────────────────────────────────
+// Reads the pre-computed per-publisher portfolio (built by
+// scripts/build_index.py -> bookstories.aggregator.aggregate_stories, written
+// next to stories_data.js as publisher_portfolios/<slug>.json) so the shelf's
+// citation/mention/education math has exactly one implementation instead of a
+// second copy re-derived here in JS. Purely additive: when a publisher hasn't
+// been exported yet (or the fetch fails for any reason) this quietly renders
+// nothing and the rest of the page is unaffected.
+function slugifyPublisher(name) {
+  const slug = String(name || "").trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  return slug || "unknown-publisher";
+}
+
+function renderBookshelfCard(box) {
+  const shelves = [
+    { key: "top_cited_items", label: "Top cited", chipClass: "shelf-chip-cite", field: "citations", unit: "citations" },
+    { key: "top_mentioned_items", label: "Top mentioned", chipClass: "shelf-chip-mention", field: "events", unit: "mentions" },
+    { key: "top_education_items", label: "Top in education", chipClass: "shelf-chip-edu", field: "education", unit: "teaching mentions" },
+  ];
+  const blocks = shelves.map(s => {
+    const items = box[s.key] || [];
+    if (!items.length) return "";
+    const row = items.map(it => {
+      const cover = it.cover_url
+        ? `<img class="shelf-cover-img" src="${escHtml(it.cover_url)}" alt="Cover of ${escHtml(it.title)}">`
+        : `<div class="gen-jacket-sm" style="--jh: ${it.cover_hue != null ? it.cover_hue : 214};" role="img" aria-label="${escHtml(it.title)}. Cover image not available."><span class="gj-title-sm">${escHtml(it.title)}</span></div>`;
+      const link = it.story_url ? `href="${escHtml(it.story_url)}" target="_blank"` : "";
+      return `<div class="shelf-slot"><a ${link}>${cover}<div class="shelf-plank"></div><div class="shelf-title">${escHtml(it.title)}</div><div class="shelf-chips"><span class="shelf-chip ${s.chipClass}">${fmt(it[s.field])} ${s.unit}</span></div></a></div>`;
+    }).join("");
+    return `<div class="bookshelf-block"><div class="bookshelf-label">${s.label}</div><div class="bookshelf-row">${row}</div></div>`;
+  }).join("");
+  if (!blocks) return "";
+  return `<div class="pf-card" id="pfBookshelfCard">
+      <div class="pf-card-title">Digital Bookshelf</div>
+      <div style="font-size:0.82rem;color:var(--muted);margin:-0.5rem 0 1.1rem;">The collection's most-cited, most-talked-about, and most-taught works — articles and data included, not just books — cover art where it resolves.</div>
+      ${blocks}
+      <div style="font-size:0.7rem;color:var(--muted);margin-top:0.2rem;">A small nod to Bookmetrix's original digital bookshelf.</div>
+    </div>`;
+}
+
+let _bookshelfReqId = 0;
+
+async function maybeRenderBookshelf() {
+  const existing = document.getElementById("pfBookshelfCard");
+  if (existing) existing.remove();
+
+  const reqId = ++_bookshelfReqId;
+  if (state.view !== "publisher" || state.filters.venue.size !== 1) return;
+  const publisherName = [...state.filters.venue][0];
+  const slug = slugifyPublisher(publisherName);
+
+  let box;
+  try {
+    const res = await fetch(`publisher_portfolios/${slug}.json`, { cache: "no-store" });
+    if (!res.ok) return;
+    box = await res.json();
+  } catch (e) {
+    return;
+  }
+  if (reqId !== _bookshelfReqId) return; // a newer request superseded this one
+  const aggEl = document.getElementById("aggView");
+  if (!aggEl.classList.contains("visible")) return; // navigated away from agg view
+  const html = renderBookshelfCard(box);
+  if (html) aggEl.insertAdjacentHTML("afterbegin", html);
+}
+
 // Also extend buildAggGroups to track types + top concepts per group
 function buildAggGroups(stories, groupKey) {
   const map = {};
@@ -2104,6 +2200,7 @@ function update() {
   } else if (isAgg) {
     aggEl.classList.add("visible");
     renderAgg(filtered, state.view);
+    maybeRenderBookshelf();
   } else {
     aggEl.classList.remove("visible");
     const authorHits = state.query ? filterAuthors(state.query) : [];
