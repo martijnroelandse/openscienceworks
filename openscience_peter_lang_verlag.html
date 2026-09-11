@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Peter Lang Verlag — Portfolio Dashboard</title>
     <style>
         /* ── Base ── */
@@ -78,7 +79,17 @@
         .stats-strip-label { font-size: .68rem; color: #6b7280; text-transform: uppercase;
                              letter-spacing: .06em; margin-top: .25rem; }
         .stats-strip-sub { font-size: .65rem; color: #b45309; font-weight: 700; margin-top: .2rem; }
-        @media(max-width:640px) { .stats-strip { grid-template-columns: repeat(2,1fr); } }
+        @media(max-width:640px) {
+            .stats-strip { grid-template-columns: repeat(2,1fr); }
+            .site-nav { flex-wrap: wrap; gap: .5rem; padding: .55rem 1rem; }
+            .site-nav-right { flex-wrap: wrap; }
+            .page { padding: 1.5rem 1rem 3rem; }
+            .card { padding: 1.25rem; min-width: 0; }
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: minmax(0, 1fr); }
+            .hero { padding: 1.5rem 1rem; }
+            .hero-inner { gap: 1rem; }
+            .hero-title { overflow-wrap: anywhere; }
+        }
 
         /* ── Stat box (secondary stats) ── */
         .stat-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: .75rem;
@@ -130,6 +141,52 @@
         .table-scroll table { margin-top: 0; }
         .table-scroll th, .table-scroll td { border-left: none; border-right: none; }
         .table-scroll tr:first-child th { border-top: none; }
+
+        /* ── Works table filters ── */
+        .works-filters { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: .75rem 0 .25rem; }
+        .works-filter-btn { border: 1px solid #e5e7eb; background: #fff; color: #4b5563;
+                            border-radius: 999px; padding: .28rem .75rem; font-size: .78rem;
+                            font-weight: 600; cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
+        .works-filter-btn:hover { background: #f9fafb; color: #111827; }
+        .works-filter-btn.is-active { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+        .works-filter-select { border: 1px solid #e5e7eb; background: #fff; color: #374151;
+                               border-radius: .5rem; padding: .3rem .55rem; font-size: .78rem; }
+        .works-filter-count { font-size: .78rem; color: #6b7280; margin-left: auto; }
+        .award-pill { display: inline-flex; align-items: center; gap: .25rem; background: #fef9c3;
+                      color: #92400e; border: 1px solid #fde68a; border-radius: 999px;
+                      padding: .1rem .45rem; font-size: .72rem; font-weight: 600; white-space: nowrap; }
+        .award-list { margin: 0; padding-left: 1rem; font-size: .75rem; color: #6b7280; }
+        tr.is-hidden-by-filter { display: none; }
+
+        /* ── Digital bookshelf ── */
+        .bookshelf-block { margin-bottom: 1.75rem; }
+        .bookshelf-block:last-child { margin-bottom: 0; }
+        .bookshelf-label { font-size: .78rem; font-weight: 700; color: #374151; margin-bottom: .7rem; }
+        .bookshelf-row { display: flex; gap: 1.1rem; overflow-x: auto; padding: .2rem .2rem 1.1rem; }
+        .shelf-slot { flex: 0 0 auto; width: 92px; display: flex; flex-direction: column; align-items: center; }
+        .shelf-slot a { width: 100%; text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; }
+        .shelf-cover-img, .gen-jacket-sm { width: 88px; height: 128px; border-radius: 3px;
+            box-shadow: 0 4px 10px rgba(15,23,42,.16), 0 1px 2px rgba(15,23,42,.10); object-fit: cover; }
+        .gen-jacket-sm { --js: 24%; position: relative; overflow: hidden; padding: .6rem .5rem .5rem;
+            display: flex; flex-direction: column; color: #f4efe4; box-sizing: border-box;
+            background: linear-gradient(158deg, hsl(var(--jh,214) var(--js) 31%) 0%,
+                hsl(var(--jh,214) var(--js) 24%) 55%, hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%); }
+        .gen-jacket-sm::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+            background: hsl(var(--jh,214) 26% 15%); }
+        .gen-jacket-sm .gj-title-sm { font-family: Georgia, 'Times New Roman', serif; font-weight: 600;
+            font-size: .62rem; line-height: 1.15; margin: auto 0; overflow: hidden;
+            display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; }
+        .shelf-plank { width: 88px; height: 14px; margin-top: -1px; border-radius: 3px;
+            background: linear-gradient(180deg, #c88a52 0%, #a86b36 55%, #8a5426 100%);
+            box-shadow: 0 6px 10px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.25); }
+        .shelf-title { width: 100%; font-size: .68rem; color: #4b5563; text-align: center; margin-top: .45rem;
+            line-height: 1.25; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        .shelf-chips { width: 100%; display: flex; justify-content: center; gap: .3rem; margin-top: .35rem; }
+        .shelf-chip { font-size: .62rem; font-weight: 700; border-radius: 999px; padding: .05rem .4rem; white-space: nowrap; }
+        .shelf-chip-cite { background: #eff6ff; color: #1d4ed8; }
+        .shelf-chip-mention { background: #f5f3ff; color: #6d28d9; }
+        .shelf-chip-edu { background: #f0fdf4; color: #166534; }
+        .bookshelf-credit { font-size: .72rem; color: #9ca3af; margin-top: .3rem; }
 
         /* ── List rows ── */
         .list-row { display: flex; justify-content: space-between; align-items: center;
@@ -189,7 +246,7 @@
         
         <span class="hero-type-badge">37 Books</span>
         
-        <span class="hero-type-badge">1 Article</span>
+        <span class="hero-type-badge">1 Journal Article</span>
         
       </div>
     </div>
@@ -202,7 +259,10 @@
   <div class="section-label">Portfolio narrative</div>
   <section class="card">
     <h2><span>The Story So Far</span></h2>
-    <div style="line-height:1.65;"><h3 class='story-subheading'>Executive Summary</h3><p class='story-text'>The Peter Lang Verlag encompasses 38 works that have collectively generated significant scholarly and public impact. Anchored predominantly in Sociology, Political science, and Computer science, this collection has amassed a highly concentrated thematic footprint.</p><p class='story-text'>Commitment to open knowledge sharing is a defining characteristic of this dataset. Currently, 10% of the portfolio is available via Open Access.</p><p class='story-text'>The impact of these works is geographically and institutionally diverse. This portfolio demonstrates both rapid public uptake and sustained relevance as a methodological anchor for future synthesis.</p></div>
+    <div style="line-height:1.65;"><p class="story-text">This selection contains 38 works with 555 recorded scholarly citations. Available citing-work metadata identifies 37 countries.</p><p class="story-text">There are 9 recorded Wikipedia article–work matches, including 8 book references verified against an article revision. References and bibliography entries document use of a work; these counts do not measure readership.</p><p class="story-text">Current metadata classifies 10 of these works as open access. Missing usage data and zero recorded mentions on a channel do not establish an absence of engagement.</p></div>
+    <div class="muted" style="margin-top:.45rem;">
+      Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
+    </div>
   </section>
   
 
@@ -212,14 +272,14 @@
   <div class="section-label">Key metrics</div>
   <div class="stats-strip">
     <div class="stats-strip-item">
-      <div class="stats-strip-num">581</div>
+      <div class="stats-strip-num">555</div>
       <div class="stats-strip-label">Total Citations</div>
       
       <div class="stats-strip-sub">🏆 1 in Top 1%</div>
       
     </div>
     <div class="stats-strip-item">
-      <div class="stats-strip-num">5</div>
+      <div class="stats-strip-num">13</div>
       <div class="stats-strip-label">Online Mentions</div>
     </div>
     <div class="stats-strip-item">
@@ -229,12 +289,336 @@
       <div style="font-size:.65rem;color:#6b7280;margin-top:.2rem;">10 of 38 works</div>
     </div>
     <div class="stats-strip-item">
-      <div class="stats-strip-num">15</div>
+      <div class="stats-strip-num">37</div>
       <div class="stats-strip-label">Citing Countries</div>
     </div>
+    
   </div>
 
   
+  <div class="section-label">On the shelf</div>
+  <section class="card">
+    <h2><span>Digital Bookshelf</span> <span class="badge">Portfolio</span></h2>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">The collection's most-cited, most-talked-about, and most-taught works — articles and data included, not just books — cover art where it resolves.</div>
+
+    
+
+    
+    <div class="bookshelf-block">
+      <div class="bookshelf-label">Top cited</div>
+      
+    <div class="bookshelf-row">
+      
+      <div class="shelf-slot">
+        <a href="bookstory_isbn_9789052019192.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://covers.openlibrary.org/b/id/5213719-L.jpg" alt="Cover of Enlightenment and genocide, contradictions of modernity">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Enlightenment and genocide, contradictions of modernity</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">358 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3726_978-1-4539-1848-7.html" target="_blank">
+          
+          <div class="gen-jacket-sm" style="--jh: 36;" role="img" aria-label="What Does It Mean to Be White?. Cover image not available.">
+            <span class="gj-title-sm">What Does It Mean to Be White?</span>
+          </div>
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">What Does It Mean to Be White?</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">130 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3726_b21769.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/cf1e9397-a9c2-45d4-be83-1d2bcdcc458a/retrieve" alt="Cover of Virtual Innovation and Support Networks">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Virtual Innovation and Support Networks</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">10 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3726_b21634.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://cdn.openpublishing.com/thumbnail/products/1376330/large.webp" alt="Cover of Streaming the Formula 1 Rivalry">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Streaming the Formula 1 Rivalry</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">9 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3726_b22161.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/3b7451a4-beea-4bed-ab42-db539fe8988d/retrieve" alt="Cover of Educational Agency and Activism in Linguistic Landscape Studies">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Educational Agency and Activism in Linguistic Landscape Studies</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">7 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="articlestory_10.3726_jts012024.04.html" target="_blank">
+          
+          <div class="gen-jacket-sm" style="--jh: 232;" role="img" aria-label="Terminology in the Age of AI: The Transformation of Terminology Theory and Practice. Cover image not available.">
+            <span class="gj-title-sm">Terminology in the Age of AI: The Transformation of Terminology Theory and Practice</span>
+          </div>
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Terminology in the Age of AI: The Transformation of Terminology Theory and Practice</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">6 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3726_978-3-0352-6563-7.html" target="_blank">
+          
+          <div class="gen-jacket-sm" style="--jh: 94;" role="img" aria-label="Lotze et son héritage. Cover image not available.">
+            <span class="gj-title-sm">Lotze et son héritage</span>
+          </div>
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Lotze et son héritage</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">4 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3726_b16046.html" target="_blank">
+          
+          <div class="gen-jacket-sm" style="--jh: 107;" role="img" aria-label="Renewing the Church-State Partnership for Catholic Education. Cover image not available.">
+            <span class="gj-title-sm">Renewing the Church-State Partnership for Catholic Education</span>
+          </div>
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Renewing the Church-State Partnership for Catholic Education</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">4 citations</span></div>
+        </a>
+      </div>
+      
+    </div>
+    
+    </div>
+    
+
+    
+    <div class="bookshelf-block">
+      <div class="bookshelf-label">Top mentioned</div>
+      
+    <div class="bookshelf-row">
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3726_b20254.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/8986f0fa-736b-4b6f-8dca-4c082b63207f/retrieve" alt="Cover of Trade Unions in the European Union">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Trade Unions in the European Union</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">5 mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3726_b21758.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://cdn.openpublishing.com/thumbnail/products/1436624/large.webp" alt="Cover of The Art of Thinking in a Digital World">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">The Art of Thinking in a Digital World</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">3 mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3726_b20055.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://cdn.openpublishing.com/thumbnail/products/1290258/large.webp" alt="Cover of When the World Turned Upside Down">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">When the World Turned Upside Down</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">2 mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3726_b15269.html" target="_blank">
+          
+          <div class="gen-jacket-sm" style="--jh: 23;" role="img" aria-label="World War II Re-explored. Cover image not available.">
+            <span class="gj-title-sm">World War II Re-explored</span>
+          </div>
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">World War II Re-explored</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">2 mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3726_978-1-4539-1848-7.html" target="_blank">
+          
+          <div class="gen-jacket-sm" style="--jh: 36;" role="img" aria-label="What Does It Mean to Be White?. Cover image not available.">
+            <span class="gj-title-sm">What Does It Mean to Be White?</span>
+          </div>
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">What Does It Mean to Be White?</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">1 mentions</span></div>
+        </a>
+      </div>
+      
+    </div>
+    
+    </div>
+    
+
+    
+    <div class="bookshelf-block">
+      <div class="bookshelf-label">Top in education</div>
+      
+    <div class="bookshelf-row">
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3726_b11759.html" target="_blank">
+          
+          <div class="gen-jacket-sm" style="--jh: 113;" role="img" aria-label="Digital Disruption. Cover image not available.">
+            <span class="gj-title-sm">Digital Disruption</span>
+          </div>
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Digital Disruption</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">5 teaching mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3726_b20055.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://cdn.openpublishing.com/thumbnail/products/1290258/large.webp" alt="Cover of When the World Turned Upside Down">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">When the World Turned Upside Down</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">2 teaching mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3726_b19581.html" target="_blank">
+          
+          <div class="gen-jacket-sm" style="--jh: 84;" role="img" aria-label="Embodied Books. Cover image not available.">
+            <span class="gj-title-sm">Embodied Books</span>
+          </div>
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Embodied Books</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">2 teaching mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3726_b21634.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://cdn.openpublishing.com/thumbnail/products/1376330/large.webp" alt="Cover of Streaming the Formula 1 Rivalry">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Streaming the Formula 1 Rivalry</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">1 teaching mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3726_b14667.html" target="_blank">
+          
+          <div class="gen-jacket-sm" style="--jh: 354;" role="img" aria-label="All Children Are All Our Children. Cover image not available.">
+            <span class="gj-title-sm">All Children Are All Our Children</span>
+          </div>
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">All Children Are All Our Children</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">1 teaching mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3726_b21758.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://cdn.openpublishing.com/thumbnail/products/1436624/large.webp" alt="Cover of The Art of Thinking in a Digital World">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">The Art of Thinking in a Digital World</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">1 teaching mentions</span></div>
+        </a>
+      </div>
+      
+    </div>
+    
+    </div>
+    
+
+    <div class="bookshelf-credit">A small nod to Bookmetrix's original digital bookshelf.</div>
+  </section>
+  
+
+  
+  <div class="section-label">Publisher QA</div>
+  <section class="card">
+    <h2><span>Claimed OA not in DOAB</span> <span class="badge" style="background:#fff7ed;color:#9a3412;border:1px solid #fdba74;">Needs verification</span></h2>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">
+      5 works are marked OA by publisher metadata but have no DOAB confirmation.
+    </div>
+    
+    <ul class="rank-list">
+      
+      <li><span>Peter Lang Verlag</span><strong>5</strong></li>
+      
+    </ul>
+    
+  </section>
+  
+
+  <div class="section-label">Open science report card</div>
+  <section class="card">
+    <h2><span>Open Science Indicators</span> <span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">OpenAIRE / PRISM</span></h2>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">
+      <strong title="PRISM is a structured metadata feed used by DOAB for book-level peer-review context where publishers supply it.">PRISM</strong> provides book-level peer-review context signals; missing PRISM data does not imply missing peer review.
+    </div>
+    
+    <div class="grid-4" style="margin-bottom:0;margin-top:1rem;">
+      <div class="stat-box">
+        
+        <div class="stat-number">0%</div>
+        <div class="stat-label">Open Peer Review</div>
+      </div>
+      <div class="stat-box">
+        
+        <div class="stat-number">13%</div>
+        <div class="stat-label" title="PRISM context means publisher/title metadata was found, even when no explicit review record is returned.">PRISM Context</div>
+      </div>
+      <div class="stat-box">
+        
+        <div class="stat-number">0%</div>
+        <div class="stat-label" title="Explicit peer-review records returned by PRISM.">PRISM Peer Reviews</div>
+      </div>
+      <div class="stat-box">
+        
+        <div class="stat-number">97%</div>
+        <div class="stat-label">OpenAIRE Reach</div>
+        
+        <div class="muted" style="font-size:.68rem;margin-top:.25rem;">Open instances: 16%</div>
+      </div>
+    </div>
+    
+
+    
+  </section>
 
   <!-- Charts -->
   <div class="section-label">Citation &amp; attention landscape</div>
@@ -243,25 +627,25 @@
       <h2><span>Citation Timeline</span></h2>
       <div class="muted" style="margin-top:-.15rem;font-size:.8rem;">Annual citation counts across the portfolio.</div>
       <div class="chart-wrap">
-        <canvas id="citationChart" data-labels="[&#34;1998&#34;, &#34;1999&#34;, &#34;2001&#34;, &#34;2002&#34;, &#34;2004&#34;, &#34;2007&#34;, &#34;2008&#34;, &#34;2009&#34;, &#34;2010&#34;, &#34;2012&#34;, &#34;2013&#34;, &#34;2014&#34;, &#34;2015&#34;, &#34;2016&#34;, &#34;2017&#34;, &#34;2018&#34;, &#34;2019&#34;, &#34;2020&#34;, &#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[1, 1, 4, 1, 1, 5, 2, 2, 4, 3, 3, 9, 3, 13, 13, 19, 24, 33, 26, 17, 14, 21, 40, 13]"></canvas>
+        <canvas id="citationChart" data-labels="[&#34;1999&#34;, &#34;2001&#34;, &#34;2002&#34;, &#34;2004&#34;, &#34;2007&#34;, &#34;2008&#34;, &#34;2009&#34;, &#34;2010&#34;, &#34;2012&#34;, &#34;2013&#34;, &#34;2014&#34;, &#34;2015&#34;, &#34;2016&#34;, &#34;2017&#34;, &#34;2018&#34;, &#34;2019&#34;, &#34;2020&#34;, &#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[1, 4, 1, 1, 5, 2, 2, 3, 3, 1, 6, 3, 13, 13, 18, 24, 31, 26, 17, 13, 11, 23, 16]"></canvas>
       </div>
     </section>
     <div class="grid-2" style="margin-bottom:0;gap:1rem;">
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Citing Sectors</span> <span class="badge">ROR</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Government&#34;, &#34;Facility&#34;, &#34;Healthcare&#34;, &#34;Nonprofit&#34;, &#34;Funder&#34;, &#34;Company&#34;, &#34;Other&#34;, &#34;Archive&#34;]" data-values="[187, 6, 13, 9, 9, 4, 3, 1, 2]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Facility&#34;, &#34;Company&#34;, &#34;Archive&#34;, &#34;Government&#34;, &#34;Healthcare&#34;, &#34;Nonprofit&#34;, &#34;Funder&#34;, &#34;Other&#34;]" data-values="[169, 11, 2, 2, 5, 10, 3, 2, 1]"></canvas></div>
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Citation Context</span> <span class="badge">scite</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="sciteChart" data-labels="[&#34;Supporting&#34;, &#34;Mentioning&#34;, &#34;Contradicting&#34;]" data-values="[1, 96, 0]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="sciteChart" data-labels="[&#34;Supporting&#34;, &#34;Mentioning&#34;, &#34;Contradicting&#34;]" data-values="[1, 103, 0]"></canvas></div>
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Work Types</span> <span class="badge">OpenAlex</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="wtChart" data-labels="[&#34;Article&#34;, &#34;Book-Chapter&#34;, &#34;Dissertation&#34;, &#34;Book&#34;, &#34;Review&#34;, &#34;Preprint&#34;, &#34;Other&#34;]" data-values="[198, 41, 15, 12, 2, 2, 2]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="wtChart" data-labels="[&#34;Article&#34;, &#34;Book-Chapter&#34;, &#34;Book&#34;, &#34;Dissertation&#34;, &#34;Book-Review&#34;, &#34;Conference-Paper&#34;, &#34;Editorial&#34;, &#34;Preprint&#34;, &#34;Reference-Entry&#34;, &#34;Report&#34;, &#34;Other&#34;]" data-values="[163, 39, 12, 21, 1, 2, 2, 1, 2, 1, 2]"></canvas></div>
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Top Venues</span> <span class="badge">OpenAlex</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="venueChart" data-labels="[&#34;Transfer European Review of Labour and Research&#34;, &#34;Cambridge University Press eBooks&#34;, &#34;Figshare&#34;, &#34;Whiteness and Education&#34;, &#34;Scandinavian Journal of History&#34;, &#34;Cooperation and Conflict&#34;]" data-values="[6, 5, 4, 3, 3, 3]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="venueChart" data-labels="[&#34;Cambridge University Press eBooks&#34;, &#34;Scandinavian Journal of History&#34;, &#34;Cooperation and Conflict&#34;, &#34;Whiteness and Education&#34;, &#34;The British Journal of Criminology&#34;, &#34;Journal of Ethnic and Migration Studies&#34;]" data-values="[5, 3, 3, 3, 2, 2]"></canvas></div>
       </section>
     </div>
   </div>
@@ -274,7 +658,7 @@
     <div class="muted" style="margin-top:-.2rem;margin-bottom:1.25rem;">Breakdown across platforms for the entire portfolio.</div>
     <div class="platform-grid">
       <div class="platform-box" style="border-top-color:#64748b;">
-        <div class="platform-num" style="color:#334155;">5</div>
+        <div class="platform-num" style="color:#334155;">9</div>
         <div class="platform-lbl">Wikipedia</div>
       </div>
       <div class="platform-box" style="border-top-color:#ea580c;">
@@ -294,7 +678,7 @@
         <div class="platform-lbl">Expert Annotations</div>
       </div>
       <div class="platform-box" style="border-top-color:#16a34a;">
-        <div class="platform-num" style="color:#15803d;">5</div>
+        <div class="platform-num" style="color:#15803d;">4</div>
         <div class="platform-lbl">News Media</div>
       </div>
     </div>
@@ -306,11 +690,11 @@
     <h2><span>Teaching, Practice &amp; Library Adoption</span></h2>
     <div class="grid-3" style="margin-bottom:0;margin-top:1rem;">
       <div class="stat-box">
-        <div class="stat-number">108</div>
+        <div class="stat-number">119</div>
         <div class="stat-label">Library Holdings</div>
       </div>
       <div class="stat-box">
-        <div class="stat-number">39</div>
+        <div class="stat-number">1</div>
         <div class="stat-label">Syllabi / OCW</div>
       </div>
       <div class="stat-box">
@@ -326,7 +710,7 @@
         <div class="stat-label">Formal Reviews</div>
       </div>
       <div class="stat-box">
-        <div class="stat-number">3227</div>
+        <div class="stat-number">5788</div>
         <div class="stat-label">Chapter Cites</div>
       </div>
     </div>
@@ -367,6 +751,8 @@
         
           <span class="tag tag-soft">Anthropology</span>
         
+          <span class="tag tag-soft">Economics</span>
+        
           <span class="tag tag-soft">Visual arts</span>
         
           <span class="tag tag-soft">Epistemology</span>
@@ -374,8 +760,6 @@
           <span class="tag tag-soft">Linguistics</span>
         
           <span class="tag tag-soft">Biopower</span>
-        
-          <span class="tag tag-soft">Economics</span>
         
           <span class="tag tag-soft">Austerity</span>
         
@@ -397,30 +781,8 @@
           
           <span class="role-pill role-pill-academic">
             <span class="role-dot" style="background:#3b82f6;"></span>
-            Commercial linkage
-            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">22.5</span>
-          </span>
-        
-          
-          
-          
-          
-          
-          <span class="role-pill role-pill-academic">
-            <span class="role-dot" style="background:#3b82f6;"></span>
-            Pedagogical anchor
-            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">11.5</span>
-          </span>
-        
-          
-          
-          
-          
-          
-          <span class="role-pill role-pill-academic">
-            <span class="role-dot" style="background:#3b82f6;"></span>
             Sustainability & policy relevance
-            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">9.9</span>
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">9.3</span>
           </span>
         
           
@@ -431,7 +793,29 @@
           <span class="role-pill role-pill-academic">
             <span class="role-dot" style="background:#3b82f6;"></span>
             Scholarly uptake
-            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">8.3</span>
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">8.6</span>
+          </span>
+        
+          
+          
+          
+          
+          
+          <span class="role-pill role-pill-academic">
+            <span class="role-dot" style="background:#3b82f6;"></span>
+            Pedagogical anchor
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">2.5</span>
+          </span>
+        
+          
+          
+          
+          
+          
+          <span class="role-pill role-pill-academic">
+            <span class="role-dot" style="background:#3b82f6;"></span>
+            Active public discourse
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">1.0</span>
           </span>
         
           
@@ -456,35 +840,35 @@
       <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Based on author affiliations of citing works.</div>
       <div>
         
-          <span class="tag">United States (80)</span>
+          <span class="tag">United States (81)</span>
         
           <span class="tag">United Kingdom (23)</span>
         
-          <span class="tag">Sweden (16)</span>
+          <span class="tag">Sweden (12)</span>
         
-          <span class="tag">Germany (14)</span>
+          <span class="tag">Germany (12)</span>
         
           <span class="tag">Norway (11)</span>
         
           <span class="tag tag-soft">Canada (8)</span>
         
-          <span class="tag tag-soft">Belgium (8)</span>
-        
           <span class="tag tag-soft">France (7)</span>
         
-          <span class="tag tag-soft">Spain (7)</span>
-        
-          <span class="tag tag-soft">Italy (7)</span>
-        
-          <span class="tag tag-soft">Poland (6)</span>
-        
           <span class="tag tag-soft">Denmark (6)</span>
+        
+          <span class="tag tag-soft">Spain (6)</span>
+        
+          <span class="tag tag-soft">Finland (5)</span>
         
           <span class="tag tag-soft">New Zealand (5)</span>
         
           <span class="tag tag-soft">Australia (5)</span>
         
-          <span class="tag tag-soft">Finland (5)</span>
+          <span class="tag tag-soft">Italy (4)</span>
+        
+          <span class="tag tag-soft">Belgium (3)</span>
+        
+          <span class="tag tag-soft">South Africa (3)</span>
         
       </div>
     </section>
@@ -493,35 +877,35 @@
       <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Canonical names based on author affiliations.</div>
       <div>
         
-          <span class="tag">University of Wyoming (4)</span>
-        
           <span class="tag">Victoria University of Wellington (4)</span>
         
-          <span class="tag">Örebro University (3)</span>
+          <span class="tag">University of Wyoming (4)</span>
         
-          <span class="tag">University of Helsinki (2)</span>
+          <span class="tag">Örebro University (4)</span>
         
-          <span class="tag">European Trade Union Institute (2)</span>
+          <span class="tag">University of Kentucky (3)</span>
+        
+          <span class="tag">Stanford University (3)</span>
+        
+          <span class="tag tag-soft">University of Arizona (3)</span>
+        
+          <span class="tag tag-soft">University of Helsinki (2)</span>
         
           <span class="tag tag-soft">University of Oslo (2)</span>
         
+          <span class="tag tag-soft">University of Iowa (2)</span>
+        
+          <span class="tag tag-soft">Office of Education (2)</span>
+        
           <span class="tag tag-soft">The University of Sydney (2)</span>
         
-          <span class="tag tag-soft">University of Kentucky (2)</span>
-        
-          <span class="tag tag-soft">Jacksonville State University (2)</span>
+          <span class="tag tag-soft">St. Norbert College (2)</span>
         
           <span class="tag tag-soft">Minnesota State University, Mankato (2)</span>
         
-          <span class="tag tag-soft">University of Massachusetts Amherst (2)</span>
+          <span class="tag tag-soft">University of Toronto (2)</span>
         
-          <span class="tag tag-soft">Delft University of Technology (2)</span>
-        
-          <span class="tag tag-soft">St Mary's University Twickenham London (2)</span>
-        
-          <span class="tag tag-soft">Universität Hamburg (2)</span>
-        
-          <span class="tag tag-soft">Stanford University (1)</span>
+          <span class="tag tag-soft">Smith College (2)</span>
         
       </div>
     </section>
@@ -553,355 +937,1209 @@
     </div>
   </section>
 
+  
+  <div class="section-label">OA provenance</div>
+  <section class="card">
+    <h2><span>Open Access Provenance</span></h2>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">Primary source used to classify OA per work.</div>
+    <div class="platform-grid">
+      
+      <div class="platform-box" style="border-top-color:#64748b;">
+        <div class="platform-num" style="color:#334155;">28</div>
+        <div class="platform-lbl">Closed/Unknown</div>
+      </div>
+      
+      <div class="platform-box" style="border-top-color:#64748b;">
+        <div class="platform-num" style="color:#334155;">5</div>
+        <div class="platform-lbl">Publisher-claimed</div>
+      </div>
+      
+      <div class="platform-box" style="border-top-color:#64748b;">
+        <div class="platform-num" style="color:#334155;">4</div>
+        <div class="platform-lbl">DOAB</div>
+      </div>
+      
+      <div class="platform-box" style="border-top-color:#64748b;">
+        <div class="platform-num" style="color:#334155;">1</div>
+        <div class="platform-lbl">OAPEN</div>
+      </div>
+      
+    </div>
+  </section>
+  
+
   <!-- Works table -->
   <div class="section-label">Included works</div>
   <section class="card">
-    <h2><span>All Works</span> <span class="badge">38 total</span></h2>
+    <h2><span>All Works</span> <span class="badge" id="worksTotalBadge">38 total</span></h2>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="works-filters" id="worksFilters">
+      <button type="button" class="works-filter-btn is-active" data-filter="all">All works</button>
+      
+      
+      <button type="button" class="works-filter-btn" data-filter="prism_context">PRISM context (5)</button>
+      
+      <button type="button" class="works-filter-btn" data-filter="openaire_reach">OpenAIRE reach (37)</button>
+      <button type="button" class="works-filter-btn" data-filter="openaire_open">OpenAIRE open instances (6)</button>
+      
+      
+      
+      
+      <span class="works-filter-count" id="worksFilterCount">38 shown</span>
+    </div>
+    
     <div class="table-scroll">
-      <table>
+      <table id="worksTable">
         <thead>
           <tr><th>Year</th><th>Type</th><th>Title</th><th>DOI</th><th>Citations</th><th>Mentions</th></tr>
         </thead>
         <tbody>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="0"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">None</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Enlightenment and genocide, contradictions of modernity</td>
-            <td><a href="https://doi.org/9789052019192" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">9789052019192</a></td>
+            <td>
+              
+              <a href="bookstory_isbn_9789052019192.html" style="color:#111827;text-decoration:none;font-weight:500;">Enlightenment and genocide, contradictions of modernity</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_isbn_9789052019192.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">9789052019192</a>
+              <a href="https://doi.org/9789052019192" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">358</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
-            <td style="white-space:nowrap;">None</td>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2016</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>What Does It Mean to Be White?: Developing White Racial Literacy</td>
-            <td><a href="https://doi.org/10.3726/978-1-4539-1848-7" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/978-1-4539-1848-7</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_978-1-4539-1848-7.html" style="color:#111827;text-decoration:none;font-weight:500;">What Does It Mean to Be White?</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_978-1-4539-1848-7.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/978-1-4539-1848-7</a>
+              <a href="https://doi.org/10.3726/978-1-4539-1848-7" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">130</td>
+            <td style="text-align:right;">1</td>
+          </tr>
+          
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="1"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b21769.html" style="color:#111827;text-decoration:none;font-weight:500;">Virtual Innovation and Support Networks</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b21769.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b21769</a>
+              <a href="https://doi.org/10.3726/b21769" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">10</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
-            <td style="white-space:nowrap;">2023</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Trade Unions in the European Union</td>
-            <td><a href="https://doi.org/10.3726/b20254" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b20254</a></td>
-            <td style="text-align:right;font-weight:600;">32</td>
-            <td style="text-align:right;">4</td>
-          </tr>
-          
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2024</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Streaming the Formula 1 Rivalry</td>
-            <td><a href="https://doi.org/10.3726/b21634" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b21634</a></td>
-            <td style="text-align:right;font-weight:600;">8</td>
+            <td>
+              
+              <a href="bookstory_10.3726_b21634.html" style="color:#111827;text-decoration:none;font-weight:500;">Streaming the Formula 1 Rivalry</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b21634.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b21634</a>
+              <a href="https://doi.org/10.3726/b21634" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">9</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="1"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2024</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Virtual Innovation and Support Networks</td>
-            <td><a href="https://doi.org/10.3726/b21769" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b21769</a></td>
-            <td style="text-align:right;font-weight:600;">8</td>
-            <td style="text-align:right;">0</td>
-          </tr>
-          
-          <tr>
-            <td style="white-space:nowrap;">2024</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Educational Agency and Activism in Linguistic Landscape Studies</td>
-            <td><a href="https://doi.org/10.3726/b22161" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b22161</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b22161.html" style="color:#111827;text-decoration:none;font-weight:500;">Educational Agency and Activism in Linguistic Landscape Studies</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b22161.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b22161</a>
+              <a href="https://doi.org/10.3726/b22161" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">7</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2024</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Article</span></td>
-            <td>Terminology in the Age of AI: The Transformation of Terminology Theory and Practice</td>
-            <td><a href="https://doi.org/10.3726/jts012024.04" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/jts012024.04</a></td>
-            <td style="text-align:right;font-weight:600;">5</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
+            <td>
+              
+              <a href="articlestory_10.3726_jts012024.04.html" style="color:#111827;text-decoration:none;font-weight:500;">Terminology in the Age of AI: The Transformation of Terminology Theory and Practice</a>
+              
+            </td>
+            <td>
+              
+              <a href="articlestory_10.3726_jts012024.04.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/jts012024.04</a>
+              <a href="https://doi.org/10.3726/jts012024.04" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">6</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2015</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Lotze et son héritage</td>
-            <td><a href="https://doi.org/10.3726/978-3-0352-6563-7" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/978-3-0352-6563-7</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_978-3-0352-6563-7.html" style="color:#111827;text-decoration:none;font-weight:500;">Lotze et son héritage</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_978-3-0352-6563-7.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/978-3-0352-6563-7</a>
+              <a href="https://doi.org/10.3726/978-3-0352-6563-7" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">4</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2020</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b16046.html" style="color:#111827;text-decoration:none;font-weight:500;">Renewing the Church-State Partnership for Catholic Education</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b16046.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b16046</a>
+              <a href="https://doi.org/10.3726/b16046" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">4</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="1"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2015</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Redesigning Life</td>
-            <td><a href="https://doi.org/10.3726/978-3-0352-6544-6" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/978-3-0352-6544-6</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_978-3-0352-6544-6.html" style="color:#111827;text-decoration:none;font-weight:500;">Redesigning Life</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_978-3-0352-6544-6.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/978-3-0352-6544-6</a>
+              <a href="https://doi.org/10.3726/978-3-0352-6544-6" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">3</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2017</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Austerity and the Implementation of the Europe 2020 Strategy in Spain</td>
-            <td><a href="https://doi.org/10.3726/b11422" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b11422</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b11422.html" style="color:#111827;text-decoration:none;font-weight:500;">Austerity and the Implementation of the Europe 2020 Strategy in Spain</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b11422.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b11422</a>
+              <a href="https://doi.org/10.3726/b11422" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">3</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2018</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Digital Disruption</td>
-            <td><a href="https://doi.org/10.3726/b11759" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b11759</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b11759.html" style="color:#111827;text-decoration:none;font-weight:500;">Digital Disruption</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b11759.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b11759</a>
+              <a href="https://doi.org/10.3726/b11759" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">3</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
-            <td style="white-space:nowrap;">2020</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Renewing the Church-State Partnership for Catholic Education</td>
-            <td><a href="https://doi.org/10.3726/b16046" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b16046</a></td>
-            <td style="text-align:right;font-weight:600;">3</td>
-            <td style="text-align:right;">0</td>
-          </tr>
-          
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2019</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Digital Marketing Applications</td>
-            <td><a href="https://doi.org/10.3726/b16301" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b16301</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b16301.html" style="color:#111827;text-decoration:none;font-weight:500;">Digital Marketing Applications</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b16301.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b16301</a>
+              <a href="https://doi.org/10.3726/b16301" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">3</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2023</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>When the World Turned Upside Down</td>
-            <td><a href="https://doi.org/10.3726/b20055" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b20055</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b20055.html" style="color:#111827;text-decoration:none;font-weight:500;">When the World Turned Upside Down</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b20055.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b20055</a>
+              <a href="https://doi.org/10.3726/b20055" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">3</td>
-            <td style="text-align:right;">0</td>
+            <td style="text-align:right;">2</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2016</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Forme(s) et modes d’être / Form(s) and Modes of Being</td>
-            <td><a href="https://doi.org/10.3726/978-3-0352-6632-0" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/978-3-0352-6632-0</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_978-3-0352-6632-0.html" style="color:#111827;text-decoration:none;font-weight:500;">Forme(s) et modes d’être / Form(s) and Modes of Being</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_978-3-0352-6632-0.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/978-3-0352-6632-0</a>
+              <a href="https://doi.org/10.3726/978-3-0352-6632-0" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">2</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2018</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Competition, Community, and Educational Growth</td>
-            <td><a href="https://doi.org/10.3726/b13071" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b13071</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b13071.html" style="color:#111827;text-decoration:none;font-weight:500;">Competition, Community, and Educational Growth</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b13071.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b13071</a>
+              <a href="https://doi.org/10.3726/b13071" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">2</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2019</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>The Great Irish Famine and Social Class</td>
-            <td><a href="https://doi.org/10.3726/b13149" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b13149</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b13149.html" style="color:#111827;text-decoration:none;font-weight:500;">The Great Irish Famine and Social Class</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b13149.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b13149</a>
+              <a href="https://doi.org/10.3726/b13149" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">2</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2019</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>All Children Are All Our Children</td>
-            <td><a href="https://doi.org/10.3726/b14667" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b14667</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b14667.html" style="color:#111827;text-decoration:none;font-weight:500;">All Children Are All Our Children</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b14667.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b14667</a>
+              <a href="https://doi.org/10.3726/b14667" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">2</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="1"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2023</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b20254.html" style="color:#111827;text-decoration:none;font-weight:500;">Trade Unions in the European Union</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b20254.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b20254</a>
+              <a href="https://doi.org/10.3726/b20254" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">1</td>
+            <td style="text-align:right;">5</td>
+          </tr>
+          
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2016</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>The Point of Philosophy</td>
-            <td><a href="https://doi.org/10.3726/978-3-0352-6588-0" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/978-3-0352-6588-0</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_978-3-0352-6588-0.html" style="color:#111827;text-decoration:none;font-weight:500;">The Point of Philosophy</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_978-3-0352-6588-0.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/978-3-0352-6588-0</a>
+              <a href="https://doi.org/10.3726/978-3-0352-6588-0" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">1</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2019</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Imagined Cosmopolis</td>
-            <td><a href="https://doi.org/10.3726/b13225" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b13225</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b13225.html" style="color:#111827;text-decoration:none;font-weight:500;">Imagined Cosmopolis</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b13225.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b13225</a>
+              <a href="https://doi.org/10.3726/b13225" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">1</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2025</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Pro-vax</td>
-            <td><a href="https://doi.org/10.3726/b18362" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b18362</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b18362.html" style="color:#111827;text-decoration:none;font-weight:500;">Pro-vax</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b18362.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b18362</a>
+              <a href="https://doi.org/10.3726/b18362" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">1</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="1"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2014</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Militär und Gesellschaft in Preußen – Quellen zur Militärsozialisation 1713–1806</td>
-            <td><a href="https://doi.org/10.3726/978-3-653-02684-9" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/978-3-653-02684-9</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_978-3-653-02684-9.html" style="color:#111827;text-decoration:none;font-weight:500;">Militär und Gesellschaft in Preußen – Quellen zur Militärsozialisation 1713–1806</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_978-3-653-02684-9.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/978-3-653-02684-9</a>
+              <a href="https://doi.org/10.3726/978-3-653-02684-9" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">0</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2019</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>El mundo de atrás</td>
-            <td><a href="https://doi.org/10.3726/b13395" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b13395</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b13395.html" style="color:#111827;text-decoration:none;font-weight:500;">El mundo de atrás</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b13395.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b13395</a>
+              <a href="https://doi.org/10.3726/b13395" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">0</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2019</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Narrativas periféricas</td>
-            <td><a href="https://doi.org/10.3726/b14860" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b14860</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b14860.html" style="color:#111827;text-decoration:none;font-weight:500;">Narrativas periféricas</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b14860.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b14860</a>
+              <a href="https://doi.org/10.3726/b14860" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">0</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2019</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>The Curriculum of Horror</td>
-            <td><a href="https://doi.org/10.3726/b14917" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b14917</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b14917.html" style="color:#111827;text-decoration:none;font-weight:500;">The Curriculum of Horror</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b14917.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b14917</a>
+              <a href="https://doi.org/10.3726/b14917" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">0</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2019</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>The Economy and Meaningfulness</td>
-            <td><a href="https://doi.org/10.3726/b15232" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b15232</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b15232.html" style="color:#111827;text-decoration:none;font-weight:500;">The Economy and Meaningfulness</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b15232.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b15232</a>
+              <a href="https://doi.org/10.3726/b15232" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">0</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2019</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>World War II Re-explored</td>
-            <td><a href="https://doi.org/10.3726/b15269" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b15269</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b15269.html" style="color:#111827;text-decoration:none;font-weight:500;">World War II Re-explored</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b15269.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b15269</a>
+              <a href="https://doi.org/10.3726/b15269" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">0</td>
-            <td style="text-align:right;">1</td>
+            <td style="text-align:right;">2</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2020</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Les défis de la diversité culturelle dans le monde du travail au XXIe siècle</td>
-            <td><a href="https://doi.org/10.3726/b17114" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b17114</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b17114.html" style="color:#111827;text-decoration:none;font-weight:500;">Les défis de la diversité culturelle dans le monde du travail au XXIe siècle</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b17114.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b17114</a>
+              <a href="https://doi.org/10.3726/b17114" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">0</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2024</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Art, Identity and Cosmopolitanism</td>
-            <td><a href="https://doi.org/10.3726/b18017" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b18017</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b18017.html" style="color:#111827;text-decoration:none;font-weight:500;">Art, Identity and Cosmopolitanism</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b18017.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b18017</a>
+              <a href="https://doi.org/10.3726/b18017" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">0</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2024</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Embodied Books</td>
-            <td><a href="https://doi.org/10.3726/b19581" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b19581</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b19581.html" style="color:#111827;text-decoration:none;font-weight:500;">Embodied Books</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b19581.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b19581</a>
+              <a href="https://doi.org/10.3726/b19581" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">0</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2024</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>The Irish Against the War</td>
-            <td><a href="https://doi.org/10.3726/b20333" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b20333</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b20333.html" style="color:#111827;text-decoration:none;font-weight:500;">The Irish Against the War</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b20333.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b20333</a>
+              <a href="https://doi.org/10.3726/b20333" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">0</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2023</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Fire Burning in My Head</td>
-            <td><a href="https://doi.org/10.3726/b20464" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b20464</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b20464.html" style="color:#111827;text-decoration:none;font-weight:500;">Fire Burning in My Head</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b20464.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b20464</a>
+              <a href="https://doi.org/10.3726/b20464" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">0</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2023</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Christian Democracy and Labour after World War II</td>
-            <td><a href="https://doi.org/10.3726/b21088" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b21088</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b21088.html" style="color:#111827;text-decoration:none;font-weight:500;">Christian Democracy and Labour after World War II</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b21088.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b21088</a>
+              <a href="https://doi.org/10.3726/b21088" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">0</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2023</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Compositions, A Life</td>
-            <td><a href="https://doi.org/10.3726/b21156" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b21156</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b21156.html" style="color:#111827;text-decoration:none;font-weight:500;">Compositions, A Life</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b21156.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b21156</a>
+              <a href="https://doi.org/10.3726/b21156" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">0</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2024</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Contemporary Issues on Adolescents and Counseling</td>
-            <td><a href="https://doi.org/10.3726/b21679" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b21679</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b21679.html" style="color:#111827;text-decoration:none;font-weight:500;">Contemporary Issues on Adolescents and Counseling</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b21679.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b21679</a>
+              <a href="https://doi.org/10.3726/b21679" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">0</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2024</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Digital Visual Art Education</td>
-            <td><a href="https://doi.org/10.3726/b21753" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b21753</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b21753.html" style="color:#111827;text-decoration:none;font-weight:500;">Digital Visual Art Education</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b21753.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b21753</a>
+              <a href="https://doi.org/10.3726/b21753" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">0</td>
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2024</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>The Art of Thinking in a Digital World</td>
-            <td><a href="https://doi.org/10.3726/b21758" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b21758</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b21758.html" style="color:#111827;text-decoration:none;font-weight:500;">The Art of Thinking in a Digital World</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b21758.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b21758</a>
+              <a href="https://doi.org/10.3726/b21758" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">0</td>
-            <td style="text-align:right;">0</td>
+            <td style="text-align:right;">3</td>
           </tr>
           
-          <tr>
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
             <td style="white-space:nowrap;">2024</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>Knowledge and practical knowledge</td>
-            <td><a href="https://doi.org/10.3726/b21787" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b21787</a></td>
+            <td>
+              
+              <a href="bookstory_10.3726_b21787.html" style="color:#111827;text-decoration:none;font-weight:500;">Knowledge and practical knowledge</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3726_b21787.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3726/b21787</a>
+              <a href="https://doi.org/10.3726/b21787" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
             <td style="text-align:right;font-weight:600;">0</td>
             <td style="text-align:right;">0</td>
           </tr>
@@ -916,7 +2154,7 @@
       <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:#9ca3af;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
       <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;font-weight:600;text-decoration:none;">Read the Methodology &amp; Legend ↗</a></span>
     </div>
-    <div style="padding-left:1.35rem;">Generated on 2026-06-16 06:31:05 UTC</div>
+    <div style="padding-left:1.35rem;">Generated on 2026-09-11 13:36:32 UTC</div>
   </footer>
 
 </div><!-- /page -->
@@ -966,6 +2204,65 @@ makeDoughnut('sectorChart');
 makeDoughnut('sciteChart', ['#16a34a','#9ca3af','#dc2626']);
 makeDoughnut('wtChart');
 makeDoughnut('venueChart');
+
+(function(){
+  const filters = document.getElementById('worksFilters');
+  const table = document.getElementById('worksTable');
+  const countEl = document.getElementById('worksFilterCount');
+  const funderSelect = document.getElementById('worksFunderFilter');
+  if (!filters || !table) return;
+
+  const rows = Array.from(table.querySelectorAll('tbody tr'));
+  let mode = 'all';
+
+  function rowMatchesFilter(row, filterMode) {
+    if (filterMode === 'all') return true;
+    if (filterMode === 'awarded') return row.getAttribute('data-has-award') === '1';
+    if (filterMode === 'unawarded') return row.getAttribute('data-has-award') !== '1';
+    if (filterMode === 'preprint') return row.getAttribute('data-has-preprint') === '1';
+    if (filterMode === 'open_review') return row.getAttribute('data-has-open-review') === '1';
+    if (filterMode === 'stewardship') return row.getAttribute('data-has-stewardship') === '1';
+    if (filterMode === 'rrid') return row.getAttribute('data-has-rrid') === '1';
+    if (filterMode === 'openaire_reach') return row.getAttribute('data-has-openaire-reach') === '1';
+    if (filterMode === 'openaire_open') return row.getAttribute('data-has-openaire-open') === '1';
+    if (filterMode === 'prism_context') return row.getAttribute('data-has-prism-context') === '1';
+    if (filterMode === 'prism_peer_review') return row.getAttribute('data-has-prism-peer') === '1';
+    return true;
+  }
+
+  function rowMatchesFunder(row, funderKey) {
+    if (!funderKey) return true;
+    const keyString = row.getAttribute('data-funder-keys') || '';
+    if (!keyString) return false;
+    return keyString.split('|').includes(funderKey);
+  }
+
+  function applyFilter(nextMode) {
+    mode = nextMode;
+    filters.querySelectorAll('[data-filter]').forEach((btn) => {
+      btn.classList.toggle('is-active', btn.getAttribute('data-filter') === mode);
+    });
+
+    let shown = 0;
+    rows.forEach((row) => {
+      const visible = rowMatchesFilter(row, mode) && rowMatchesFunder(row, funderSelect ? funderSelect.value : '');
+      row.classList.toggle('is-hidden-by-filter', !visible);
+      if (visible) shown += 1;
+    });
+
+    if (countEl) countEl.textContent = `${shown} shown`;
+  }
+
+  filters.addEventListener('click', (event) => {
+    const btn = event.target.closest('[data-filter]');
+    if (!btn) return;
+    applyFilter(btn.getAttribute('data-filter') || 'all');
+  });
+
+  if (funderSelect) {
+    funderSelect.addEventListener('change', () => applyFilter(mode));
+  }
+})();
 </script>
 </body>
 </html>

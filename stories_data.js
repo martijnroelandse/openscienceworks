@@ -4060,6 +4060,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Wikipedia",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -4070,7 +4071,9 @@ window.STORIES_DATA = [
 "Spear's Book Award Shortlist (Business, 2014)",
 "Waterstones Book of the Year shortlist (2014)"
 ],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 48
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -4225,7 +4228,7 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
-"wikipedia": 1
+"wikipedia": 21
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -8017,13 +8020,15 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Substack"
+"Substack",
+"Wikipedia"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"wikipedia": 9,
 "substack": 1
 },
 "is_top1pct": true,
@@ -8168,13 +8173,15 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Substack"
+"Substack",
+"Wikipedia"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"wikipedia": 3,
 "substack": 1
 },
 "is_top1pct": true,
@@ -8512,6 +8519,7 @@ window.STORIES_DATA = [
 "belongs_to_series": true,
 "mention_platforms": [
 "Substack",
+"Wikipedia",
 "Hypothesis"
 ],
 "has_librarything": false,
@@ -8519,6 +8527,7 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"wikipedia": 7,
 "hypothesis": 2,
 "substack": 1
 },
@@ -8661,12 +8670,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 5
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -8811,13 +8824,15 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Substack"
+"Substack",
+"Wikipedia"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"wikipedia": 5,
 "substack": 1
 },
 "is_top1pct": false,
@@ -9118,12 +9133,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 3
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -9278,7 +9297,7 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
-"wikipedia": 1,
+"wikipedia": 8,
 "hypothesis": 1,
 "substack": 1
 },
@@ -9829,7 +9848,7 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
-"wikipedia": 24
+"wikipedia": 39
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -10282,13 +10301,15 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Substack"
+"Substack",
+"Wikipedia"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"wikipedia": 3,
 "substack": 1
 },
 "is_top1pct": false,
@@ -10428,12 +10449,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 11
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -10727,12 +10752,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -11038,12 +11067,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 6
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -11548,12 +11581,16 @@ window.STORIES_DATA = [
 "series_name": "World oral literature series",
 "series_id": "https://openalex.org/S4210174747",
 "belongs_to_series": true,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 11
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -12011,12 +12048,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -12310,12 +12351,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 12
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -13083,12 +13128,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 7
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -15496,12 +15545,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 2
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -15642,12 +15695,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -15798,12 +15855,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 2
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -15946,12 +16007,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 2
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -16236,12 +16301,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -16544,12 +16613,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -16686,12 +16759,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 2
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -16834,12 +16911,16 @@ window.STORIES_DATA = [
 "series_name": "Climate Change 2014: Mitigation of Climate Change",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -17140,12 +17221,16 @@ window.STORIES_DATA = [
 "series_name": "Regional climate studies",
 "series_id": "https://openalex.org/S4210227056",
 "belongs_to_series": true,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 3
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -17288,12 +17373,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 7
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -17588,12 +17677,16 @@ window.STORIES_DATA = [
 "series_name": "Fundamental theories of physics",
 "series_id": "https://openalex.org/S4210233994",
 "belongs_to_series": true,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 4
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -18183,12 +18276,16 @@ window.STORIES_DATA = [
 "series_name": "Graduate texts in physics",
 "series_id": "https://openalex.org/S4210220221",
 "belongs_to_series": true,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 6
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -18626,12 +18723,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 12
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -18916,12 +19017,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 4
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -19071,7 +19176,7 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
-"wikipedia": 1
+"wikipedia": 3
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -19217,13 +19322,15 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Substack"
+"Substack",
+"Wikipedia"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"wikipedia": 1,
 "substack": 1
 },
 "is_top1pct": true,
@@ -19369,12 +19476,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 2
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -19516,12 +19627,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 2
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -19959,12 +20074,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -21701,12 +21820,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 6
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -22139,12 +22262,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 2
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -23182,14 +23309,15 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Bluesky",
-"Wikipedia"
+"Wikipedia",
+"Bluesky"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"wikipedia": 10,
 "bluesky": 1
 },
 "is_top1pct": false,
@@ -24151,12 +24279,16 @@ window.STORIES_DATA = [
 "series_name": "Studies in International Economics",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 2
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -24452,12 +24584,16 @@ window.STORIES_DATA = [
 "series_name": "Counterpoints",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -25938,6 +26074,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Wikipedia",
 "Bluesky",
 "Hypothesis"
 ],
@@ -25946,6 +26083,7 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"wikipedia": 2,
 "bluesky": 1,
 "hypothesis": 9
 },
@@ -33293,7 +33431,7 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
-"wikipedia": 1
+"wikipedia": 2
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -33401,12 +33539,16 @@ window.STORIES_DATA = [
 "series_name": "Studies in Archaeological Sciences",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -33544,6 +33686,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Wikipedia",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -33552,7 +33695,9 @@ window.STORIES_DATA = [
 "awards": [
 "ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities"
 ],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 14
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -35854,6 +35999,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Wikipedia",
 "News",
 "LibraryThing"
 ],
@@ -35864,6 +36010,7 @@ window.STORIES_DATA = [
 "Lambda Literary Award Nominee (Gay Men's Studies, 1996)"
 ],
 "platform_counts": {
+"wikipedia": 2,
 "news": 1
 },
 "is_top1pct": false,
@@ -36501,6 +36648,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": true,
 "mention_platforms": [
+"Wikipedia",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -36509,7 +36657,9 @@ window.STORIES_DATA = [
 "awards": [
 "ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History"
 ],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 6
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -37095,14 +37245,16 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Status",
+"Wikipedia",
 "LibraryThing"
 ],
 "has_librarything": true,
 "librarything_rating": 7.8,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 3
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -38714,13 +38866,15 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Status"
+"Wikipedia"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 3
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -38857,7 +39011,7 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
-"wikipedia": 1,
+"wikipedia": 5,
 "hypothesis": 6
 },
 "is_top1pct": false,
@@ -39556,12 +39710,16 @@ window.STORIES_DATA = [
 "series_name": "MODID-19febebe56a:Leuven University Press",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 2
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -39979,6 +40137,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Wikipedia",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -39987,7 +40146,9 @@ window.STORIES_DATA = [
 "awards": [
 "ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies"
 ],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 3
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -44078,6 +44239,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Wikipedia",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -44086,7 +44248,9 @@ window.STORIES_DATA = [
 "awards": [
 "ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Multimodal"
 ],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 2
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -44322,13 +44486,15 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Status"
+"Wikipedia"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 3
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -45356,13 +45522,15 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Status"
+"Wikipedia"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -46995,12 +47163,16 @@ window.STORIES_DATA = [
 "series_name": "Research for policy",
 "series_id": "https://openalex.org/S4210175367",
 "belongs_to_series": true,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -47147,7 +47319,9 @@ window.STORIES_DATA = [
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 2
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -47400,6 +47574,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Wikipedia",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -47408,7 +47583,9 @@ window.STORIES_DATA = [
 "awards": [
 "ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies"
 ],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 2
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -48999,12 +49176,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -49269,6 +49450,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Wikipedia",
 "News"
 ],
 "has_librarything": false,
@@ -49276,6 +49458,7 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"wikipedia": 2,
 "news": 1
 },
 "is_top1pct": false,
@@ -49548,12 +49731,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -49680,6 +49867,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Wikipedia",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -49688,7 +49876,9 @@ window.STORIES_DATA = [
 "awards": [
 "ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities"
 ],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 3
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -51463,12 +51653,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 3
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -53913,12 +54107,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 3
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -54001,14 +54199,15 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"News",
-"Wikipedia"
+"Wikipedia",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"wikipedia": 2,
 "news": 3
 },
 "is_top1pct": false,
@@ -54274,6 +54473,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Wikipedia",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -54282,7 +54482,9 @@ window.STORIES_DATA = [
 "awards": [
 "ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities"
 ],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 2
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -54608,9 +54810,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -56754,6 +56954,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Wikipedia",
 "News"
 ],
 "has_librarything": false,
@@ -56761,6 +56962,7 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"wikipedia": 1,
 "news": 1
 },
 "is_top1pct": false,
@@ -56879,12 +57081,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 2
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -58151,6 +58357,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Wikipedia",
 "News"
 ],
 "has_librarything": false,
@@ -58158,6 +58365,7 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"wikipedia": 1,
 "news": 1
 },
 "is_top1pct": false,
@@ -58392,6 +58600,7 @@ window.STORIES_DATA = [
 "belongs_to_series": true,
 "mention_platforms": [
 "Substack",
+"Wikipedia",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -58401,6 +58610,7 @@ window.STORIES_DATA = [
 "ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies"
 ],
 "platform_counts": {
+"wikipedia": 3,
 "substack": 1
 },
 "is_top1pct": false,
@@ -60597,12 +60807,16 @@ window.STORIES_DATA = [
 "series_name": "Archimedes",
 "series_id": "https://openalex.org/S4210238523",
 "belongs_to_series": true,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -61048,12 +61262,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -61297,6 +61515,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Wikipedia",
 "News"
 ],
 "has_librarything": false,
@@ -61304,6 +61523,7 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"wikipedia": 2,
 "news": 1
 },
 "is_top1pct": false,
@@ -61517,7 +61737,9 @@ window.STORIES_DATA = [
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 9
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -61829,6 +62051,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Wikipedia",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -61837,7 +62060,9 @@ window.STORIES_DATA = [
 "awards": [
 "ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History"
 ],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 2
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -62465,12 +62690,16 @@ window.STORIES_DATA = [
 "series_name": "MODID-d66f183fd58:Amsterdam University Press",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -67011,12 +67240,16 @@ window.STORIES_DATA = [
 "series_name": "Emerging globalities and civilizational perspectives",
 "series_id": "https://openalex.org/S4393919242",
 "belongs_to_series": true,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -67527,13 +67760,16 @@ window.STORIES_DATA = [
 "series_id": "https://openalex.org/S4210183583",
 "belongs_to_series": true,
 "mention_platforms": [
+"Wikipedia",
 "Blogs"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -67919,12 +68155,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -68183,7 +68423,9 @@ window.STORIES_DATA = [
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 3
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -68265,12 +68507,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -68368,12 +68614,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 2
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -68777,7 +69027,9 @@ window.STORIES_DATA = [
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -68986,12 +69238,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 7
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -69173,12 +69429,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -69589,12 +69849,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -70012,12 +70276,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -70705,6 +70973,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Wikipedia",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -70713,7 +70982,9 @@ window.STORIES_DATA = [
 "awards": [
 "ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology"
 ],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -71315,7 +71586,9 @@ window.STORIES_DATA = [
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 5
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -71421,7 +71694,7 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
-"wikipedia": 3,
+"wikipedia": 4,
 "news": 1
 },
 "is_top1pct": false,
@@ -80832,12 +81105,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -80915,12 +81192,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -80992,12 +81273,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 2
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -81583,12 +81868,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -81679,7 +81968,9 @@ window.STORIES_DATA = [
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 3
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -81756,13 +82047,16 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Wikipedia",
 "LibraryThing"
 ],
 "has_librarything": true,
 "librarything_rating": 8.0,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -81928,12 +82222,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 2
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -82527,12 +82825,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 2
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -82797,12 +83099,16 @@ window.STORIES_DATA = [
 "series_name": "Islamophobia as a Form of Radicalisation Perspectives on Media, Academia and Socio-political Scapes from Europe and Canada",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -83050,12 +83356,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -83136,12 +83446,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -83221,6 +83535,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Wikipedia",
 "News"
 ],
 "has_librarything": false,
@@ -83228,6 +83543,7 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"wikipedia": 3,
 "news": 1
 },
 "is_top1pct": false,
@@ -84012,12 +84328,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -84180,12 +84500,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Wikipedia"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"wikipedia": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -85531,7 +85855,7 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
-"wikipedia": 1
+"wikipedia": 2
 },
 "is_top1pct": false,
 "is_top10pct": false,
@@ -86463,9 +86787,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -86551,6 +86873,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Wikipedia",
 "News",
 "LibraryThing"
 ],
@@ -86561,6 +86884,7 @@ window.STORIES_DATA = [
 "ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History; Political Science"
 ],
 "platform_counts": {
+"wikipedia": 2,
 "news": 5
 },
 "is_top1pct": false,
@@ -86720,7 +87044,7 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
-"wikipedia": 2
+"wikipedia": 7
 },
 "is_top1pct": false,
 "is_top10pct": false,
@@ -87217,6 +87541,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Wikipedia",
 "News"
 ],
 "has_librarything": false,
@@ -87224,6 +87549,7 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"wikipedia": 15,
 "news": 1
 },
 "is_top1pct": false,
@@ -87457,6 +87783,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Wikipedia",
 "News",
 "LibraryThing"
 ],
@@ -87465,6 +87792,7 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"wikipedia": 6,
 "news": 1
 },
 "is_top1pct": false,

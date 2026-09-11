@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>University of Michigan Press — Portfolio Dashboard</title>
     <style>
         /* ── Base ── */
@@ -78,7 +79,17 @@
         .stats-strip-label { font-size: .68rem; color: #6b7280; text-transform: uppercase;
                              letter-spacing: .06em; margin-top: .25rem; }
         .stats-strip-sub { font-size: .65rem; color: #b45309; font-weight: 700; margin-top: .2rem; }
-        @media(max-width:640px) { .stats-strip { grid-template-columns: repeat(2,1fr); } }
+        @media(max-width:640px) {
+            .stats-strip { grid-template-columns: repeat(2,1fr); }
+            .site-nav { flex-wrap: wrap; gap: .5rem; padding: .55rem 1rem; }
+            .site-nav-right { flex-wrap: wrap; }
+            .page { padding: 1.5rem 1rem 3rem; }
+            .card { padding: 1.25rem; min-width: 0; }
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: minmax(0, 1fr); }
+            .hero { padding: 1.5rem 1rem; }
+            .hero-inner { gap: 1rem; }
+            .hero-title { overflow-wrap: anywhere; }
+        }
 
         /* ── Stat box (secondary stats) ── */
         .stat-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: .75rem;
@@ -146,6 +157,36 @@
                       padding: .1rem .45rem; font-size: .72rem; font-weight: 600; white-space: nowrap; }
         .award-list { margin: 0; padding-left: 1rem; font-size: .75rem; color: #6b7280; }
         tr.is-hidden-by-filter { display: none; }
+
+        /* ── Digital bookshelf ── */
+        .bookshelf-block { margin-bottom: 1.75rem; }
+        .bookshelf-block:last-child { margin-bottom: 0; }
+        .bookshelf-label { font-size: .78rem; font-weight: 700; color: #374151; margin-bottom: .7rem; }
+        .bookshelf-row { display: flex; gap: 1.1rem; overflow-x: auto; padding: .2rem .2rem 1.1rem; }
+        .shelf-slot { flex: 0 0 auto; width: 92px; display: flex; flex-direction: column; align-items: center; }
+        .shelf-slot a { width: 100%; text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; }
+        .shelf-cover-img, .gen-jacket-sm { width: 88px; height: 128px; border-radius: 3px;
+            box-shadow: 0 4px 10px rgba(15,23,42,.16), 0 1px 2px rgba(15,23,42,.10); object-fit: cover; }
+        .gen-jacket-sm { --js: 24%; position: relative; overflow: hidden; padding: .6rem .5rem .5rem;
+            display: flex; flex-direction: column; color: #f4efe4; box-sizing: border-box;
+            background: linear-gradient(158deg, hsl(var(--jh,214) var(--js) 31%) 0%,
+                hsl(var(--jh,214) var(--js) 24%) 55%, hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%); }
+        .gen-jacket-sm::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+            background: hsl(var(--jh,214) 26% 15%); }
+        .gen-jacket-sm .gj-title-sm { font-family: Georgia, 'Times New Roman', serif; font-weight: 600;
+            font-size: .62rem; line-height: 1.15; margin: auto 0; overflow: hidden;
+            display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; }
+        .shelf-plank { width: 88px; height: 14px; margin-top: -1px; border-radius: 3px;
+            background: linear-gradient(180deg, #c88a52 0%, #a86b36 55%, #8a5426 100%);
+            box-shadow: 0 6px 10px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.25); }
+        .shelf-title { width: 100%; font-size: .68rem; color: #4b5563; text-align: center; margin-top: .45rem;
+            line-height: 1.25; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        .shelf-chips { width: 100%; display: flex; justify-content: center; gap: .3rem; margin-top: .35rem; }
+        .shelf-chip { font-size: .62rem; font-weight: 700; border-radius: 999px; padding: .05rem .4rem; white-space: nowrap; }
+        .shelf-chip-cite { background: #eff6ff; color: #1d4ed8; }
+        .shelf-chip-mention { background: #f5f3ff; color: #6d28d9; }
+        .shelf-chip-edu { background: #f0fdf4; color: #166534; }
+        .bookshelf-credit { font-size: .72rem; color: #9ca3af; margin-top: .3rem; }
 
         /* ── List rows ── */
         .list-row { display: flex; justify-content: space-between; align-items: center;
@@ -216,7 +257,7 @@
   <div class="section-label">Portfolio narrative</div>
   <section class="card">
     <h2><span>The Story So Far</span></h2>
-    <div style="line-height:1.65;"><h3 class='story-subheading'>Executive Summary</h3><p class='story-text'>The University of Michigan Press encompasses 8 works that have collectively generated significant scholarly and public impact. Anchored predominantly in Political science, Economics, and Politics, this collection has amassed a highly concentrated thematic footprint.</p><p class='story-text'>Commitment to open knowledge sharing is a defining characteristic of this dataset. A significant portion of this dataset prioritizes accessibility, with 37% of the portfolio available via Open Access.</p><p class='story-text'>The impact of these works is geographically and institutionally diverse. Noteworthy engagement extends beyond standard academia, with measurable uptake in the Facility and Nonprofit sectors. this portfolio demonstrates both rapid public uptake and sustained relevance as a methodological anchor for future synthesis.</p></div>
+    <div style="line-height:1.65;"><p class="story-text">This selection contains 8 works with 623 recorded scholarly citations. Available citing-work metadata identifies 64 countries.</p><p class="story-text">There are 10 recorded Wikipedia article–work matches, including 6 book references verified against an article revision. References and bibliography entries document use of a work; these counts do not measure readership.</p><p class="story-text">Current metadata classifies 3 of these works as open access. Missing usage data and zero recorded mentions on a channel do not establish an absence of engagement.</p></div>
     <div class="muted" style="margin-top:.45rem;">
       Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
     </div>
@@ -229,14 +270,14 @@
   <div class="section-label">Key metrics</div>
   <div class="stats-strip">
     <div class="stats-strip-item">
-      <div class="stats-strip-num">610</div>
+      <div class="stats-strip-num">623</div>
       <div class="stats-strip-label">Total Citations</div>
       
       <div class="stats-strip-sub">🏆 1 in Top 1%</div>
       
     </div>
     <div class="stats-strip-item">
-      <div class="stats-strip-num">17</div>
+      <div class="stats-strip-num">22</div>
       <div class="stats-strip-label">Online Mentions</div>
     </div>
     <div class="stats-strip-item">
@@ -246,7 +287,7 @@
       <div style="font-size:.65rem;color:#6b7280;margin-top:.2rem;">3 of 8 works</div>
     </div>
     <div class="stats-strip-item">
-      <div class="stats-strip-num">15</div>
+      <div class="stats-strip-num">64</div>
       <div class="stats-strip-label">Citing Countries</div>
     </div>
     
@@ -256,6 +297,205 @@
     </div>
     
   </div>
+
+  
+  <div class="section-label">On the shelf</div>
+  <section class="card">
+    <h2><span>Digital Bookshelf</span> <span class="badge">Portfolio</span></h2>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">The collection's most-cited, most-talked-about, and most-taught works — articles and data included, not just books — cover art where it resolves.</div>
+
+    
+
+    
+    <div class="bookshelf-block">
+      <div class="bookshelf-label">Top cited</div>
+      
+    <div class="bookshelf-row">
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3998_mpub.11927713.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9780472038626&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Coronavirus Politics">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Coronavirus Politics</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">165 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3998_mpub.15472.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9780472109319&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Measurement of Nontariff Barriers">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Measurement of Nontariff Barriers</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">164 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3998_mpub.17144.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9780472112470&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Quantifying the Impact of Technical Barriers to Trade">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Quantifying the Impact of Technical Barriers to Trade</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">153 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3998_mpub.16284.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9780472111787&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Institutions and Investments">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Institutions and Investments</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">43 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3998_mpub.17801.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9780472024995&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of The Role of the Judge in International Trade Regulation">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">The Role of the Judge in International Trade Regulation</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">40 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3998_mpub.16818.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9780472110995&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Social Dimensions of U.S. Trade Policies">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Social Dimensions of U.S. Trade Policies</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">35 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3998_mpub.9853855.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/48e1f3ca-07b5-40b7-995f-3289290aca4b/retrieve" alt="Cover of Music on the Move">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Music on the Move</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">17 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3998_mpub.12584348.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/fb98d143-99e1-46b6-bd8b-af1e50e87ecf/retrieve" alt="Cover of Owning My Masters (Mastered)">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Owning My Masters (Mastered)</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">6 citations</span></div>
+        </a>
+      </div>
+      
+    </div>
+    
+    </div>
+    
+
+    
+    <div class="bookshelf-block">
+      <div class="bookshelf-label">Top mentioned</div>
+      
+    <div class="bookshelf-row">
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3998_mpub.9853855.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/48e1f3ca-07b5-40b7-995f-3289290aca4b/retrieve" alt="Cover of Music on the Move">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Music on the Move</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">11 mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3998_mpub.11927713.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9780472038626&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Coronavirus Politics">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Coronavirus Politics</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">9 mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3998_mpub.17144.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9780472112470&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Quantifying the Impact of Technical Barriers to Trade">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Quantifying the Impact of Technical Barriers to Trade</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">2 mentions</span></div>
+        </a>
+      </div>
+      
+    </div>
+    
+    </div>
+    
+
+    
+    <div class="bookshelf-block">
+      <div class="bookshelf-label">Top in education</div>
+      
+    <div class="bookshelf-row">
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3998_mpub.9853855.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/48e1f3ca-07b5-40b7-995f-3289290aca4b/retrieve" alt="Cover of Music on the Move">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Music on the Move</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">4 teaching mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3998_mpub.11927713.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9780472038626&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Coronavirus Politics">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Coronavirus Politics</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">3 teaching mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3998_mpub.12584348.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/fb98d143-99e1-46b6-bd8b-af1e50e87ecf/retrieve" alt="Cover of Owning My Masters (Mastered)">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Owning My Masters (Mastered)</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">1 teaching mentions</span></div>
+        </a>
+      </div>
+      
+    </div>
+    
+    </div>
+    
+
+    <div class="bookshelf-credit">A small nod to Bookmetrix's original digital bookshelf.</div>
+  </section>
+  
 
   
   <div class="section-label">Publisher QA</div>
@@ -276,7 +516,7 @@
 
   <div class="section-label">Open science report card</div>
   <section class="card">
-    <h2><span>Open Science Indicators</span> <span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">Crossref / EuropePMC / OpenAIRE / PRISM</span></h2>
+    <h2><span>Open Science Indicators</span> <span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">OpenAIRE / PRISM</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">
       <strong title="PRISM is a structured metadata feed used by DOAB for book-level peer-review context where publishers supply it.">PRISM</strong> provides book-level peer-review context signals; missing PRISM data does not imply missing peer review.
     </div>
@@ -284,17 +524,17 @@
     <div class="grid-4" style="margin-bottom:0;margin-top:1rem;">
       <div class="stat-box">
         
-        <div class="stat-number">12%</div>
+        <div class="stat-number">25%</div>
         <div class="stat-label">Open Peer Review</div>
       </div>
       <div class="stat-box">
         
-        <div class="stat-number">25%</div>
+        <div class="stat-number">38%</div>
         <div class="stat-label" title="PRISM context means publisher/title metadata was found, even when no explicit review record is returned.">PRISM Context</div>
       </div>
       <div class="stat-box">
         
-        <div class="stat-number">12%</div>
+        <div class="stat-number">25%</div>
         <div class="stat-label" title="Explicit peer-review records returned by PRISM.">PRISM Peer Reviews</div>
       </div>
       <div class="stat-box">
@@ -317,13 +557,13 @@
       <h2><span>Citation Timeline</span></h2>
       <div class="muted" style="margin-top:-.15rem;font-size:.8rem;">Annual citation counts across the portfolio.</div>
       <div class="chart-wrap">
-        <canvas id="citationChart" data-labels="[&#34;1997&#34;, &#34;1999&#34;, &#34;2000&#34;, &#34;2001&#34;, &#34;2002&#34;, &#34;2003&#34;, &#34;2004&#34;, &#34;2005&#34;, &#34;2006&#34;, &#34;2007&#34;, &#34;2008&#34;, &#34;2009&#34;, &#34;2010&#34;, &#34;2011&#34;, &#34;2012&#34;, &#34;2013&#34;, &#34;2014&#34;, &#34;2015&#34;, &#34;2016&#34;, &#34;2017&#34;, &#34;2018&#34;, &#34;2019&#34;, &#34;2020&#34;, &#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[1, 1, 3, 11, 19, 29, 16, 30, 21, 16, 23, 60, 22, 24, 17, 26, 16, 11, 10, 14, 22, 3, 6, 27, 47, 62, 36, 35, 7]"></canvas>
+        <canvas id="citationChart" data-labels="[&#34;1997&#34;, &#34;1999&#34;, &#34;2000&#34;, &#34;2001&#34;, &#34;2002&#34;, &#34;2003&#34;, &#34;2004&#34;, &#34;2005&#34;, &#34;2006&#34;, &#34;2007&#34;, &#34;2008&#34;, &#34;2009&#34;, &#34;2010&#34;, &#34;2011&#34;, &#34;2012&#34;, &#34;2013&#34;, &#34;2014&#34;, &#34;2015&#34;, &#34;2016&#34;, &#34;2017&#34;, &#34;2018&#34;, &#34;2019&#34;, &#34;2020&#34;, &#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[1, 1, 3, 11, 19, 28, 16, 31, 19, 15, 24, 61, 21, 26, 17, 26, 15, 12, 9, 16, 22, 3, 6, 27, 47, 62, 36, 35, 13]"></canvas>
       </div>
     </section>
     <div class="grid-2" style="margin-bottom:0;gap:1rem;">
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Citing Sectors</span> <span class="badge">ROR</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Facility&#34;, &#34;Government&#34;, &#34;Nonprofit&#34;, &#34;Healthcare&#34;, &#34;Company&#34;, &#34;Other&#34;, &#34;Funder&#34;]" data-values="[413, 50, 35, 47, 9, 9, 17, 6]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Facility&#34;, &#34;Nonprofit&#34;, &#34;Government&#34;, &#34;Other&#34;, &#34;Company&#34;, &#34;Healthcare&#34;]" data-values="[426, 53, 50, 39, 21, 12, 11]"></canvas></div>
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Citation Context</span> <span class="badge">scite</span></h2>
@@ -331,11 +571,11 @@
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Work Types</span> <span class="badge">OpenAlex</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="wtChart" data-labels="[&#34;Article&#34;, &#34;Book-Chapter&#34;, &#34;Preprint&#34;, &#34;Book&#34;, &#34;Review&#34;, &#34;Report&#34;, &#34;Paratext&#34;, &#34;Other&#34;, &#34;Dissertation&#34;, &#34;Reference-Entry&#34;]" data-values="[373, 142, 31, 29, 5, 8, 2, 14, 9, 2]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="wtChart" data-labels="[&#34;Article&#34;, &#34;Book-Chapter&#34;, &#34;Preprint&#34;, &#34;Dissertation&#34;, &#34;Report&#34;, &#34;Reference-Entry&#34;, &#34;Book&#34;, &#34;Conference-Paper&#34;, &#34;Other&#34;, &#34;Paratext&#34;, &#34;Review&#34;, &#34;Book-Review&#34;]" data-values="[341, 131, 56, 12, 15, 11, 22, 4, 13, 12, 3, 2]"></canvas></div>
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Top Venues</span> <span class="badge">OpenAlex</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="venueChart" data-labels="[&#34;Cambridge University Press eBooks&#34;, &#34;SSRN Electronic Journal&#34;, &#34;World Economy&#34;, &#34;RePEc: Research Papers in Economics&#34;, &#34;American Journal of Agricultural Economics&#34;, &#34;Journal of Health Politics Policy and Law&#34;]" data-values="[55, 33, 9, 8, 8, 6]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="venueChart" data-labels="[&#34;Cambridge University Press eBooks&#34;, &#34;SSRN Electronic Journal&#34;, &#34;RePEc: Research Papers in Economics&#34;, &#34;World Economy&#34;, &#34;American Journal of Agricultural Economics&#34;, &#34;AgEcon Search (University of Minnesota, USA)&#34;]" data-values="[55, 33, 14, 10, 8, 7]"></canvas></div>
       </section>
     </div>
   </div>
@@ -348,7 +588,7 @@
     <div class="muted" style="margin-top:-.2rem;margin-bottom:1.25rem;">Breakdown across platforms for the entire portfolio.</div>
     <div class="platform-grid">
       <div class="platform-box" style="border-top-color:#64748b;">
-        <div class="platform-num" style="color:#334155;">4</div>
+        <div class="platform-num" style="color:#334155;">10</div>
         <div class="platform-lbl">Wikipedia</div>
       </div>
       <div class="platform-box" style="border-top-color:#ea580c;">
@@ -368,7 +608,7 @@
         <div class="platform-lbl">Expert Annotations</div>
       </div>
       <div class="platform-box" style="border-top-color:#16a34a;">
-        <div class="platform-num" style="color:#15803d;">7</div>
+        <div class="platform-num" style="color:#15803d;">6</div>
         <div class="platform-lbl">News Media</div>
       </div>
     </div>
@@ -384,7 +624,7 @@
         <div class="stat-label">Library Holdings</div>
       </div>
       <div class="stat-box">
-        <div class="stat-number">4</div>
+        <div class="stat-number">1</div>
         <div class="stat-label">Syllabi / OCW</div>
       </div>
       <div class="stat-box">
@@ -471,17 +711,6 @@
           
           <span class="role-pill role-pill-academic">
             <span class="role-dot" style="background:#3b82f6;"></span>
-            Commercial linkage
-            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">5.4</span>
-          </span>
-        
-          
-          
-          
-          
-          
-          <span class="role-pill role-pill-academic">
-            <span class="role-dot" style="background:#3b82f6;"></span>
             Sustainability & policy relevance
             <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">3.3</span>
           </span>
@@ -516,7 +745,18 @@
           <span class="role-pill role-pill-academic">
             <span class="role-dot" style="background:#3b82f6;"></span>
             Pedagogical anchor
-            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">0.9</span>
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">1.5</span>
+          </span>
+        
+          
+          
+          
+          
+          
+          <span class="role-pill role-pill-academic">
+            <span class="role-dot" style="background:#3b82f6;"></span>
+            Active public discourse
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">1.0</span>
           </span>
         
       </div>
@@ -530,35 +770,35 @@
       <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Based on author affiliations of citing works.</div>
       <div>
         
-          <span class="tag">United States (177)</span>
+          <span class="tag">United States (187)</span>
         
-          <span class="tag">United Kingdom (45)</span>
+          <span class="tag">United Kingdom (46)</span>
         
-          <span class="tag">Germany (29)</span>
+          <span class="tag">China (31)</span>
         
-          <span class="tag">China (29)</span>
+          <span class="tag">Germany (30)</span>
         
-          <span class="tag">France (28)</span>
+          <span class="tag">France (29)</span>
         
-          <span class="tag tag-soft">Canada (24)</span>
+          <span class="tag tag-soft">Canada (28)</span>
         
-          <span class="tag tag-soft">Brazil (20)</span>
+          <span class="tag tag-soft">Switzerland (23)</span>
         
-          <span class="tag tag-soft">Switzerland (19)</span>
+          <span class="tag tag-soft">Brazil (23)</span>
         
-          <span class="tag tag-soft">Australia (18)</span>
+          <span class="tag tag-soft">Australia (21)</span>
         
-          <span class="tag tag-soft">Italy (15)</span>
+          <span class="tag tag-soft">Italy (17)</span>
         
-          <span class="tag tag-soft">South Korea (12)</span>
+          <span class="tag tag-soft">Japan (14)</span>
         
-          <span class="tag tag-soft">Japan (11)</span>
+          <span class="tag tag-soft">South Korea (14)</span>
         
           <span class="tag tag-soft">Malaysia (11)</span>
         
-          <span class="tag tag-soft">Norway (7)</span>
+          <span class="tag tag-soft">Russia (10)</span>
         
-          <span class="tag tag-soft">India (6)</span>
+          <span class="tag tag-soft">Belgium (10)</span>
         
       </div>
     </section>
@@ -567,35 +807,35 @@
       <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Canonical names based on author affiliations.</div>
       <div>
         
-          <span class="tag">Massachusetts Institute of Technology (11)</span>
+          <span class="tag">University of Michigan (16)</span>
         
-          <span class="tag">Graduate Institute of International and Development Studies (10)</span>
+          <span class="tag">Iowa State University (15)</span>
         
-          <span class="tag">Iowa State University (8)</span>
+          <span class="tag">Graduate Institute of International and Development Studies (13)</span>
         
-          <span class="tag">University of Michigan (5)</span>
+          <span class="tag">Massachusetts Institute of Technology (12)</span>
         
-          <span class="tag">Rhode Island College (5)</span>
+          <span class="tag">Providence College (11)</span>
         
-          <span class="tag tag-soft">Providence College (5)</span>
+          <span class="tag tag-soft">Rhode Island College (11)</span>
         
-          <span class="tag tag-soft">University of Malaya (5)</span>
+          <span class="tag tag-soft">Centre for Economic Policy Research (10)</span>
         
-          <span class="tag tag-soft">University of Michigan–Ann Arbor (4)</span>
+          <span class="tag tag-soft">Fundação Getulio Vargas (9)</span>
         
-          <span class="tag tag-soft">University of Virginia (4)</span>
+          <span class="tag tag-soft">Economie Publique (7)</span>
         
-          <span class="tag tag-soft">Fundação Getulio Vargas (3)</span>
+          <span class="tag tag-soft">World Bank (7)</span>
         
-          <span class="tag tag-soft">Kyung Hee University (3)</span>
+          <span class="tag tag-soft">The University of Adelaide (7)</span>
         
-          <span class="tag tag-soft">Economie Publique (2)</span>
+          <span class="tag tag-soft">Medizinische Hochschule Hannover (6)</span>
         
-          <span class="tag tag-soft">Medizinische Hochschule Hannover (2)</span>
+          <span class="tag tag-soft">McGill University (6)</span>
         
-          <span class="tag tag-soft">Loughborough University (2)</span>
+          <span class="tag tag-soft">Institut de Recherche pour le Développement (6)</span>
         
-          <span class="tag tag-soft">The University of Adelaide (2)</span>
+          <span class="tag tag-soft">Australian National University (5)</span>
         
       </div>
     </section>
@@ -651,12 +891,12 @@
       
       <div class="platform-box" style="border-top-color:#64748b;">
         <div class="platform-num" style="color:#334155;">1</div>
-        <div class="platform-lbl">DOAB</div>
+        <div class="platform-lbl">OAPEN</div>
       </div>
       
       <div class="platform-box" style="border-top-color:#64748b;">
         <div class="platform-num" style="color:#334155;">1</div>
-        <div class="platform-lbl">OAPEN</div>
+        <div class="platform-lbl">DOAB</div>
       </div>
       
     </div>
@@ -683,9 +923,9 @@
       <button type="button" class="works-filter-btn" data-filter="awarded">Award winners (1)</button>
       <button type="button" class="works-filter-btn" data-filter="unawarded">Without awards (7)</button>
       
-      <button type="button" class="works-filter-btn" data-filter="open_review">Open peer review (1)</button>
-      <button type="button" class="works-filter-btn" data-filter="prism_context">PRISM context (2)</button>
-      <button type="button" class="works-filter-btn" data-filter="prism_peer_review">PRISM peer reviews (1)</button>
+      <button type="button" class="works-filter-btn" data-filter="open_review">Open peer review (2)</button>
+      <button type="button" class="works-filter-btn" data-filter="prism_context">PRISM context (3)</button>
+      <button type="button" class="works-filter-btn" data-filter="prism_peer_review">PRISM peer reviews (2)</button>
       <button type="button" class="works-filter-btn" data-filter="openaire_reach">OpenAIRE reach (8)</button>
       <button type="button" class="works-filter-btn" data-filter="openaire_open">OpenAIRE open instances (7)</button>
       
@@ -701,42 +941,6 @@
           <tr><th>Year</th><th>Type</th><th>Title</th><th>DOI</th><th>Awards</th><th>Citations</th><th>Mentions</th></tr>
         </thead>
         <tbody>
-          
-          <tr
-            data-has-award="0"
-            data-has-preprint="0"
-            data-has-open-review="0"
-            data-has-stewardship="0"
-            data-has-rrid="0"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="0"
-            data-has-prism-peer="0"
-            data-funder-keys=""
-          >
-            <td style="white-space:nowrap;">1998</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>
-              
-              <a href="bookstory_10.3998_mpub.15472.html" style="color:#111827;text-decoration:none;font-weight:500;">Measurement of Nontariff Barriers</a>
-              
-            </td>
-            <td>
-              
-              <a href="bookstory_10.3998_mpub.15472.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3998/mpub.15472</a>
-              <a href="https://doi.org/10.3998/mpub.15472" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td>
-              
-                <span class="muted">—</span>
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">163</td>
-            <td style="text-align:right;">0</td>
-          </tr>
           
           <tr
             data-has-award="0"
@@ -770,8 +974,44 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">159</td>
+            <td style="text-align:right;font-weight:600;">165</td>
             <td style="text-align:right;">9</td>
+          </tr>
+          
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">1998</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.3998_mpub.15472.html" style="color:#111827;text-decoration:none;font-weight:500;">Measurement of Nontariff Barriers</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3998_mpub.15472.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3998/mpub.15472</a>
+              <a href="https://doi.org/10.3998/mpub.15472" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                <span class="muted">—</span>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">164</td>
+            <td style="text-align:right;">0</td>
           </tr>
           
           <tr
@@ -807,7 +1047,7 @@
             </td>
             
             <td style="text-align:right;font-weight:600;">153</td>
-            <td style="text-align:right;">1</td>
+            <td style="text-align:right;">2</td>
           </tr>
           
           <tr
@@ -921,13 +1161,13 @@
           <tr
             data-has-award="0"
             data-has-preprint="0"
-            data-has-open-review="0"
+            data-has-open-review="1"
             data-has-stewardship="0"
             data-has-rrid="0"
             data-has-openaire-reach="1"
             data-has-openaire-open="1"
-            data-has-prism-context="0"
-            data-has-prism-peer="0"
+            data-has-prism-context="1"
+            data-has-prism-peer="1"
             data-funder-keys=""
           >
             <td style="white-space:nowrap;">2020</td>
@@ -951,7 +1191,7 @@
             </td>
             
             <td style="text-align:right;font-weight:600;">17</td>
-            <td style="text-align:right;">7</td>
+            <td style="text-align:right;">11</td>
           </tr>
           
           <tr
@@ -988,7 +1228,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;font-weight:600;">6</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1002,7 +1242,7 @@
       <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:#9ca3af;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
       <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;font-weight:600;text-decoration:none;">Read the Methodology &amp; Legend ↗</a></span>
     </div>
-    <div style="padding-left:1.35rem;">Generated on 2026-09-01 21:00:19 UTC</div>
+    <div style="padding-left:1.35rem;">Generated on 2026-09-11 13:36:32 UTC</div>
   </footer>
 
 </div><!-- /page -->

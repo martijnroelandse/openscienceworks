@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ACLS 2026 Finalists — Portfolio Dashboard</title>
     <style>
         /* ── Base ── */
@@ -78,7 +79,17 @@
         .stats-strip-label { font-size: .68rem; color: #6b7280; text-transform: uppercase;
                              letter-spacing: .06em; margin-top: .25rem; }
         .stats-strip-sub { font-size: .65rem; color: #b45309; font-weight: 700; margin-top: .2rem; }
-        @media(max-width:640px) { .stats-strip { grid-template-columns: repeat(2,1fr); } }
+        @media(max-width:640px) {
+            .stats-strip { grid-template-columns: repeat(2,1fr); }
+            .site-nav { flex-wrap: wrap; gap: .5rem; padding: .55rem 1rem; }
+            .site-nav-right { flex-wrap: wrap; }
+            .page { padding: 1.5rem 1rem 3rem; }
+            .card { padding: 1.25rem; min-width: 0; }
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: minmax(0, 1fr); }
+            .hero { padding: 1.5rem 1rem; }
+            .hero-inner { gap: 1rem; }
+            .hero-title { overflow-wrap: anywhere; }
+        }
 
         /* ── Stat box (secondary stats) ── */
         .stat-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: .75rem;
@@ -146,6 +157,36 @@
                       padding: .1rem .45rem; font-size: .72rem; font-weight: 600; white-space: nowrap; }
         .award-list { margin: 0; padding-left: 1rem; font-size: .75rem; color: #6b7280; }
         tr.is-hidden-by-filter { display: none; }
+
+        /* ── Digital bookshelf ── */
+        .bookshelf-block { margin-bottom: 1.75rem; }
+        .bookshelf-block:last-child { margin-bottom: 0; }
+        .bookshelf-label { font-size: .78rem; font-weight: 700; color: #374151; margin-bottom: .7rem; }
+        .bookshelf-row { display: flex; gap: 1.1rem; overflow-x: auto; padding: .2rem .2rem 1.1rem; }
+        .shelf-slot { flex: 0 0 auto; width: 92px; display: flex; flex-direction: column; align-items: center; }
+        .shelf-slot a { width: 100%; text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; }
+        .shelf-cover-img, .gen-jacket-sm { width: 88px; height: 128px; border-radius: 3px;
+            box-shadow: 0 4px 10px rgba(15,23,42,.16), 0 1px 2px rgba(15,23,42,.10); object-fit: cover; }
+        .gen-jacket-sm { --js: 24%; position: relative; overflow: hidden; padding: .6rem .5rem .5rem;
+            display: flex; flex-direction: column; color: #f4efe4; box-sizing: border-box;
+            background: linear-gradient(158deg, hsl(var(--jh,214) var(--js) 31%) 0%,
+                hsl(var(--jh,214) var(--js) 24%) 55%, hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%); }
+        .gen-jacket-sm::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+            background: hsl(var(--jh,214) 26% 15%); }
+        .gen-jacket-sm .gj-title-sm { font-family: Georgia, 'Times New Roman', serif; font-weight: 600;
+            font-size: .62rem; line-height: 1.15; margin: auto 0; overflow: hidden;
+            display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; }
+        .shelf-plank { width: 88px; height: 14px; margin-top: -1px; border-radius: 3px;
+            background: linear-gradient(180deg, #c88a52 0%, #a86b36 55%, #8a5426 100%);
+            box-shadow: 0 6px 10px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.25); }
+        .shelf-title { width: 100%; font-size: .68rem; color: #4b5563; text-align: center; margin-top: .45rem;
+            line-height: 1.25; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        .shelf-chips { width: 100%; display: flex; justify-content: center; gap: .3rem; margin-top: .35rem; }
+        .shelf-chip { font-size: .62rem; font-weight: 700; border-radius: 999px; padding: .05rem .4rem; white-space: nowrap; }
+        .shelf-chip-cite { background: #eff6ff; color: #1d4ed8; }
+        .shelf-chip-mention { background: #f5f3ff; color: #6d28d9; }
+        .shelf-chip-edu { background: #f0fdf4; color: #166534; }
+        .bookshelf-credit { font-size: .72rem; color: #9ca3af; margin-top: .3rem; }
 
         /* ── List rows ── */
         .list-row { display: flex; justify-content: space-between; align-items: center;
@@ -216,7 +257,7 @@
   <div class="section-label">Portfolio narrative</div>
   <section class="card">
     <h2><span>The Story So Far</span></h2>
-    <div style="line-height:1.65;"><h3 class='story-subheading'>Executive Summary</h3><p class='story-text'>The ACLS 2026 Finalists encompasses 29 works that have collectively generated significant scholarly and public impact. Anchored predominantly in History, Politics, and Political science, this collection has amassed a highly concentrated thematic footprint.</p><p class='story-text'>Commitment to open knowledge sharing is a defining characteristic of this dataset. An impressive 100% of the portfolio is available via Open Access, ensuring global accessibility.</p><p class='story-text'>The impact of these works is geographically and institutionally diverse. Noteworthy engagement extends beyond standard academia, with measurable uptake in the Facility and Nonprofit sectors. Supported by foundational backing from Arcadia, this portfolio demonstrates both rapid public uptake and sustained relevance as a methodological anchor for future synthesis.</p></div>
+    <div style="line-height:1.65;"><p class="story-text">This selection contains 29 works with 355 recorded scholarly citations. Available citing-work metadata identifies 50 countries.</p><p class="story-text">There are 40 recorded Wikipedia article–work matches, including 40 book references verified against an article revision. References and bibliography entries document use of a work; these counts do not measure readership.</p><p class="story-text">Current metadata classifies 29 of these works as open access. Missing usage data and zero recorded mentions on a channel do not establish an absence of engagement.</p></div>
     <div class="muted" style="margin-top:.45rem;">
       Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
     </div>
@@ -229,14 +270,14 @@
   <div class="section-label">Key metrics</div>
   <div class="stats-strip">
     <div class="stats-strip-item">
-      <div class="stats-strip-num">165</div>
+      <div class="stats-strip-num">355</div>
       <div class="stats-strip-label">Total Citations</div>
       
       <div class="stats-strip-sub">🏆 6 in Top 1%</div>
       
     </div>
     <div class="stats-strip-item">
-      <div class="stats-strip-num">8</div>
+      <div class="stats-strip-num">46</div>
       <div class="stats-strip-label">Online Mentions</div>
     </div>
     <div class="stats-strip-item">
@@ -246,7 +287,7 @@
       <div style="font-size:.65rem;color:#6b7280;margin-top:.2rem;">29 of 29 works</div>
     </div>
     <div class="stats-strip-item">
-      <div class="stats-strip-num">15</div>
+      <div class="stats-strip-num">50</div>
       <div class="stats-strip-label">Citing Countries</div>
     </div>
     
@@ -258,10 +299,325 @@
   </div>
 
   
+  <div class="section-label">On the shelf</div>
+  <section class="card">
+    <h2><span>Digital Bookshelf</span> <span class="badge">Portfolio</span></h2>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">The collection's most-cited, most-talked-about, and most-taught works — articles and data included, not just books — cover art where it resolves.</div>
+
+    
+
+    
+    <div class="bookshelf-block">
+      <div class="bookshelf-label">Top cited</div>
+      
+    <div class="bookshelf-row">
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.1017_9781009383981.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9781009383998&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Democracy and Empire">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Democracy and Empire</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">51 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.1515_9781501769023.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/88bf9a37-ce8d-4ecb-8790-88f70c0c25ea/retrieve" alt="Cover of Ecological States">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Ecological States</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">40 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.7551_mitpress_15191.001.0001.html" target="_blank">
+          
+          <div class="gen-jacket-sm" style="--jh: 261;" role="img" aria-label="Mortevivum. Cover image not available.">
+            <span class="gj-title-sm">Mortevivum</span>
+          </div>
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Mortevivum</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">29 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.31389_lsepress.rpg.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/4d908c0c-d118-447e-a954-1c872651e4c1/retrieve" alt="Cover of Renegotiating Patriarchy: Gender, Agency and the Bangladesh Paradox">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Renegotiating Patriarchy: Gender, Agency and the Bangladesh Paradox</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">29 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.1017_9781009305815.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9781009305822&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of States-in-Waiting">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">States-in-Waiting</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">24 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.5040_9781350237674.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/3ea3eeda-f681-4ec9-b1e5-16cb80121a85/retrieve" alt="Cover of Economic Diversification in Nigeria">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Economic Diversification in Nigeria</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">21 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.1525_luminos.162.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/78ff4166-4056-42de-a6b7-75c2e9fdcd07/retrieve" alt="Cover of A Life of Worry: Politics, Mental Health, and Vietnam’s Age of Anxiety">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">A Life of Worry: Politics, Mental Health, and Vietnam’s Age of Anxiety</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">18 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.1525_luminos.209.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/29ff3c62-8e5d-4e17-ab01-f6c48f7c2c72/retrieve" alt="Cover of Mal-Nutrition: Maternal Health Science and the Reproduction of Harm">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Mal-Nutrition: Maternal Health Science and the Reproduction of Harm</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">17 citations</span></div>
+        </a>
+      </div>
+      
+    </div>
+    
+    </div>
+    
+
+    
+    <div class="bookshelf-block">
+      <div class="bookshelf-label">Top mentioned</div>
+      
+    <div class="bookshelf-row">
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.1515_9781501769023.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/88bf9a37-ce8d-4ecb-8790-88f70c0c25ea/retrieve" alt="Cover of Ecological States">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Ecological States</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">14 mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3998_mpub.14469549.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9781943208852&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Abortion Pills">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Abortion Pills</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">7 mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.1017_9781009305815.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9781009305822&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of States-in-Waiting">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">States-in-Waiting</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">6 mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3998_mpub.12255695.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/2759a31f-6fcc-423a-b9e8-393070281c02/retrieve" alt="Cover of Twining">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Twining</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">3 mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.1515_9780295753317.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9780295753317&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Kernels of Resistance">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Kernels of Resistance</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">3 mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.7551_mitpress_12089.001.0001.html" target="_blank">
+          
+          <div class="gen-jacket-sm" style="--jh: 162;" role="img" aria-label="Sex Sounds. Cover image not available.">
+            <span class="gj-title-sm">Sex Sounds</span>
+          </div>
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Sex Sounds</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">3 mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.21627_2019bq.html" target="_blank">
+          
+          <div class="gen-jacket-sm" style="--jh: 327;" role="img" aria-label="Black Quotidian: Everyday History in African-American Newspapers. Cover image not available.">
+            <span class="gj-title-sm">Black Quotidian: Everyday History in African-American Newspapers</span>
+          </div>
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Black Quotidian: Everyday History in African-American Newspapers</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">2 mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.11647_obp.0145.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/d7839d17-881b-4ab4-a197-4d4c52a03198/retrieve" alt="Cover of Image, Knife, and Gluepot">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Image, Knife, and Gluepot</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">2 mentions</span></div>
+        </a>
+      </div>
+      
+    </div>
+    
+    </div>
+    
+
+    
+    <div class="bookshelf-block">
+      <div class="bookshelf-label">Top in education</div>
+      
+    <div class="bookshelf-row">
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3998_mpub.14469549.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9781943208852&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Abortion Pills">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Abortion Pills</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">4 teaching mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.1017_9781009305815.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9781009305822&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of States-in-Waiting">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">States-in-Waiting</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">3 teaching mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.1515_9781501769023.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/88bf9a37-ce8d-4ecb-8790-88f70c0c25ea/retrieve" alt="Cover of Ecological States">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Ecological States</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">2 teaching mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.1515_9780295750507.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9780295750507&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Upland Geopolitics">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Upland Geopolitics</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">2 teaching mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3998_mpub.12255695.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/2759a31f-6fcc-423a-b9e8-393070281c02/retrieve" alt="Cover of Twining">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Twining</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">2 teaching mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.11647_obp.0145.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/d7839d17-881b-4ab4-a197-4d4c52a03198/retrieve" alt="Cover of Image, Knife, and Gluepot">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Image, Knife, and Gluepot</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">2 teaching mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.1515_9781501777394.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/ce06a01a-5213-43e9-adac-d3cb0d7bbcdb/retrieve" alt="Cover of Border of Water and Ice">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Border of Water and Ice</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">2 teaching mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.1515_9781501773853.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9781501773853&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Poet-Monks">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Poet-Monks</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">2 teaching mentions</span></div>
+        </a>
+      </div>
+      
+    </div>
+    
+    </div>
+    
+
+    <div class="bookshelf-credit">A small nod to Bookmetrix's original digital bookshelf.</div>
+  </section>
+  
+
+  
 
   <div class="section-label">Open science report card</div>
   <section class="card">
-    <h2><span>Open Science Indicators</span> <span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">Crossref / EuropePMC / OpenAIRE / PRISM</span></h2>
+    <h2><span>Open Science Indicators</span> <span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">OpenAIRE / PRISM</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">
       <strong title="PRISM is a structured metadata feed used by DOAB for book-level peer-review context where publishers supply it.">PRISM</strong> provides book-level peer-review context signals; missing PRISM data does not imply missing peer review.
     </div>
@@ -274,7 +630,7 @@
       </div>
       <div class="stat-box">
         
-        <div class="stat-number">59%</div>
+        <div class="stat-number">79%</div>
         <div class="stat-label" title="PRISM context means publisher/title metadata was found, even when no explicit review record is returned.">PRISM Context</div>
       </div>
       <div class="stat-box">
@@ -302,25 +658,25 @@
       <h2><span>Citation Timeline</span></h2>
       <div class="muted" style="margin-top:-.15rem;font-size:.8rem;">Annual citation counts across the portfolio.</div>
       <div class="chart-wrap">
-        <canvas id="citationChart" data-labels="[&#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[4, 11, 24, 40, 151, 94]"></canvas>
+        <canvas id="citationChart" data-labels="[&#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[4, 11, 25, 40, 141, 125]"></canvas>
       </div>
     </section>
     <div class="grid-2" style="margin-bottom:0;gap:1rem;">
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Citing Sectors</span> <span class="badge">ROR</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Facility&#34;, &#34;Healthcare&#34;, &#34;Archive&#34;, &#34;Nonprofit&#34;, &#34;Other&#34;, &#34;Government&#34;, &#34;Company&#34;]" data-values="[235, 13, 1, 1, 13, 4, 4, 4]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Facility&#34;, &#34;Nonprofit&#34;, &#34;Government&#34;, &#34;Other&#34;, &#34;Company&#34;, &#34;Healthcare&#34;, &#34;Archive&#34;]" data-values="[254, 13, 12, 4, 7, 4, 1, 1]"></canvas></div>
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Citation Context</span> <span class="badge">scite</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="sciteChart" data-labels="[&#34;Supporting&#34;, &#34;Mentioning&#34;, &#34;Contradicting&#34;]" data-values="[0, 18, 0]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="sciteChart" data-labels="[&#34;Supporting&#34;, &#34;Mentioning&#34;, &#34;Contradicting&#34;]" data-values="[0, 20, 0]"></canvas></div>
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Work Types</span> <span class="badge">OpenAlex</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="wtChart" data-labels="[&#34;Book-Chapter&#34;, &#34;Article&#34;, &#34;Book&#34;, &#34;Paratext&#34;, &#34;Book-Review&#34;, &#34;Editorial&#34;, &#34;Reference-Entry&#34;, &#34;Other&#34;, &#34;Preprint&#34;, &#34;Conference-Paper&#34;, &#34;Report&#34;]" data-values="[94, 175, 12, 12, 4, 1, 4, 7, 8, 6, 1]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="wtChart" data-labels="[&#34;Article&#34;, &#34;Book&#34;, &#34;Book-Review&#34;, &#34;Editorial&#34;, &#34;Reference-Entry&#34;, &#34;Book-Chapter&#34;, &#34;Preprint&#34;, &#34;Paratext&#34;, &#34;Other&#34;, &#34;Conference-Paper&#34;, &#34;Report&#34;]" data-values="[182, 12, 2, 1, 5, 104, 8, 14, 10, 6, 2]"></canvas></div>
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Top Venues</span> <span class="badge">OpenAlex</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="venueChart" data-labels="[&#34;SSRN Electronic Journal&#34;, &#34;The Journal of Peasant Studies&#34;, &#34;Cambridge University Press eBooks&#34;, &#34;Critical Review of International Social and Political Philosophy&#34;, &#34;Globalizations&#34;, &#34;Environment and Planning E Nature and Space&#34;]" data-values="[8, 7, 7, 7, 4, 4]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="venueChart" data-labels="[&#34;Cambridge University Press eBooks&#34;, &#34;SSRN Electronic Journal&#34;, &#34;The Journal of Peasant Studies&#34;, &#34;Critical Review of International Social and Political Philosophy&#34;, &#34;Environment and Planning E Nature and Space&#34;, &#34;Globalizations&#34;]" data-values="[8, 8, 7, 7, 4, 4]"></canvas></div>
       </section>
     </div>
   </div>
@@ -333,7 +689,7 @@
     <div class="muted" style="margin-top:-.2rem;margin-bottom:1.25rem;">Breakdown across platforms for the entire portfolio.</div>
     <div class="platform-grid">
       <div class="platform-box" style="border-top-color:#64748b;">
-        <div class="platform-num" style="color:#334155;">0</div>
+        <div class="platform-num" style="color:#334155;">40</div>
         <div class="platform-lbl">Wikipedia</div>
       </div>
       <div class="platform-box" style="border-top-color:#ea580c;">
@@ -353,7 +709,7 @@
         <div class="platform-lbl">Expert Annotations</div>
       </div>
       <div class="platform-box" style="border-top-color:#16a34a;">
-        <div class="platform-num" style="color:#15803d;">7</div>
+        <div class="platform-num" style="color:#15803d;">5</div>
         <div class="platform-lbl">News Media</div>
       </div>
     </div>
@@ -365,11 +721,11 @@
     <h2><span>Teaching, Practice &amp; Library Adoption</span></h2>
     <div class="grid-3" style="margin-bottom:0;margin-top:1rem;">
       <div class="stat-box">
-        <div class="stat-number">25</div>
+        <div class="stat-number">33</div>
         <div class="stat-label">Library Holdings</div>
       </div>
       <div class="stat-box">
-        <div class="stat-number">12</div>
+        <div class="stat-number">2</div>
         <div class="stat-label">Syllabi / OCW</div>
       </div>
       <div class="stat-box">
@@ -385,7 +741,7 @@
         <div class="stat-label">Formal Reviews</div>
       </div>
       <div class="stat-box">
-        <div class="stat-number">110</div>
+        <div class="stat-number">17</div>
         <div class="stat-label">Chapter Cites</div>
       </div>
     </div>
@@ -457,7 +813,7 @@
           <span class="role-pill role-pill-academic">
             <span class="role-dot" style="background:#3b82f6;"></span>
             Scholarly uptake
-            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">13.6</span>
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">13.9</span>
           </span>
         
           
@@ -478,8 +834,8 @@
           
           <span class="role-pill role-pill-academic">
             <span class="role-dot" style="background:#3b82f6;"></span>
-            Commercial linkage
-            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">0.9</span>
+            Pedagogical anchor
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">4.8</span>
           </span>
         
           
@@ -489,8 +845,8 @@
           
           <span class="role-pill role-pill-academic">
             <span class="role-dot" style="background:#3b82f6;"></span>
-            Pedagogical anchor
-            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">0.6</span>
+            Commercial linkage
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">0.9</span>
           </span>
         
       </div>
@@ -504,21 +860,21 @@
       <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Based on author affiliations of citing works.</div>
       <div>
         
-          <span class="tag">United States (131)</span>
+          <span class="tag">United States (143)</span>
         
-          <span class="tag">United Kingdom (29)</span>
+          <span class="tag">United Kingdom (32)</span>
+        
+          <span class="tag">Netherlands (18)</span>
         
           <span class="tag">China (17)</span>
-        
-          <span class="tag">Netherlands (17)</span>
         
           <span class="tag">Canada (16)</span>
         
           <span class="tag tag-soft">Germany (14)</span>
         
-          <span class="tag tag-soft">Australia (7)</span>
+          <span class="tag tag-soft">Bangladesh (8)</span>
         
-          <span class="tag tag-soft">Bangladesh (7)</span>
+          <span class="tag tag-soft">Australia (7)</span>
         
           <span class="tag tag-soft">Hong Kong (6)</span>
         
@@ -530,9 +886,9 @@
         
           <span class="tag tag-soft">Indonesia (4)</span>
         
-          <span class="tag tag-soft">Spain (3)</span>
-        
           <span class="tag tag-soft">New Zealand (3)</span>
+        
+          <span class="tag tag-soft">Switzerland (3)</span>
         
       </div>
     </section>
@@ -543,33 +899,33 @@
         
           <span class="tag">University of California, Riverside (23)</span>
         
-          <span class="tag">University of Washington (10)</span>
+          <span class="tag">Pennsylvania State University (12)</span>
         
-          <span class="tag">Virginia Tech (5)</span>
+          <span class="tag">University of Washington (11)</span>
         
-          <span class="tag">Erasmus University Rotterdam (5)</span>
+          <span class="tag">University College London (6)</span>
         
           <span class="tag">The University of Melbourne (5)</span>
         
+          <span class="tag tag-soft">New York University (5)</span>
+        
+          <span class="tag tag-soft">Erasmus University Rotterdam (5)</span>
+        
+          <span class="tag tag-soft">Virginia Tech (5)</span>
+        
           <span class="tag tag-soft">Johns Hopkins University (5)</span>
         
-          <span class="tag tag-soft">Rutgers, The State University of New Jersey (4)</span>
+          <span class="tag tag-soft">McGill University (5)</span>
         
           <span class="tag tag-soft">Wageningen University & Research (4)</span>
         
-          <span class="tag tag-soft">University College London (4)</span>
+          <span class="tag tag-soft">Rutgers, The State University of New Jersey (4)</span>
         
-          <span class="tag tag-soft">New York University (4)</span>
+          <span class="tag tag-soft">The Ohio State University (4)</span>
+        
+          <span class="tag tag-soft">University of Cambridge (4)</span>
         
           <span class="tag tag-soft">University of Virginia (4)</span>
-        
-          <span class="tag tag-soft">McGill University (4)</span>
-        
-          <span class="tag tag-soft">University of London (4)</span>
-        
-          <span class="tag tag-soft">Indiana University (3)</span>
-        
-          <span class="tag tag-soft">Leiden University (3)</span>
         
       </div>
     </section>
@@ -610,13 +966,23 @@
     <div class="platform-grid">
       
       <div class="platform-box" style="border-top-color:#64748b;">
-        <div class="platform-num" style="color:#334155;">16</div>
+        <div class="platform-num" style="color:#334155;">13</div>
+        <div class="platform-lbl">DOAB</div>
+      </div>
+      
+      <div class="platform-box" style="border-top-color:#64748b;">
+        <div class="platform-num" style="color:#334155;">11</div>
+        <div class="platform-lbl">OAPEN</div>
+      </div>
+      
+      <div class="platform-box" style="border-top-color:#64748b;">
+        <div class="platform-num" style="color:#334155;">3</div>
         <div class="platform-lbl">Publisher-claimed</div>
       </div>
       
       <div class="platform-box" style="border-top-color:#64748b;">
-        <div class="platform-num" style="color:#334155;">13</div>
-        <div class="platform-lbl">DOAB</div>
+        <div class="platform-num" style="color:#334155;">2</div>
+        <div class="platform-lbl">ACLS/Arcadia rule</div>
       </div>
       
     </div>
@@ -644,7 +1010,7 @@
       <button type="button" class="works-filter-btn" data-filter="unawarded">Without awards (0)</button>
       
       <button type="button" class="works-filter-btn" data-filter="open_review">Open peer review (1)</button>
-      <button type="button" class="works-filter-btn" data-filter="prism_context">PRISM context (17)</button>
+      <button type="button" class="works-filter-btn" data-filter="prism_context">PRISM context (23)</button>
       <button type="button" class="works-filter-btn" data-filter="prism_peer_review">PRISM peer reviews (1)</button>
       <button type="button" class="works-filter-btn" data-filter="openaire_reach">OpenAIRE reach (27)</button>
       <button type="button" class="works-filter-btn" data-filter="openaire_open">OpenAIRE open instances (26)</button>
@@ -678,7 +1044,45 @@
             data-has-rrid="0"
             data-has-openaire-reach="1"
             data-has-openaire-open="1"
-            data-has-prism-context="0"
+            data-has-prism-context="1"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2023</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.1017_9781009383981.html" style="color:#111827;text-decoration:none;font-weight:500;">Democracy and Empire</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.1017_9781009383981.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1017/9781009383981</a>
+              <a href="https://doi.org/10.1017/9781009383981" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Political Science">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">51</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr
+            data-has-award="1"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="1"
             data-has-prism-peer="0"
             data-funder-keys=""
           >
@@ -705,6 +1109,82 @@
             </td>
             
             <td style="text-align:right;font-weight:600;">40</td>
+            <td style="text-align:right;">14</td>
+          </tr>
+          
+          <tr
+            data-has-award="1"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.7551_mitpress_15191.001.0001.html" style="color:#111827;text-decoration:none;font-weight:500;">Mortevivum</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.7551_mitpress_15191.001.0001.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7551/mitpress/15191.001.0001</a>
+              <a href="https://doi.org/10.7551/mitpress/15191.001.0001" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Multimodal">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">29</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr
+            data-has-award="1"
+            data-has-preprint="0"
+            data-has-open-review="1"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="1"
+            data-has-prism-peer="1"
+            data-funder-keys="the-london-school-of-economics-and-political-science"
+          >
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.31389_lsepress.rpg.html" style="color:#111827;text-decoration:none;font-weight:500;">Renegotiating Patriarchy: Gender, Agency and the Bangladesh Paradox</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.31389_lsepress.rpg.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.31389/lsepress.rpg</a>
+              <a href="https://doi.org/10.31389/lsepress.rpg" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Political Science">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">29</td>
             <td style="text-align:right;">1</td>
           </tr>
           
@@ -742,8 +1222,46 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">23</td>
-            <td style="text-align:right;">1</td>
+            <td style="text-align:right;font-weight:600;">24</td>
+            <td style="text-align:right;">6</td>
+          </tr>
+          
+          <tr
+            data-has-award="1"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="1"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2022</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.5040_9781350237674.html" style="color:#111827;text-decoration:none;font-weight:500;">Economic Diversification in Nigeria</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.5040_9781350237674.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.5040/9781350237674</a>
+              <a href="https://doi.org/10.5040/9781350237674" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Political Science">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">21</td>
+            <td style="text-align:right;">0</td>
           </tr>
           
           <tr
@@ -830,7 +1348,7 @@
             data-has-rrid="0"
             data-has-openaire-reach="1"
             data-has-openaire-open="1"
-            data-has-prism-context="0"
+            data-has-prism-context="1"
             data-has-prism-peer="0"
             data-funder-keys=""
           >
@@ -868,7 +1386,45 @@
             data-has-rrid="0"
             data-has-openaire-reach="1"
             data-has-openaire-open="1"
-            data-has-prism-context="0"
+            data-has-prism-context="1"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2021</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.3998_mpub.12255695.html" style="color:#111827;text-decoration:none;font-weight:500;">Twining</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3998_mpub.12255695.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3998/mpub.12255695</a>
+              <a href="https://doi.org/10.3998/mpub.12255695" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">15</td>
+            <td style="text-align:right;">3</td>
+          </tr>
+          
+          <tr
+            data-has-award="1"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="1"
             data-has-prism-peer="0"
             data-funder-keys=""
           >
@@ -895,7 +1451,7 @@
             </td>
             
             <td style="text-align:right;font-weight:600;">11</td>
-            <td style="text-align:right;">1</td>
+            <td style="text-align:right;">0</td>
           </tr>
           
           <tr
@@ -907,6 +1463,44 @@
             data-has-openaire-reach="1"
             data-has-openaire-open="1"
             data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2022</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.1525_9780520384521.html" style="color:#111827;text-decoration:none;font-weight:500;">At the Edges of Sleep</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.1525_9780520384521.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1525/9780520384521</a>
+              <a href="https://doi.org/10.1525/9780520384521" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">11</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr
+            data-has-award="1"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="1"
             data-has-prism-peer="0"
             data-funder-keys=""
           >
@@ -932,7 +1526,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">9</td>
+            <td style="text-align:right;font-weight:600;">10</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -944,7 +1538,45 @@
             data-has-rrid="0"
             data-has-openaire-reach="1"
             data-has-openaire-open="1"
-            data-has-prism-context="0"
+            data-has-prism-context="1"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2019</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.21627_2019bq.html" style="color:#111827;text-decoration:none;font-weight:500;">Black Quotidian: Everyday History in African-American Newspapers</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.21627_2019bq.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.21627/2019bq</a>
+              <a href="https://doi.org/10.21627/2019bq" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Multimodal">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">10</td>
+            <td style="text-align:right;">2</td>
+          </tr>
+          
+          <tr
+            data-has-award="1"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="1"
             data-has-prism-peer="0"
             data-funder-keys=""
           >
@@ -1020,6 +1652,44 @@
             data-has-rrid="0"
             data-has-openaire-reach="1"
             data-has-openaire-open="1"
+            data-has-prism-context="1"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2019</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.11647_obp.0145.html" style="color:#111827;text-decoration:none;font-weight:500;">Image, Knife, and Gluepot</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.11647_obp.0145.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.11647/obp.0145</a>
+              <a href="https://doi.org/10.11647/obp.0145" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">7</td>
+            <td style="text-align:right;">2</td>
+          </tr>
+          
+          <tr
+            data-has-award="1"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
             data-has-prism-context="0"
             data-has-prism-peer="0"
             data-funder-keys=""
@@ -1046,7 +1716,45 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">5</td>
+            <td style="text-align:right;font-weight:600;">6</td>
+            <td style="text-align:right;">3</td>
+          </tr>
+          
+          <tr
+            data-has-award="1"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="1"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.3998_mpub.12584348.html" style="color:#111827;text-decoration:none;font-weight:500;">Owning My Masters (Mastered)</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3998_mpub.12584348.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3998/mpub.12584348</a>
+              <a href="https://doi.org/10.3998/mpub.12584348" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Multimodal">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">6</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1085,6 +1793,82 @@
             </td>
             
             <td style="text-align:right;font-weight:600;">4</td>
+            <td style="text-align:right;">2</td>
+          </tr>
+          
+          <tr
+            data-has-award="1"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="1"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2022</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.7551_mitpress_12089.001.0001.html" style="color:#111827;text-decoration:none;font-weight:500;">Sex Sounds</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.7551_mitpress_12089.001.0001.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7551/mitpress/12089.001.0001</a>
+              <a href="https://doi.org/10.7551/mitpress/12089.001.0001" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">3</td>
+            <td style="text-align:right;">3</td>
+          </tr>
+          
+          <tr
+            data-has-award="1"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="1"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2020</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.3998_mpub.11923978.html" style="color:#111827;text-decoration:none;font-weight:500;">A Sense of Brutality</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3998_mpub.11923978.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3998/mpub.11923978</a>
+              <a href="https://doi.org/10.3998/mpub.11923978" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Political Science">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">3</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1161,6 +1945,44 @@
             </td>
             
             <td style="text-align:right;font-weight:600;">2</td>
+            <td style="text-align:right;">2</td>
+          </tr>
+          
+          <tr
+            data-has-award="1"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.1515_9781501773853.html" style="color:#111827;text-decoration:none;font-weight:500;">Poet-Monks</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.1515_9781501773853.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1515/9781501773853</a>
+              <a href="https://doi.org/10.1515/9781501773853" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">2</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1199,7 +2021,7 @@
             </td>
             
             <td style="text-align:right;font-weight:600;">1</td>
-            <td style="text-align:right;">0</td>
+            <td style="text-align:right;">1</td>
           </tr>
           
           <tr
@@ -1237,235 +2059,7 @@
             </td>
             
             <td style="text-align:right;font-weight:600;">0</td>
-            <td style="text-align:right;">0</td>
-          </tr>
-          
-          <tr
-            data-has-award="1"
-            data-has-preprint="0"
-            data-has-open-review="0"
-            data-has-stewardship="0"
-            data-has-rrid="0"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="0"
-            data-has-prism-peer="0"
-            data-funder-keys=""
-          >
-            <td style="white-space:nowrap;">2022</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>
-              
-              <a href="bookstory_10.1525_9780520384521.html" style="color:#111827;text-decoration:none;font-weight:500;">At the Edges of Sleep</a>
-              
-            </td>
-            <td>
-              
-              <a href="bookstory_10.1525_9780520384521.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1525/9780520384521</a>
-              <a href="https://doi.org/10.1525/9780520384521" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td>
-              
-                
-                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies">🏆 Award</span>
-                
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">0</td>
-            <td style="text-align:right;">0</td>
-          </tr>
-          
-          <tr
-            data-has-award="1"
-            data-has-preprint="0"
-            data-has-open-review="0"
-            data-has-stewardship="0"
-            data-has-rrid="0"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="0"
-            data-has-prism-peer="0"
-            data-funder-keys=""
-          >
-            <td style="white-space:nowrap;">2019</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>
-              
-              <a href="bookstory_10.11647_obp.0145.html" style="color:#111827;text-decoration:none;font-weight:500;">Image, Knife, and Gluepot</a>
-              
-            </td>
-            <td>
-              
-              <a href="bookstory_10.11647_obp.0145.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.11647/obp.0145</a>
-              <a href="https://doi.org/10.11647/obp.0145" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td>
-              
-                
-                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies">🏆 Award</span>
-                
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">0</td>
-            <td style="text-align:right;">0</td>
-          </tr>
-          
-          <tr
-            data-has-award="1"
-            data-has-preprint="0"
-            data-has-open-review="0"
-            data-has-stewardship="0"
-            data-has-rrid="0"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="0"
-            data-has-prism-peer="0"
-            data-funder-keys=""
-          >
-            <td style="white-space:nowrap;">2024</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>
-              
-              <a href="bookstory_10.1515_9781501773853.html" style="color:#111827;text-decoration:none;font-weight:500;">Poet-Monks</a>
-              
-            </td>
-            <td>
-              
-              <a href="bookstory_10.1515_9781501773853.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1515/9781501773853</a>
-              <a href="https://doi.org/10.1515/9781501773853" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td>
-              
-                
-                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies">🏆 Award</span>
-                
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">0</td>
-            <td style="text-align:right;">0</td>
-          </tr>
-          
-          <tr
-            data-has-award="1"
-            data-has-preprint="0"
-            data-has-open-review="0"
-            data-has-stewardship="0"
-            data-has-rrid="0"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="1"
-            data-has-prism-peer="0"
-            data-funder-keys=""
-          >
-            <td style="white-space:nowrap;">2022</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>
-              
-              <a href="bookstory_10.7551_mitpress_12089.001.0001.html" style="color:#111827;text-decoration:none;font-weight:500;">Sex Sounds</a>
-              
-            </td>
-            <td>
-              
-              <a href="bookstory_10.7551_mitpress_12089.001.0001.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7551/mitpress/12089.001.0001</a>
-              <a href="https://doi.org/10.7551/mitpress/12089.001.0001" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td>
-              
-                
-                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies">🏆 Award</span>
-                
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">0</td>
-            <td style="text-align:right;">0</td>
-          </tr>
-          
-          <tr
-            data-has-award="1"
-            data-has-preprint="0"
-            data-has-open-review="0"
-            data-has-stewardship="0"
-            data-has-rrid="0"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="1"
-            data-has-prism-peer="0"
-            data-funder-keys=""
-          >
-            <td style="white-space:nowrap;">2021</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>
-              
-              <a href="bookstory_10.3998_mpub.12255695.html" style="color:#111827;text-decoration:none;font-weight:500;">Twining</a>
-              
-            </td>
-            <td>
-              
-              <a href="bookstory_10.3998_mpub.12255695.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3998/mpub.12255695</a>
-              <a href="https://doi.org/10.3998/mpub.12255695" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td>
-              
-                
-                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies">🏆 Award</span>
-                
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">0</td>
-            <td style="text-align:right;">0</td>
-          </tr>
-          
-          <tr
-            data-has-award="1"
-            data-has-preprint="0"
-            data-has-open-review="0"
-            data-has-stewardship="0"
-            data-has-rrid="0"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="1"
-            data-has-prism-peer="0"
-            data-funder-keys=""
-          >
-            <td style="white-space:nowrap;">2019</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>
-              
-              <a href="bookstory_10.21627_2019bq.html" style="color:#111827;text-decoration:none;font-weight:500;">Black Quotidian: Everyday History in African-American Newspapers</a>
-              
-            </td>
-            <td>
-              
-              <a href="bookstory_10.21627_2019bq.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.21627/2019bq</a>
-              <a href="https://doi.org/10.21627/2019bq" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td>
-              
-                
-                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Multimodal">🏆 Award</span>
-                
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">0</td>
-            <td style="text-align:right;">0</td>
+            <td style="text-align:right;">7</td>
           </tr>
           
           <tr
@@ -1544,234 +2138,6 @@
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr
-            data-has-award="1"
-            data-has-preprint="0"
-            data-has-open-review="0"
-            data-has-stewardship="0"
-            data-has-rrid="0"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="0"
-            data-has-prism-context="0"
-            data-has-prism-peer="0"
-            data-funder-keys=""
-          >
-            <td style="white-space:nowrap;">2024</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>
-              
-              <a href="bookstory_10.7551_mitpress_15191.001.0001.html" style="color:#111827;text-decoration:none;font-weight:500;">Mortevivum</a>
-              
-            </td>
-            <td>
-              
-              <a href="bookstory_10.7551_mitpress_15191.001.0001.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7551/mitpress/15191.001.0001</a>
-              <a href="https://doi.org/10.7551/mitpress/15191.001.0001" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td>
-              
-                
-                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Multimodal">🏆 Award</span>
-                
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">0</td>
-            <td style="text-align:right;">0</td>
-          </tr>
-          
-          <tr
-            data-has-award="1"
-            data-has-preprint="0"
-            data-has-open-review="0"
-            data-has-stewardship="0"
-            data-has-rrid="0"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="1"
-            data-has-prism-peer="0"
-            data-funder-keys=""
-          >
-            <td style="white-space:nowrap;">2024</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>
-              
-              <a href="bookstory_10.3998_mpub.12584348.html" style="color:#111827;text-decoration:none;font-weight:500;">Owning My Masters (Mastered)</a>
-              
-            </td>
-            <td>
-              
-              <a href="bookstory_10.3998_mpub.12584348.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3998/mpub.12584348</a>
-              <a href="https://doi.org/10.3998/mpub.12584348" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td>
-              
-                
-                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Multimodal">🏆 Award</span>
-                
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">0</td>
-            <td style="text-align:right;">0</td>
-          </tr>
-          
-          <tr
-            data-has-award="1"
-            data-has-preprint="0"
-            data-has-open-review="0"
-            data-has-stewardship="0"
-            data-has-rrid="0"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="1"
-            data-has-prism-peer="0"
-            data-funder-keys=""
-          >
-            <td style="white-space:nowrap;">2023</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>
-              
-              <a href="bookstory_10.1017_9781009383981.html" style="color:#111827;text-decoration:none;font-weight:500;">Democracy and Empire</a>
-              
-            </td>
-            <td>
-              
-              <a href="bookstory_10.1017_9781009383981.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1017/9781009383981</a>
-              <a href="https://doi.org/10.1017/9781009383981" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td>
-              
-                
-                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Political Science">🏆 Award</span>
-                
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">0</td>
-            <td style="text-align:right;">0</td>
-          </tr>
-          
-          <tr
-            data-has-award="1"
-            data-has-preprint="0"
-            data-has-open-review="0"
-            data-has-stewardship="0"
-            data-has-rrid="0"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="1"
-            data-has-prism-peer="0"
-            data-funder-keys=""
-          >
-            <td style="white-space:nowrap;">2022</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>
-              
-              <a href="bookstory_10.5040_9781350237674.html" style="color:#111827;text-decoration:none;font-weight:500;">Economic Diversification in Nigeria</a>
-              
-            </td>
-            <td>
-              
-              <a href="bookstory_10.5040_9781350237674.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.5040/9781350237674</a>
-              <a href="https://doi.org/10.5040/9781350237674" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td>
-              
-                
-                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Political Science">🏆 Award</span>
-                
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">0</td>
-            <td style="text-align:right;">3</td>
-          </tr>
-          
-          <tr
-            data-has-award="1"
-            data-has-preprint="0"
-            data-has-open-review="1"
-            data-has-stewardship="0"
-            data-has-rrid="0"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="1"
-            data-has-prism-peer="1"
-            data-funder-keys="the-london-school-of-economics-and-political-science"
-          >
-            <td style="white-space:nowrap;">2024</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>
-              
-              <a href="bookstory_10.31389_lsepress.rpg.html" style="color:#111827;text-decoration:none;font-weight:500;">Renegotiating Patriarchy: Gender, Agency and the Bangladesh Paradox</a>
-              
-            </td>
-            <td>
-              
-              <a href="bookstory_10.31389_lsepress.rpg.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.31389/lsepress.rpg</a>
-              <a href="https://doi.org/10.31389/lsepress.rpg" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td>
-              
-                
-                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Political Science">🏆 Award</span>
-                
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">0</td>
-            <td style="text-align:right;">2</td>
-          </tr>
-          
-          <tr
-            data-has-award="1"
-            data-has-preprint="0"
-            data-has-open-review="0"
-            data-has-stewardship="0"
-            data-has-rrid="0"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="1"
-            data-has-prism-peer="0"
-            data-funder-keys=""
-          >
-            <td style="white-space:nowrap;">2020</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>
-              
-              <a href="bookstory_10.3998_mpub.11923978.html" style="color:#111827;text-decoration:none;font-weight:500;">A Sense of Brutality</a>
-              
-            </td>
-            <td>
-              
-              <a href="bookstory_10.3998_mpub.11923978.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3998/mpub.11923978</a>
-              <a href="https://doi.org/10.3998/mpub.11923978" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td>
-              
-                
-                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Political Science">🏆 Award</span>
-                
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">0</td>
-            <td style="text-align:right;">0</td>
-          </tr>
-          
         </tbody>
       </table>
     </div>
@@ -1782,7 +2148,7 @@
       <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:#9ca3af;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
       <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;font-weight:600;text-decoration:none;">Read the Methodology &amp; Legend ↗</a></span>
     </div>
-    <div style="padding-left:1.35rem;">Generated on 2026-09-01 21:00:27 UTC</div>
+    <div style="padding-left:1.35rem;">Generated on 2026-09-11 13:36:32 UTC</div>
   </footer>
 
 </div><!-- /page -->
