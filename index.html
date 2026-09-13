@@ -929,7 +929,6 @@
       .sidebar { position: static; }
     }
   </style>
-<link rel="stylesheet" href="publisher-overview.css">
 </head>
 <body>
 
@@ -957,7 +956,6 @@
   </div>
 </header>
 
-<div id="publisherTools" hidden><a href="index.html">← All stories</a><button type="button" id="publisherFilterToggle" aria-controls="sidebar" aria-expanded="false">Filter this selection</button></div>
 <!-- ══ EXPLORER ══════════════════════════════════════════════════════════════ -->
 <div class="shell" id="explorer">
 
@@ -1086,7 +1084,6 @@
   <p class="site-footer-legal">© 2026 openscience.works · martijnroelandse.dev b.v. · KVK 84477547</p>
 </footer>
 
-<script src="publisher-overview.js"></script>
 <script src="stories_data.js"></script>
 <script src="authors_data.js"></script>
 <script src="role_tooltips.js"></script>
@@ -2070,7 +2067,7 @@ function renderAgg(stories, groupKey) {
 
   // Portfolio summary for the full filtered set
   const pSummary = computePortfolioSummary(stories);
-  const pfCard   = renderPortfolioCard(pSummary, groups.length === 1 ? groups[0].name : label, groupKey);
+  const pfCard   = renderPortfolioCard(pSummary, label, groupKey);
 
   function th(lbl, sortKey, title="") {
     const active = state.aggSort.key === sortKey;
@@ -2253,15 +2250,6 @@ function clearAll() {
 }
 
 function update() {
-  const publisherMode = state.view === "publisher" && state.filters.venue.size === 1;
-  document.body.classList.toggle("publisher-mode", publisherMode);
-  document.getElementById("publisherTools").hidden = !publisherMode;
-  if (!publisherMode) {
-    ++publisherRequest;
-    document.title = "openscience.works";
-    document.body.classList.remove("publisher-filters-open");
-    document.getElementById("publisherFilterToggle").setAttribute("aria-expanded", "false");
-  }
   const all      = window.STORIES_DATA;
   const filtered = filterStories(all);
   const sorted   = sortStories(filtered);
@@ -2281,7 +2269,7 @@ function update() {
   } else if (isAgg) {
     aggEl.classList.add("visible");
     renderAgg(filtered, state.view);
-    renderPublisherOverview(filtered);
+    maybeRenderBookshelf();
   } else {
     aggEl.classList.remove("visible");
     const authorHits = state.query ? filterAuthors(state.query) : [];
