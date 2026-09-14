@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BMC — Portfolio Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+    <style>
+        /* ── Base ── */
+        * { box-sizing: border-box; }
+        body { font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+               background: #f3f4f6; color: #111827; margin: 0; padding: 0; }
+        .display { font-family: "Fraunces", Georgia, serif; font-weight: 600; }
+        .page { max-width: 1100px; margin: auto; padding: 1.5rem 2rem 4rem; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem;
+                box-shadow: 0 10px 30px rgba(15,23,42,.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 1.75rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1/-1; }
+
+        /* ── Typography ── */
+        h2 { margin-top: 0; font-size: 1.2rem; color: #111827;
+             font-family: "Fraunces", Georgia, serif; font-weight: 600;
+             display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
+        h2 span:first-child { flex: 1; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .section-label { font-size: .65rem; font-weight: 700; text-transform: uppercase;
+                         letter-spacing: .1em; color: #9ca3af; margin-bottom: .5rem; margin-top: .25rem; }
+
+        /* ── Tags / Badges ── */
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8;
+               padding: .15rem .5rem; border-radius: 999px; font-size: .82rem;
+               margin: .1rem .15rem .1rem 0; font-weight: 500; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca;
+                 font-family: "Source Sans 3", sans-serif;
+                 padding: .15rem .55rem; border-radius: 999px; font-size: .72rem; font-weight: 500;
+                 white-space: nowrap; flex-shrink: 0; }
+
+        /* ── Site nav ── */
+        .site-nav { background: white; border-bottom: 1px solid #e5e7eb;
+                    padding: .55rem 2rem; display: flex; align-items: center;
+                    justify-content: space-between; position: sticky; top: 0; z-index: 200; }
+        .site-nav-brand { display: flex; align-items: center; gap: .55rem;
+                          text-decoration: none; color: #111827; font-weight: 700; font-size: .95rem; }
+        .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+        .brand-dot { color: #F2C94C; }
+        .site-nav-right { display: flex; align-items: center; gap: .75rem; }
+        .site-nav-links { display: flex; gap: .2rem; }
+        .site-nav-links a { padding: .35rem .8rem; border-radius: .4rem; font-size: .85rem;
+                            font-weight: 500; text-decoration: none; color: #6b7280;
+                            transition: background .15s, color .15s; }
+        .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+        .print-btn { display: flex; align-items: center; gap: .4rem; padding: .4rem .9rem;
+                     background: #2563eb; color: white; border: none; border-radius: .45rem;
+                     font-size: .82rem; font-weight: 600; cursor: pointer;
+                     box-shadow: 0 2px 8px rgba(37,99,235,.3); transition: background .15s; }
+        .print-btn:hover { background: #1d4ed8; }
+        .print-btn svg { flex-shrink: 0; }
+
+        /* ── Hero ── */
+        .hero { padding: 1.75rem 2rem; background: white; margin-bottom: 1.75rem;
+                border-bottom: 1px solid #e5e7eb; }
+        .hero-inner { max-width: 1100px; margin: 0 auto;
+                      display: flex; align-items: center; gap: 1.75rem; }
+        .hero-logo { width: 80px; height: 80px; object-fit: contain; flex-shrink: 0; }
+        .hero-title { font-family: "Fraunces", Georgia, serif; font-size: 2.1rem; font-weight: 600;
+                      line-height: 1.15; margin: 0 0 .4rem; }
+        .hero-meta { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap;
+                     font-size: .9rem; color: #6b7280; }
+        .hero-type-badge { display: inline-flex; align-items: center; gap: .3rem;
+                           padding: .2rem .6rem; border-radius: 999px; font-size: .78rem;
+                           font-weight: 600; background: #f3f4f6; color: #374151;
+                           border: 1px solid #e5e7eb; }
+
+        /* ── Stats strip ── */
+        .stats-strip { display: grid; grid-template-columns: repeat(4,1fr); background: white;
+                       border-radius: .9rem; box-shadow: 0 10px 30px rgba(15,23,42,.08);
+                       margin-bottom: 1.75rem; overflow: hidden; }
+        .stats-strip-item { padding: 1rem 1.25rem; text-align: center; border-right: 1px solid #f3f4f6; }
+        .stats-strip-item:last-child { border-right: none; }
+        .stats-strip-num { font-family: "Fraunces", Georgia, serif; font-size: 1.9rem; font-weight: 600;
+                           color: #2563eb; line-height: 1.1; font-variant-numeric: tabular-nums; }
+        .stats-strip-label { font-size: .68rem; color: #6b7280; text-transform: uppercase;
+                             letter-spacing: .06em; margin-top: .25rem; }
+        .stats-strip-sub { font-size: .65rem; color: #b45309; font-weight: 700; margin-top: .2rem; }
+        @media(max-width:640px) {
+            .stats-strip { grid-template-columns: repeat(2,1fr); }
+            .site-nav { flex-wrap: wrap; gap: .5rem; padding: .55rem 1rem; }
+            .site-nav-right { flex-wrap: wrap; }
+            .page { padding: 1.5rem 1rem 3rem; }
+            .card { padding: 1.25rem; min-width: 0; }
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: minmax(0, 1fr); }
+            .hero { padding: 1.5rem 1rem; }
+            .hero-inner { gap: 1rem; }
+            .hero-title { overflow-wrap: anywhere; }
+        }
+
+        /* ── Stat box (secondary stats) ── */
+        .stat-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: .75rem;
+                    padding: 1.1rem; text-align: center; }
+        .stat-number { font-family: "Fraunces", Georgia, serif; font-size: 2rem; font-weight: 600;
+                       color: #0f172a; line-height: 1; margin-bottom: .2rem; font-variant-numeric: tabular-nums; }
+        .stat-label { font-size: .75rem; color: #64748b; text-transform: uppercase;
+                      letter-spacing: .05em; font-weight: 600; }
+        .stat-box-muted { background: #fafafa; border-style: dashed; }
+        .stat-box-muted .stat-label { color: #9ca3af; }
+
+        /* ── Risk card ── */
+        .risk-card { border: 2px solid #dc2626; background: #fff5f5; }
+        .risk-card h2 { color: #991b1b; }
+
+        /* ── Platform mentions ── */
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px,1fr)); gap: 1rem; }
+        .platform-box { background: white; border-radius: .75rem; padding: 1rem;
+                        text-align: center; border: 1px solid #e2e8f0; border-top-width: 3px; }
+        .platform-num { font-family: "Fraunces", Georgia, serif; font-size: 1.8rem; font-weight: 600;
+                        line-height: 1; margin-bottom: .25rem; font-variant-numeric: tabular-nums; }
+        .platform-lbl { font-size: .72rem; color: #6b7280; text-transform: uppercase;
+                        letter-spacing: .05em; font-weight: 600; }
+
+        /* ── Role pills (same as story pages) ── */
+        .roles-domain { margin-bottom: .85rem; }
+        .roles-domain:last-of-type { margin-bottom: 0; }
+        .roles-domain-label { font-size: .62rem; font-weight: 700; text-transform: uppercase;
+                              letter-spacing: .07em; margin-bottom: .4rem; }
+        .roles-row { display: flex; flex-wrap: wrap; gap: .35rem; }
+        .role-pill { position: relative; display: inline-flex; align-items: center; gap: .3rem;
+                     padding: .28rem .65rem .28rem .45rem; border-radius: 999px;
+                     font-size: .78rem; font-weight: 600; border: 1.5px solid; }
+        .role-pill-academic   { background: #eff6ff; color: #1e40af; border-color: #bfdbfe; }
+        .role-pill-readership { background: #f5f3ff; color: #4c1d95; border-color: #ddd6fe; }
+        .role-pill-public     { background: #fffbeb; color: #92400e; border-color: #fde68a; }
+        .role-pill-practical  { background: #f0fdf4; color: #065f46; border-color: #bbf7d0; }
+        .role-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+        .role-score { font-size: .6rem; font-weight: 700; padding: .05rem .3rem;
+                      border-radius: 999px; margin-left: .1rem; background: rgba(0,0,0,.06); }
+
+        /* ── Chart cards ── */
+        .chart-card { padding: 1.25rem 1.5rem; }
+        .chart-card h2 { font-size: 1rem; margin-bottom: .15rem; }
+        .chart-wrap { height: 200px; width: 100%; margin-top: .75rem; }
+
+        /* ── Table ── */
+        table { width: 100%; border-collapse: collapse; font-size: .84rem; margin-top: .75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: .55rem .65rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; position: sticky; top: 0; z-index: 10; }
+        tr:hover td { background: #f9fafb; }
+        .table-scroll { max-height: 520px; overflow-y: auto; border-radius: .5rem; border: 1px solid #e5e7eb; }
+        .table-scroll table { margin-top: 0; }
+        .table-scroll th, .table-scroll td { border-left: none; border-right: none; }
+        .table-scroll tr:first-child th { border-top: none; }
+
+        /* ── Works table filters ── */
+        .works-filters { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: .75rem 0 .25rem; }
+        .works-filter-btn { border: 1px solid #e5e7eb; background: #fff; color: #4b5563;
+                            border-radius: 999px; padding: .28rem .75rem; font-size: .78rem;
+                            font-weight: 600; cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
+        .works-filter-btn:hover { background: #f9fafb; color: #111827; }
+        .works-filter-btn.is-active { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+        .works-filter-select { border: 1px solid #e5e7eb; background: #fff; color: #374151;
+                               border-radius: .5rem; padding: .3rem .55rem; font-size: .78rem; }
+        .works-filter-count { font-size: .78rem; color: #6b7280; margin-left: auto; }
+        .award-pill { display: inline-flex; align-items: center; gap: .25rem; background: #fef9c3;
+                      color: #92400e; border: 1px solid #fde68a; border-radius: 999px;
+                      padding: .1rem .45rem; font-size: .72rem; font-weight: 600; white-space: nowrap; }
+        .award-list { margin: 0; padding-left: 1rem; font-size: .75rem; color: #6b7280; }
+        tr.is-hidden-by-filter { display: none; }
+
+        /* ── Digital bookshelf ── */
+        .bookshelf-block { margin-bottom: 1.75rem; }
+        .bookshelf-block:last-child { margin-bottom: 0; }
+        .bookshelf-label { font-size: .78rem; font-weight: 700; color: #374151; margin-bottom: .7rem; }
+        .shelf-tab-switch { display: flex; gap: .3rem; background: #f3f4f6; border-radius: 999px;
+                            padding: .25rem; width: fit-content; margin-bottom: .7rem; }
+        .shelf-tab-btn { border: none; background: transparent; font-size: .72rem; font-weight: 700;
+                         padding: .35rem .85rem; border-radius: 999px; color: #6b7280; cursor: pointer;
+                         font-family: "Source Sans 3", sans-serif; transition: background .15s, color .15s; }
+        .shelf-tab-btn:hover { color: #111827; }
+        .shelf-tab-btn.is-active { background: #111827; color: #f9fafb; }
+        .shelf-panel.is-hidden { display: none; }
+        .bookshelf-row { display: flex; gap: 1.1rem; overflow-x: auto; padding: .2rem .2rem 1.1rem; }
+        .shelf-slot { flex: 0 0 auto; width: 92px; display: flex; flex-direction: column; align-items: center; }
+        .shelf-slot a { width: 100%; text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; }
+        .shelf-cover-img, .gen-jacket-sm { width: 88px; height: 128px; border-radius: 3px;
+            box-shadow: 0 4px 10px rgba(15,23,42,.16), 0 1px 2px rgba(15,23,42,.10); object-fit: cover; }
+        .gen-jacket-sm { --js: 24%; position: relative; overflow: hidden; padding: .6rem .5rem .5rem;
+            display: flex; flex-direction: column; color: #f4efe4; box-sizing: border-box;
+            background: linear-gradient(158deg, hsl(var(--jh,214) var(--js) 31%) 0%,
+                hsl(var(--jh,214) var(--js) 24%) 55%, hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%); }
+        .gen-jacket-sm::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+            background: hsl(var(--jh,214) 26% 15%); }
+        .gen-jacket-sm .gj-title-sm { font-family: Georgia, 'Times New Roman', serif; font-weight: 600;
+            font-size: .62rem; line-height: 1.15; margin: auto 0; overflow: hidden;
+            display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; }
+        .shelf-plank { width: 88px; height: 14px; margin-top: -1px; border-radius: 3px;
+            background: linear-gradient(180deg, #c88a52 0%, #a86b36 55%, #8a5426 100%);
+            box-shadow: 0 6px 10px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.25); }
+        .shelf-title { width: 100%; font-size: .68rem; color: #4b5563; text-align: center; margin-top: .45rem;
+            line-height: 1.25; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        .shelf-chips { width: 100%; display: flex; justify-content: center; gap: .3rem; margin-top: .35rem; }
+        .shelf-chip { font-size: .62rem; font-weight: 700; border-radius: 999px; padding: .05rem .4rem; white-space: nowrap; }
+        .shelf-chip-cite { background: #eff6ff; color: #1d4ed8; }
+        .shelf-chip-mention { background: #f5f3ff; color: #6d28d9; }
+        .shelf-chip-edu { background: #f0fdf4; color: #166534; }
+        .shelf-chip-download { background: #ecfeff; color: #0e7490; }
+        .bookshelf-credit { font-size: .72rem; color: #9ca3af; margin-top: .3rem; }
+
+        /* ── List rows ── */
+        .list-row { display: flex; justify-content: space-between; align-items: center;
+                    border-bottom: 1px solid #f3f4f6; padding: .4rem 0; }
+        .list-row:last-child { border-bottom: none; }
+
+        /* ── Credo band ── */
+        .credo-band { display: flex; gap: .9rem; align-items: flex-start;
+                      border-left: 3px solid #7a2432; background: white;
+                      border-radius: 0 .7rem .7rem 0; padding: 1rem 1.4rem; margin-bottom: 1.75rem; }
+        .credo-band .mark { font-family: "Fraunces", Georgia, serif; font-weight: 600;
+                            font-size: 1.4rem; color: #7a2432; line-height: 1; }
+        .credo-band p { margin: 0; font-size: .87rem; line-height: 1.6; color: #4b5563; max-width: 66ch; }
+        .credo-band p b { color: #111827; }
+
+        /* ── Sized tag cloud (institutions / funders / countries) ── */
+        .tag-1 { font-size: 1.05rem; }
+        .tag-2 { font-size: .92rem; }
+        .tag-3 { font-size: .78rem; opacity: .82; }
+
+        /* ── QA flag (merged into OA provenance) ── */
+        .qa-flag { border-top: 1px solid #f3f4f6; margin-top: 1.1rem; padding-top: 1rem; }
+
+        /* ── Reach map ── */
+        .map-card canvas { width: 100%; height: auto; display: block; border-radius: .6rem;
+                            background: #e7edf5; aspect-ratio: 900 / 400; }
+        .map-note { font-size: .74rem; color: #9ca3af; margin-top: .6rem; }
+
+        /* ── Footer ── */
+        footer { margin-top: 3rem; padding: 1.5rem 0 3rem;
+                 border-top: 1px solid #e5e7eb; color: #9ca3af; font-size: .82rem; }
+
+        /* ── Print ── */
+        @media print {
+            .site-nav, .print-btn { display: none !important; }
+            body { background: white !important; padding: 0; }
+            .page { max-width: 100% !important; padding: 1rem; }
+            .hero { border: none; padding: 1rem 0; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; }
+            .stats-strip { box-shadow: none !important; border: 1px solid #e5e7eb !important; }
+            .grid-2, .grid-3, .grid-4 { display: grid !important; }
+            tr { page-break-inside: avoid; }
+            thead { display: table-header-group; }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div class="site-nav-right">
+    <div class="site-nav-links">
+      <a href="index.html">← All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="print-btn" onclick="window.print()">
+      <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+      </svg>
+      Print PDF
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-inner">
+    <img class="hero-logo" src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <div>
+      <h1 class="hero-title">BMC</h1>
+      <div class="hero-meta">
+        <span>Portfolio analysis of <strong>7</strong> works</span>
+        
+        <span class="hero-type-badge">7 Journal Articles</span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+
+  
+  <div class="section-label">Portfolio narrative</div>
+  <section class="card">
+    <h2><span>The Story So Far</span></h2>
+    <div style="line-height:1.65;"><p class="story-text">This selection contains 7 works with 23,936 recorded scholarly citations. Available citing-work metadata identifies 41 countries.</p><p class="story-text">There are 0 recorded Wikipedia article–work matches, including 0 book references verified against an article revision. References and bibliography entries document use of a work; these counts do not measure readership.</p><p class="story-text">Current metadata classifies 7 of these works as open access. Missing usage data and zero recorded mentions on a channel do not establish an absence of engagement.</p></div>
+    <div class="muted" style="margin-top:.45rem;">
+      Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
+    </div>
+  </section>
+  
+
+  <div class="credo-band">
+    <span class="mark">&#8221;</span>
+    <p><b>No single metric stands in for impact here.</b> Citations, downloads, mentions, teaching and open-access rights are shown side by side, each tagged with the source it came from — read together, not ranked against each other.</p>
+  </div>
+
+  <!-- Key metrics strip -->
+  <div class="section-label">Key metrics</div>
+  <div class="stats-strip">
+    <div class="stats-strip-item">
+      <div class="stats-strip-num">23,936</div>
+      <div class="stats-strip-label">Total Citations</div>
+      
+      <div class="stats-strip-sub">🏆 1 in Top 1%</div>
+      
+    </div>
+    
+    <div class="stats-strip-item">
+      <div class="stats-strip-num">0</div>
+      <div class="stats-strip-label">Online Mentions</div>
+    </div>
+    <div class="stats-strip-item">
+      
+      <div class="stats-strip-num">100%</div>
+      <div class="stats-strip-label">Open Access</div>
+      <div style="font-size:.65rem;color:#6b7280;margin-top:.2rem;">7 of 7 works</div>
+    </div>
+    
+  </div>
+
+  
+  <div class="section-label">On the shelf</div>
+  <section class="card">
+    <h2><span>Digital Bookshelf</span> <span class="badge">Portfolio</span></h2>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">The same collection, ranked by whichever evidence you pick — no one ranking is "the" ranking. Articles and data included, not just books — cover art where it resolves.</div>
+
+    
+
+    
+
+    
+      
+      <div class="bookshelf-block">
+        
+        <div class="bookshelf-label">Top cited</div>
+        
+        
+        <div class="shelf-panel" id="shelf-cite-edu-a">
+    <div class="bookshelf-row">
+      
+      <div class="shelf-slot">
+        <a href="articlestory_10.1186_1471-2105-12-323.html" target="_blank">
+          
+          <div class="gen-jacket-sm" style="--jh: 67;" role="img" aria-label="RSEM: accurate transcript quantification from RNA-Seq data with or without a reference genome. Cover image not available.">
+            <span class="gj-title-sm">RSEM: accurate transcript quantification from RNA-Seq data with or without a reference genome</span>
+          </div>
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">RSEM: accurate transcript quantification from RNA-Seq data with or without a reference genome</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">23,930 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="articlestory_10.1186_s12864-023-09832-1.html" target="_blank">
+          
+          <div class="gen-jacket-sm" style="--jh: 245;" role="img" aria-label="High-capacity sample multiplexing for single cell chromatin accessibility profiling. Cover image not available.">
+            <span class="gj-title-sm">High-capacity sample multiplexing for single cell chromatin accessibility profiling</span>
+          </div>
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">High-capacity sample multiplexing for single cell chromatin accessibility profiling</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">4 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="articlestory_10.1186_s12884-024-07109-3.html" target="_blank">
+          
+          <div class="gen-jacket-sm" style="--jh: 275;" role="img" aria-label="Effect of postpartum clinical guideline on maternal outcomes in iranian women: a randomized controlled clinical trial. Cover image not available.">
+            <span class="gj-title-sm">Effect of postpartum clinical guideline on maternal outcomes in iranian women: a randomized controlled clinical trial</span>
+          </div>
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Effect of postpartum clinical guideline on maternal outcomes in iranian women: a randomized controlled clinical trial</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">1 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="articlestory_10.1186_s12905-024-03526-w.html" target="_blank">
+          
+          <div class="gen-jacket-sm" style="--jh: 28;" role="img" aria-label="Development of prognostic models for HER2-positive metastatic breast cancer in females: a retrospective population-based study. Cover image not available.">
+            <span class="gj-title-sm">Development of prognostic models for HER2-positive metastatic breast cancer in females: a retrospective population-based study</span>
+          </div>
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Development of prognostic models for HER2-positive metastatic breast cancer in females: a retrospective population-based study</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">1 citations</span></div>
+        </a>
+      </div>
+      
+    </div>
+    </div>
+        
+        
+      </div>
+      
+    
+
+    
+      
+    
+
+    <div class="bookshelf-credit">A small nod to Bookmetrix's original digital bookshelf.</div>
+  </section>
+  
+
+  
+
+  <div class="section-label">Open science report card</div>
+  <section class="card">
+    <h2><span>Open Science Indicators</span> <span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">Crossref / EuropePMC / OpenAIRE / PRISM</span></h2>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">
+      <strong title="PRISM is a structured metadata feed used by DOAB for book-level peer-review context where publishers supply it.">PRISM</strong> provides book-level peer-review context signals; missing PRISM data does not imply missing peer review — few OA book publishers have formal open peer review tracked at all.
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="grid-4" style="margin-bottom:0;margin-top:1rem;">
+      
+    
+    <div class="stat-box">
+      <div class="stat-number">14%</div>
+      <div class="stat-label">Linked Preprints</div>
+    </div>
+    
+  
+      
+    
+    <div class="stat-box stat-box-muted">
+      <div class="stat-number" style="color:#9ca3af;">&mdash;</div>
+      <div class="stat-label">Open Peer Review</div>
+      <div class="muted" style="font-size:.65rem;margin-top:.35rem;line-height:1.35;">Not yet recorded — absence of data, not absence of review.</div>
+    </div>
+    
+  
+      
+    
+    <div class="stat-box">
+      <div class="stat-number">14%</div>
+      <div class="stat-label">Open Data / Code</div>
+    </div>
+    
+  
+      
+    
+    <div class="stat-box stat-box-muted">
+      <div class="stat-number" style="color:#9ca3af;">&mdash;</div>
+      <div class="stat-label">Contains RRIDs</div>
+      <div class="muted" style="font-size:.65rem;margin-top:.35rem;line-height:1.35;">Not recorded for any work in this selection.</div>
+    </div>
+    
+  
+    </div>
+    <div class="grid-4" style="margin-bottom:0;margin-top:1rem;">
+      
+    
+    <div class="stat-box">
+      <div class="stat-number">57%</div>
+      <div class="stat-label">OpenAIRE Reach</div>
+    </div>
+    
+  
+      
+    
+    <div class="stat-box">
+      <div class="stat-number">57%</div>
+      <div class="stat-label">OpenAIRE Open Instances</div>
+    </div>
+    
+  
+      
+    
+    <div class="stat-box stat-box-muted">
+      <div class="stat-number" style="color:#9ca3af;">&mdash;</div>
+      <div class="stat-label" title="PRISM context means publisher/title metadata was found, even when no explicit review record is returned.">PRISM Context</div>
+      <div class="muted" style="font-size:.65rem;margin-top:.35rem;line-height:1.35;">No PRISM metadata returned for this selection.</div>
+    </div>
+    
+  
+      
+    
+    <div class="stat-box stat-box-muted">
+      <div class="stat-number" style="color:#9ca3af;">&mdash;</div>
+      <div class="stat-label" title="Explicit peer-review records returned by PRISM.">PRISM Peer Reviews</div>
+      <div class="muted" style="font-size:.65rem;margin-top:.35rem;line-height:1.35;">Not yet recorded — absence of data, not absence of review.</div>
+    </div>
+    
+  
+    </div>
+    
+
+    
+    <div class="qa-flag">
+      <div style="font-size:.78rem;font-weight:700;color:#374151;margin-bottom:.2rem;">Inferred portfolio roles</div>
+      <div class="muted" style="margin-bottom:.7rem;">What the evidence above doesn't capture — cumulative heuristic classification of how this portfolio is actually used, across all works.</div>
+      <div class="roles-row">
+        
+          
+          
+          
+          
+          
+          <span class="role-pill role-pill-academic">
+            <span class="role-dot" style="background:#3b82f6;"></span>
+            High-visibility uptake
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">2.5</span>
+          </span>
+        
+          
+          
+          
+          
+          
+          <span class="role-pill role-pill-academic">
+            <span class="role-dot" style="background:#3b82f6;"></span>
+            Scholarly uptake
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">1.3</span>
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- Charts -->
+  <div class="section-label">Citation &amp; attention landscape</div>
+  <div class="grid-2" style="margin-bottom:0;">
+    <section class="card chart-card" style="margin-bottom:0;">
+      <h2><span>Citation Timeline</span></h2>
+      <div class="muted" style="margin-top:-.15rem;font-size:.8rem;">Annual citation counts across the portfolio.</div>
+      <div class="chart-wrap">
+        <canvas id="citationChart" data-labels="[&#34;2010&#34;, &#34;2011&#34;, &#34;2012&#34;, &#34;2013&#34;, &#34;2014&#34;, &#34;2015&#34;, &#34;2016&#34;, &#34;2017&#34;, &#34;2018&#34;, &#34;2019&#34;, &#34;2020&#34;, &#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[9, 2, 28, 135, 288, 500, 815, 1124, 1413, 1806, 2288, 2632, 2550, 2643, 2521, 2441, 1356]"></canvas>
+      </div>
+    </section>
+    <div class="grid-2" style="margin-bottom:0;gap:1rem;">
+      <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
+        <h2 style="font-size:.95rem;"><span>Citing Sectors</span> <span class="badge">ROR</span></h2>
+        <div class="chart-wrap" style="height:170px;"><canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Facility&#34;, &#34;Healthcare&#34;, &#34;Government&#34;, &#34;Nonprofit&#34;, &#34;Company&#34;, &#34;Other&#34;, &#34;Funder&#34;, &#34;Archive&#34;]" data-values="[20302, 9370, 6080, 5130, 3686, 2168, 852, 631, 506]"></canvas></div>
+      </section>
+      <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
+        <h2 style="font-size:.95rem;"><span>Citation Context</span> <span class="badge">scite</span></h2>
+        <div class="chart-wrap" style="height:170px;"><canvas id="sciteChart" data-labels="[&#34;Supporting&#34;, &#34;Mentioning&#34;, &#34;Contradicting&#34;]" data-values="[13, 15757, 1]"></canvas></div>
+      </section>
+      <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
+        <h2 style="font-size:.95rem;"><span>Work Types</span> <span class="badge">OpenAlex</span></h2>
+        <div class="chart-wrap" style="height:170px;"><canvas id="wtChart" data-labels="[&#34;Article&#34;, &#34;Preprint&#34;, &#34;Dataset&#34;, &#34;Peer-Review&#34;, &#34;Dissertation&#34;, &#34;Book-Chapter&#34;, &#34;Data-Paper&#34;, &#34;Conference-Paper&#34;, &#34;Other&#34;, &#34;Supplementary-Materials&#34;, &#34;Review&#34;, &#34;Erratum&#34;, &#34;Reference-Entry&#34;, &#34;Book&#34;, &#34;Book-Review&#34;]" data-values="[18053, 2966, 527, 278, 214, 181, 82, 75, 70, 54, 36, 7, 7, 5, 4]"></canvas></div>
+      </section>
+      <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
+        <h2 style="font-size:.95rem;"><span>Top Venues</span> <span class="badge">OpenAlex</span></h2>
+        <div class="chart-wrap" style="height:170px;"><canvas id="venueChart" data-labels="[&#34;bioRxiv (Cold Spring Harbor Laboratory)&#34;, &#34;Scientific Reports&#34;, &#34;BMC Genomics&#34;, &#34;Figshare&#34;, &#34;Nature Communications&#34;, &#34;International Journal of Molecular Sciences&#34;]" data-values="[2174, 660, 568, 520, 516, 513]"></canvas></div>
+      </section>
+    </div>
+  </div>
+  <div style="margin-bottom:1.75rem;"></div>
+
+  <!-- Community -->
+  <div class="section-label">Community engagement &amp; public discourse</div>
+  <section class="card">
+    <h2><span>Online Mentions by Platform</span></h2>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:1.25rem;">Breakdown across platforms for the entire portfolio.</div>
+    <div class="platform-grid">
+      <div class="platform-box" style="border-top-color:#64748b;">
+        <div class="platform-num" style="color:#334155;">0</div>
+        <div class="platform-lbl">Wikipedia</div>
+      </div>
+      <div class="platform-box" style="border-top-color:#ea580c;">
+        <div class="platform-num" style="color:#c2410c;">0</div>
+        <div class="platform-lbl">Reddit</div>
+      </div>
+      <div class="platform-box" style="border-top-color:#0ea5e9;">
+        <div class="platform-num" style="color:#0369a1;">0</div>
+        <div class="platform-lbl">Bluesky</div>
+      </div>
+      <div class="platform-box" style="border-top-color:#eab308;">
+        <div class="platform-num" style="color:#a16207;">0</div>
+        <div class="platform-lbl">StackExchange</div>
+      </div>
+      <div class="platform-box" style="border-top-color:#db2777;">
+        <div class="platform-num" style="color:#be185d;">0</div>
+        <div class="platform-lbl">Expert Annotations</div>
+      </div>
+      <div class="platform-box" style="border-top-color:#16a34a;">
+        <div class="platform-num" style="color:#15803d;">0</div>
+        <div class="platform-lbl">News Media</div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- Concepts / Roles / Geo -->
+  <div class="section-label">Thematic &amp; impact profile</div>
+  <section class="card">
+    <h2><span>Dominant Concepts</span> <span class="badge">OpenAlex</span></h2>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Weighted by AI confidence score.</div>
+    <div>
+      
+        <span class="tag">Medicine</span>
+      
+        <span class="tag">Reproductive medicine</span>
+      
+        <span class="tag">Obstetrics</span>
+      
+        <span class="tag">Pregnancy</span>
+      
+        <span class="tag">Population</span>
+      
+        <span class="tag tag-soft">Computational biology</span>
+      
+        <span class="tag tag-soft">Biology</span>
+      
+        <span class="tag tag-soft">Retrospective cohort study</span>
+      
+        <span class="tag tag-soft">Environmental health</span>
+      
+        <span class="tag tag-soft">Gynecology</span>
+      
+        <span class="tag tag-soft">Public health</span>
+      
+        <span class="tag tag-soft">Epidemiology</span>
+      
+        <span class="tag tag-soft">DNA microarray</span>
+      
+        <span class="tag tag-soft">Internal medicine</span>
+      
+        <span class="tag tag-soft">Genetics</span>
+      
+        <span class="tag tag-soft">Randomized controlled trial</span>
+      
+        <span class="tag tag-soft">Biostatistics</span>
+      
+        <span class="tag tag-soft">Profiling (computer programming)</span>
+      
+        <span class="tag tag-soft">Guideline</span>
+      
+        <span class="tag tag-soft">Offspring</span>
+      
+    </div>
+  </section>
+
+  
+  <section class="card">
+    <h2><span>Reach, mapped</span> <span class="badge">OpenAlex</span></h2>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Citing-work affiliations trace back to <span class="stats-strip-num" style="font-size:1.1rem;">41</span> countries — circle size shows citation count from that country.</div>
+    <div class="map-card">
+      <canvas id="reach-map" data-countries='[{"count": 9500, "label": "China"}, {"count": 8092, "label": "United States"}, {"count": 1605, "label": "United Kingdom"}, {"count": 1394, "label": "Germany"}, {"count": 1233, "label": "Japan"}, {"count": 1001, "label": "Canada"}, {"count": 970, "label": "Australia"}, {"count": 887, "label": "Spain"}, {"count": 813, "label": "France"}, {"count": 729, "label": "South Korea"}, {"count": 608, "label": "Italy"}, {"count": 544, "label": "India"}, {"count": 483, "label": "Switzerland"}, {"count": 455, "label": "Netherlands"}, {"count": 447, "label": "Sweden"}]' role="img" aria-label="World map of citing countries, sized by citation count"></canvas>
+      <div class="map-note">Full breakdown, including countries not shown on the map, in the list below.</div>
+    </div>
+  </section>
+  
+
+  <div class="grid-2">
+    <section class="card" style="margin-bottom:0;">
+      <h2><span>Top Citing Countries</span> <span class="badge">OpenAlex</span></h2>
+      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Based on author affiliations of citing works — size shows how often each one appears.</div>
+      <div>
+        
+          <span class="tag tag-1">China (9500)</span>
+        
+          <span class="tag tag-1">United States (8092)</span>
+        
+          <span class="tag tag-1">United Kingdom (1605)</span>
+        
+          <span class="tag tag-2">Germany (1394)</span>
+        
+          <span class="tag tag-2">Japan (1233)</span>
+        
+          <span class="tag tag-2">Canada (1001)</span>
+        
+          <span class="tag tag-2">Australia (970)</span>
+        
+          <span class="tag tag-2">Spain (887)</span>
+        
+          <span class="tag tag-soft tag-3">France (813)</span>
+        
+          <span class="tag tag-soft tag-3">South Korea (729)</span>
+        
+          <span class="tag tag-soft tag-3">Italy (608)</span>
+        
+          <span class="tag tag-soft tag-3">India (544)</span>
+        
+          <span class="tag tag-soft tag-3">Switzerland (483)</span>
+        
+          <span class="tag tag-soft tag-3">Netherlands (455)</span>
+        
+          <span class="tag tag-soft tag-3">Sweden (447)</span>
+        
+      </div>
+    </section>
+    <section class="card" style="margin-bottom:0;">
+      <h2><span>Top Citing Institutions</span> <span class="badge">ROR / OpenAlex</span></h2>
+      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Canonical names based on author affiliations — size shows how often each one appears.</div>
+      <div>
+        
+          <span class="tag tag-1">Chinese Academy of Sciences (999)</span>
+        
+          <span class="tag tag-1">Harvard University (721)</span>
+        
+          <span class="tag tag-1">University of Chinese Academy of Sciences (666)</span>
+        
+          <span class="tag tag-2">Broad Institute (533)</span>
+        
+          <span class="tag tag-2">Chinese Academy of Agricultural Sciences (480)</span>
+        
+          <span class="tag tag-2">Ministry of Agriculture and Rural Affairs (421)</span>
+        
+          <span class="tag tag-2">Sun Yat-sen University (391)</span>
+        
+          <span class="tag tag-2">Huazhong Agricultural University (387)</span>
+        
+          <span class="tag tag-soft tag-3">Zhejiang University (383)</span>
+        
+          <span class="tag tag-soft tag-3">Howard Hughes Medical Institute (364)</span>
+        
+          <span class="tag tag-soft tag-3">Centre National de la Recherche Scientifique (359)</span>
+        
+          <span class="tag tag-soft tag-3">Dana-Farber Cancer Institute (339)</span>
+        
+          <span class="tag tag-soft tag-3">Massachusetts Institute of Technology (328)</span>
+        
+          <span class="tag tag-soft tag-3">National Institutes of Health (326)</span>
+        
+          <span class="tag tag-soft tag-3">University of Wisconsin–Madison (324)</span>
+        
+      </div>
+    </section>
+  </div>
+
+  <div class="grid-2">
+    <section class="card " style="margin-bottom:0;">
+      <h2><span>Top Funders</span> <span class="badge">Europe PMC</span></h2>
+      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Number of distinct works supported — size shows how often each one appears.</div>
+      <div>
+        
+          
+            
+            
+            <span class="tag tag-soft tag-1">NHGRI NIH HHS (2)</span>
+            
+          
+            
+            
+            <span class="tag tag-soft tag-1">4DN Centers for Data Integration, Modeling and Visualization (1)</span>
+            
+          
+            
+            
+            <span class="tag tag-soft tag-1">National Human Genome Research Institute, (1)</span>
+            
+          
+            
+            
+            <span class="tag tag-soft tag-2">American Cancer Society Mentored Scholar Award (1)</span>
+            
+          
+            
+            
+            <span class="tag tag-soft tag-2">National Human Genome Research Institute (1)</span>
+            
+          
+            
+            
+            <span class="tag tag-soft tag-2">NIGMS NIH HHS (1)</span>
+            
+          
+            
+            
+            <span class="tag tag-soft tag-2">Paul G. Allen Frontiers Foundation (1)</span>
+            
+          
+            
+            
+            <span class="tag tag-soft tag-2">Brotman Baty Institute for Precision Medicine (1)</span>
+            
+          
+            
+            
+            <span class="tag tag-soft tag-3">Howard Hughes Medical Institute (1)</span>
+            
+          
+            
+            
+            <span class="tag tag-soft tag-3">The Fourth Round of Ningbo Medical Key Disciplines Construction Plan (1)</span>
+            
+          
+            
+            
+            <span class="tag tag-soft tag-3">Ningbo Clinical Medical Research Center for Thoracic Malignancies (1)</span>
+            
+          
+        
+      </div>
+    </section>
+    
+    <section class="card" style="margin-bottom:0;">
+      <h2><span>Data Repositories</span> <span class="badge">Europe PMC</span></h2>
+      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Platforms hosting associated code / data.</div>
+      <div>
+        
+          
+            <span class="tag" style="background:#dcfce7;color:#166534;border:1px solid #bbf7d0;">GitHub Repository (2)</span>
+          
+            <span class="tag" style="background:#dcfce7;color:#166534;border:1px solid #bbf7d0;">Figshare Dataset (2)</span>
+          
+        
+      </div>
+    </section>
+    
+  </div>
+
+  <!-- Authors -->
+  <div class="section-label">Contributors</div>
+  <section class="card">
+    <h2><span>Core Authors</span> <span class="badge">Portfolio</span></h2>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Authors with more than one work in this dataset.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.4rem 1.5rem;">
+      
+        <div class="muted">No authors have multiple works in this dataset.</div>
+      
+    </div>
+  </section>
+
+  
+  <div class="section-label">OA provenance</div>
+  <section class="card">
+    <h2><span>Open Access Provenance</span></h2>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">Primary source used to classify OA per work.</div>
+    
+    <div class="platform-grid">
+      
+      <div class="platform-box" style="border-top-color:#64748b;">
+        <div class="platform-num" style="color:#334155;">7</div>
+        <div class="platform-lbl">Publisher-claimed</div>
+      </div>
+      
+    </div>
+    
+    
+  </section>
+  
+
+  
+
+  <!-- Works table -->
+  <div class="section-label">Included works</div>
+  <section class="card">
+    <h2><span>All Works</span> <span class="badge" id="worksTotalBadge">7 total</span></h2>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="works-filters" id="worksFilters">
+      <button type="button" class="works-filter-btn is-active" data-filter="all">All works</button>
+      
+      
+      
+      
+      <button type="button" class="works-filter-btn" data-filter="openaire_reach">OpenAIRE reach (4)</button>
+      <button type="button" class="works-filter-btn" data-filter="openaire_open">OpenAIRE open instances (4)</button>
+      <button type="button" class="works-filter-btn" data-filter="preprint">Linked preprints (1)</button>
+      <button type="button" class="works-filter-btn" data-filter="stewardship">Open data/code (1)</button>
+      
+      
+      <label for="worksFunderFilter" class="muted" style="font-size:.76rem;">By funder:</label>
+      <select id="worksFunderFilter" class="works-filter-select">
+        <option value="">All funders</option>
+        
+        <option value="nhgri-nih-hhs">NHGRI NIH HHS (2)</option>
+        
+        <option value="4dn-centers-for-data-integration-modeling-and-visualization">4DN Centers for Data Integration, Modeling and Visualization (1)</option>
+        
+        <option value="national-human-genome-research-institute">National Human Genome Research Institute, (1)</option>
+        
+        <option value="american-cancer-society-mentored-scholar-award">American Cancer Society Mentored Scholar Award (1)</option>
+        
+        <option value="national-human-genome-research-institute">National Human Genome Research Institute (1)</option>
+        
+        <option value="nigms-nih-hhs">NIGMS NIH HHS (1)</option>
+        
+        <option value="paul-g-allen-frontiers-foundation">Paul G. Allen Frontiers Foundation (1)</option>
+        
+        <option value="brotman-baty-institute-for-precision-medicine">Brotman Baty Institute for Precision Medicine (1)</option>
+        
+        <option value="howard-hughes-medical-institute">Howard Hughes Medical Institute (1)</option>
+        
+        <option value="the-fourth-round-of-ningbo-medical-key-disciplines-construction-plan">The Fourth Round of Ningbo Medical Key Disciplines Construction Plan (1)</option>
+        
+        <option value="ningbo-clinical-medical-research-center-for-thoracic-malignancies">Ningbo Clinical Medical Research Center for Thoracic Malignancies (1)</option>
+        
+      </select>
+      
+      <span class="works-filter-count" id="worksFilterCount">7 shown</span>
+    </div>
+    
+    <div class="table-scroll">
+      <table id="worksTable">
+        <thead>
+          <tr><th>Year</th><th>Type</th><th>Title</th><th>DOI</th><th>Citations</th><th>Mentions</th></tr>
+        </thead>
+        <tbody>
+          
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys="nhgri-nih-hhs"
+          >
+            <td style="white-space:nowrap;">2011</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
+            <td>
+              
+              <a href="articlestory_10.1186_1471-2105-12-323.html" style="color:#111827;text-decoration:none;font-weight:500;">RSEM: accurate transcript quantification from RNA-Seq data with or without a reference genome</a>
+              
+            </td>
+            <td>
+              
+              <a href="articlestory_10.1186_1471-2105-12-323.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1186/1471-2105-12-323</a>
+              <a href="https://doi.org/10.1186/1471-2105-12-323" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">23930</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr
+            data-has-award="0"
+            data-has-preprint="1"
+            data-has-open-review="0"
+            data-has-stewardship="1"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys="4dn-centers-for-data-integration-modeling-and-visualization|american-cancer-society-mentored-scholar-award|brotman-baty-institute-for-precision-medicine|howard-hughes-medical-institute|nhgri-nih-hhs|nigms-nih-hhs|national-human-genome-research-institute|national-human-genome-research-institute|paul-g-allen-frontiers-foundation"
+          >
+            <td style="white-space:nowrap;">2023</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
+            <td>
+              
+              <a href="articlestory_10.1186_s12864-023-09832-1.html" style="color:#111827;text-decoration:none;font-weight:500;">High-capacity sample multiplexing for single cell chromatin accessibility profiling</a>
+              
+            </td>
+            <td>
+              
+              <a href="articlestory_10.1186_s12864-023-09832-1.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1186/s12864-023-09832-1</a>
+              <a href="https://doi.org/10.1186/s12864-023-09832-1" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">4</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
+            <td>
+              
+              <a href="articlestory_10.1186_s12884-024-07109-3.html" style="color:#111827;text-decoration:none;font-weight:500;">Effect of postpartum clinical guideline on maternal outcomes in iranian women: a randomized controlled clinical trial</a>
+              
+            </td>
+            <td>
+              
+              <a href="articlestory_10.1186_s12884-024-07109-3.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1186/s12884-024-07109-3</a>
+              <a href="https://doi.org/10.1186/s12884-024-07109-3" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">1</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys="ningbo-clinical-medical-research-center-for-thoracic-malignancies|the-fourth-round-of-ningbo-medical-key-disciplines-construction-plan"
+          >
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
+            <td>
+              
+              <a href="articlestory_10.1186_s12905-024-03526-w.html" style="color:#111827;text-decoration:none;font-weight:500;">Development of prognostic models for HER2-positive metastatic breast cancer in females: a retrospective population-based study</a>
+              
+            </td>
+            <td>
+              
+              <a href="articlestory_10.1186_s12905-024-03526-w.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1186/s12905-024-03526-w</a>
+              <a href="https://doi.org/10.1186/s12905-024-03526-w" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">1</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="0"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2026</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
+            <td>
+              
+              <a href="articlestory_10.1186_s12884-026-09905-5.html" style="color:#111827;text-decoration:none;font-weight:500;">The impact of the COVID-19 infections on pregnancy outcomes in Indonesia</a>
+              
+            </td>
+            <td>
+              
+              <a href="articlestory_10.1186_s12884-026-09905-5.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1186/s12884-026-09905-5</a>
+              <a href="https://doi.org/10.1186/s12884-026-09905-5" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="0"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2026</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
+            <td>
+              
+              <a href="articlestory_10.1186_s12889-026-29248-2.html" style="color:#111827;text-decoration:none;font-weight:500;">Trends in cardiovascular disease mortality in Kazakhstan and the impact of the COVID-19 pandemic: a national health data analysis</a>
+              
+            </td>
+            <td>
+              
+              <a href="articlestory_10.1186_s12889-026-29248-2.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1186/s12889-026-29248-2</a>
+              <a href="https://doi.org/10.1186/s12889-026-29248-2" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="0"
+            data-has-openaire-open="0"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2026</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
+            <td>
+              
+              <a href="articlestory_10.1186_s12903-026-09527-5.html" style="color:#111827;text-decoration:none;font-weight:500;">Prenatal exposure to gestational diabetes mellitus increases developmental defects of enamel in offspring: a retrospective cohort study in China</a>
+              
+            </td>
+            <td>
+              
+              <a href="articlestory_10.1186_s12903-026-09527-5.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1186/s12903-026-09527-5</a>
+              <a href="https://doi.org/10.1186/s12903-026-09527-5" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem;">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:#9ca3af;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;font-weight:600;text-decoration:none;">Read the Methodology &amp; Legend ↗</a></span>
+    </div>
+    <div style="padding-left:1.35rem;">Generated on 2026-09-14 15:37:30 UTC</div>
+  </footer>
+
+</div><!-- /page -->
+
+<script>
+const DOUGHNUT_OPTS = {
+  responsive: true, maintainAspectRatio: false, cutout: '68%',
+  plugins: { legend: { position: 'right', labels: { boxWidth: 9, padding: 8, font: { size: 10 } } } }
+};
+const PALETTE = ['#2563eb','#0d9488','#6366f1','#f59e0b','#ec4899','#0ea5e9','#8b5cf6','#14b8a6'];
+
+function makeDoughnut(id, palette) {
+  const canvas = document.getElementById(id); if (!canvas) return;
+  const labels = JSON.parse(canvas.getAttribute('data-labels'));
+  const data   = JSON.parse(canvas.getAttribute('data-values'));
+  if (!data.length || data.reduce((a,b)=>a+b,0)===0) {
+    canvas.parentElement.innerHTML = '<div style="display:flex;align-items:center;height:100%;color:#9ca3af;font-size:.82rem;">No data available.</div>';
+    return;
+  }
+  new Chart(canvas.getContext('2d'), {
+    type: 'doughnut',
+    data: { labels, datasets: [{ data, backgroundColor: palette || PALETTE, borderWidth: 0 }] },
+    options: DOUGHNUT_OPTS
+  });
+}
+
+// Citation timeline
+(function(){
+  const canvas = document.getElementById('citationChart'); if (!canvas) return;
+  const labels = JSON.parse(canvas.getAttribute('data-labels'));
+  const data   = JSON.parse(canvas.getAttribute('data-values'));
+  new Chart(canvas.getContext('2d'), {
+    type: 'bar',
+    data: { labels, datasets: [{ label: 'Citations', data, backgroundColor: '#2563eb', borderRadius: 4 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        y: { beginAtZero: true, border: { display: false }, grid: { color: '#f3f4f6' } },
+        x: { grid: { display: false }, border: { display: false } }
+      },
+      plugins: { legend: { display: false } }
+    }
+  });
+})();
+
+// Bookshelf tab switching (Cited/Education, Mentions/Downloads)
+document.querySelectorAll('.shelf-tab-switch').forEach(function(switcher){
+  switcher.addEventListener('click', function(e){
+    const btn = e.target.closest('.shelf-tab-btn');
+    if (!btn) return;
+    const targetId = btn.getAttribute('data-shelf-target');
+    const block = switcher.closest('.bookshelf-block');
+    block.querySelectorAll('.shelf-tab-btn').forEach(b => b.classList.toggle('is-active', b === btn));
+    block.querySelectorAll('.shelf-panel').forEach(p => p.classList.toggle('is-hidden', p.id !== targetId));
+  });
+});
+
+makeDoughnut('sectorChart');
+makeDoughnut('sciteChart', ['#16a34a','#9ca3af','#dc2626']);
+makeDoughnut('wtChart');
+makeDoughnut('venueChart');
+
+// Reach map — dot-mask world silhouette (generated from a few simplified
+// continent outlines, not traced coastlines) with bubbles for whichever
+// countries this portfolio's top_countries actually contains. Countries not
+// in COUNTRY_CENTROIDS are simply skipped on the map; the tag list below it
+// still shows every one, so nothing is hidden, only the plot is best-effort.
+(function(){
+  const canvas = document.getElementById('reach-map');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let countries;
+  try { countries = JSON.parse(canvas.getAttribute('data-countries') || '[]'); }
+  catch (e) { countries = []; }
+  if (!countries.length) return;
+
+  const CONTINENTS = [
+    [[-165,68],[-140,60],[-125,48],[-123,37],[-117,32],[-106,20],[-97,16],[-88,14],[-80,8],[-77,18],[-95,29],[-97,26],[-82,31],[-76,35],[-70,43],[-60,48],[-65,60],[-80,68],[-100,72],[-130,71],[-165,68]],
+    [[-79,9],[-77,1],[-70,-5],[-70,-18],[-71,-30],[-73,-42],[-68,-55],[-63,-53],[-58,-38],[-48,-24],[-35,-8],[-50,3],[-60,9],[-72,10],[-79,9]],
+    [[-17,15],[-16,7],[-8,5],[3,6],[9,4],[9,-3],[13,-6],[12,-18],[18,-34],[26,-34],[33,-25],[40,-15],[43,-2],[51,12],[43,12],[37,15],[32,22],[25,32],[10,37],[-6,35],[-13,28],[-17,15]],
+    [[-10,52],[-9,43],[-3,36],[3,36],[9,44],[13,38],[19,40],[23,36],[27,40],[29,45],[35,45],[40,46],[48,47],[60,55],[60,66],[40,70],[25,71],[10,63],[5,58],[-10,52]],
+    [[35,45],[40,46],[48,47],[60,55],[60,66],[75,68],[90,72],[110,73],[140,73],[170,68],[180,66],[160,60],[145,50],[140,45],[130,35],[122,31],[120,23],[108,10],[100,6],[95,16],[90,22],[88,26],[80,8],[77,8],[68,24],[60,25],[48,30],[44,37],[36,37],[35,45]],
+    [[113,-22],[122,-17],[131,-12],[142,-11],[145,-17],[150,-22],[153,-28],[150,-35],[140,-38],[130,-32],[115,-34],[113,-22]]
+  ];
+
+  // Approximate centroid/capital [lon, lat] for common OpenAlex/ROR country labels.
+  const COUNTRY_CENTROIDS = {
+    'United Kingdom':[-2,54],'United States':[-98,39],'Belgium':[4.5,50.6],'China':[104,35],
+    'Italy':[12.5,42],'Spain':[-3.7,40],'France':[2.3,47],'Germany':[10.4,51],'Poland':[19.1,52],
+    'Netherlands':[5.3,52.2],'Portugal':[-8,39.5],'Ethiopia':[39,9],'Canada':[-96,56],
+    'Switzerland':[8.2,46.8],'Lithuania':[24,55.2],'Ireland':[-8,53.4],'Sweden':[16,62],
+    'Norway':[9,61],'Denmark':[10,56],'Finland':[26,64],'Austria':[14,47.5],'Greece':[22,39],
+    'Turkey':[35,39],'Russia':[90,61],'Ukraine':[31,49],'Czechia':[15.5,49.8],'Czech Republic':[15.5,49.8],
+    'Slovakia':[19.5,48.7],'Hungary':[19.5,47.2],'Romania':[25,46],'Bulgaria':[25.5,42.7],
+    'Croatia':[15.5,45.1],'Serbia':[21,44],'Slovenia':[14.8,46.1],'Estonia':[25,58.6],
+    'Latvia':[25,56.9],'Iceland':[-19,65],'Luxembourg':[6.1,49.8],'Japan':[138,36.2],
+    'South Korea':[127.8,36.5],'Korea, Republic of':[127.8,36.5],'India':[79,22],'Pakistan':[69,30],
+    'Bangladesh':[90,24],'Indonesia':[113,-2],'Malaysia':[102,4],'Singapore':[103.8,1.35],
+    'Thailand':[101,15],'Vietnam':[106,16],'Philippines':[122,13],'Israel':[35,31],
+    'Saudi Arabia':[45,24],'United Arab Emirates':[54,24],'Iran':[53,32],'Iraq':[44,33],
+    'Egypt':[30,27],'Nigeria':[8,9.5],'South Africa':[24,-29],'Kenya':[38,0.5],
+    'Ghana':[-1,7.9],'Morocco':[-6,32],'Tunisia':[9.5,34],'Algeria':[3,28],
+    'Brazil':[-52,-11],'Argentina':[-64,-35],'Chile':[-71,-30],'Mexico':[-102,23],
+    'Colombia':[-73,4],'Peru':[-75,-10],'Venezuela':[-66,8],'Australia':[134,-25],
+    'New Zealand':[172,-41],'Taiwan':[121,23.8],'Hong Kong':[114.1,22.3],
+    'Cyprus':[33,35],'Malta':[14.4,35.9],'Georgia':[43.4,42.3],'Armenia':[45,40.1],
+    'Ecuador':[-78,-1.8],'Uruguay':[-56,-33],'Costa Rica':[-84,9.7],'Panama':[-80,8.6],
+    'Kazakhstan':[68,48],'Uzbekistan':[64,41],'Ethiopia, Federal Democratic Republic of':[39,9]
+  };
+
+  function pointInPolygon(lon, lat, poly){
+    let inside = false;
+    for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+      const xi = poly[i][0], yi = poly[i][1], xj = poly[j][0], yj = poly[j][1];
+      const intersect = ((yi > lat) !== (yj > lat)) && (lon < (xj - xi) * (lat - yi) / (yj - yi) + xi);
+      if (intersect) inside = !inside;
+    }
+    return inside;
+  }
+
+  function draw(){
+    const W = canvas.clientWidth || 900;
+    const H = Math.round(W * 400 / 900);
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+
+    function project(lon, lat){ return [(lon + 180) / 360 * W, (90 - lat) / 180 * H]; }
+
+    const step = W / 108;
+    ctx.fillStyle = '#9fb0c7';
+    for (let y = step / 2; y < H; y += step) {
+      const lat = 90 - (y / H) * 180;
+      for (let x = step / 2; x < W; x += step) {
+        const lon = (x / W) * 360 - 180;
+        let land = false;
+        for (let c = 0; c < CONTINENTS.length; c++) { if (pointInPolygon(lon, lat, CONTINENTS[c])) { land = true; break; } }
+        if (land) { ctx.beginPath(); ctx.arc(x, y, step * 0.19, 0, Math.PI * 2); ctx.fill(); }
+      }
+    }
+
+    const plottable = countries.filter(c => COUNTRY_CENTROIDS[c.label]);
+    if (!plottable.length) return;
+    const maxN = Math.max.apply(null, plottable.map(c => c.count));
+    plottable.forEach(c => {
+      const [lon, lat] = COUNTRY_CENTROIDS[c.label];
+      const [x, y] = project(lon, lat);
+      const r = 4 + Math.sqrt(c.count / maxN) * 15;
+      ctx.beginPath(); ctx.fillStyle = 'rgba(29,78,216,0.32)'; ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath(); ctx.fillStyle = '#1d4ed8'; ctx.arc(x, y, 4, 0, Math.PI * 2); ctx.fill();
+      ctx.lineWidth = 1.5; ctx.strokeStyle = '#ffffff'; ctx.stroke();
+    });
+
+    ctx.font = '600 11px "Source Sans 3", sans-serif';
+    ctx.fillStyle = '#111827';
+    ctx.textBaseline = 'middle';
+    const placed = [];
+    const overlaps = (box) => placed.some(p =>
+      box.x < p.x + p.w && box.x + box.w > p.x && box.y < p.y + p.h && box.y + box.h > p.y);
+    plottable.slice().sort((a, b) => b.count - a.count).slice(0, 8).forEach(c => {
+      const [lon, lat] = COUNTRY_CENTROIDS[c.label];
+      const [x, y] = project(lon, lat);
+      const r = 4 + Math.sqrt(c.count / maxN) * 15;
+      const label = c.label + ' · ' + c.count;
+      const w = ctx.measureText(label).width;
+      const tx = Math.min(x + r + 6, W - w - 4);
+      const box = { x: tx - 2, y: y - 7, w: w + 4, h: 14 };
+      if (overlaps(box)) return;
+      placed.push(box);
+      ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(231,237,245,0.9)'; ctx.strokeText(label, tx, y);
+      ctx.fillText(label, tx, y);
+    });
+  }
+
+  draw();
+  let resizeTimer;
+  window.addEventListener('resize', function(){ clearTimeout(resizeTimer); resizeTimer = setTimeout(draw, 120); });
+})();
+
+(function(){
+  const filters = document.getElementById('worksFilters');
+  const table = document.getElementById('worksTable');
+  const countEl = document.getElementById('worksFilterCount');
+  const funderSelect = document.getElementById('worksFunderFilter');
+  if (!filters || !table) return;
+
+  const rows = Array.from(table.querySelectorAll('tbody tr'));
+  let mode = 'all';
+
+  function rowMatchesFilter(row, filterMode) {
+    if (filterMode === 'all') return true;
+    if (filterMode === 'awarded') return row.getAttribute('data-has-award') === '1';
+    if (filterMode === 'unawarded') return row.getAttribute('data-has-award') !== '1';
+    if (filterMode === 'preprint') return row.getAttribute('data-has-preprint') === '1';
+    if (filterMode === 'open_review') return row.getAttribute('data-has-open-review') === '1';
+    if (filterMode === 'stewardship') return row.getAttribute('data-has-stewardship') === '1';
+    if (filterMode === 'rrid') return row.getAttribute('data-has-rrid') === '1';
+    if (filterMode === 'openaire_reach') return row.getAttribute('data-has-openaire-reach') === '1';
+    if (filterMode === 'openaire_open') return row.getAttribute('data-has-openaire-open') === '1';
+    if (filterMode === 'prism_context') return row.getAttribute('data-has-prism-context') === '1';
+    if (filterMode === 'prism_peer_review') return row.getAttribute('data-has-prism-peer') === '1';
+    return true;
+  }
+
+  function rowMatchesFunder(row, funderKey) {
+    if (!funderKey) return true;
+    const keyString = row.getAttribute('data-funder-keys') || '';
+    if (!keyString) return false;
+    return keyString.split('|').includes(funderKey);
+  }
+
+  function applyFilter(nextMode) {
+    mode = nextMode;
+    filters.querySelectorAll('[data-filter]').forEach((btn) => {
+      btn.classList.toggle('is-active', btn.getAttribute('data-filter') === mode);
+    });
+
+    let shown = 0;
+    rows.forEach((row) => {
+      const visible = rowMatchesFilter(row, mode) && rowMatchesFunder(row, funderSelect ? funderSelect.value : '');
+      row.classList.toggle('is-hidden-by-filter', !visible);
+      if (visible) shown += 1;
+    });
+
+    if (countEl) countEl.textContent = `${shown} shown`;
+  }
+
+  filters.addEventListener('click', (event) => {
+    const btn = event.target.closest('[data-filter]');
+    if (!btn) return;
+    applyFilter(btn.getAttribute('data-filter') || 'all');
+  });
+
+  if (funderSelect) {
+    funderSelect.addEventListener('change', () => applyFilter(mode));
+  }
+})();
+</script>
+</body>
+</html>
