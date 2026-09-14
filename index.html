@@ -254,6 +254,12 @@
       padding: 0.05rem 0.4rem;
       border-radius: 999px;
     }
+    .facet-alias {
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-weight: 500;
+      cursor: help;
+    }
     .facet-opt .oa-dot {
       width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
     }
@@ -1217,6 +1223,34 @@ function orderedPlatforms(counts) {
   return keys;
 }
 
+// Publisher/venue names that cover the exact same underlying works (e.g. CERN
+// the institution vs Zenodo the repository it deposits to — same records,
+// publisher field vs venue field) look like duplicated counts in the facet
+// list otherwise. Flags each such name with what it's an alias of so the
+// label can say so, rather than leaving two identical counts looking like a
+// bug.
+function computeVenueAliases(stories) {
+  const sets = {};
+  for (const s of stories) {
+    const id = s.file || s.doi || s.title;
+    for (const name of new Set([s.venue, s.publisher].filter(Boolean))) {
+      (sets[name] || (sets[name] = new Set())).add(id);
+    }
+  }
+  const bySignature = {};
+  for (const name of Object.keys(sets)) {
+    const sig = [...sets[name]].sort().join("");
+    (bySignature[sig] || (bySignature[sig] = [])).push(name);
+  }
+  const aliasOf = {};
+  for (const names of Object.values(bySignature)) {
+    if (names.length > 1) {
+      for (const name of names) aliasOf[name] = names.filter(n => n !== name);
+    }
+  }
+  return aliasOf;
+}
+
 // ── build facet counts ────────────────────────────────────────────────────
 function buildFacetCounts(stories) {
   const counts = { type:{}, oa:{}, concept:{}, role:{}, institution:{}, funder:{}, venue:{}, series:{}, platform:{}, year:{}, features:{} };
@@ -1490,7 +1524,13 @@ function renderFacets(allStories, filtered) {
   renderFacetGroup("fo-funder", "funder", allC.funder, filtC.funder, k => esc(k), topFunders);
 
   const topVenues = Object.entries(allC.venue).sort((a,b)=>b[1]-a[1]).slice(0,25).map(([k])=>k);
-  renderFacetGroup("fo-venue", "venue", allC.venue, filtC.venue, k => esc(k), topVenues);
+  const venueAliases = computeVenueAliases(allStories);
+  renderFacetGroup("fo-venue", "venue", allC.venue, filtC.venue, k => {
+    const aliases = venueAliases[k];
+    if (!aliases) return esc(k);
+    const title = `Same works as: ${aliases.join(", ")}`;
+    return `${esc(k)} <span class="facet-alias" title="${esc(title)}">= ${esc(aliases[0])}</span>`;
+  }, topVenues);
 
   const topSeries = Object.entries(allC.series).sort((a,b)=>b[1]-a[1]).slice(0,30).map(([k])=>k);
   const seriesEl = document.getElementById("fo-series");
