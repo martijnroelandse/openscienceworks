@@ -39,15 +39,21 @@
 .publisher-mode .shelf-chip {font-size:.72rem;white-space:normal;text-align:center;line-height:1.25;border-radius:.6rem;max-width:100%;}
 .publisher-mode .bookshelf-row {overflow-x:auto;}
 
-/* Display type for headline numbers, matching the printable report's design language. */
-.publisher-heading h1, .pf-card-title, .publisher-metric strong, .os-tile .os-num {
+/* Display type for headline numbers, matching the printable report's design
+   language — scoped to .publisher-mode (single-publisher view only) so it
+   never reaches shared site chrome like the bookshelf card title, which also
+   renders in the general institution/funder browse views. */
+.publisher-mode .publisher-heading h1,
+.publisher-mode .publisher-metric strong,
+.publisher-mode .os-tile .os-num,
+.publisher-mode .publisher-credo .mark {
   font-family: "Fraunces", Georgia, serif;
 }
 
 /* Credo band: no single metric stands in for impact. */
 .publisher-credo { display:flex; gap:.9rem; align-items:flex-start; border-left:3px solid #7a2432;
   background:#fff; border-radius:0 10px 10px 0; padding:1rem 1.4rem; margin:1.25rem 0; }
-.publisher-credo .mark { font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:1.4rem; color:#7a2432; line-height:1; flex:none; }
+.publisher-credo .mark { font-weight:600; font-size:1.4rem; color:#7a2432; line-height:1; flex:none; }
 .publisher-credo p { margin:0; font-size:.9rem; line-height:1.6; color:var(--muted); max-width:66ch; }
 .publisher-credo p b { color:var(--text); }
 

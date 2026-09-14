@@ -1226,7 +1226,13 @@ function buildFacetCounts(stories) {
     counts.oa[oaKey] = (counts.oa[oaKey]||0)+1;
     for (const c of s.concepts) counts.concept[c] = (counts.concept[c]||0)+1;
     for (const r of s.roles) counts.role[r] = (counts.role[r]||0)+1;
-    if (s.venue) counts.venue[s.venue] = (counts.venue[s.venue]||0)+1;
+    // Publisher/venue facet counts both fields, deduped per story — matching the
+    // OR filter below (line ~1337) and the portfolio-dashboard grouping, so a
+    // story whose publisher and venue differ (e.g. journal articles) isn't
+    // silently dropped from its publisher's count just because venue disagrees.
+    for (const name of new Set([s.venue, s.publisher].filter(Boolean))) {
+      counts.venue[name] = (counts.venue[name]||0)+1;
+    }
     if (s.series_name) counts.series[s.series_name] = (counts.series[s.series_name]||0)+1;
     for (const p of (s.mention_platforms||[])) counts.platform[p] = (counts.platform[p]||0)+1;
     if (s.year) counts.year[s.year] = (counts.year[s.year]||0)+1;
