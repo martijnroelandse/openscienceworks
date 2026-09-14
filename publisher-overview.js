@@ -17,6 +17,15 @@ async function renderPublisherOverview(stories) {
       publisherCache.set(name, box);
     }
     if (request !== publisherRequest || state.view !== 'publisher' || !state.filters.venue.has(name)) return;
+    // The printable report is now the default publisher view — richer, and a
+    // plain page load rather than a client-rendered one, so it isn't subject
+    // to this SPA's JSON-fetch/render path or its own caching quirks. Only
+    // publishers without a generated report (not yet run through the
+    // portfolio-dashboard pipeline) fall through to the in-page render below.
+    if (box.report_url) {
+      window.location.replace(box.report_url);
+      return;
+    }
     // Never substitute the whole portfolio for a smaller filtered selection.
     const files = new Set(stories.map(s => s.file));
     if (box.schema_version !== 2 || box.member_files.length !== files.size || !box.member_files.every(f => files.has(f))) {
