@@ -1523,11 +1523,25 @@ function renderFacets(allStories, filtered) {
   const topFunders = Object.entries(allC.funder).sort((a,b)=>b[1]-a[1]).slice(0,40).map(([k])=>k);
   renderFacetGroup("fo-funder", "funder", allC.funder, filtC.funder, k => esc(k), topFunders);
 
-  const topVenues = Object.entries(allC.venue).sort((a,b)=>b[1]-a[1]).slice(0,25).map(([k])=>k);
   const venueAliases = computeVenueAliases(allStories);
+  // For these specific alias pairs, show only the preferred name in the
+  // facet list rather than both — the institution behind it (CERN, Cold
+  // Spring Harbor Laboratory, eLife Sciences Publications Ltd) is still on
+  // each work's own story page, just not surfaced as its own sidebar entry.
+  const VENUE_DISPLAY_PREFERENCE = new Set(["Zenodo", "bioRxiv (Cold Spring Harbor Laboratory)", "eLife"]);
+  const isDominatedAlias = k => {
+    const aliases = venueAliases[k];
+    return !!aliases && !VENUE_DISPLAY_PREFERENCE.has(k) && aliases.some(a => VENUE_DISPLAY_PREFERENCE.has(a));
+  };
+  const topVenues = Object.entries(allC.venue).sort((a,b)=>b[1]-a[1])
+    .map(([k])=>k).filter(k => !isDominatedAlias(k)).slice(0,25);
+  const visibleVenues = new Set(topVenues);
   renderFacetGroup("fo-venue", "venue", allC.venue, filtC.venue, k => {
     const aliases = venueAliases[k];
-    if (!aliases) return esc(k);
+    // Only annotate when the alias is actually shown alongside it — once its
+    // dominated pair is hidden from the list, there's nothing left to
+    // disambiguate from.
+    if (!aliases || !aliases.some(a => visibleVenues.has(a))) return esc(k);
     const title = `Same works as: ${aliases.join(", ")}`;
     return `${esc(k)} <span class="facet-alias" title="${esc(title)}">= ${esc(aliases[0])}</span>`;
   }, topVenues);
