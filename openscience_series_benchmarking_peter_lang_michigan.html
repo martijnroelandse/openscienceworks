@@ -4,11 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Series Benchmarking — Peter Lang & Michigan — Portfolio Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap">
     <style>
         /* ── Base ── */
         * { box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        body { font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
                background: #f3f4f6; color: #111827; margin: 0; padding: 0; }
+        .display { font-family: "Fraunces", Georgia, serif; font-weight: 600; }
         .page { max-width: 1100px; margin: auto; padding: 1.5rem 2rem 4rem; }
         .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem;
                 box-shadow: 0 10px 30px rgba(15,23,42,.08); margin-bottom: 1.75rem; }
@@ -18,7 +21,8 @@
         .span-full { grid-column: 1/-1; }
 
         /* ── Typography ── */
-        h2 { margin-top: 0; font-size: 1.15rem; color: #111827;
+        h2 { margin-top: 0; font-size: 1.2rem; color: #111827;
+             font-family: "Fraunces", Georgia, serif; font-weight: 600;
              display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
         h2 span:first-child { flex: 1; }
         .muted { color: #6b7280; font-size: 0.85rem; }
@@ -31,6 +35,7 @@
                margin: .1rem .15rem .1rem 0; font-weight: 500; }
         .tag-soft { background: #f3f4f6; color: #4b5563; }
         .badge { display: inline-block; background: #eef2ff; color: #4338ca;
+                 font-family: "Source Sans 3", sans-serif;
                  padding: .15rem .55rem; border-radius: 999px; font-size: .72rem; font-weight: 500;
                  white-space: nowrap; flex-shrink: 0; }
 
@@ -61,7 +66,8 @@
         .hero-inner { max-width: 1100px; margin: 0 auto;
                       display: flex; align-items: center; gap: 1.75rem; }
         .hero-logo { width: 80px; height: 80px; object-fit: contain; flex-shrink: 0; }
-        .hero-title { font-size: 1.8rem; font-weight: 800; line-height: 1.2; margin: 0 0 .4rem; }
+        .hero-title { font-family: "Fraunces", Georgia, serif; font-size: 2.1rem; font-weight: 600;
+                      line-height: 1.15; margin: 0 0 .4rem; }
         .hero-meta { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap;
                      font-size: .9rem; color: #6b7280; }
         .hero-type-badge { display: inline-flex; align-items: center; gap: .3rem;
@@ -75,7 +81,8 @@
                        margin-bottom: 1.75rem; overflow: hidden; }
         .stats-strip-item { padding: 1rem 1.25rem; text-align: center; border-right: 1px solid #f3f4f6; }
         .stats-strip-item:last-child { border-right: none; }
-        .stats-strip-num { font-size: 1.7rem; font-weight: 800; color: #2563eb; line-height: 1.1; }
+        .stats-strip-num { font-family: "Fraunces", Georgia, serif; font-size: 1.9rem; font-weight: 600;
+                           color: #2563eb; line-height: 1.1; font-variant-numeric: tabular-nums; }
         .stats-strip-label { font-size: .68rem; color: #6b7280; text-transform: uppercase;
                              letter-spacing: .06em; margin-top: .25rem; }
         .stats-strip-sub { font-size: .65rem; color: #b45309; font-weight: 700; margin-top: .2rem; }
@@ -94,9 +101,12 @@
         /* ── Stat box (secondary stats) ── */
         .stat-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: .75rem;
                     padding: 1.1rem; text-align: center; }
-        .stat-number { font-size: 2rem; font-weight: 800; color: #0f172a; line-height: 1; margin-bottom: .2rem; }
+        .stat-number { font-family: "Fraunces", Georgia, serif; font-size: 2rem; font-weight: 600;
+                       color: #0f172a; line-height: 1; margin-bottom: .2rem; font-variant-numeric: tabular-nums; }
         .stat-label { font-size: .75rem; color: #64748b; text-transform: uppercase;
                       letter-spacing: .05em; font-weight: 600; }
+        .stat-box-muted { background: #fafafa; border-style: dashed; }
+        .stat-box-muted .stat-label { color: #9ca3af; }
 
         /* ── Risk card ── */
         .risk-card { border: 2px solid #dc2626; background: #fff5f5; }
@@ -106,7 +116,8 @@
         .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px,1fr)); gap: 1rem; }
         .platform-box { background: white; border-radius: .75rem; padding: 1rem;
                         text-align: center; border: 1px solid #e2e8f0; border-top-width: 3px; }
-        .platform-num { font-size: 1.8rem; font-weight: 800; line-height: 1; margin-bottom: .25rem; }
+        .platform-num { font-family: "Fraunces", Georgia, serif; font-size: 1.8rem; font-weight: 600;
+                        line-height: 1; margin-bottom: .25rem; font-variant-numeric: tabular-nums; }
         .platform-lbl { font-size: .72rem; color: #6b7280; text-transform: uppercase;
                         letter-spacing: .05em; font-weight: 600; }
 
@@ -162,6 +173,14 @@
         .bookshelf-block { margin-bottom: 1.75rem; }
         .bookshelf-block:last-child { margin-bottom: 0; }
         .bookshelf-label { font-size: .78rem; font-weight: 700; color: #374151; margin-bottom: .7rem; }
+        .shelf-tab-switch { display: flex; gap: .3rem; background: #f3f4f6; border-radius: 999px;
+                            padding: .25rem; width: fit-content; margin-bottom: .7rem; }
+        .shelf-tab-btn { border: none; background: transparent; font-size: .72rem; font-weight: 700;
+                         padding: .35rem .85rem; border-radius: 999px; color: #6b7280; cursor: pointer;
+                         font-family: "Source Sans 3", sans-serif; transition: background .15s, color .15s; }
+        .shelf-tab-btn:hover { color: #111827; }
+        .shelf-tab-btn.is-active { background: #111827; color: #f9fafb; }
+        .shelf-panel.is-hidden { display: none; }
         .bookshelf-row { display: flex; gap: 1.1rem; overflow-x: auto; padding: .2rem .2rem 1.1rem; }
         .shelf-slot { flex: 0 0 auto; width: 92px; display: flex; flex-direction: column; align-items: center; }
         .shelf-slot a { width: 100%; text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; }
@@ -186,12 +205,35 @@
         .shelf-chip-cite { background: #eff6ff; color: #1d4ed8; }
         .shelf-chip-mention { background: #f5f3ff; color: #6d28d9; }
         .shelf-chip-edu { background: #f0fdf4; color: #166534; }
+        .shelf-chip-download { background: #ecfeff; color: #0e7490; }
         .bookshelf-credit { font-size: .72rem; color: #9ca3af; margin-top: .3rem; }
 
         /* ── List rows ── */
         .list-row { display: flex; justify-content: space-between; align-items: center;
                     border-bottom: 1px solid #f3f4f6; padding: .4rem 0; }
         .list-row:last-child { border-bottom: none; }
+
+        /* ── Credo band ── */
+        .credo-band { display: flex; gap: .9rem; align-items: flex-start;
+                      border-left: 3px solid #7a2432; background: white;
+                      border-radius: 0 .7rem .7rem 0; padding: 1rem 1.4rem; margin-bottom: 1.75rem; }
+        .credo-band .mark { font-family: "Fraunces", Georgia, serif; font-weight: 600;
+                            font-size: 1.4rem; color: #7a2432; line-height: 1; }
+        .credo-band p { margin: 0; font-size: .87rem; line-height: 1.6; color: #4b5563; max-width: 66ch; }
+        .credo-band p b { color: #111827; }
+
+        /* ── Sized tag cloud (institutions / funders / countries) ── */
+        .tag-1 { font-size: 1.05rem; }
+        .tag-2 { font-size: .92rem; }
+        .tag-3 { font-size: .78rem; opacity: .82; }
+
+        /* ── QA flag (merged into OA provenance) ── */
+        .qa-flag { border-top: 1px solid #f3f4f6; margin-top: 1.1rem; padding-top: 1rem; }
+
+        /* ── Reach map ── */
+        .map-card canvas { width: 100%; height: auto; display: block; border-radius: .6rem;
+                            background: #e7edf5; aspect-ratio: 900 / 400; }
+        .map-note { font-size: .74rem; color: #9ca3af; margin-top: .6rem; }
 
         /* ── Footer ── */
         footer { margin-top: 3rem; padding: 1.5rem 0 3rem;
@@ -257,12 +299,17 @@
   <div class="section-label">Portfolio narrative</div>
   <section class="card">
     <h2><span>The Story So Far</span></h2>
-    <div style="line-height:1.65;"><p class="story-text">This selection contains 10 works with 439 recorded scholarly citations. Available citing-work metadata identifies 55 countries.</p><p class="story-text">There are 7 recorded Wikipedia article–work matches, including 7 book references verified against an article revision. References and bibliography entries document use of a work; these counts do not measure readership.</p><p class="story-text">Current metadata classifies 2 of these works as open access. Missing usage data and zero recorded mentions on a channel do not establish an absence of engagement.</p></div>
+    <div style="line-height:1.65;"><p class="story-text">This selection contains 10 works with 439 recorded scholarly citations. Recorded downloads total 2,384, reported for 1 of these works. Available citing-work metadata identifies 55 countries.</p><p class="story-text">There are 7 recorded Wikipedia article–work matches, including 7 book references verified against an article revision. References and bibliography entries document use of a work; these counts do not measure readership.</p><p class="story-text">Current metadata classifies 2 of these works as open access. Missing usage data and zero recorded mentions on a channel do not establish an absence of engagement.</p></div>
     <div class="muted" style="margin-top:.45rem;">
       Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
     </div>
   </section>
   
+
+  <div class="credo-band">
+    <span class="mark">&#8221;</span>
+    <p><b>No single metric stands in for impact here.</b> Citations, downloads, mentions, teaching and open-access rights are shown side by side, each tagged with the source it came from — read together, not ranked against each other.</p>
+  </div>
 
   
 
@@ -276,6 +323,13 @@
       <div class="stats-strip-sub">⭐ 6 in Top 10%</div>
       
     </div>
+    
+    <div class="stats-strip-item">
+      <div class="stats-strip-num">2,384</div>
+      <div class="stats-strip-label">Downloads</div>
+      <div style="font-size:.65rem;color:#6b7280;margin-top:.2rem;">1 of 10 works · OAPEN/DataCite</div>
+    </div>
+    
     <div class="stats-strip-item">
       <div class="stats-strip-num">7</div>
       <div class="stats-strip-label">Online Mentions</div>
@@ -286,10 +340,6 @@
       <div class="stats-strip-label">Open Access</div>
       <div style="font-size:.65rem;color:#6b7280;margin-top:.2rem;">2 of 10 works</div>
     </div>
-    <div class="stats-strip-item">
-      <div class="stats-strip-num">55</div>
-      <div class="stats-strip-label">Citing Countries</div>
-    </div>
     
   </div>
 
@@ -297,14 +347,20 @@
   <div class="section-label">On the shelf</div>
   <section class="card">
     <h2><span>Digital Bookshelf</span> <span class="badge">Portfolio</span></h2>
-    <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">The collection's most-cited, most-talked-about, and most-taught works — articles and data included, not just books — cover art where it resolves.</div>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">The same collection, ranked by whichever evidence you pick — no one ranking is "the" ranking. Articles and data included, not just books — cover art where it resolves.</div>
 
     
 
     
-    <div class="bookshelf-block">
-      <div class="bookshelf-label">Top cited</div>
+
+    
       
+      <div class="bookshelf-block">
+        
+        <div class="bookshelf-label">Top cited</div>
+        
+        
+        <div class="shelf-panel" id="shelf-cite-edu-a">
     <div class="bookshelf-row">
       
       <div class="shelf-slot">
@@ -387,14 +443,24 @@
       </div>
       
     </div>
-    
     </div>
+        
+        
+      </div>
+      
     
 
     
-    <div class="bookshelf-block">
-      <div class="bookshelf-label">Top mentioned</div>
       
+      <div class="bookshelf-block">
+        
+        <div class="shelf-tab-switch">
+          <button type="button" class="shelf-tab-btn is-active" data-shelf-target="shelf-mention-dl-a">Top mentioned</button>
+          <button type="button" class="shelf-tab-btn" data-shelf-target="shelf-mention-dl-b">Top downloaded</button>
+        </div>
+        
+        
+        <div class="shelf-panel" id="shelf-mention-dl-a">
     <div class="bookshelf-row">
       
       <div class="shelf-slot">
@@ -420,10 +486,28 @@
       </div>
       
     </div>
-    
     </div>
-    
-
+        
+        
+        <div class="shelf-panel is-hidden" id="shelf-mention-dl-b">
+    <div class="bookshelf-row">
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3726_b20254.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/8986f0fa-736b-4b6f-8dca-4c082b63207f/retrieve" alt="Cover of Trade Unions in the European Union">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Trade Unions in the European Union</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-download">2,384 downloads</span></div>
+        </a>
+      </div>
+      
+    </div>
+    </div>
+        
+      </div>
+      
     
 
     <div class="bookshelf-credit">A small nod to Bookmetrix's original digital bookshelf.</div>
@@ -431,55 +515,112 @@
   
 
   
-  <div class="section-label">Publisher QA</div>
-  <section class="card">
-    <h2><span>Claimed OA not in DOAB</span> <span class="badge" style="background:#fff7ed;color:#9a3412;border:1px solid #fdba74;">Needs verification</span></h2>
-    <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">
-      1 works are marked OA by publisher metadata but have no DOAB confirmation.
-    </div>
-    
-    <ul class="rank-list">
-      
-      <li><span>Peter Lang Verlag</span><strong>1</strong></li>
-      
-    </ul>
-    
-  </section>
-  
 
   <div class="section-label">Open science report card</div>
   <section class="card">
     <h2><span>Open Science Indicators</span> <span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">OpenAIRE / PRISM</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">
-      <strong title="PRISM is a structured metadata feed used by DOAB for book-level peer-review context where publishers supply it.">PRISM</strong> provides book-level peer-review context signals; missing PRISM data does not imply missing peer review.
+      <strong title="PRISM is a structured metadata feed used by DOAB for book-level peer-review context where publishers supply it.">PRISM</strong> provides book-level peer-review context signals; missing PRISM data does not imply missing peer review — few OA book publishers have formal open peer review tracked at all.
     </div>
+    
+    
+    
+    
+    
     
     <div class="grid-4" style="margin-bottom:0;margin-top:1rem;">
-      <div class="stat-box">
-        
-        <div class="stat-number">0%</div>
-        <div class="stat-label">Open Peer Review</div>
-      </div>
-      <div class="stat-box">
-        
-        <div class="stat-number">10%</div>
-        <div class="stat-label" title="PRISM context means publisher/title metadata was found, even when no explicit review record is returned.">PRISM Context</div>
-      </div>
-      <div class="stat-box">
-        
-        <div class="stat-number">0%</div>
-        <div class="stat-label" title="Explicit peer-review records returned by PRISM.">PRISM Peer Reviews</div>
-      </div>
-      <div class="stat-box">
-        
-        <div class="stat-number">100%</div>
-        <div class="stat-label">OpenAIRE Reach</div>
-        
-        <div class="muted" style="font-size:.68rem;margin-top:.25rem;">Open instances: 50%</div>
-      </div>
+      
+    
+    <div class="stat-box">
+      <div class="stat-number">10%</div>
+      <div class="stat-label" title="PRISM context means publisher/title metadata was found, even when no explicit review record is returned.">PRISM Context</div>
     </div>
     
+  
+      
+    
+    <div class="stat-box">
+      <div class="stat-number">100%</div>
+      <div class="stat-label">OpenAIRE Reach</div>
+    </div>
+    
+  
+      
+    
+    <div class="stat-box stat-box-muted">
+      <div class="stat-number" style="color:#9ca3af;">&mdash;</div>
+      <div class="stat-label">Open Peer Review</div>
+      <div class="muted" style="font-size:.65rem;margin-top:.35rem;line-height:1.35;">Not yet recorded — absence of data, not absence of review.</div>
+    </div>
+    
+  
+      
+    
+    <div class="stat-box stat-box-muted">
+      <div class="stat-number" style="color:#9ca3af;">&mdash;</div>
+      <div class="stat-label" title="Explicit peer-review records returned by PRISM.">PRISM Peer Reviews</div>
+      <div class="muted" style="font-size:.65rem;margin-top:.35rem;line-height:1.35;">Not yet recorded — absence of data, not absence of review.</div>
+    </div>
+    
+  
+    </div>
+    
+    <div class="muted" style="font-size:.7rem;margin-top:.6rem;">OpenAIRE open instances: 50% of works.</div>
+    
+    
 
+    
+    <div class="qa-flag">
+      <div style="font-size:.78rem;font-weight:700;color:#374151;margin-bottom:.2rem;">Inferred portfolio roles</div>
+      <div class="muted" style="margin-bottom:.7rem;">What the evidence above doesn't capture — cumulative heuristic classification of how this portfolio is actually used, across all works.</div>
+      <div class="roles-row">
+        
+          
+          
+          
+          
+          
+          <span class="role-pill role-pill-academic">
+            <span class="role-dot" style="background:#3b82f6;"></span>
+            Sustainability & policy relevance
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">4.4</span>
+          </span>
+        
+          
+          
+          
+          
+          
+          <span class="role-pill role-pill-academic">
+            <span class="role-dot" style="background:#3b82f6;"></span>
+            Scholarly uptake
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">2.7</span>
+          </span>
+        
+          
+          
+          
+          
+          
+          <span class="role-pill role-pill-academic">
+            <span class="role-dot" style="background:#3b82f6;"></span>
+            Reference point for synthesis
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">1.8</span>
+          </span>
+        
+          
+          
+          
+          
+          
+          <span class="role-pill role-pill-academic">
+            <span class="role-dot" style="background:#3b82f6;"></span>
+            Active public discourse
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">1.0</span>
+          </span>
+        
+      </div>
+    </div>
     
   </section>
 
@@ -582,182 +723,137 @@
 
   <!-- Concepts / Roles / Geo -->
   <div class="section-label">Thematic &amp; impact profile</div>
-  <div class="grid-2">
-    <section class="card" style="margin-bottom:0;">
-      <h2><span>Dominant Concepts</span> <span class="badge">OpenAlex</span></h2>
-      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Weighted by AI confidence score.</div>
-      <div>
-        
-          <span class="tag">Political science</span>
-        
-          <span class="tag">Economics</span>
-        
-          <span class="tag">Democracy</span>
-        
-          <span class="tag">Politics</span>
-        
-          <span class="tag">International trade</span>
-        
-          <span class="tag tag-soft">Sociology</span>
-        
-          <span class="tag tag-soft">Austerity</span>
-        
-          <span class="tag tag-soft">Law</span>
-        
-          <span class="tag tag-soft">Commercial policy</span>
-        
-          <span class="tag tag-soft">Political economy</span>
-        
-          <span class="tag tag-soft">Stern</span>
-        
-          <span class="tag tag-soft">China</span>
-        
-          <span class="tag tag-soft">Foreign direct investment</span>
-        
-          <span class="tag tag-soft">Adjudication</span>
-        
-          <span class="tag tag-soft">Business</span>
-        
-          <span class="tag tag-soft">Scholarship</span>
-        
-          <span class="tag tag-soft">Knowledge management</span>
-        
-          <span class="tag tag-soft">History</span>
-        
-          <span class="tag tag-soft">Technical barriers to trade</span>
-        
-          <span class="tag tag-soft">Recession</span>
-        
-      </div>
-    </section>
+  <section class="card">
+    <h2><span>Dominant Concepts</span> <span class="badge">OpenAlex</span></h2>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Weighted by AI confidence score.</div>
+    <div>
+      
+        <span class="tag">Political science</span>
+      
+        <span class="tag">Economics</span>
+      
+        <span class="tag">Democracy</span>
+      
+        <span class="tag">Politics</span>
+      
+        <span class="tag">International trade</span>
+      
+        <span class="tag tag-soft">Sociology</span>
+      
+        <span class="tag tag-soft">Austerity</span>
+      
+        <span class="tag tag-soft">Law</span>
+      
+        <span class="tag tag-soft">Commercial policy</span>
+      
+        <span class="tag tag-soft">Political economy</span>
+      
+        <span class="tag tag-soft">Stern</span>
+      
+        <span class="tag tag-soft">China</span>
+      
+        <span class="tag tag-soft">Foreign direct investment</span>
+      
+        <span class="tag tag-soft">Adjudication</span>
+      
+        <span class="tag tag-soft">Business</span>
+      
+        <span class="tag tag-soft">Scholarship</span>
+      
+        <span class="tag tag-soft">Knowledge management</span>
+      
+        <span class="tag tag-soft">History</span>
+      
+        <span class="tag tag-soft">Technical barriers to trade</span>
+      
+        <span class="tag tag-soft">Recession</span>
+      
+    </div>
+  </section>
 
-    <section class="card" style="margin-bottom:0;">
-      <h2><span>Inferred Portfolio Roles</span></h2>
-      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Cumulative heuristic classification across all works.</div>
-      
-      <div class="roles-row">
-        
-          
-          
-          
-          
-          
-          <span class="role-pill role-pill-academic">
-            <span class="role-dot" style="background:#3b82f6;"></span>
-            Sustainability & policy relevance
-            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">4.4</span>
-          </span>
-        
-          
-          
-          
-          
-          
-          <span class="role-pill role-pill-academic">
-            <span class="role-dot" style="background:#3b82f6;"></span>
-            Scholarly uptake
-            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">2.7</span>
-          </span>
-        
-          
-          
-          
-          
-          
-          <span class="role-pill role-pill-academic">
-            <span class="role-dot" style="background:#3b82f6;"></span>
-            Reference point for synthesis
-            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">1.8</span>
-          </span>
-        
-          
-          
-          
-          
-          
-          <span class="role-pill role-pill-academic">
-            <span class="role-dot" style="background:#3b82f6;"></span>
-            Active public discourse
-            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">1.0</span>
-          </span>
-        
-      </div>
-      
-    </section>
-  </div>
+  
+  <section class="card">
+    <h2><span>Reach, mapped</span> <span class="badge">OpenAlex</span></h2>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Citing-work affiliations trace back to <span class="stats-strip-num" style="font-size:1.1rem;">55</span> countries — circle size shows citation count from that country.</div>
+    <div class="map-card">
+      <canvas id="reach-map" data-countries='[{"count": 133, "label": "United States"}, {"count": 23, "label": "China"}, {"count": 23, "label": "United Kingdom"}, {"count": 21, "label": "Switzerland"}, {"count": 17, "label": "France"}, {"count": 17, "label": "Germany"}, {"count": 15, "label": "Australia"}, {"count": 12, "label": "South Korea"}, {"count": 11, "label": "Japan"}, {"count": 10, "label": "Malaysia"}, {"count": 9, "label": "India"}, {"count": 8, "label": "Italy"}, {"count": 8, "label": "Canada"}, {"count": 7, "label": "Spain"}, {"count": 5, "label": "Belgium"}]' role="img" aria-label="World map of citing countries, sized by citation count"></canvas>
+      <div class="map-note">Full breakdown, including countries not shown on the map, in the list below.</div>
+    </div>
+  </section>
+  
 
   <div class="grid-2">
     <section class="card" style="margin-bottom:0;">
       <h2><span>Top Citing Countries</span> <span class="badge">OpenAlex</span></h2>
-      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Based on author affiliations of citing works.</div>
+      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Based on author affiliations of citing works — size shows how often each one appears.</div>
       <div>
         
-          <span class="tag">United States (133)</span>
+          <span class="tag tag-1">United States (133)</span>
         
-          <span class="tag">China (23)</span>
+          <span class="tag tag-1">China (23)</span>
         
-          <span class="tag">United Kingdom (23)</span>
+          <span class="tag tag-1">United Kingdom (23)</span>
         
-          <span class="tag">Switzerland (21)</span>
+          <span class="tag tag-2">Switzerland (21)</span>
         
-          <span class="tag">France (17)</span>
+          <span class="tag tag-2">France (17)</span>
         
-          <span class="tag tag-soft">Germany (17)</span>
+          <span class="tag tag-2">Germany (17)</span>
         
-          <span class="tag tag-soft">Australia (15)</span>
+          <span class="tag tag-2">Australia (15)</span>
         
-          <span class="tag tag-soft">South Korea (12)</span>
+          <span class="tag tag-2">South Korea (12)</span>
         
-          <span class="tag tag-soft">Japan (11)</span>
+          <span class="tag tag-soft tag-3">Japan (11)</span>
         
-          <span class="tag tag-soft">Malaysia (10)</span>
+          <span class="tag tag-soft tag-3">Malaysia (10)</span>
         
-          <span class="tag tag-soft">India (9)</span>
+          <span class="tag tag-soft tag-3">India (9)</span>
         
-          <span class="tag tag-soft">Italy (8)</span>
+          <span class="tag tag-soft tag-3">Italy (8)</span>
         
-          <span class="tag tag-soft">Canada (8)</span>
+          <span class="tag tag-soft tag-3">Canada (8)</span>
         
-          <span class="tag tag-soft">Spain (7)</span>
+          <span class="tag tag-soft tag-3">Spain (7)</span>
         
-          <span class="tag tag-soft">Belgium (5)</span>
+          <span class="tag tag-soft tag-3">Belgium (5)</span>
         
       </div>
     </section>
     <section class="card" style="margin-bottom:0;">
       <h2><span>Top Citing Institutions</span> <span class="badge">ROR / OpenAlex</span></h2>
-      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Canonical names based on author affiliations.</div>
+      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Canonical names based on author affiliations — size shows how often each one appears.</div>
       <div>
         
-          <span class="tag">Iowa State University (15)</span>
+          <span class="tag tag-1">Iowa State University (15)</span>
         
-          <span class="tag">Graduate Institute of International and Development Studies (13)</span>
+          <span class="tag tag-1">Graduate Institute of International and Development Studies (13)</span>
         
-          <span class="tag">Massachusetts Institute of Technology (12)</span>
+          <span class="tag tag-1">Massachusetts Institute of Technology (12)</span>
         
-          <span class="tag">Providence College (11)</span>
+          <span class="tag tag-2">Providence College (11)</span>
         
-          <span class="tag">Rhode Island College (11)</span>
+          <span class="tag tag-2">Rhode Island College (11)</span>
         
-          <span class="tag tag-soft">Centre for Economic Policy Research (10)</span>
+          <span class="tag tag-2">Centre for Economic Policy Research (10)</span>
         
-          <span class="tag tag-soft">Economie Publique (7)</span>
+          <span class="tag tag-2">Economie Publique (7)</span>
         
-          <span class="tag tag-soft">World Bank (7)</span>
+          <span class="tag tag-2">World Bank (7)</span>
         
-          <span class="tag tag-soft">The University of Adelaide (7)</span>
+          <span class="tag tag-soft tag-3">The University of Adelaide (7)</span>
         
-          <span class="tag tag-soft">Australian National University (5)</span>
+          <span class="tag tag-soft tag-3">Australian National University (5)</span>
         
-          <span class="tag tag-soft">Center for Economic and Policy Research (5)</span>
+          <span class="tag tag-soft tag-3">University of Malaya (5)</span>
         
-          <span class="tag tag-soft">University of Malaya (5)</span>
+          <span class="tag tag-soft tag-3">Center for Economic and Policy Research (5)</span>
         
-          <span class="tag tag-soft">University of Michigan (4)</span>
+          <span class="tag tag-soft tag-3">University of Michigan (4)</span>
         
-          <span class="tag tag-soft">WorldFish (4)</span>
+          <span class="tag tag-soft tag-3">WorldFish (4)</span>
         
-          <span class="tag tag-soft">Auburn University (4)</span>
+          <span class="tag tag-soft tag-3">Auburn University (4)</span>
         
       </div>
     </section>
@@ -766,7 +862,7 @@
   <div class="grid-2">
     <section class="card span-full" style="margin-bottom:0;">
       <h2><span>Top Funders</span> <span class="badge">Europe PMC</span></h2>
-      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Number of distinct works supported.</div>
+      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Number of distinct works supported — size shows how often each one appears.</div>
       <div>
         <span class="muted">Not available.</span>
       </div>
@@ -799,6 +895,7 @@
   <section class="card">
     <h2><span>Open Access Provenance</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">Primary source used to classify OA per work.</div>
+    
     <div class="platform-grid">
       
       <div class="platform-box" style="border-top-color:#64748b;">
@@ -808,15 +905,31 @@
       
       <div class="platform-box" style="border-top-color:#64748b;">
         <div class="platform-num" style="color:#334155;">1</div>
-        <div class="platform-lbl">DOAB</div>
+        <div class="platform-lbl">Publisher-claimed</div>
       </div>
       
       <div class="platform-box" style="border-top-color:#64748b;">
         <div class="platform-num" style="color:#334155;">1</div>
-        <div class="platform-lbl">Publisher-claimed</div>
+        <div class="platform-lbl">DOAB</div>
       </div>
       
     </div>
+    
+    
+    <div class="qa-flag">
+      <span class="badge" style="background:#fff7ed;color:#9a3412;border:1px solid #fdba74;">Needs verification</span>
+      <div class="muted" style="margin-top:.5rem;">
+        1 of these works are marked OA by publisher metadata but have no DOAB confirmation — a metadata gap, not necessarily a closed-access work.
+      </div>
+      
+      <ul class="rank-list" style="margin-top:.6rem;">
+        
+        <li><span>Peter Lang Verlag</span><strong>1</strong></li>
+        
+      </ul>
+      
+    </div>
+    
   </section>
   
 
@@ -1166,7 +1279,7 @@
       <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:#9ca3af;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
       <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;font-weight:600;text-decoration:none;">Read the Methodology &amp; Legend ↗</a></span>
     </div>
-    <div style="padding-left:1.35rem;">Generated on 2026-09-11 13:36:32 UTC</div>
+    <div style="padding-left:1.35rem;">Generated on 2026-09-14 08:45:30 UTC</div>
   </footer>
 
 </div><!-- /page -->
@@ -1212,10 +1325,140 @@ function makeDoughnut(id, palette) {
   });
 })();
 
+// Bookshelf tab switching (Cited/Education, Mentions/Downloads)
+document.querySelectorAll('.shelf-tab-switch').forEach(function(switcher){
+  switcher.addEventListener('click', function(e){
+    const btn = e.target.closest('.shelf-tab-btn');
+    if (!btn) return;
+    const targetId = btn.getAttribute('data-shelf-target');
+    const block = switcher.closest('.bookshelf-block');
+    block.querySelectorAll('.shelf-tab-btn').forEach(b => b.classList.toggle('is-active', b === btn));
+    block.querySelectorAll('.shelf-panel').forEach(p => p.classList.toggle('is-hidden', p.id !== targetId));
+  });
+});
+
 makeDoughnut('sectorChart');
 makeDoughnut('sciteChart', ['#16a34a','#9ca3af','#dc2626']);
 makeDoughnut('wtChart');
 makeDoughnut('venueChart');
+
+// Reach map — dot-mask world silhouette (generated from a few simplified
+// continent outlines, not traced coastlines) with bubbles for whichever
+// countries this portfolio's top_countries actually contains. Countries not
+// in COUNTRY_CENTROIDS are simply skipped on the map; the tag list below it
+// still shows every one, so nothing is hidden, only the plot is best-effort.
+(function(){
+  const canvas = document.getElementById('reach-map');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let countries;
+  try { countries = JSON.parse(canvas.getAttribute('data-countries') || '[]'); }
+  catch (e) { countries = []; }
+  if (!countries.length) return;
+
+  const CONTINENTS = [
+    [[-165,68],[-140,60],[-125,48],[-123,37],[-117,32],[-106,20],[-97,16],[-88,14],[-80,8],[-77,18],[-95,29],[-97,26],[-82,31],[-76,35],[-70,43],[-60,48],[-65,60],[-80,68],[-100,72],[-130,71],[-165,68]],
+    [[-79,9],[-77,1],[-70,-5],[-70,-18],[-71,-30],[-73,-42],[-68,-55],[-63,-53],[-58,-38],[-48,-24],[-35,-8],[-50,3],[-60,9],[-72,10],[-79,9]],
+    [[-17,15],[-16,7],[-8,5],[3,6],[9,4],[9,-3],[13,-6],[12,-18],[18,-34],[26,-34],[33,-25],[40,-15],[43,-2],[51,12],[43,12],[37,15],[32,22],[25,32],[10,37],[-6,35],[-13,28],[-17,15]],
+    [[-10,52],[-9,43],[-3,36],[3,36],[9,44],[13,38],[19,40],[23,36],[27,40],[29,45],[35,45],[40,46],[48,47],[60,55],[60,66],[40,70],[25,71],[10,63],[5,58],[-10,52]],
+    [[35,45],[40,46],[48,47],[60,55],[60,66],[75,68],[90,72],[110,73],[140,73],[170,68],[180,66],[160,60],[145,50],[140,45],[130,35],[122,31],[120,23],[108,10],[100,6],[95,16],[90,22],[88,26],[80,8],[77,8],[68,24],[60,25],[48,30],[44,37],[36,37],[35,45]],
+    [[113,-22],[122,-17],[131,-12],[142,-11],[145,-17],[150,-22],[153,-28],[150,-35],[140,-38],[130,-32],[115,-34],[113,-22]]
+  ];
+
+  // Approximate centroid/capital [lon, lat] for common OpenAlex/ROR country labels.
+  const COUNTRY_CENTROIDS = {
+    'United Kingdom':[-2,54],'United States':[-98,39],'Belgium':[4.5,50.6],'China':[104,35],
+    'Italy':[12.5,42],'Spain':[-3.7,40],'France':[2.3,47],'Germany':[10.4,51],'Poland':[19.1,52],
+    'Netherlands':[5.3,52.2],'Portugal':[-8,39.5],'Ethiopia':[39,9],'Canada':[-96,56],
+    'Switzerland':[8.2,46.8],'Lithuania':[24,55.2],'Ireland':[-8,53.4],'Sweden':[16,62],
+    'Norway':[9,61],'Denmark':[10,56],'Finland':[26,64],'Austria':[14,47.5],'Greece':[22,39],
+    'Turkey':[35,39],'Russia':[90,61],'Ukraine':[31,49],'Czechia':[15.5,49.8],'Czech Republic':[15.5,49.8],
+    'Slovakia':[19.5,48.7],'Hungary':[19.5,47.2],'Romania':[25,46],'Bulgaria':[25.5,42.7],
+    'Croatia':[15.5,45.1],'Serbia':[21,44],'Slovenia':[14.8,46.1],'Estonia':[25,58.6],
+    'Latvia':[25,56.9],'Iceland':[-19,65],'Luxembourg':[6.1,49.8],'Japan':[138,36.2],
+    'South Korea':[127.8,36.5],'Korea, Republic of':[127.8,36.5],'India':[79,22],'Pakistan':[69,30],
+    'Bangladesh':[90,24],'Indonesia':[113,-2],'Malaysia':[102,4],'Singapore':[103.8,1.35],
+    'Thailand':[101,15],'Vietnam':[106,16],'Philippines':[122,13],'Israel':[35,31],
+    'Saudi Arabia':[45,24],'United Arab Emirates':[54,24],'Iran':[53,32],'Iraq':[44,33],
+    'Egypt':[30,27],'Nigeria':[8,9.5],'South Africa':[24,-29],'Kenya':[38,0.5],
+    'Ghana':[-1,7.9],'Morocco':[-6,32],'Tunisia':[9.5,34],'Algeria':[3,28],
+    'Brazil':[-52,-11],'Argentina':[-64,-35],'Chile':[-71,-30],'Mexico':[-102,23],
+    'Colombia':[-73,4],'Peru':[-75,-10],'Venezuela':[-66,8],'Australia':[134,-25],
+    'New Zealand':[172,-41],'Taiwan':[121,23.8],'Hong Kong':[114.1,22.3],
+    'Cyprus':[33,35],'Malta':[14.4,35.9],'Georgia':[43.4,42.3],'Armenia':[45,40.1],
+    'Ecuador':[-78,-1.8],'Uruguay':[-56,-33],'Costa Rica':[-84,9.7],'Panama':[-80,8.6],
+    'Kazakhstan':[68,48],'Uzbekistan':[64,41],'Ethiopia, Federal Democratic Republic of':[39,9]
+  };
+
+  function pointInPolygon(lon, lat, poly){
+    let inside = false;
+    for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+      const xi = poly[i][0], yi = poly[i][1], xj = poly[j][0], yj = poly[j][1];
+      const intersect = ((yi > lat) !== (yj > lat)) && (lon < (xj - xi) * (lat - yi) / (yj - yi) + xi);
+      if (intersect) inside = !inside;
+    }
+    return inside;
+  }
+
+  function draw(){
+    const W = canvas.clientWidth || 900;
+    const H = Math.round(W * 400 / 900);
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+
+    function project(lon, lat){ return [(lon + 180) / 360 * W, (90 - lat) / 180 * H]; }
+
+    const step = W / 108;
+    ctx.fillStyle = '#9fb0c7';
+    for (let y = step / 2; y < H; y += step) {
+      const lat = 90 - (y / H) * 180;
+      for (let x = step / 2; x < W; x += step) {
+        const lon = (x / W) * 360 - 180;
+        let land = false;
+        for (let c = 0; c < CONTINENTS.length; c++) { if (pointInPolygon(lon, lat, CONTINENTS[c])) { land = true; break; } }
+        if (land) { ctx.beginPath(); ctx.arc(x, y, step * 0.19, 0, Math.PI * 2); ctx.fill(); }
+      }
+    }
+
+    const plottable = countries.filter(c => COUNTRY_CENTROIDS[c.label]);
+    if (!plottable.length) return;
+    const maxN = Math.max.apply(null, plottable.map(c => c.count));
+    plottable.forEach(c => {
+      const [lon, lat] = COUNTRY_CENTROIDS[c.label];
+      const [x, y] = project(lon, lat);
+      const r = 4 + Math.sqrt(c.count / maxN) * 15;
+      ctx.beginPath(); ctx.fillStyle = 'rgba(29,78,216,0.32)'; ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath(); ctx.fillStyle = '#1d4ed8'; ctx.arc(x, y, 4, 0, Math.PI * 2); ctx.fill();
+      ctx.lineWidth = 1.5; ctx.strokeStyle = '#ffffff'; ctx.stroke();
+    });
+
+    ctx.font = '600 11px "Source Sans 3", sans-serif';
+    ctx.fillStyle = '#111827';
+    ctx.textBaseline = 'middle';
+    const placed = [];
+    const overlaps = (box) => placed.some(p =>
+      box.x < p.x + p.w && box.x + box.w > p.x && box.y < p.y + p.h && box.y + box.h > p.y);
+    plottable.slice().sort((a, b) => b.count - a.count).slice(0, 8).forEach(c => {
+      const [lon, lat] = COUNTRY_CENTROIDS[c.label];
+      const [x, y] = project(lon, lat);
+      const r = 4 + Math.sqrt(c.count / maxN) * 15;
+      const label = c.label + ' · ' + c.count;
+      const w = ctx.measureText(label).width;
+      const tx = Math.min(x + r + 6, W - w - 4);
+      const box = { x: tx - 2, y: y - 7, w: w + 4, h: 14 };
+      if (overlaps(box)) return;
+      placed.push(box);
+      ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(231,237,245,0.9)'; ctx.strokeText(label, tx, y);
+      ctx.fillText(label, tx, y);
+    });
+  }
+
+  draw();
+  let resizeTimer;
+  window.addEventListener('resize', function(){ clearTimeout(resizeTimer); resizeTimer = setTimeout(draw, 120); });
+})();
 
 (function(){
   const filters = document.getElementById('worksFilters');

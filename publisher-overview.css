@@ -36,7 +36,69 @@
 .publisher-table td,.publisher-table th {padding:.7rem;text-align:left;border-bottom:1px solid #eee;}
 .publisher-updated {font-size:.8rem;color:var(--muted);line-height:1.6;}
 .publisher-mode .shelf-title {font-size:.9rem;}
-.publisher-mode .shelf-chip {font-size:.8rem;}
+.publisher-mode .shelf-chip {font-size:.72rem;white-space:normal;text-align:center;line-height:1.25;border-radius:.6rem;max-width:100%;}
 .publisher-mode .bookshelf-row {overflow-x:auto;}
+
+/* Display type for headline numbers, matching the printable report's design language. */
+.publisher-heading h1, .pf-card-title, .publisher-metric strong, .os-tile .os-num {
+  font-family: "Fraunces", Georgia, serif;
+}
+
+/* Credo band: no single metric stands in for impact. */
+.publisher-credo { display:flex; gap:.9rem; align-items:flex-start; border-left:3px solid #7a2432;
+  background:#fff; border-radius:0 10px 10px 0; padding:1rem 1.4rem; margin:1.25rem 0; }
+.publisher-credo .mark { font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:1.4rem; color:#7a2432; line-height:1; flex:none; }
+.publisher-credo p { margin:0; font-size:.9rem; line-height:1.6; color:var(--muted); max-width:66ch; }
+.publisher-credo p b { color:var(--text); }
+
+/* Sized tag cloud: countries / institutions / funders. */
+.pub-tag { display:inline-block; border:1px solid var(--border); border-radius:999px; padding:.15rem .55rem;
+  margin:.1rem .15rem .1rem 0; background:#f9fafb; color:var(--text); font-weight:600; }
+.pub-tag-soft { color:var(--muted); background:#fff; }
+.pub-tag-1 { font-size:1.05rem; }
+.pub-tag-2 { font-size:.92rem; }
+.pub-tag-3 { font-size:.78rem; opacity:.82; }
+
+/* Reach map. */
+.pub-map { margin:1rem 0; }
+.pub-map canvas { width:100%; height:auto; display:block; border-radius:.6rem; background:#e7edf5; aspect-ratio:900/400; }
+.pub-map-note { font-size:.74rem; color:var(--muted); margin-top:.6rem; }
+
+/* Open science indicator tiles, softened when structurally near-zero. */
+.os-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:.9rem; margin:1rem 0; }
+.os-tile { background:#f8fafc; border:1px solid #e2e8f0; border-radius:.75rem; padding:1.1rem; text-align:center; }
+.os-tile.is-muted { background:#fafafa; border-style:dashed; }
+.os-tile .os-num { font-size:1.8rem; font-weight:600; line-height:1; margin-bottom:.2rem; color:#0f172a; }
+.os-tile.is-muted .os-num { color:#9ca3af; }
+.os-tile .os-label { font-size:.72rem; color:#64748b; text-transform:uppercase; letter-spacing:.05em; font-weight:600; }
+.os-tile.is-muted .os-label { color:#9ca3af; }
+.os-tile .os-caption { font-size:.65rem; color:var(--muted); margin-top:.35rem; line-height:1.35; }
+@media(max-width:760px){ .os-grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
+
+/* Inferred roles, moved next to the open-science indicators as richer context. */
+.pub-roles { border-top:1px solid #eee; margin-top:1.1rem; padding-top:1rem; }
+.pub-roles-title { font-size:.85rem; font-weight:700; color:#374151; margin-bottom:.2rem; }
+.roles-row { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.6rem; }
+.role-pill { position:relative; display:inline-flex; align-items:center; gap:.3rem; padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px; font-size:.78rem; font-weight:600; border:1.5px solid; }
+.role-pill-academic   { background:#eff6ff; color:#1e40af; border-color:#bfdbfe; }
+.role-pill-readership { background:#f5f3ff; color:#4c1d95; border-color:#ddd6fe; }
+.role-pill-public     { background:#fffbeb; color:#92400e; border-color:#fde68a; }
+.role-pill-practical  { background:#f0fdf4; color:#065f46; border-color:#bbf7d0; }
+.role-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+.role-score { font-size:.6rem; font-weight:700; padding:.05rem .3rem; border-radius:999px; margin-left:.1rem; background:rgba(0,0,0,.06); }
+
+/* Merged OA-claim verification flag, folded into the provenance section. */
+.qa-flag { border-top:1px solid #eee; margin-top:1rem; padding-top:1rem; }
+.qa-badge { display:inline-block; background:#fff7ed; color:#9a3412; border:1px solid #fdba74;
+  padding:.15rem .55rem; border-radius:999px; font-size:.72rem; font-weight:600; }
+
+/* Bookshelf tab switch (paired shelves: cited/education, mentions/downloads). */
+.shelf-tab-switch { display:flex; gap:.3rem; background:#f3f4f6; border-radius:999px; padding:.25rem;
+  width:fit-content; margin-bottom:.7rem; }
+.shelf-tab-btn { border:none; background:transparent; font-size:.72rem; font-weight:700; padding:.35rem .85rem;
+  border-radius:999px; color:#6b7280; cursor:pointer; font:inherit; }
+.shelf-tab-btn[aria-selected="true"] { background:#111827; color:#f9fafb; }
+.bookshelf-block .bookshelf-row[hidden] { display:none!important; }
 @media(max-width:760px){.publisher-mode.publisher-filters-open .shell{grid-template-columns:minmax(0,1fr)}.publisher-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.publisher-ranks{grid-template-columns:minmax(0,1fr);gap:0}.publisher-metric{padding:1rem}.publisher-heading h1{overflow-wrap:anywhere}}
 @media print{.publisher-mode .hero,#publisherTools,.publisher-mode .sidebar,.publisher-tabs{display:none!important}.publisher-panel[hidden]{display:none!important}.publisher-detail{break-inside:avoid}.publisher-mode .shell{display:block}.publisher-mode .publisher-detail{border:0}}

@@ -25,6 +25,7 @@ async function renderPublisherOverview(stories) {
     }
     host.innerHTML = publisherPage(box);
     initPublisherTabs(host);
+    drawReachMap(document.getElementById('pf-reach-map'));
   } catch (_) {
     if (request === publisherRequest && state.view === 'publisher') host.insertAdjacentHTML('afterbegin', '<p role="status">The full publisher report is temporarily unavailable. The index summary is shown below.</p>');
   }
@@ -33,57 +34,215 @@ async function renderPublisherOverview(stories) {
 function publisherPage(box) {
   const e = escHtml;
   const counts = [
-    [fmt(box.total_citations), 'Citations'], [fmt(box.total_events), 'Mentions'],
+    [fmt(box.total_citations), 'Citations'],
+    ...(box.total_downloads ? [[fmt(box.total_downloads), 'Downloads']] : []),
+    [fmt(box.total_events), 'Mentions'],
     [`${box.total_works ? Math.round(100 * box.is_open_access / box.total_works) : 0}%`, 'Open access'],
-    [fmt(box.country_count), 'Citing countries'],
   ];
-  const rank = (title, entries) => `<section><h3>${e(title)}</h3><ul>${entries.map(it => `<li><span>${e(it.label)}</span><strong>${fmt(it.count)}</strong></li>`).join('')}</ul></section>`;
+  const rank = (title, entries, badge) => `<section><h3>${e(title)}${badge ? ` <span class="badge">${e(badge)}</span>` : ''}</h3><ul>${entries.map(it => `<li><span>${e(it.label)}</span><strong>${fmt(it.count)}</strong></li>`).join('')}</ul></section>`;
+  const tagCloud = (title, entries, badge) => `<section><h3>${e(title)}${badge ? ` <span class="badge">${e(badge)}</span>` : ''}</h3><div>${entries.map((it, i) => `<span class="pub-tag${i >= 8 ? ' pub-tag-soft' : ''}${i < 3 ? ' pub-tag-1' : i < 8 ? ' pub-tag-2' : ' pub-tag-3'}">${e(it.label)} (${fmt(it.count)})</span>`).join('') || '<span class="publisher-updated">Not available.</span>'}</div></section>`;
   const labels = {wikipedia:'Wikipedia',reddit:'Reddit',bluesky:'Bluesky',hypothesis:'Expert annotations',stackexchange:'StackExchange',news:'News',other:'Other recorded mentions'};
   const teaching = {library_holdings:'Library holdings',ocw_mentions:'Syllabi / courseware',youtube_mentions:'Educational video lectures',otl_mentions:'Open textbooks',oer_listings:'Open educational resources'};
-  const indicators = {has_open_review:'Open peer review',has_prism_context:'PRISM context',has_prism_peer_review:'PRISM peer reviews',has_openaire_reach:'OpenAIRE reach',has_openaire_open_instance:'OpenAIRE open instances'};
+  const indicatorLabels = {has_open_review:'Open peer review',has_prism_context:'PRISM context',has_prism_peer_review:'PRISM peer reviews',has_openaire_reach:'OpenAIRE reach',has_openaire_open_instance:'OpenAIRE open instances'};
   const entries = (obj, names) => Object.entries(obj).map(([key,count]) => ({label:names[key] || key,count}));
+  const osTile = (pct, label) => pct === 0
+    ? `<div class="os-tile is-muted"><div class="os-num">&mdash;</div><div class="os-label">${e(label)}</div><div class="os-caption">Not yet recorded — absence of data, not absence of review.</div></div>`
+    : `<div class="os-tile"><div class="os-num">${pct}%</div><div class="os-label">${e(label)}</div></div>`;
+  const osTiles = box.total_works ? Object.entries(box.indicators).map(([key, count]) =>
+    osTile(Math.round(100 * count / box.total_works), indicatorLabels[key] || key)).join('') : '';
+  const domainStyle = {academic:['role-pill-academic','#3b82f6','#dbeafe','#1d4ed8'], readership:['role-pill-readership','#8b5cf6','#ede9fe','#6d28d9'],
+    public:['role-pill-public','#f59e0b','#fef3c7','#92400e'], practical:['role-pill-practical','#10b981','#dcfce7','#166534']};
+  const rolePills = (box.roles && box.roles.length) ? `<div class="pub-roles"><div class="pub-roles-title">Inferred portfolio roles</div>
+    <div class="publisher-updated" style="margin-top:.2rem;">What the evidence above doesn't capture — cumulative heuristic classification of how this portfolio is actually used, across all works.</div>
+    <div class="roles-row">${box.roles.map(r => {
+      const [cls, dot, bg, col] = domainStyle[r.domain] || domainStyle.academic;
+      return `<span class="role-pill ${cls}"><span class="role-dot" style="background:${dot};"></span>${e(r.label)}<span class="role-score" style="background:${bg};color:${col};">${Number(r.count).toFixed(1)}</span></span>`;
+    }).join('')}</div></div>` : '';
+  const qaFlag = box.claim_gap_count ? `<div class="qa-flag"><span class="qa-badge">Needs verification</span>
+    <div class="publisher-updated" style="margin-top:.5rem;">${fmt(box.claim_gap_count)} of these works are marked OA by publisher metadata but have no DOAB confirmation — a metadata gap, not necessarily a closed-access work.</div></div>` : '';
   const f = box.featured;
   const feature = f ? `<aside class="publisher-feature"><strong>A closer look</strong><p><a href="${e(f.story_url)}">${e(f.title)}</a> has ${fmt(f.events)} recorded mention${f.events === 1 ? '' : 's'}.</p>${box.featured_evidence.length ? `<p>Examples from Wikipedia article references: ${box.featured_evidence.map(r => `<a href="${e(r.url)}" target="_blank" rel="noopener">${e(r.article)} (checked revision)</a>`).join(' · ')}.</p>` : '<p>Open the work’s story to explore its recorded evidence.</p>'}</aside>` : '';
-  // Reuse the existing cover cards, displaying only one ranking at a time.
+  // Reuse the existing cover cards, displaying only one ranking per shelf at a time.
   const shelf = renderBookshelfCard(box);
+  const map = box.countries.length ? `<section class="pub-map"><h3>Reach, mapped <span class="badge">OpenAlex</span></h3>
+    <div class="publisher-updated" style="margin:-.3rem 0 .7rem;">Citing-work affiliations trace back to <strong>${fmt(box.country_count)}</strong> countries — circle size shows citation count from that country.</div>
+    <canvas id="pf-reach-map" data-countries='${JSON.stringify(box.countries).replace(/'/g, '&#39;')}' role="img" aria-label="World map of citing countries, sized by citation count"></canvas>
+    <div class="pub-map-note">Full breakdown, including countries not shown on the map, in the list below.</div></section>` : '';
   const works = box.items.map(it => `<tr><td>${e(it.year || '—')}</td><td><a href="${e(it.story_url)}">${e(it.title)}</a></td><td>${fmt(it.citations)}</td><td>${fmt(it.events)}</td></tr>`).join('');
   const report = box.report_url ? `<a class="publisher-report" href="${e(box.report_url)}">Printable report</a>` : '<button type="button" class="btn" onclick="printPublisherPage()">Print report</button>';
   return `<header class="publisher-heading"><h1>${e(box.title)}</h1><p>A selection of ${fmt(box.total_works)} ${box.books === box.total_works ? 'books' : 'works'} · ${report}</p></header>
     <div class="publisher-metrics">${counts.map(([n,label]) => `<div class="publisher-metric"><strong>${n}</strong><span>${label}</span></div>`).join('')}</div>
-    <p class="publisher-summary">${e(box.summary)}</p>${feature}${shelf}
-    <details class="publisher-detail" open><summary>Mentions &amp; reach</summary><p>${e(box.definitions.mentions)}</p><div class="publisher-ranks">${rank('Mentions by platform',entries(box.platform_counts,labels))}${rank('Citing sectors',box.sectors)}</div><p>${e(box.definitions.reach)}</p><div class="publisher-ranks">${rank('Top citing countries',box.countries)}${rank('Top citing institutions',box.institutions)}</div></details>
-    <details class="publisher-detail"><summary>Open science &amp; teaching</summary><div class="publisher-ranks">${rank('Works with recorded indicators',entries(box.indicators,indicators))}${rank('Teaching & library evidence',entries(box.teaching,teaching))}${rank('Open access provenance',box.oa_provenance)}</div><p>${fmt(box.claim_gap_count)} works are marked open access by publisher metadata without DOAB confirmation. This is a metadata verification flag.</p></details>
-    <details class="publisher-detail"><summary>Scholarly context</summary><div class="publisher-ranks">${rank('Annual citations',Object.entries(box.citations_by_year).map(([label,count])=>({label,count})))}${rank('Inferred roles (heuristic scores)',box.roles)}${rank('Dominant concepts (weighted scores)',box.concepts)}${rank('Funders',box.funders)}</div><p>${fmt(box.top_10_percent_count)} works in the top 10% cited; ${fmt(box.top_1_percent_count)} in the top 1%. Recorded integrity flags: ${fmt(box.retracted_count)} retractions, ${fmt(box.eoc_count)} expressions of concern, ${fmt(box.pubpeer_count)} works with PubPeer discussions.</p></details>
+    <div class="publisher-credo"><span class="mark">&#8221;</span><p><b>No single metric stands in for impact here.</b> Every figure below is shown next to the source it came from, so it can be checked — not just cited.</p></div>
+    <p class="publisher-summary">${e(box.summary)}</p>${feature}${shelf}${map}
+    <details class="publisher-detail" open><summary>Mentions &amp; reach</summary><p>${e(box.definitions.mentions)}</p><div class="publisher-ranks">${rank('Mentions by platform',entries(box.platform_counts,labels))}${rank('Citing sectors',box.sectors,'ROR')}</div><p>${e(box.definitions.reach)}</p><div class="publisher-ranks">${tagCloud('Top citing countries',box.countries,'OpenAlex')}${tagCloud('Top citing institutions',box.institutions,'ROR / OpenAlex')}</div></details>
+    <details class="publisher-detail"><summary>Open science &amp; teaching</summary><div class="os-grid">${osTiles}</div>${rolePills}<div class="publisher-ranks" style="margin-top:1.2rem;">${rank('Teaching & library evidence',entries(box.teaching,teaching))}${rank('Open access provenance',box.oa_provenance)}</div>${qaFlag}</details>
+    <details class="publisher-detail"><summary>Scholarly context</summary><div class="publisher-ranks">${rank('Annual citations',Object.entries(box.citations_by_year).map(([label,count])=>({label,count})))}${tagCloud('Funders',box.funders,'Europe PMC')}</div><div class="publisher-ranks" style="margin-top:1.2rem;">${rank('Dominant concepts (weighted scores)',box.concepts)}</div><p>${fmt(box.top_10_percent_count)} works in the top 10% cited; ${fmt(box.top_1_percent_count)} in the top 1%. Recorded integrity flags: ${fmt(box.retracted_count)} retractions, ${fmt(box.eoc_count)} expressions of concern, ${fmt(box.pubpeer_count)} works with PubPeer discussions.</p></details>
     <details class="publisher-detail"><summary>All ${fmt(box.total_works)} works</summary><div class="publisher-table-wrap"><table class="publisher-table"><thead><tr><th>Year</th><th>Title</th><th>Citations</th><th>Mentions</th></tr></thead><tbody>${works}</tbody></table></div></details>
     <p class="publisher-updated">Overview refreshed ${e(new Date(box.generated_at).toLocaleString('en-GB', {timeZone:'UTC'}))} UTC. Source evidence may have earlier collection dates.<br>${e(box.definitions.coverage)}</p>`;
 }
 
+const PF_CONTINENTS = [
+  [[-165,68],[-140,60],[-125,48],[-123,37],[-117,32],[-106,20],[-97,16],[-88,14],[-80,8],[-77,18],[-95,29],[-97,26],[-82,31],[-76,35],[-70,43],[-60,48],[-65,60],[-80,68],[-100,72],[-130,71],[-165,68]],
+  [[-79,9],[-77,1],[-70,-5],[-70,-18],[-71,-30],[-73,-42],[-68,-55],[-63,-53],[-58,-38],[-48,-24],[-35,-8],[-50,3],[-60,9],[-72,10],[-79,9]],
+  [[-17,15],[-16,7],[-8,5],[3,6],[9,4],[9,-3],[13,-6],[12,-18],[18,-34],[26,-34],[33,-25],[40,-15],[43,-2],[51,12],[43,12],[37,15],[32,22],[25,32],[10,37],[-6,35],[-13,28],[-17,15]],
+  [[-10,52],[-9,43],[-3,36],[3,36],[9,44],[13,38],[19,40],[23,36],[27,40],[29,45],[35,45],[40,46],[48,47],[60,55],[60,66],[40,70],[25,71],[10,63],[5,58],[-10,52]],
+  [[35,45],[40,46],[48,47],[60,55],[60,66],[75,68],[90,72],[110,73],[140,73],[170,68],[180,66],[160,60],[145,50],[140,45],[130,35],[122,31],[120,23],[108,10],[100,6],[95,16],[90,22],[88,26],[80,8],[77,8],[68,24],[60,25],[48,30],[44,37],[36,37],[35,45]],
+  [[113,-22],[122,-17],[131,-12],[142,-11],[145,-17],[150,-22],[153,-28],[150,-35],[140,-38],[130,-32],[115,-34],[113,-22]]
+];
+
+const PF_COUNTRY_CENTROIDS = {
+  'United Kingdom':[-2,54],'United States':[-98,39],'Belgium':[4.5,50.6],'China':[104,35],
+  'Italy':[12.5,42],'Spain':[-3.7,40],'France':[2.3,47],'Germany':[10.4,51],'Poland':[19.1,52],
+  'Netherlands':[5.3,52.2],'Portugal':[-8,39.5],'Ethiopia':[39,9],'Canada':[-96,56],
+  'Switzerland':[8.2,46.8],'Lithuania':[24,55.2],'Ireland':[-8,53.4],'Sweden':[16,62],
+  'Norway':[9,61],'Denmark':[10,56],'Finland':[26,64],'Austria':[14,47.5],'Greece':[22,39],
+  'Turkey':[35,39],'Russia':[90,61],'Ukraine':[31,49],'Czechia':[15.5,49.8],'Czech Republic':[15.5,49.8],
+  'Slovakia':[19.5,48.7],'Hungary':[19.5,47.2],'Romania':[25,46],'Bulgaria':[25.5,42.7],
+  'Croatia':[15.5,45.1],'Serbia':[21,44],'Slovenia':[14.8,46.1],'Estonia':[25,58.6],
+  'Latvia':[25,56.9],'Iceland':[-19,65],'Luxembourg':[6.1,49.8],'Japan':[138,36.2],
+  'South Korea':[127.8,36.5],'Korea, Republic of':[127.8,36.5],'India':[79,22],'Pakistan':[69,30],
+  'Bangladesh':[90,24],'Indonesia':[113,-2],'Malaysia':[102,4],'Singapore':[103.8,1.35],
+  'Thailand':[101,15],'Vietnam':[106,16],'Philippines':[122,13],'Israel':[35,31],
+  'Saudi Arabia':[45,24],'United Arab Emirates':[54,24],'Iran':[53,32],'Iraq':[44,33],
+  'Egypt':[30,27],'Nigeria':[8,9.5],'South Africa':[24,-29],'Kenya':[38,0.5],
+  'Ghana':[-1,7.9],'Morocco':[-6,32],'Tunisia':[9.5,34],'Algeria':[3,28],
+  'Brazil':[-52,-11],'Argentina':[-64,-35],'Chile':[-71,-30],'Mexico':[-102,23],
+  'Colombia':[-73,4],'Peru':[-75,-10],'Venezuela':[-66,8],'Australia':[134,-25],
+  'New Zealand':[172,-41],'Taiwan':[121,23.8],'Hong Kong':[114.1,22.3],
+  'Cyprus':[33,35],'Malta':[14.4,35.9],'Georgia':[43.4,42.3],'Armenia':[45,40.1],
+  'Ecuador':[-78,-1.8],'Uruguay':[-56,-33],'Costa Rica':[-84,9.7],'Panama':[-80,8.6],
+  'Kazakhstan':[68,48],'Uzbekistan':[64,41]
+};
+
+function pfPointInPolygon(lon, lat, poly) {
+  let inside = false;
+  for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+    const xi = poly[i][0], yi = poly[i][1], xj = poly[j][0], yj = poly[j][1];
+    const intersect = ((yi > lat) !== (yj > lat)) && (lon < (xj - xi) * (lat - yi) / (yj - yi) + xi);
+    if (intersect) inside = !inside;
+  }
+  return inside;
+}
+
+function drawReachMap(canvas) {
+  if (!canvas) return;
+  let countries;
+  try { countries = JSON.parse(canvas.getAttribute('data-countries') || '[]'); }
+  catch (e) { countries = []; }
+  if (!countries.length) return;
+  const ctx = canvas.getContext('2d');
+
+  function draw() {
+    const W = canvas.clientWidth || 900;
+    const H = Math.round(W * 400 / 900);
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+
+    function project(lon, lat) { return [(lon + 180) / 360 * W, (90 - lat) / 180 * H]; }
+
+    const step = W / 108;
+    ctx.fillStyle = '#9fb0c7';
+    for (let y = step / 2; y < H; y += step) {
+      const lat = 90 - (y / H) * 180;
+      for (let x = step / 2; x < W; x += step) {
+        const lon = (x / W) * 360 - 180;
+        let land = false;
+        for (let c = 0; c < PF_CONTINENTS.length; c++) { if (pfPointInPolygon(lon, lat, PF_CONTINENTS[c])) { land = true; break; } }
+        if (land) { ctx.beginPath(); ctx.arc(x, y, step * 0.19, 0, Math.PI * 2); ctx.fill(); }
+      }
+    }
+
+    const plottable = countries.filter(c => PF_COUNTRY_CENTROIDS[c.label]);
+    if (!plottable.length) return;
+    const maxN = Math.max.apply(null, plottable.map(c => c.count));
+    plottable.forEach(c => {
+      const [lon, lat] = PF_COUNTRY_CENTROIDS[c.label];
+      const [x, y] = project(lon, lat);
+      const r = 4 + Math.sqrt(c.count / maxN) * 15;
+      ctx.beginPath(); ctx.fillStyle = 'rgba(29,78,216,0.32)'; ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath(); ctx.fillStyle = '#1d4ed8'; ctx.arc(x, y, 4, 0, Math.PI * 2); ctx.fill();
+      ctx.lineWidth = 1.5; ctx.strokeStyle = '#ffffff'; ctx.stroke();
+    });
+
+    ctx.font = '600 11px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+    ctx.fillStyle = '#111827';
+    ctx.textBaseline = 'middle';
+    const placed = [];
+    const overlaps = (box) => placed.some(p => box.x < p.x + p.w && box.x + box.w > p.x && box.y < p.y + p.h && box.y + box.h > p.y);
+    plottable.slice().sort((a, b) => b.count - a.count).slice(0, 8).forEach(c => {
+      const [lon, lat] = PF_COUNTRY_CENTROIDS[c.label];
+      const [x, y] = project(lon, lat);
+      const r = 4 + Math.sqrt(c.count / maxN) * 15;
+      const label = c.label + ' · ' + c.count;
+      const w = ctx.measureText(label).width;
+      const tx = Math.min(x + r + 6, W - w - 4);
+      const bx = { x: tx - 2, y: y - 7, w: w + 4, h: 14 };
+      if (overlaps(bx)) return;
+      placed.push(bx);
+      ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(231,237,245,0.9)'; ctx.strokeText(label, tx, y);
+      ctx.fillText(label, tx, y);
+    });
+  }
+
+  draw();
+  let resizeTimer;
+  window.addEventListener('resize', function () { clearTimeout(resizeTimer); resizeTimer = setTimeout(draw, 120); });
+}
+
 function initPublisherTabs(host) {
-  const shelf = host.querySelector('#pfBookshelfCard');
-  if (!shelf) return;
-  const intro = shelf.querySelector('.pf-card-title + div');
-  if (intro) intro.textContent = 'Explore the works behind the evidence.';
-  const panels = [...shelf.querySelectorAll('.bookshelf-block')];
-  const names = {'Top cited':'Citations','Top mentioned':'Mentions','Top in education':'Teaching'};
-  const tabs = document.createElement('div');
-  tabs.className = 'publisher-tabs'; tabs.setAttribute('role','tablist');tabs.setAttribute('aria-label','Bookshelf ranking');
-  panels.forEach((panel,i) => {
-    const label = panel.querySelector('.bookshelf-label');
-    const button = document.createElement('button'); button.type='button';button.setAttribute('role','tab');
-    button.id=`publisher-tab-${i}`;button.textContent=names[label.textContent] || label.textContent;
-    button.setAttribute('aria-controls',`publisher-panel-${i}`);button.setAttribute('aria-selected',String(i===0));button.tabIndex=i===0?0:-1;
-    panel.id=`publisher-panel-${i}`;panel.classList.add('publisher-panel');panel.setAttribute('role','tabpanel');panel.setAttribute('aria-labelledby',button.id);panel.hidden=i!==0;label.hidden=true;
-    button.addEventListener('click',()=>activate(i));tabs.append(button);
+  // Two shelves, each a two-way tab switch: cited/education, mentions/downloads —
+  // rather than one flat tablist across every ranking. A shelf with only one side
+  // of its pair present (e.g. no downloads for a closed-access publisher) just
+  // keeps its plain label, no empty tab shown.
+  const shelfCard = host.querySelector('#pfBookshelfCard');
+  if (!shelfCard) return;
+  const pairs = [['Top cited', 'Top in education'], ['Top mentioned', 'Top downloaded']];
+  const blocks = [...shelfCard.querySelectorAll('.bookshelf-block')];
+  const byLabel = new Map(blocks.map(b => [b.querySelector('.bookshelf-label').textContent, b]));
+
+  pairs.forEach((pair, pairIdx) => {
+    const present = pair.map(label => byLabel.get(label)).filter(Boolean);
+    if (present.length < 2) return;
+    const [blockA, blockB] = present;
+    const labelA = blockA.querySelector('.bookshelf-label');
+    const labelB = blockB.querySelector('.bookshelf-label');
+    const rowA = blockA.querySelector('.bookshelf-row');
+    const rowB = blockB.querySelector('.bookshelf-row');
+    const idA = `pf-shelf-${pairIdx}-a`, idB = `pf-shelf-${pairIdx}-b`;
+    rowA.id = idA; rowB.id = idB;
+
+    const switcher = document.createElement('div');
+    switcher.className = 'shelf-tab-switch';
+    switcher.setAttribute('role', 'tablist');
+    switcher.setAttribute('aria-label', 'Bookshelf ranking');
+    const btnA = document.createElement('button');
+    btnA.type = 'button'; btnA.className = 'shelf-tab-btn'; btnA.setAttribute('role', 'tab');
+    btnA.setAttribute('aria-selected', 'true'); btnA.setAttribute('aria-controls', idA);
+    btnA.textContent = labelA.textContent;
+    const btnB = document.createElement('button');
+    btnB.type = 'button'; btnB.className = 'shelf-tab-btn'; btnB.setAttribute('role', 'tab');
+    btnB.setAttribute('aria-selected', 'false'); btnB.setAttribute('aria-controls', idB);
+    btnB.textContent = labelB.textContent;
+    switcher.append(btnA, btnB);
+
+    labelA.remove(); labelB.remove();
+    blockA.insertBefore(switcher, rowA);
+    blockA.appendChild(rowB);
+    rowB.hidden = true;
+    blockB.remove();
+
+    function activate(which) {
+      const aOn = which === 'a';
+      btnA.setAttribute('aria-selected', String(aOn));
+      btnB.setAttribute('aria-selected', String(!aOn));
+      rowA.hidden = !aOn;
+      rowB.hidden = aOn;
+    }
+    btnA.addEventListener('click', () => activate('a'));
+    btnB.addEventListener('click', () => activate('b'));
   });
-  function activate(index) { [...tabs.children].forEach((b,i)=>{b.setAttribute('aria-selected',String(i===index));b.tabIndex=i===index?0:-1;panels[i].hidden=i!==index;}); }
-  tabs.addEventListener('keydown',event=>{
-    const current=[...tabs.children].indexOf(document.activeElement);let next=current;
-    if(event.key==='ArrowRight')next=(current+1)%panels.length;
-    else if(event.key==='ArrowLeft')next=(current+panels.length-1)%panels.length;
-    else if(event.key==='Home')next=0;else if(event.key==='End')next=panels.length-1;else return;
-    event.preventDefault();activate(next);tabs.children[next].focus();
-  });
-  panels[0].before(tabs);
 }
 
 function printPublisherPage() {
