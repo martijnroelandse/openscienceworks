@@ -26,6 +26,7 @@ async function renderPublisherOverview(stories) {
     host.innerHTML = publisherPage(box);
     initPublisherTabs(host);
     drawReachMap(document.getElementById('pf-reach-map'));
+    renderPublisherCharts(host);
   } catch (_) {
     if (request === publisherRequest && state.view === 'publisher') host.insertAdjacentHTML('afterbegin', '<p role="status">The full publisher report is temporarily unavailable. The index summary is shown below.</p>');
   }
@@ -41,6 +42,15 @@ function publisherPage(box) {
   ];
   const rank = (title, entries, badge) => `<section><h3>${e(title)}${badge ? ` <span class="badge">${e(badge)}</span>` : ''}</h3><ul>${entries.map(it => `<li><span>${e(it.label)}</span><strong>${fmt(it.count)}</strong></li>`).join('')}</ul></section>`;
   const tagCloud = (title, entries, badge) => `<section><h3>${e(title)}${badge ? ` <span class="badge">${e(badge)}</span>` : ''}</h3><div>${entries.map((it, i) => `<span class="pub-tag${i >= 8 ? ' pub-tag-soft' : ''}${i < 3 ? ' pub-tag-1' : i < 8 ? ' pub-tag-2' : ' pub-tag-3'}">${e(it.label)} (${fmt(it.count)})</span>`).join('') || '<span class="publisher-updated">Not available.</span>'}</div></section>`;
+  const jsonAttr = (x) => JSON.stringify(x).replace(/'/g, '&#39;');
+  const chartCard = (title, badge, id, labels, data) => `<div class="pub-chart-card"><h4>${e(title)}${badge ? ` <span class="badge">${e(badge)}</span>` : ''}</h4><div class="pub-chart-wrap"><canvas id="${id}" data-chart="doughnut" data-labels='${jsonAttr(labels)}' data-values='${jsonAttr(data)}'></canvas></div></div>`;
+  const charts = box.total_citations || box.total_events ? `<div class="pub-timeline-wrap"><canvas id="pf-citation-timeline" data-labels='${jsonAttr(Object.keys(box.citations_by_year))}' data-values='${jsonAttr(Object.values(box.citations_by_year))}'></canvas></div>
+    <div class="pub-charts-grid">
+      ${chartCard('Citing Sectors', 'ROR', 'pf-chart-sectors', box.sectors.map(s => s.label), box.sectors.map(s => s.count))}
+      ${chartCard('Citation Context', 'scite', 'pf-chart-scite', ['Supporting', 'Mentioning', 'Contradicting'], [box.scite.supporting, box.scite.mentioning, box.scite.contradicting])}
+      ${chartCard('Work Types', 'OpenAlex', 'pf-chart-worktypes', box.work_types.map(w => w.label), box.work_types.map(w => w.count))}
+      ${chartCard('Top Venues', 'OpenAlex', 'pf-chart-venues', box.top_venues.map(v => v.label), box.top_venues.map(v => v.count))}
+    </div>` : '';
   const labels = {wikipedia:'Wikipedia',reddit:'Reddit',bluesky:'Bluesky',hypothesis:'Expert annotations',stackexchange:'StackExchange',news:'News',other:'Other recorded mentions'};
   const teaching = {library_holdings:'Library holdings',ocw_mentions:'Syllabi / courseware',youtube_mentions:'Educational video lectures',otl_mentions:'Open textbooks',oer_listings:'Open educational resources'};
   const indicatorLabels = {has_open_review:'Open peer review',has_prism_context:'PRISM context',has_prism_peer_review:'PRISM peer reviews',has_openaire_reach:'OpenAIRE reach',has_openaire_open_instance:'OpenAIRE open instances'};
@@ -76,7 +86,7 @@ function publisherPage(box) {
     <p class="publisher-summary">${e(box.summary)}</p>${feature}${shelf}${map}
     <details class="publisher-detail" open><summary>Mentions &amp; reach</summary><p>${e(box.definitions.mentions)}</p><div class="publisher-ranks">${rank('Mentions by platform',entries(box.platform_counts,labels))}${rank('Citing sectors',box.sectors,'ROR')}</div><p>${e(box.definitions.reach)}</p><div class="publisher-ranks">${tagCloud('Top citing countries',box.countries,'OpenAlex')}${tagCloud('Top citing institutions',box.institutions,'ROR / OpenAlex')}</div></details>
     <details class="publisher-detail"><summary>Open science &amp; teaching</summary><div class="os-grid">${osTiles}</div>${rolePills}<div class="publisher-ranks" style="margin-top:1.2rem;">${rank('Teaching & library evidence',entries(box.teaching,teaching))}${rank('Open access provenance',box.oa_provenance)}</div>${qaFlag}</details>
-    <details class="publisher-detail"><summary>Scholarly context</summary><div class="publisher-ranks">${rank('Annual citations',Object.entries(box.citations_by_year).map(([label,count])=>({label,count})))}${tagCloud('Funders',box.funders,'Europe PMC')}</div><div class="publisher-ranks" style="margin-top:1.2rem;">${rank('Dominant concepts (weighted scores)',box.concepts)}</div><p>${fmt(box.top_10_percent_count)} works in the top 10% cited; ${fmt(box.top_1_percent_count)} in the top 1%. Recorded integrity flags: ${fmt(box.retracted_count)} retractions, ${fmt(box.eoc_count)} expressions of concern, ${fmt(box.pubpeer_count)} works with PubPeer discussions.</p></details>
+    <details class="publisher-detail"><summary>Scholarly context</summary>${charts}<div class="publisher-ranks" style="margin-top:1.2rem;">${tagCloud('Funders',box.funders,'Europe PMC')}${rank('Dominant concepts (weighted scores)',box.concepts)}</div><p>${fmt(box.top_10_percent_count)} works in the top 10% cited; ${fmt(box.top_1_percent_count)} in the top 1%. Recorded integrity flags: ${fmt(box.retracted_count)} retractions, ${fmt(box.eoc_count)} expressions of concern, ${fmt(box.pubpeer_count)} works with PubPeer discussions.</p></details>
     <details class="publisher-detail"><summary>All ${fmt(box.total_works)} works</summary><div class="publisher-table-wrap"><table class="publisher-table"><thead><tr><th>Year</th><th>Title</th><th>Citations</th><th>Mentions</th></tr></thead><tbody>${works}</tbody></table></div></details>
     <p class="publisher-updated">Overview refreshed ${e(new Date(box.generated_at).toLocaleString('en-GB', {timeZone:'UTC'}))} UTC. Source evidence may have earlier collection dates.<br>${e(box.definitions.coverage)}</p>`;
 }
@@ -243,6 +253,55 @@ function initPublisherTabs(host) {
     btnA.addEventListener('click', () => activate('a'));
     btnB.addEventListener('click', () => activate('b'));
   });
+}
+
+const PF_PALETTE = ['#2E4563', '#0d9488', '#6366f1', '#f59e0b', '#ec4899', '#0ea5e9', '#8b5cf6', '#14b8a6'];
+const PF_DOUGHNUT_OPTS = {
+  responsive: true, maintainAspectRatio: false, cutout: '68%',
+  plugins: { legend: { position: 'right', labels: { boxWidth: 9, padding: 8, font: { size: 10 } } } }
+};
+
+function renderPublisherCharts(host) {
+  if (typeof Chart === 'undefined') return;
+  host.querySelectorAll('canvas[data-chart="doughnut"]').forEach(canvas => {
+    let labels, data;
+    try {
+      labels = JSON.parse(canvas.getAttribute('data-labels') || '[]');
+      data = JSON.parse(canvas.getAttribute('data-values') || '[]');
+    } catch (e) { return; }
+    const wrap = canvas.closest('.pub-chart-wrap');
+    if (!data.length || data.reduce((a, b) => a + b, 0) === 0) {
+      if (wrap) wrap.innerHTML = '<div class="publisher-updated" style="display:flex;align-items:center;height:100%;">No data available.</div>';
+      return;
+    }
+    new Chart(canvas.getContext('2d'), {
+      type: 'doughnut',
+      data: { labels, datasets: [{ data, backgroundColor: PF_PALETTE, borderWidth: 0 }] },
+      options: PF_DOUGHNUT_OPTS,
+    });
+  });
+
+  const timeline = host.querySelector('#pf-citation-timeline');
+  if (timeline) {
+    const labels = JSON.parse(timeline.getAttribute('data-labels') || '[]');
+    const data = JSON.parse(timeline.getAttribute('data-values') || '[]');
+    if (data.length && data.some(v => v > 0)) {
+      new Chart(timeline.getContext('2d'), {
+        type: 'bar',
+        data: { labels, datasets: [{ label: 'Citations', data, backgroundColor: '#2E4563', borderRadius: 4 }] },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          scales: {
+            y: { beginAtZero: true, border: { display: false }, grid: { color: '#f3f4f6' } },
+            x: { grid: { display: false }, border: { display: false } },
+          },
+          plugins: { legend: { display: false } },
+        },
+      });
+    } else {
+      timeline.closest('.pub-timeline-wrap').innerHTML = '<div class="publisher-updated" style="display:flex;align-items:center;height:100%;">No annual citation data available.</div>';
+    }
+  }
 }
 
 function printPublisherPage() {
