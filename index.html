@@ -232,6 +232,19 @@
 
     .facet-options { display: flex; flex-direction: column; gap: 0.1rem; }
     .facet-options.overflow { max-height: 180px; overflow-y: auto; }
+    .facet-search {
+      width: 100%;
+      box-sizing: border-box;
+      font: inherit;
+      font-size: 0.8rem;
+      padding: 0.35rem 0.55rem;
+      margin: 0 0 0.4rem 0;
+      border: 1px solid var(--border);
+      border-radius: 0.4rem;
+      background: var(--surface);
+      color: var(--text);
+    }
+    .facet-search:focus { outline: 2px solid var(--accent-light); border-color: var(--accent); }
     .facet-opt {
       display: flex;
       align-items: center;
@@ -1050,6 +1063,8 @@
     <!-- Publisher / venue -->
     <div class="facet-group collapsed" id="fg-venue">
       <h3 onclick="toggleFacet('fg-venue')">Publisher / venue <span class="caret">▾</span></h3>
+      <input type="text" class="facet-search" id="venueSearchInput" placeholder="Search publisher…"
+             oninput="onVenueSearch(this.value)" onclick="event.stopPropagation()">
       <div class="facet-options overflow" id="fo-venue"></div>
     </div>
 
@@ -1473,6 +1488,39 @@ function renderCards(stories) {
 }
 
 // ── render facets ─────────────────────────────────────────────────────────
+function venueLabel(k, venueAliases, visibleVenues) {
+  const aliases = venueAliases[k];
+  // Only annotate when the alias is actually shown alongside it — once its
+  // dominated pair is hidden from the list, there's nothing left to
+  // disambiguate from.
+  if (!aliases || !aliases.some(a => visibleVenues.has(a))) return esc(k);
+  const title = `Same works as: ${aliases.join(", ")}`;
+  return `${esc(k)} <span class="facet-alias" title="${esc(title)}">= ${esc(aliases[0])}</span>`;
+}
+
+// Type-to-filter for the Publisher / venue facet: searches every publisher
+// on the platform (not just the default top-25 slice) by substring match.
+function renderVenueOptions(query) {
+  const data = state.venueFacet;
+  const el = document.getElementById("fo-venue");
+  if (!data || !el) return;
+  const q = (query || "").trim().toLowerCase();
+  const keys = q
+    ? data.allVenuesSorted.filter(k => k.toLowerCase().includes(q))
+    : data.allVenuesSorted.slice(0, 25);
+  if (q && !keys.length) {
+    el.innerHTML = `<p class="facet-empty">No publisher matches “${esc(query.trim())}”.</p>`;
+    return;
+  }
+  const visible = new Set(keys);
+  renderFacetGroup("fo-venue", "venue", data.allC, data.filtC,
+    k => venueLabel(k, data.venueAliases, visible), keys);
+}
+
+function onVenueSearch(value) {
+  renderVenueOptions(value);
+}
+
 function renderFacetGroup(elId, facetKey, allCounts, filtCounts, labelFn, keys) {
   const el = document.getElementById(elId);
   const activeSet = state.filters[facetKey];
@@ -1533,18 +1581,13 @@ function renderFacets(allStories, filtered) {
     const aliases = venueAliases[k];
     return !!aliases && !VENUE_DISPLAY_PREFERENCE.has(k) && aliases.some(a => VENUE_DISPLAY_PREFERENCE.has(a));
   };
-  const topVenues = Object.entries(allC.venue).sort((a,b)=>b[1]-a[1])
-    .map(([k])=>k).filter(k => !isDominatedAlias(k)).slice(0,25);
-  const visibleVenues = new Set(topVenues);
-  renderFacetGroup("fo-venue", "venue", allC.venue, filtC.venue, k => {
-    const aliases = venueAliases[k];
-    // Only annotate when the alias is actually shown alongside it — once its
-    // dominated pair is hidden from the list, there's nothing left to
-    // disambiguate from.
-    if (!aliases || !aliases.some(a => visibleVenues.has(a))) return esc(k);
-    const title = `Same works as: ${aliases.join(", ")}`;
-    return `${esc(k)} <span class="facet-alias" title="${esc(title)}">= ${esc(aliases[0])}</span>`;
-  }, topVenues);
+  const allVenuesSorted = Object.entries(allC.venue).sort((a,b)=>b[1]-a[1])
+    .map(([k])=>k).filter(k => !isDominatedAlias(k));
+  const topVenues = allVenuesSorted.slice(0,25);
+  // Cache the full (unsliced) list so the search box below can filter across
+  // every publisher on the platform, not just the default top 25 shown here.
+  state.venueFacet = { allC: allC.venue, filtC: filtC.venue, venueAliases, allVenuesSorted };
+  renderVenueOptions(document.getElementById("venueSearchInput")?.value || "");
 
   const topSeries = Object.entries(allC.series).sort((a,b)=>b[1]-a[1]).slice(0,30).map(([k])=>k);
   const seriesEl = document.getElementById("fo-series");
