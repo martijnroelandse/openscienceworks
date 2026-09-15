@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>BookStories embed — publisher placement prototype</title>
+  <style>
+    :root{
+      --lup:#a80000; --lup-dark:#7d0000; --ink:#1f2430; --muted:#5b6472; --line:#d9dde3;
+      --paper:#ffffff; --wash:#f6f7f9;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--wash);color:var(--ink);
+         font-family:"Iowan Old Style",Georgia,"Times New Roman",serif;font-size:16px;line-height:1.55}
+    .shell{max-width:1140px;margin:0 auto;padding:0 24px}
+    .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+
+    /* prototype disclosure — first thing on the page, deliberately loud */
+    .proto{background:#fffbeb;border-bottom:2px solid #F2C94C;color:#713f12}
+    .proto div{max-width:1140px;margin:0 auto;padding:10px 24px;font-size:13px;line-height:1.55;
+               font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+    .proto a{color:#713f12;font-weight:700}
+    .proto .dot{color:#b45309}
+
+    header.site{background:var(--paper);border-bottom:3px solid var(--lup)}
+    .site-in{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0}
+    .wordmark{font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--lup);font-weight:600;line-height:1.5}
+    .wordmark small{display:block;letter-spacing:.14em;color:var(--muted);font-size:10.5px;margin-top:3px}
+    nav.site-nav{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;gap:20px}
+
+    .crumbs{font-size:13px;color:var(--muted);padding:16px 0}
+    .crumbs a{color:var(--lup);text-decoration:none}
+
+    .grid{display:grid;grid-template-columns:210px 1fr;gap:38px;align-items:start;padding-bottom:40px}
+    .jacket{width:210px;height:315px;background:linear-gradient(170deg,#33414f,#1b242e);color:#e9dfc4;
+            display:flex;flex-direction:column;justify-content:space-between;padding:20px 16px;
+            box-shadow:0 10px 26px rgba(0,0,0,.28)}
+    .jacket .series{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.8}
+    .jacket b{font-size:23px;line-height:1.14;font-weight:600}
+    .jacket .who{font-size:11px;opacity:.85}
+    .side-meta{margin-top:18px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+               font-size:12.5px;color:var(--muted);line-height:1.7}
+    .side-meta b{color:var(--ink)}
+
+    h1{font-size:33px;line-height:1.16;margin:0 0 6px;font-weight:600}
+    .sub{font-size:19px;color:var(--muted);font-style:italic;margin:0 0 14px}
+    .byline{font-size:15px;margin:0 0 18px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+    .btn{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:13.5px;
+         font-weight:600;padding:10px 18px;border:1px solid var(--lup);color:var(--lup);
+         background:var(--paper);text-decoration:none}
+    .btn.solid{background:var(--lup);color:#fff}
+
+    .tabs{display:flex;gap:26px;border-bottom:1px solid var(--line);margin-bottom:22px;
+          font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:13px;
+          letter-spacing:.06em;text-transform:uppercase}
+    .tabs span{padding:0 0 10px;color:var(--muted);cursor:default}
+    .tabs span.on{color:var(--lup);border-bottom:2px solid var(--lup);font-weight:600;margin-bottom:-1px}
+
+    .cols{display:grid;grid-template-columns:1fr 360px;gap:34px;align-items:start}
+    .blurb p{margin:0 0 14px;max-width:62ch}
+    .aside h4{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:11px;
+              letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 10px;font-weight:600}
+    iframe{width:100%;height:300px;border:0;display:block;overflow:hidden}
+    .demo{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:12px;
+          color:#7f1d1d;background:#fff7f6;border:1px dashed #e8b4ae;padding:8px 10px;margin:0 0 12px;
+          display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .demo button{font:inherit;font-size:12px;border:1px solid #e0aaa4;background:#fff;color:#7f1d1d;
+                 border-radius:999px;padding:3px 11px;cursor:pointer}
+    .demo button[aria-pressed="true"]{background:#7f1d1d;color:#fff;border-color:#7f1d1d}
+    @media (max-width:900px){.grid,.cols{grid-template-columns:1fr}.jacket{width:170px;height:255px}}
+  </style>
+</head>
+<body>
+  <div class="proto">
+    <div><strong>Prototype.</strong> A mock-up of a publisher title page, built by
+      <a href="https://www.openscience.works/">openscience<span class="dot">.</span>works</a>
+      to show how a BookStories panel would sit alongside a book. It is <strong>not</strong> a Liverpool
+      University Press page, is not a copy of their live design, and is not affiliated with or endorsed by
+      the Press. The book, the metadata and every figure in the panel are real.</div>
+  </div>
+
+  <header class="site">
+    <div class="shell site-in">
+      <div class="wordmark">Liverpool University Press<small>Founded 1899</small></div>
+      <nav class="site-nav sans"><span>Books</span><span>Journals</span><span>Open Access</span><span>About</span></nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="crumbs sans"><a href="#">Home</a> / <a href="#">Books</a> / <a href="#">Translated Texts for Historians</a> / The Goths in the Fourth Century</div>
+
+    <div class="grid">
+      <div>
+        <div class="jacket">
+          <span class="series">Translated Texts for Historians · 11</span>
+          <b>The Goths in the Fourth Century</b>
+          <span class="who">Peter Heather · John Matthews</span>
+        </div>
+        <div class="side-meta sans">
+          <div><b>Published:</b> 1991</div>
+          <div><b>Series:</b> Translated Texts for Historians</div>
+          <div><b>ISBN:</b> 978-0-85323-426-5</div>
+          <div><b>DOI:</b> 10.3828/978-0-85323-426-5</div>
+        </div>
+      </div>
+
+      <section>
+        <h1>The Goths in the Fourth Century</h1>
+        <p class="sub">Translated Texts for Historians, volume 11</p>
+        <p class="byline">Peter Heather and John Matthews</p>
+
+        <div class="actions sans">
+          <a class="btn solid" href="#">Buy the book</a>
+          <a class="btn" href="#">Request inspection copy</a>
+          <a class="btn" href="#">Recommend to library</a>
+        </div>
+
+        <div class="tabs"><span class="on">Description</span><span>Contents</span><span>Reviews</span><span>Author</span><span>Related</span></div>
+
+        <div class="cols">
+          <div class="blurb">
+            <p>The fourth century was a crucial period in the history of the Goths, whose relations with the Roman Empire shifted from frontier warfare to settlement within the imperial provinces. This volume brings together the principal sources for that history in translation, with commentary.</p>
+            <p>The texts assembled here — the <em>Passion of St Saba</em>, Ulfila's letter, the fragments of Eunapius and the relevant sections of Ammianus Marcellinus among them — remain the essential documentary basis for the study of Gothic society, religion and the crossing of the Danube.</p>
+            <p>Peter Heather is Professor of Medieval History at King's College London. John Matthews is John M. Schiff Professor Emeritus of Classics and History at Yale University.</p>
+          </div>
+
+          <aside class="aside">
+            <h4>How this book is being used</h4>
+            <div class="demo">
+              <b>Demo:</b>
+              <button type="button" data-variant="storyline" aria-pressed="true">Storyline</button>
+              <button type="button" data-variant="audiences" aria-pressed="false">Who's reading it</button>
+              <button type="button" data-variant="pulse" aria-pressed="false">Still moving</button>
+            </div>
+            <iframe id="bs" title="BookStories — how The Goths in the Fourth Century is being read and cited"
+                    src="embed_10.3828_978-0-85323-426-5.html?variant=storyline&partner=lup"
+                    loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </aside>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var frame = document.getElementById("bs");
+      window.addEventListener("message", function (e) {
+        var d = e && e.data;
+        if (!d || d.type !== "bookstory-embed-height") return;
+        var h = Number(d.height);
+        if (Number.isFinite(h) && h > 0) frame.style.height = Math.ceil(h) + "px";
+      });
+      document.querySelectorAll(".demo [data-variant]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          document.querySelectorAll(".demo [data-variant]").forEach(function (x) { x.setAttribute("aria-pressed", "false"); });
+          b.setAttribute("aria-pressed", "true");
+          frame.src = "embed_10.3828_978-0-85323-426-5.html?variant=" + b.dataset.variant + "&partner=lup";
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
