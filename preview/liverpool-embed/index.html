@@ -7,59 +7,101 @@
   <title>BookStories embed — publisher placement prototype</title>
   <style>
     :root{
-      --lup:#a80000; --lup-dark:#7d0000; --ink:#1f2430; --muted:#5b6472; --line:#d9dde3;
+      --lup:#7a1220; --lup-dark:#530c16; --access:#c0272e;
+      --ink:#1f2430; --muted:#5b6472; --line:#d9dde3;
       --paper:#ffffff; --wash:#f6f7f9;
     }
     *{box-sizing:border-box}
     body{margin:0;background:var(--wash);color:var(--ink);
          font-family:"Iowan Old Style",Georgia,"Times New Roman",serif;font-size:16px;line-height:1.55}
-    .shell{max-width:1140px;margin:0 auto;padding:0 24px}
+    .shell{max-width:1180px;margin:0 auto;padding:0 24px}
     .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
 
     /* prototype disclosure — first thing on the page, deliberately loud */
     .proto{background:#fffbeb;border-bottom:2px solid #F2C94C;color:#713f12}
-    .proto div{max-width:1140px;margin:0 auto;padding:10px 24px;font-size:13px;line-height:1.55;
+    .proto div{max-width:1180px;margin:0 auto;padding:10px 24px;font-size:13px;line-height:1.55;
                font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
     .proto a{color:#713f12;font-weight:700}
     .proto .dot{color:#b45309}
 
-    header.site{background:var(--paper);border-bottom:3px solid var(--lup)}
-    .site-in{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0}
-    .wordmark{font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--lup);font-weight:600;line-height:1.5}
-    .wordmark small{display:block;letter-spacing:.14em;color:var(--muted);font-size:10.5px;margin-top:3px}
-    nav.site-nav{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;gap:20px}
+    /* ---- site chrome: approximates the real page's structure (search bar,
+       two-row nav) without copying LUP's actual logo artwork or cover image —
+       both stay invented, per the disclosure above. ---- */
+    header.site{background:var(--paper);border-bottom:1px solid var(--line)}
+    .site-top{display:flex;align-items:center;gap:28px;padding:18px 0 10px;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;flex-shrink:0}
+    .brand-mark{width:34px;height:34px;border-radius:50%;flex-shrink:0;
+                background:radial-gradient(circle at 35% 30%, var(--lup), var(--lup-dark));
+                box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+    .wordmark{font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--lup);font-weight:600;line-height:1.35}
+    .wordmark small{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+                     letter-spacing:.16em;color:var(--muted);font-size:9.5px;margin-top:3px;text-transform:uppercase}
+    .searchbar{display:flex;align-items:stretch;flex:1;min-width:220px;max-width:460px;border:1px solid var(--line);border-radius:3px;overflow:hidden}
+    .searchbar select{border:0;border-right:1px solid var(--line);background:var(--wash);font-size:12px;
+                       padding:0 10px;color:var(--ink);text-transform:uppercase;letter-spacing:.04em}
+    .searchbar input{border:0;flex:1;padding:0 10px;font-size:13px;min-width:0}
+    .searchbar input::placeholder{color:#9aa2ad}
+    .searchbar button{border:0;background:var(--lup);color:#fff;width:40px;cursor:default;font-size:14px}
+    .top-actions{display:flex;align-items:center;gap:10px;flex-shrink:0;margin-left:auto}
+    .top-actions a{text-decoration:none;font-size:12.5px;font-weight:600}
+    .btn-dark{background:#1f2430;color:#fff !important;padding:9px 16px;border-radius:2px;white-space:nowrap}
+    .btn-outline{border:1px solid var(--ink);color:var(--ink) !important;padding:8px 15px;border-radius:2px;white-space:nowrap}
+    .cart{color:var(--ink) !important;white-space:nowrap}
+    .adv-search{display:block;padding:0 0 12px;font-size:12.5px;color:var(--muted);text-decoration:none}
+    nav.site-nav{border-top:1px solid var(--line);background:var(--paper)}
+    .nav-in{display:flex;gap:26px;padding:13px 24px;font-size:13.5px;color:var(--ink);flex-wrap:wrap}
+    .nav-in span{cursor:default}
 
-    .crumbs{font-size:13px;color:var(--muted);padding:16px 0}
-    .crumbs a{color:var(--lup);text-decoration:none}
-
-    .grid{display:grid;grid-template-columns:210px 1fr;gap:38px;align-items:start;padding-bottom:40px}
-    .jacket{width:210px;height:315px;background:linear-gradient(170deg,#33414f,#1b242e);color:#e9dfc4;
+    .grid{display:grid;grid-template-columns:210px 1fr;gap:38px;align-items:start;padding:28px 0 40px}
+    .left-col{display:flex;flex-direction:column;gap:14px}
+    .jacket{width:210px;height:300px;background:linear-gradient(170deg,#33414f,#1b242e);color:#e9dfc4;
             display:flex;flex-direction:column;justify-content:space-between;padding:20px 16px;
             box-shadow:0 10px 26px rgba(0,0,0,.28)}
     .jacket .series{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.8}
     .jacket b{font-size:23px;line-height:1.14;font-weight:600}
     .jacket .who{font-size:11px;opacity:.85}
-    .side-meta{margin-top:18px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-               font-size:12.5px;color:var(--muted);line-height:1.7}
-    .side-meta b{color:var(--ink)}
+    .price-box{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+               background:#1f2430;color:#fff;padding:7px 10px;font-size:11px;font-weight:700;
+               letter-spacing:.02em;display:flex;justify-content:space-between;align-items:center}
+    .price-box .was{opacity:.6;font-weight:400;text-decoration:line-through;margin:0 4px}
+    .recommend{display:block;text-align:center;background:var(--lup);color:#fff;text-decoration:none;
+                font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+                font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:12px 10px}
 
-    h1{font-size:33px;line-height:1.16;margin:0 0 6px;font-weight:600}
-    .sub{font-size:19px;color:var(--muted);font-style:italic;margin:0 0 14px}
-    .byline{font-size:15px;margin:0 0 18px}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
-    .btn{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:13.5px;
-         font-weight:600;padding:10px 18px;border:1px solid var(--lup);color:var(--lup);
-         background:var(--paper);text-decoration:none}
-    .btn.solid{background:var(--lup);color:#fff}
+    .access{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+             font-size:12.5px;font-weight:700;color:var(--access);letter-spacing:.02em;margin:0 0 8px}
+    h1{font-size:33px;line-height:1.16;margin:0 0 10px;font-weight:600}
+    .meta{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+          font-size:13.5px;color:var(--ink);margin:0 0 6px}
+    .subjects{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+              font-size:13.5px;margin:0 0 12px}
+    .subjects a{color:var(--lup);text-decoration:none}
+    .isbns{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+           font-size:13px;color:var(--ink);margin:0 0 4px}
+    .doi-line{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+              font-size:11.5px;color:var(--muted);margin:0 0 12px}
+    .byline{font-size:15px;margin:0 0 12px}
+    .elib{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+          font-size:13px;color:var(--ink);margin:0 0 20px;max-width:56ch}
+    .elib a{color:var(--lup)}
+
+    .actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:26px;
+             font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+    .btn{font-size:12.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;
+         padding:10px 16px;border:1px solid #c7ccd3;color:var(--ink);background:#eceef1;text-decoration:none;
+         border-radius:2px;display:inline-flex;align-items:center;gap:7px}
+    .actions .spacer{flex:1}
 
     .tabs{display:flex;gap:26px;border-bottom:1px solid var(--line);margin-bottom:22px;
           font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:13px;
-          letter-spacing:.06em;text-transform:uppercase}
-    .tabs span{padding:0 0 10px;color:var(--muted);cursor:default}
-    .tabs span.on{color:var(--lup);border-bottom:2px solid var(--lup);font-weight:600;margin-bottom:-1px}
+          font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+    .tabs span{padding:0 0 10px;color:#9aa2ad;cursor:default}
+    .tabs span.on{color:var(--lup);border-bottom:2px solid var(--lup);margin-bottom:-1px}
 
     .cols{display:grid;grid-template-columns:1fr 360px;gap:34px;align-items:start}
     .blurb p{margin:0 0 14px;max-width:62ch}
+    .toc-h{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:15px;
+           font-weight:700;color:var(--ink);border-top:1px solid var(--line);margin:34px 0 0;padding-top:22px}
     .aside h4{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:11px;
               letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 10px;font-weight:600}
     iframe{width:100%;height:300px;border:0;display:block;overflow:hidden}
@@ -69,7 +111,12 @@
     .demo button{font:inherit;font-size:12px;border:1px solid #e0aaa4;background:#fff;color:#7f1d1d;
                  border-radius:999px;padding:3px 11px;cursor:pointer}
     .demo button[aria-pressed="true"]{background:#7f1d1d;color:#fff;border-color:#7f1d1d}
-    @media (max-width:900px){.grid,.cols{grid-template-columns:1fr}.jacket{width:170px;height:255px}}
+    @media (max-width:900px){
+      .grid,.cols{grid-template-columns:1fr}
+      .left-col{flex-direction:row;flex-wrap:wrap}
+      .jacket{width:170px;height:242px}
+      .top-actions{margin-left:0}
+    }
   </style>
 </head>
 <body>
@@ -77,47 +124,67 @@
     <div><strong>Prototype.</strong> A mock-up of a publisher title page, built by
       <a href="https://www.openscience.works/">openscience<span class="dot">.</span>works</a>
       to show how a BookStories panel would sit alongside a book. It is <strong>not</strong> a Liverpool
-      University Press page, is not a copy of their live design, and is not affiliated with or endorsed by
-      the Press. The book, the metadata and every figure in the panel are real.</div>
+      University Press page, does not use their logo or cover artwork, and is not affiliated with or
+      endorsed by the Press. The book, the metadata and every figure in the panel are real.</div>
   </div>
 
   <header class="site">
-    <div class="shell site-in">
-      <div class="wordmark">Liverpool University Press<small>Founded 1899</small></div>
-      <nav class="site-nav sans"><span>Books</span><span>Journals</span><span>Open Access</span><span>About</span></nav>
+    <div class="shell site-top">
+      <a class="brand" href="#">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="wordmark">Liverpool<br>University Press<small>Founded 1899</small></span>
+      </a>
+      <div class="searchbar sans">
+        <select aria-label="Search scope"><option>Anywhere</option></select>
+        <input type="text" placeholder="Enter words / phrases / DOI / ISBN /" readonly>
+        <button type="button" aria-label="Search">&#128269;</button>
+      </div>
+      <div class="top-actions sans">
+        <a class="btn-dark" href="#">Login | Register</a>
+        <a class="btn-outline" href="#">Institutional Access</a>
+        <a class="cart" href="#">&#128722; My Cart</a>
+      </div>
     </div>
+    <div class="shell"><a class="adv-search sans" href="#">Advanced Search</a></div>
+    <nav class="site-nav">
+      <div class="shell nav-in sans">
+        <span>About us &#9662;</span><span>Subjects</span><span>Books &#9662;</span>
+        <span>Collections and Archives &#9662;</span><span>Journals &#9662;</span>
+        <span>Open Access &#9662;</span><span>Partner Presses &#9662;</span><span>Distributed Presses</span>
+      </div>
+    </nav>
   </header>
 
   <main class="shell">
-    <div class="crumbs sans"><a href="#">Home</a> / <a href="#">Books</a> / <a href="#">Translated Texts for Historians</a> / The Goths in the Fourth Century</div>
-
     <div class="grid">
-      <div>
+      <div class="left-col">
         <div class="jacket">
           <span class="series">Translated Texts for Historians · 11</span>
           <b>The Goths in the Fourth Century</b>
           <span class="who">Peter Heather · John Matthews</span>
         </div>
-        <div class="side-meta sans">
-          <div><b>Published:</b> 1991</div>
-          <div><b>Series:</b> Translated Texts for Historians</div>
-          <div><b>ISBN:</b> 978-0-85323-426-5</div>
-          <div><b>DOI:</b> 10.3828/978-0-85323-426-5</div>
-        </div>
+        <a class="recommend" href="#">Recommend to a librarian</a>
+        <div class="price-box"><span>PAPERBACK</span><span><span class="was">&pound;35.50</span>&pound;28.40</span></div>
       </div>
 
       <section>
+        <p class="access">&#128274; No Access</p>
         <h1>The Goths in the Fourth Century</h1>
-        <p class="sub">Translated Texts for Historians, volume 11</p>
-        <p class="byline">Peter Heather and John Matthews</p>
+        <p class="meta">Published on 01 March 1991 &bull; 224 pages</p>
+        <p class="subjects"><a href="#">Translated Texts for Historians</a> &mdash; <a href="#">Ancient History &amp; Classics</a> &mdash; <a href="#">History</a></p>
+        <p class="isbns">ISBN: 9780853234265 (Paperback) | eISBN: 9781789628296 (PDF)</p>
+        <p class="doi-line">DOI: 10.3828/978-0-85323-426-5</p>
+        <p class="byline">Peter Heather, John Matthews</p>
+        <p class="elib">Ebook available to libraries as part of <a href="#">Translated Texts for Historians E-Library Free Trial</a>, <a href="#">Translated Texts for Historians E-Library</a></p>
 
-        <div class="actions sans">
-          <a class="btn solid" href="#">Buy the book</a>
-          <a class="btn" href="#">Request inspection copy</a>
-          <a class="btn" href="#">Recommend to library</a>
+        <div class="actions">
+          <a class="btn" href="#">&#128196; PDF/EPUB</a>
+          <span class="spacer"></span>
+          <a class="btn" href="#">&#128295; Tools</a>
+          <a class="btn" href="#">&lt; Share</a>
         </div>
 
-        <div class="tabs"><span class="on">Description</span><span>Contents</span><span>Reviews</span><span>Author</span><span>Related</span></div>
+        <div class="tabs"><span class="on">About this book</span><span>About the authors</span><span>Reviews</span></div>
 
         <div class="cols">
           <div class="blurb">
@@ -139,6 +206,8 @@
                     loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
           </aside>
         </div>
+
+        <h3 class="toc-h">Table of Contents</h3>
       </section>
     </div>
   </main>
