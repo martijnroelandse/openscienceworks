@@ -16778,45 +16778,45 @@ window.STORIES_DATA = [
 "sectors": [
 {
 "label": "Education",
-"count": 183
+"count": 186
 },
 {
-"label": "Nonprofit",
-"count": 6
+"label": "Facility",
+"count": 3
 },
 {
 "label": "Government",
-"count": 5
+"count": 1
 },
 {
 "label": "Healthcare",
-"count": 2
+"count": 1
 },
 {
 "label": "Other",
-"count": 2
+"count": 1
 }
 ],
 "countries": [
 {
 "label": "United States",
-"count": 74
+"count": 71
 },
 {
 "label": "United Kingdom",
-"count": 33
+"count": 34
 },
 {
 "label": "Australia",
-"count": 23
+"count": 24
 },
 {
 "label": "France",
-"count": 12
+"count": 13
 },
 {
-"label": "Canada",
-"count": 11
+"label": "Netherlands",
+"count": 10
 }
 ],
 "citing_institutions": [
@@ -16833,11 +16833,11 @@ window.STORIES_DATA = [
 "count": 7
 },
 {
-"label": "Northeastern Illinois University",
-"count": 5
+"label": "Aarhus University",
+"count": 6
 },
 {
-"label": "University of Wales",
+"label": "Northeastern Illinois University",
 "count": 5
 }
 ],
@@ -18363,6 +18363,150 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.1007/978-3-319-18317-6"
+]
+},
+{
+"file": "datastory_10.1594_pangaea.96900.html",
+"title": "The Brown University Foraminiferal Data Base (BFD)",
+"type": "DataStory",
+"doi": "10.1594/pangaea.96900",
+"year": 1999,
+"venue": "Publishing Network for Geoscientific and Environmental Data",
+"venue_name": "Publishing Network for Geoscientific and Environmental Data",
+"publisher": "Alfred-Wegener-Institut Helmholtz-Zentrum für Polar- und Meeresforschung",
+"concepts": [
+"Base (topology)",
+"Mathematics",
+"Mathematical analysis"
+],
+"roles": [
+"Infrastructure Dataset",
+"High-Visibility Uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
+"citation_count": 349,
+"event_count": 0,
+"event_data_status": "archive_unavailable",
+"archived_event_count": null,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": true,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary The Brown University Foraminiferal Data Base (BFD) (1999) in Publishing Network for Geoscientific and Environmental Data.",
+"cover_url": "",
+"authors": "Warren L Prell, Anthony J. Martin, Cullen, James L et al.",
+"all_authors": [
+"Warren L Prell",
+"Anthony J. Martin",
+"Cullen, James L",
+"M Trend"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 18
+},
+{
+"label": "Facility",
+"count": 13
+},
+{
+"label": "Archive",
+"count": 2
+},
+{
+"label": "Government",
+"count": 2
+},
+{
+"label": "Funder",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Ireland",
+"count": 9
+},
+{
+"label": "United Kingdom",
+"count": 7
+},
+{
+"label": "Germany",
+"count": 6
+},
+{
+"label": "Norway",
+"count": 6
+},
+{
+"label": "Switzerland",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "Ollscoil na Gaillimhe – University of Galway",
+"count": 9
+},
+{
+"label": "Research Ireland Centre for Applied Geosciences",
+"count": 9
+},
+{
+"label": "University of Liverpool",
+"count": 6
+},
+{
+"label": "National Oceanography Centre",
+"count": 6
+},
+{
+"label": "Bjerknes Centre for Climate Research",
+"count": 6
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1594/pangaea.96900"
 ]
 },
 {
@@ -28688,6 +28832,164 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "datastory_10.15146_5xcp-0d46.html",
+"title": "Complete data from the Barro Colorado 50-ha plot: 423617 trees, 35 years",
+"type": "DataStory",
+"doi": "10.15146/5xcp-0d46",
+"year": 2019,
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
+"concepts": [
+"Plot (graphics)",
+"Ecology",
+"Geography",
+"Cover (algebra)",
+"Forest cover",
+"Table (database)",
+"Diversity (politics)",
+"Vegetation (pathology)"
+],
+"roles": [
+"Infrastructure Dataset",
+"High-Visibility Uptake",
+"Dataset Reference Backbone",
+"Scholarly Uptake",
+"Rapid Uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
+"citation_count": 70,
+"event_count": 0,
+"event_data_status": "archive_unavailable",
+"archived_event_count": null,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": true,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary Complete data from the Barro Colorado 50-ha plot: 423617 trees, 35 years (2019) in Zenodo.",
+"cover_url": "",
+"authors": "Condit, Richard, Pérez, Rolando, Aguilar, Salomón et al.",
+"all_authors": [
+"Condit, Richard",
+"Pérez, Rolando",
+"Aguilar, Salomón",
+"Lao, Suzanne",
+"Foster, Robin",
+"Hubbell, Stephen"
+],
+"institutions": [
+"University of California, Santa Cruz",
+"Field Museum of Natural History",
+"University of California, Los Angeles"
+],
+"download_count": 2242,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 64
+},
+{
+"label": "Facility",
+"count": 41
+},
+{
+"label": "Government",
+"count": 17
+},
+{
+"label": "Archive",
+"count": 8
+},
+{
+"label": "Nonprofit",
+"count": 8
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 45
+},
+{
+"label": "Panama",
+"count": 26
+},
+{
+"label": "United Kingdom",
+"count": 13
+},
+{
+"label": "Germany",
+"count": 11
+},
+{
+"label": "China",
+"count": 8
+}
+],
+"citing_institutions": [
+{
+"label": "Smithsonian Tropical Research Institute",
+"count": 26
+},
+{
+"label": "Princeton University",
+"count": 9
+},
+{
+"label": "German Centre for Integrative Biodiversity Research",
+"count": 8
+},
+{
+"label": "The University of Texas at Austin",
+"count": 7
+},
+{
+"label": "Marquette University",
+"count": 6
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.15146/5xcp-0d46"
+]
+},
+{
 "file": "articlestory_10.1111_j.1460-9568.2004.03503.x.html",
 "title": "Trophic support delays but does not prevent cell‐intrinsic degeneration of neurons deficient for munc18‐1",
 "type": "ArticleStory",
@@ -29276,164 +29578,6 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.7554/elife.79714"
-]
-},
-{
-"file": "datastory_10.15146_5xcp-0d46.html",
-"title": "Complete data from the Barro Colorado 50-ha plot: 423617 trees, 35 years",
-"type": "DataStory",
-"doi": "10.15146/5xcp-0d46",
-"year": 2019,
-"venue": "Zenodo",
-"venue_name": "Zenodo",
-"publisher": "CERN",
-"concepts": [
-"Plot (graphics)",
-"Ecology",
-"Geography",
-"Cover (algebra)",
-"Forest cover",
-"Table (database)",
-"Diversity (politics)",
-"Vegetation (pathology)"
-],
-"roles": [
-"Infrastructure Dataset",
-"High-Visibility Uptake",
-"Dataset Reference Backbone",
-"Scholarly Uptake",
-"Rapid Uptake"
-],
-"is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 67,
-"event_count": 0,
-"event_data_status": "archive_unavailable",
-"archived_event_count": null,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": true,
-"excerpt": "Short impact summary Complete data from the Barro Colorado 50-ha plot: 423617 trees, 35 years (2019) in Zenodo.",
-"cover_url": "",
-"authors": "Condit, Richard, Pérez, Rolando, Aguilar, Salomón et al.",
-"all_authors": [
-"Condit, Richard",
-"Pérez, Rolando",
-"Aguilar, Salomón",
-"Lao, Suzanne",
-"Foster, Robin",
-"Hubbell, Stephen"
-],
-"institutions": [
-"University of California, Santa Cruz",
-"Field Museum of Natural History",
-"University of California, Los Angeles"
-],
-"download_count": 2242,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 63
-},
-{
-"label": "Facility",
-"count": 42
-},
-{
-"label": "Government",
-"count": 15
-},
-{
-"label": "Archive",
-"count": 8
-},
-{
-"label": "Company",
-"count": 7
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 45
-},
-{
-"label": "Panama",
-"count": 25
-},
-{
-"label": "United Kingdom",
-"count": 13
-},
-{
-"label": "Germany",
-"count": 11
-},
-{
-"label": "China",
-"count": 8
-}
-],
-"citing_institutions": [
-{
-"label": "Smithsonian Tropical Research Institute",
-"count": 25
-},
-{
-"label": "Princeton University",
-"count": 9
-},
-{
-"label": "German Centre for Integrative Biodiversity Research",
-"count": 8
-},
-{
-"label": "Marquette University",
-"count": 6
-},
-{
-"label": "University of Florida",
-"count": 6
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.15146/5xcp-0d46"
 ]
 },
 {
@@ -38062,150 +38206,6 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.1093/pastj/gtw039"
-]
-},
-{
-"file": "datastory_10.1594_pangaea.96900.html",
-"title": "The Brown University Foraminiferal Data Base (BFD)",
-"type": "DataStory",
-"doi": "10.1594/pangaea.96900",
-"year": 1999,
-"venue": "Publishing Network for Geoscientific and Environmental Data",
-"venue_name": "Publishing Network for Geoscientific and Environmental Data",
-"publisher": "Alfred-Wegener-Institut Helmholtz-Zentrum für Polar- und Meeresforschung",
-"concepts": [
-"Base (topology)",
-"Mathematics",
-"Mathematical analysis"
-],
-"roles": [
-"Infrastructure Dataset",
-"High-Visibility Uptake"
-],
-"is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 19,
-"event_count": 0,
-"event_data_status": "archive_unavailable",
-"archived_event_count": null,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary The Brown University Foraminiferal Data Base (BFD) (1999) in Publishing Network for Geoscientific and Environmental Data.",
-"cover_url": "",
-"authors": "Warren L Prell, Anthony J. Martin, Cullen, James L et al.",
-"all_authors": [
-"Warren L Prell",
-"Anthony J. Martin",
-"Cullen, James L",
-"M Trend"
-],
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 18
-},
-{
-"label": "Facility",
-"count": 13
-},
-{
-"label": "Archive",
-"count": 2
-},
-{
-"label": "Government",
-"count": 2
-},
-{
-"label": "Nonprofit",
-"count": 2
-}
-],
-"countries": [
-{
-"label": "Ireland",
-"count": 9
-},
-{
-"label": "United Kingdom",
-"count": 7
-},
-{
-"label": "Germany",
-"count": 6
-},
-{
-"label": "Norway",
-"count": 6
-},
-{
-"label": "United States",
-"count": 3
-}
-],
-"citing_institutions": [
-{
-"label": "Ollscoil na Gaillimhe – University of Galway",
-"count": 9
-},
-{
-"label": "Research Ireland Centre for Applied Geosciences",
-"count": 9
-},
-{
-"label": "University of Liverpool",
-"count": 6
-},
-{
-"label": "National Oceanography Centre",
-"count": 6
-},
-{
-"label": "Bjerknes Centre for Climate Research",
-"count": 6
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.1594/pangaea.96900"
 ]
 },
 {
@@ -62807,14 +62807,6 @@ window.STORIES_DATA = [
 {
 "label": "Healthcare",
 "count": 2
-},
-{
-"label": "Company",
-"count": 1
-},
-{
-"label": "Government",
-"count": 1
 }
 ],
 "countries": [
@@ -62829,10 +62821,6 @@ window.STORIES_DATA = [
 {
 "label": "United States",
 "count": 2
-},
-{
-"label": "Canada",
-"count": 1
 }
 ],
 "citing_institutions": [
@@ -62849,11 +62837,11 @@ window.STORIES_DATA = [
 "count": 2
 },
 {
-"label": "Yale University",
+"label": "Helmholtz Munich",
 "count": 2
 },
 {
-"label": "Human Technopole",
+"label": "Yale University",
 "count": 2
 }
 ],
@@ -62954,14 +62942,6 @@ window.STORIES_DATA = [
 {
 "label": "Healthcare",
 "count": 2
-},
-{
-"label": "Company",
-"count": 1
-},
-{
-"label": "Government",
-"count": 1
 }
 ],
 "countries": [
@@ -62976,10 +62956,6 @@ window.STORIES_DATA = [
 {
 "label": "United States",
 "count": 2
-},
-{
-"label": "Canada",
-"count": 1
 }
 ],
 "citing_institutions": [
@@ -62996,11 +62972,11 @@ window.STORIES_DATA = [
 "count": 2
 },
 {
-"label": "Yale University",
+"label": "Helmholtz Munich",
 "count": 2
 },
 {
-"label": "Human Technopole",
+"label": "Yale University",
 "count": 2
 }
 ],
@@ -72312,10 +72288,6 @@ window.STORIES_DATA = [
 "funders": [],
 "sectors": [
 {
-"label": "Company",
-"count": 1
-},
-{
 "label": "Education",
 "count": 1
 },
@@ -72337,14 +72309,6 @@ window.STORIES_DATA = [
 },
 {
 "label": "McGovern Institute for Brain Research",
-"count": 1
-},
-{
-"label": "IIT@MIT",
-"count": 1
-},
-{
-"label": "Engineering Arts (United States)",
 "count": 1
 },
 {
@@ -72441,10 +72405,6 @@ window.STORIES_DATA = [
 "funders": [],
 "sectors": [
 {
-"label": "Company",
-"count": 1
-},
-{
 "label": "Education",
 "count": 1
 },
@@ -72453,19 +72413,11 @@ window.STORIES_DATA = [
 "count": 1
 },
 {
-"label": "Government",
-"count": 1
-},
-{
 "label": "Healthcare",
 "count": 1
 }
 ],
 "countries": [
-{
-"label": "Canada",
-"count": 1
-},
 {
 "label": "Germany",
 "count": 1
@@ -72481,10 +72433,6 @@ window.STORIES_DATA = [
 ],
 "citing_institutions": [
 {
-"label": "Helmholtz Association of German Research Centres",
-"count": 1
-},
-{
 "label": "Howard Hughes Medical Institute",
 "count": 1
 },
@@ -72494,6 +72442,10 @@ window.STORIES_DATA = [
 },
 {
 "label": "Max Delbrück Center",
+"count": 1
+},
+{
+"label": "Helmholtz Munich",
 "count": 1
 },
 {
@@ -90678,4 +90630,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
-window.STORIES_STATS = {"total": 687, "total_articles": 290, "total_books": 310, "total_data": 61, "total_software": 26, "total_oa": 619, "pct_oa": 90, "total_citations": 1355317, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 687, "total_articles": 290, "total_books": 310, "total_data": 61, "total_software": 26, "total_oa": 619, "pct_oa": 90, "total_citations": 1355650, "num_disciplines": 30};
