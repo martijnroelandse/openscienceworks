@@ -31417,6 +31417,179 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "articlestory_10.1001_jama.2025.3810.html",
+"title": "Varenicline for Youth Nicotine Vaping Cessation",
+"type": "ArticleStory",
+"doi": "10.1001/jama.2025.3810",
+"year": 2025,
+"venue": "JAMA",
+"venue_name": "JAMA",
+"publisher": "American Medical Association",
+"concepts": [
+"Varenicline",
+"Medicine",
+"Smoking cessation",
+"Abstinence",
+"Placebo",
+"Randomized controlled trial",
+"Population",
+"Quitline"
+],
+"roles": [
+"High-Visibility Uptake",
+"Reference Point for Synthesis"
+],
+"is_oa": true,
+"oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
+"citation_count": 53,
+"event_count": 0,
+"event_data_status": "archive_unavailable",
+"archived_event_count": null,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Varenicline for Youth Nicotine Vaping Cessation (2025) in JAMA.",
+"cover_url": "",
+"authors": "A. Eden Evins, Corinne Cather, Harrison T. Reeder et al.",
+"all_authors": [
+"A. Eden Evins",
+"Corinne Cather",
+"Harrison T. Reeder",
+"Bryn Evohr",
+"Kevin Potter",
+"Gladys N. Pachas",
+"Kevin M. Gray",
+"Sharon Levy",
+"Nancy A. Rigotti",
+"Vanessa Iroegbulem",
+"Jason Dufour",
+"Kelly Casottana",
+"Meghan A. Costello",
+"Jodi M. Gilman",
+"Randi M. Schuster"
+],
+"institutions": [
+"Harvard University",
+"Massachusetts General Hospital",
+"Medical University of South Carolina",
+"Boston Children's Hospital"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Podcasts",
+"News"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {
+"podcast": 3,
+"news": 3
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIDA NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 39
+},
+{
+"label": "Healthcare",
+"count": 29
+},
+{
+"label": "Facility",
+"count": 4
+},
+{
+"label": "Funder",
+"count": 3
+},
+{
+"label": "Nonprofit",
+"count": 3
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 28
+},
+{
+"label": "United Kingdom",
+"count": 3
+},
+{
+"label": "Canada",
+"count": 2
+},
+{
+"label": "Italy",
+"count": 2
+},
+{
+"label": "Australia",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Harvard University",
+"count": 7
+},
+{
+"label": "Massachusetts General Hospital",
+"count": 7
+},
+{
+"label": "University of Southern California",
+"count": 3
+},
+{
+"label": "Children's Hospital of Los Angeles",
+"count": 3
+},
+{
+"label": "University of Wisconsin–Madison",
+"count": 3
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1001/jama.2025.3810"
+]
+},
+{
 "file": "articlestory_10.1073_pnas.1607187113.html",
 "title": "Early somatic mosaicism is a rare cause of long-QT syndrome",
 "type": "ArticleStory",
@@ -32072,179 +32245,6 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.7280/d1wt11"
-]
-},
-{
-"file": "articlestory_10.1001_jama.2025.3810.html",
-"title": "Varenicline for Youth Nicotine Vaping Cessation",
-"type": "ArticleStory",
-"doi": "10.1001/jama.2025.3810",
-"year": 2025,
-"venue": "JAMA",
-"venue_name": "JAMA",
-"publisher": "American Medical Association",
-"concepts": [
-"Varenicline",
-"Medicine",
-"Smoking cessation",
-"Abstinence",
-"Placebo",
-"Randomized controlled trial",
-"Population",
-"Quitline"
-],
-"roles": [
-"High-Visibility Uptake",
-"Reference Point for Synthesis"
-],
-"is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 48,
-"event_count": 0,
-"event_data_status": "archive_unavailable",
-"archived_event_count": null,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": false,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary Varenicline for Youth Nicotine Vaping Cessation (2025) in JAMA.",
-"cover_url": "",
-"authors": "A. Eden Evins, Corinne Cather, Harrison T. Reeder et al.",
-"all_authors": [
-"A. Eden Evins",
-"Corinne Cather",
-"Harrison T. Reeder",
-"Bryn Evohr",
-"Kevin Potter",
-"Gladys N. Pachas",
-"Kevin M. Gray",
-"Sharon Levy",
-"Nancy A. Rigotti",
-"Vanessa Iroegbulem",
-"Jason Dufour",
-"Kelly Casottana",
-"Meghan A. Costello",
-"Jodi M. Gilman",
-"Randi M. Schuster"
-],
-"institutions": [
-"Harvard University",
-"Massachusetts General Hospital",
-"Medical University of South Carolina",
-"Boston Children's Hospital"
-],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"Podcasts",
-"News"
-],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {
-"podcast": 3,
-"news": 3
-},
-"is_top1pct": true,
-"is_top10pct": true,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [
-"NIDA NIH HHS"
-],
-"sectors": [
-{
-"label": "Education",
-"count": 35
-},
-{
-"label": "Healthcare",
-"count": 23
-},
-{
-"label": "Nonprofit",
-"count": 7
-},
-{
-"label": "Facility",
-"count": 4
-},
-{
-"label": "Government",
-"count": 4
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 27
-},
-{
-"label": "United Kingdom",
-"count": 4
-},
-{
-"label": "Canada",
-"count": 2
-},
-{
-"label": "Italy",
-"count": 2
-},
-{
-"label": "Australia",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "Massachusetts General Hospital",
-"count": 7
-},
-{
-"label": "Harvard University",
-"count": 5
-},
-{
-"label": "University of Southern California",
-"count": 3
-},
-{
-"label": "Children's Hospital of Los Angeles",
-"count": 3
-},
-{
-"label": "Medical University of South Carolina",
-"count": 3
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.1001/jama.2025.3810"
 ]
 },
 {
@@ -90630,4 +90630,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
-window.STORIES_STATS = {"total": 687, "total_articles": 290, "total_books": 310, "total_data": 61, "total_software": 26, "total_oa": 619, "pct_oa": 90, "total_citations": 1355650, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 687, "total_articles": 290, "total_books": 310, "total_data": 61, "total_software": 26, "total_oa": 619, "pct_oa": 90, "total_citations": 1355655, "num_disciplines": 30};
