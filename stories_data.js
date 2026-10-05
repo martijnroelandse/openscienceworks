@@ -220,14 +220,16 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Hypothesis"
+"Hypothesis",
+"Reddit"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
 "platform_counts": {
-"hypothesis": 3
+"hypothesis": 3,
+"reddit": 1
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -1348,7 +1350,7 @@ window.STORIES_DATA = [
 "wikipedia": 9,
 "bluesky": 2,
 "hypothesis": 1,
-"reddit": 1,
+"reddit": 3,
 "substack": 1
 },
 "is_top1pct": true,
@@ -3905,12 +3907,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Reddit"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"reddit": 10
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -7471,14 +7477,16 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Hypothesis"
+"Hypothesis",
+"Reddit"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
 "platform_counts": {
-"hypothesis": 1
+"hypothesis": 1,
+"reddit": 4
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -7667,13 +7675,15 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Substack"
+"Substack",
+"Reddit"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"reddit": 3,
 "substack": 1
 },
 "is_top1pct": true,
@@ -7863,14 +7873,16 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Bluesky"
+"Bluesky",
+"Reddit"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
 "platform_counts": {
-"bluesky": 2
+"bluesky": 2,
+"reddit": 12
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -9697,7 +9709,7 @@ window.STORIES_DATA = [
 "platform_counts": {
 "wikipedia": 5,
 "bluesky": 3,
-"reddit": 4
+"reddit": 5
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -13288,12 +13300,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Reddit"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"reddit": 1
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -21505,13 +21521,15 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Podcasts",
-"Substack"
+"Substack",
+"Reddit"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"reddit": 10,
 "substack": 3,
 "podcast": 3
 },
@@ -27834,6 +27852,7 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Bluesky",
+"Reddit",
 "News",
 "Blogs"
 ],
@@ -27842,7 +27861,8 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
-"bluesky": 1
+"bluesky": 1,
+"reddit": 1
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -31498,6 +31518,7 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Podcasts",
+"Reddit",
 "News"
 ],
 "has_librarything": false,
@@ -31505,6 +31526,7 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"reddit": 1,
 "podcast": 3,
 "news": 3
 },
@@ -41255,6 +41277,7 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Bluesky",
+"Reddit",
 "News"
 ],
 "has_librarything": false,
@@ -41263,6 +41286,7 @@ window.STORIES_DATA = [
 "awards": [],
 "platform_counts": {
 "bluesky": 1,
+"reddit": 1,
 "news": 1
 },
 "is_top1pct": false,
@@ -44911,13 +44935,15 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Substack"
+"Substack",
+"Reddit"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"reddit": 1,
 "substack": 1
 },
 "is_top1pct": false,
@@ -46857,6 +46883,7 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Podcasts",
+"Reddit",
 "News"
 ],
 "has_librarything": false,
@@ -46864,6 +46891,7 @@ window.STORIES_DATA = [
 "has_award": false,
 "awards": [],
 "platform_counts": {
+"reddit": 1,
 "podcast": 1,
 "news": 2
 },
@@ -48467,7 +48495,8 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Blogs",
-"Bluesky"
+"Bluesky",
+"Reddit"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -48475,6 +48504,7 @@ window.STORIES_DATA = [
 "awards": [],
 "platform_counts": {
 "bluesky": 9,
+"reddit": 4,
 "blog": 1
 },
 "is_top1pct": true,
@@ -54940,12 +54970,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"Reddit"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {},
+"platform_counts": {
+"reddit": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
