@@ -4022,8 +4022,8 @@ window.STORIES_DATA = [
 "Development economics"
 ],
 "roles": [
-"Commercial Linkage",
 "Reference Point for Synthesis",
+"Commercial Linkage",
 "Evidence-bearing Reference",
 "Pedagogical Anchor",
 "Sustainability & Policy Relevance"
@@ -4067,7 +4067,8 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia",
-"LibraryThing"
+"LibraryThing",
+"Hardcover"
 ],
 "has_librarything": true,
 "librarything_rating": 8.3,
@@ -4178,6 +4179,7 @@ window.STORIES_DATA = [
 "roles": [
 "Active Public Discourse",
 "Reference Point for Synthesis",
+"Commercial Linkage",
 "Evidence-bearing Reference",
 "Public Visibility & Knowledge Base",
 "High-Visibility Uptake"
@@ -4227,7 +4229,8 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Wikipedia",
 "Blogs",
-"LibraryThing"
+"LibraryThing",
+"Hardcover"
 ],
 "has_librarything": true,
 "librarything_rating": 9.2,
@@ -8143,6 +8146,7 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Reference Point for Synthesis",
+"Commercial Linkage",
 "Evidence-bearing Reference"
 ],
 "is_oa": true,
@@ -8481,6 +8485,7 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Reference Point for Synthesis",
+"Commercial Linkage",
 "Evidence-bearing Reference",
 "Sustainability & Policy Relevance"
 ],
@@ -8639,6 +8644,7 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Reference Point for Synthesis",
+"Commercial Linkage",
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
@@ -8683,7 +8689,8 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia"
+"Wikipedia",
+"Hardcover"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -9254,8 +9261,8 @@ window.STORIES_DATA = [
 "Gender studies"
 ],
 "roles": [
-"Commercial Linkage",
 "Reference Point for Synthesis",
+"Commercial Linkage",
 "Pedagogical Anchor"
 ],
 "is_oa": true,
@@ -10417,6 +10424,7 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Reference Point for Synthesis",
+"Commercial Linkage",
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
@@ -11548,6 +11556,7 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Reference Point for Synthesis",
+"Commercial Linkage",
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
@@ -11594,7 +11603,8 @@ window.STORIES_DATA = [
 "series_id": "https://openalex.org/S4210174747",
 "belongs_to_series": true,
 "mention_platforms": [
-"Wikipedia"
+"Wikipedia",
+"Hardcover"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -15668,7 +15678,8 @@ window.STORIES_DATA = [
 "Archaeology"
 ],
 "roles": [
-"Reference Point for Synthesis"
+"Reference Point for Synthesis",
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -19282,8 +19293,8 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Active Public Discourse",
-"Commercial Linkage",
 "Reference Point for Synthesis",
+"Commercial Linkage",
 "Pedagogical Anchor"
 ],
 "is_oa": true,
@@ -20832,7 +20843,9 @@ window.STORIES_DATA = [
 "New York Times reviewed",
 "Philosophical anthropology"
 ],
-"roles": [],
+"roles": [
+"Commercial Linkage"
+],
 "is_oa": false,
 "oa_status": "closed",
 "oa_provenance_source": "Closed/Unknown",
@@ -20871,7 +20884,8 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Bluesky",
 "Wikipedia",
-"LibraryThing"
+"LibraryThing",
+"Hardcover"
 ],
 "has_librarything": true,
 "librarything_rating": 8.4,
@@ -28724,6 +28738,7 @@ window.STORIES_DATA = [
 "Engineering"
 ],
 "roles": [
+"Commercial Linkage",
 "Scholarly Uptake"
 ],
 "is_oa": true,
@@ -28766,7 +28781,9 @@ window.STORIES_DATA = [
 "series_name": "SpringerBriefs in Research and Innovation Governance",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [],
+"mention_platforms": [
+"Hardcover"
+],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -31989,6 +32006,7 @@ window.STORIES_DATA = [
 "Political economy"
 ],
 "roles": [
+"Commercial Linkage",
 "Scholarly Uptake",
 "Sustainability & Policy Relevance"
 ],
@@ -33808,6 +33826,7 @@ window.STORIES_DATA = [
 "Biology"
 ],
 "roles": [
+"Commercial Linkage",
 "Scholarly Uptake"
 ],
 "is_oa": true,
@@ -35537,6 +35556,7 @@ window.STORIES_DATA = [
 "Social science"
 ],
 "roles": [
+"Commercial Linkage",
 "Scholarly Uptake",
 "Sustainability & Policy Relevance"
 ],
@@ -35696,6 +35716,7 @@ window.STORIES_DATA = [
 "Art"
 ],
 "roles": [
+"Commercial Linkage",
 "Scholarly Uptake",
 "Sustainability & Policy Relevance"
 ],
@@ -36765,6 +36786,7 @@ window.STORIES_DATA = [
 "Geography"
 ],
 "roles": [
+"Commercial Linkage",
 "Pedagogical Anchor",
 "Scholarly Uptake",
 "Sustainability & Policy Relevance"
@@ -37667,6 +37689,7 @@ window.STORIES_DATA = [
 "Development economics"
 ],
 "roles": [
+"Commercial Linkage",
 "Scholarly Uptake"
 ],
 "is_oa": true,
@@ -38407,6 +38430,7 @@ window.STORIES_DATA = [
 "Psychology"
 ],
 "roles": [
+"Commercial Linkage",
 "Scholarly Uptake",
 "Sustainability & Policy Relevance"
 ],
@@ -38548,6 +38572,7 @@ window.STORIES_DATA = [
 "Law"
 ],
 "roles": [
+"Commercial Linkage",
 "Scholarly Uptake"
 ],
 "is_oa": true,
@@ -38699,6 +38724,7 @@ window.STORIES_DATA = [
 "Psychiatry"
 ],
 "roles": [
+"Commercial Linkage",
 "Pedagogical Anchor",
 "Scholarly Uptake",
 "Sustainability & Policy Relevance"
@@ -40160,7 +40186,8 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia",
-"LibraryThing"
+"LibraryThing",
+"Hardcover"
 ],
 "has_librarything": true,
 "librarything_rating": 10.0,
@@ -43068,6 +43095,7 @@ window.STORIES_DATA = [
 "Politics"
 ],
 "roles": [
+"Commercial Linkage",
 "Pedagogical Anchor",
 "Scholarly Uptake",
 "Sustainability & Policy Relevance"
@@ -43177,6 +43205,7 @@ window.STORIES_DATA = [
 "Movie theater"
 ],
 "roles": [
+"Commercial Linkage",
 "Scholarly Uptake"
 ],
 "is_oa": true,
@@ -44221,6 +44250,7 @@ window.STORIES_DATA = [
 "Sociology"
 ],
 "roles": [
+"Commercial Linkage",
 "Scholarly Uptake"
 ],
 "is_oa": true,
@@ -44606,6 +44636,7 @@ window.STORIES_DATA = [
 "Context (archaeology)"
 ],
 "roles": [
+"Commercial Linkage",
 "Scholarly Uptake",
 "Sustainability & Policy Relevance"
 ],
@@ -46252,6 +46283,7 @@ window.STORIES_DATA = [
 "History"
 ],
 "roles": [
+"Commercial Linkage",
 "Scholarly Uptake"
 ],
 "is_oa": true,
@@ -46542,6 +46574,7 @@ window.STORIES_DATA = [
 "Categorization"
 ],
 "roles": [
+"Commercial Linkage",
 "Scholarly Uptake"
 ],
 "is_oa": true,
@@ -47553,6 +47586,7 @@ window.STORIES_DATA = [
 "TRACE (psycholinguistics)"
 ],
 "roles": [
+"Commercial Linkage",
 "Pedagogical Anchor",
 "Sustainability & Policy Relevance",
 "Scholarly Uptake"
@@ -49852,6 +49886,7 @@ window.STORIES_DATA = [
 "Ecology"
 ],
 "roles": [
+"Commercial Linkage",
 "Sustainability & Policy Relevance",
 "Scholarly Uptake"
 ],
@@ -50030,7 +50065,8 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"LibraryThing"
+"LibraryThing",
+"Hardcover"
 ],
 "has_librarything": true,
 "librarything_rating": 10.0,
@@ -50113,6 +50149,7 @@ window.STORIES_DATA = [
 "History"
 ],
 "roles": [
+"Commercial Linkage",
 "Scholarly Uptake"
 ],
 "is_oa": true,
@@ -54455,6 +54492,7 @@ window.STORIES_DATA = [
 "Water resource management"
 ],
 "roles": [
+"Commercial Linkage",
 "Sustainability & Policy Relevance",
 "Scholarly Uptake"
 ],
@@ -58459,6 +58497,7 @@ window.STORIES_DATA = [
 "Electrical engineering"
 ],
 "roles": [
+"Commercial Linkage",
 "Pedagogical Anchor",
 "Sustainability & Policy Relevance",
 "Scholarly Uptake"
@@ -58587,6 +58626,7 @@ window.STORIES_DATA = [
 "Period (music)"
 ],
 "roles": [
+"Commercial Linkage",
 "Sustainability & Policy Relevance",
 "Scholarly Uptake"
 ],
@@ -61827,6 +61867,7 @@ window.STORIES_DATA = [
 "Psychology"
 ],
 "roles": [
+"Commercial Linkage",
 "Sustainability & Policy Relevance",
 "Scholarly Uptake"
 ],
@@ -61930,6 +61971,7 @@ window.STORIES_DATA = [
 "Geography"
 ],
 "roles": [
+"Commercial Linkage",
 "Scholarly Uptake"
 ],
 "is_oa": true,
@@ -62038,6 +62080,7 @@ window.STORIES_DATA = [
 "Politics"
 ],
 "roles": [
+"Commercial Linkage",
 "Pedagogical Anchor",
 "Sustainability & Policy Relevance",
 "Scholarly Uptake"
@@ -70937,6 +70980,7 @@ window.STORIES_DATA = [
 "Philosophy"
 ],
 "roles": [
+"Commercial Linkage",
 "Sustainability & Policy Relevance",
 "Scholarly Uptake"
 ],
@@ -85001,6 +85045,7 @@ window.STORIES_DATA = [
 "Performance art"
 ],
 "roles": [
+"Commercial Linkage",
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
@@ -86733,6 +86778,7 @@ window.STORIES_DATA = [
 "Perspective (graphical)"
 ],
 "roles": [
+"Commercial Linkage",
 "Sustainability & Policy Relevance"
 ],
 "is_oa": false,
@@ -86814,6 +86860,7 @@ window.STORIES_DATA = [
 "Genetics"
 ],
 "roles": [
+"Commercial Linkage",
 "Pedagogical Anchor",
 "Sustainability & Policy Relevance"
 ],
@@ -87807,7 +87854,9 @@ window.STORIES_DATA = [
 "venue_name": "",
 "publisher": "Gallaudet University Press",
 "concepts": [],
-"roles": [],
+"roles": [
+"Commercial Linkage"
+],
 "is_oa": true,
 "oa_status": "gold",
 "oa_provenance_source": "ACLS/Arcadia rule",
