@@ -17950,145 +17950,6 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "bookstory_isbn_9789052019192.html",
-"title": "Enlightenment and genocide, contradictions of modernity",
-"type": "BookStory",
-"doi": "9789052019192",
-"year": null,
-"venue": "Peter Lang Verlag",
-"venue_name": "",
-"publisher": "Peter Lang Verlag",
-"concepts": [
-"Genocide",
-"Enlightenment",
-"Europe, politics and government, 1989-",
-"Europe, politics and government, 20th century",
-"Geography",
-"Anthropology",
-"Sociology"
-],
-"roles": [],
-"is_oa": false,
-"oa_status": "closed",
-"oa_provenance_source": "Closed/Unknown",
-"oa_provenance_sources": [],
-"oa_claimed_not_in_doab": false,
-"citation_count": 358,
-"event_count": 0,
-"event_data_status": null,
-"archived_event_count": null,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary Enlightenment and genocide, contradictions of modernity, published by P.I.E.",
-"cover_url": "https://covers.openlibrary.org/b/id/5213719-L.jpg",
-"authors": "B. Strath",
-"all_authors": [
-"B. Strath"
-],
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 32
-},
-{
-"label": "Facility",
-"count": 6
-},
-{
-"label": "Company",
-"count": 2
-},
-{
-"label": "Archive",
-"count": 2
-},
-{
-"label": "Government",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "Norway",
-"count": 10
-},
-{
-"label": "United Kingdom",
-"count": 9
-},
-{
-"label": "Sweden",
-"count": 6
-},
-{
-"label": "Denmark",
-"count": 6
-},
-{
-"label": "United States",
-"count": 4
-}
-],
-"citing_institutions": [
-{
-"label": "University of Helsinki",
-"count": 2
-},
-{
-"label": "University of Oslo",
-"count": 2
-},
-{
-"label": "Victoria University of Wellington",
-"count": 2
-},
-{
-"label": "Copenhagen Business School",
-"count": 2
-},
-{
-"label": "Lund University",
-"count": 2
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"9789052019192"
-]
-},
-{
 "file": "bookstory_10.4324_9781003021339.html",
 "title": "The Routledge Handbook of Research Methods for Social-Ecological Systems",
 "type": "BookStory",
@@ -35049,6 +34910,134 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.1101/2024.04.04.588111"
+]
+},
+{
+"file": "bookstory_isbn_9789052019192.html",
+"title": "Enlightenment and genocide, contradictions of modernity",
+"type": "BookStory",
+"doi": "9789052019192",
+"year": null,
+"venue": "Peter Lang Verlag",
+"venue_name": "",
+"publisher": "Peter Lang Verlag",
+"concepts": [
+"Genocide",
+"Enlightenment",
+"Europe, politics and government, 1989-",
+"Europe, politics and government, 20th century",
+"Modernity",
+"Politics",
+"The Holocaust",
+"Art history"
+],
+"roles": [],
+"is_oa": false,
+"oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
+"citation_count": 33,
+"event_count": 0,
+"event_data_status": null,
+"archived_event_count": null,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Enlightenment and genocide, contradictions of modernity, published by Peter Lang Verlag, has been cited 33 times.",
+"cover_url": "https://covers.openlibrary.org/b/id/5213719-L.jpg",
+"authors": "B. Strath",
+"all_authors": [
+"B. Strath"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 25
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Norway",
+"count": 12
+},
+{
+"label": "United States",
+"count": 4
+},
+{
+"label": "United Kingdom",
+"count": 3
+},
+{
+"label": "Australia",
+"count": 2
+},
+{
+"label": "Italy",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Oslo",
+"count": 12
+},
+{
+"label": "University of California, Irvine",
+"count": 1
+},
+{
+"label": "European University Institute",
+"count": 1
+},
+{
+"label": "University College Dublin",
+"count": 1
+},
+{
+"label": "University of East London",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"9789052019192"
 ]
 },
 {
@@ -90713,4 +90702,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
-window.STORIES_STATS = {"total": 687, "total_articles": 290, "total_books": 310, "total_data": 61, "total_software": 26, "total_oa": 619, "pct_oa": 90, "total_citations": 1355655, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 687, "total_articles": 290, "total_books": 310, "total_data": 61, "total_software": 26, "total_oa": 619, "pct_oa": 90, "total_citations": 1355330, "num_disciplines": 30};
