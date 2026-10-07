@@ -2631,22 +2631,6 @@ window.AUTHORS_DATA = [
     "page": "authorstory_daniel-vanmaekelbergh.html"
   },
   {
-    "slug": "0000-0002-1868-109X",
-    "display_name": "Danni Yu",
-    "orcid": "0000-0002-1868-109X",
-    "orcid_url": "https://orcid.org/0000-0002-1868-109X",
-    "pub_count": 2,
-    "story_types": [
-      "article"
-    ],
-    "total_citations": 89,
-    "total_mentions": 0,
-    "oa_count": 2,
-    "year_range": "2023–2024",
-    "institutions": [],
-    "page": "authorstory_0000-0002-1868-109X.html"
-  },
-  {
     "slug": "darrell-j-irvine",
     "display_name": "Darrell J. Irvine",
     "orcid": "",
@@ -23249,22 +23233,6 @@ window.AUTHORS_DATA = [
     "page": "authorstory_0000-0001-5937-4590.html"
   },
   {
-    "slug": "caroline-m-s-straatman",
-    "display_name": "Caroline M. S. Straatman",
-    "orcid": "",
-    "orcid_url": "",
-    "pub_count": 1,
-    "story_types": [
-      "article"
-    ],
-    "total_citations": 0,
-    "total_mentions": 0,
-    "oa_count": 1,
-    "year_range": "2017",
-    "institutions": [],
-    "page": "authorstory_caroline-m-s-straatman.html"
-  },
-  {
     "slug": "0000-0002-8425-3667",
     "display_name": "Caroline Morbieu",
     "orcid": "0000-0002-8425-3667",
@@ -23391,22 +23359,6 @@ window.AUTHORS_DATA = [
     "year_range": "2017",
     "institutions": [],
     "page": "authorstory_0000-0001-7503-8482.html"
-  },
-  {
-    "slug": "casey-papovich",
-    "display_name": "Casey Papovich",
-    "orcid": "",
-    "orcid_url": "",
-    "pub_count": 1,
-    "story_types": [
-      "article"
-    ],
-    "total_citations": 0,
-    "total_mentions": 0,
-    "oa_count": 1,
-    "year_range": "2017",
-    "institutions": [],
-    "page": "authorstory_casey-papovich.html"
   },
   {
     "slug": "0000-0001-8713-9213",
@@ -25727,22 +25679,6 @@ window.AUTHORS_DATA = [
     "year_range": "2023",
     "institutions": [],
     "page": "authorstory_0009-0007-0590-0437.html"
-  },
-  {
-    "slug": "corentin-schreiber",
-    "display_name": "Corentin Schreiber",
-    "orcid": "",
-    "orcid_url": "",
-    "pub_count": 1,
-    "story_types": [
-      "article"
-    ],
-    "total_citations": 0,
-    "total_mentions": 0,
-    "oa_count": 1,
-    "year_range": "2017",
-    "institutions": [],
-    "page": "authorstory_corentin-schreiber.html"
   },
   {
     "slug": "corinna-klingler",
@@ -29247,6 +29183,22 @@ window.AUTHORS_DATA = [
     "year_range": "2022",
     "institutions": [],
     "page": "authorstory_danielle-shlomit-sofer.html"
+  },
+  {
+    "slug": "0000-0002-1868-109X",
+    "display_name": "Danni Yu",
+    "orcid": "0000-0002-1868-109X",
+    "orcid_url": "https://orcid.org/0000-0002-1868-109X",
+    "pub_count": 1,
+    "story_types": [
+      "article"
+    ],
+    "total_citations": 86,
+    "total_mentions": 0,
+    "oa_count": 1,
+    "year_range": "2024",
+    "institutions": [],
+    "page": "authorstory_0000-0002-1868-109X.html"
   },
   {
     "slug": "0000-0002-4538-7814",
@@ -41569,22 +41521,6 @@ window.AUTHORS_DATA = [
     "page": "authorstory_0000-0003-1362-9302.html"
   },
   {
-    "slug": "glenn-g-kacprzak",
-    "display_name": "Glenn G. Kacprzak",
-    "orcid": "",
-    "orcid_url": "",
-    "pub_count": 1,
-    "story_types": [
-      "article"
-    ],
-    "total_citations": 0,
-    "total_mentions": 0,
-    "oa_count": 1,
-    "year_range": "2017",
-    "institutions": [],
-    "page": "authorstory_glenn-g-kacprzak.html"
-  },
-  {
     "slug": "0000-0002-2503-6283",
     "display_name": "GM Leung",
     "orcid": "0000-0002-2503-6283",
@@ -43727,22 +43663,6 @@ window.AUTHORS_DATA = [
     "year_range": "2024",
     "institutions": [],
     "page": "authorstory_hang-su.html"
-  },
-  {
-    "slug": "0000-0002-6877-6783",
-    "display_name": "Hang Su",
-    "orcid": "0000-0002-6877-6783",
-    "orcid_url": "https://orcid.org/0000-0002-6877-6783",
-    "pub_count": 1,
-    "story_types": [
-      "article"
-    ],
-    "total_citations": 3,
-    "total_mentions": 0,
-    "oa_count": 1,
-    "year_range": "2023",
-    "institutions": [],
-    "page": "authorstory_0000-0002-6877-6783.html"
   },
   {
     "slug": "hang-yang",
@@ -47407,22 +47327,6 @@ window.AUTHORS_DATA = [
     "year_range": "2017",
     "institutions": [],
     "page": "authorstory_0000-0002-2057-5376.html"
-  },
-  {
-    "slug": "ivo-labbe",
-    "display_name": "Ivo Labbé",
-    "orcid": "",
-    "orcid_url": "",
-    "pub_count": 1,
-    "story_types": [
-      "article"
-    ],
-    "total_citations": 0,
-    "total_mentions": 0,
-    "oa_count": 1,
-    "year_range": "2017",
-    "institutions": [],
-    "page": "authorstory_ivo-labbe.html"
   },
   {
     "slug": "0000-0003-4520-0068",
@@ -59489,22 +59393,6 @@ window.AUTHORS_DATA = [
     "page": "authorstory_0000-0002-3254-9044.html"
   },
   {
-    "slug": "karl-glazebrook",
-    "display_name": "Karl Glazebrook",
-    "orcid": "",
-    "orcid_url": "",
-    "pub_count": 1,
-    "story_types": [
-      "article"
-    ],
-    "total_citations": 0,
-    "total_mentions": 0,
-    "oa_count": 1,
-    "year_range": "2017",
-    "institutions": [],
-    "page": "authorstory_karl-glazebrook.html"
-  },
-  {
     "slug": "0000-0002-1574-7591",
     "display_name": "Karl Jansen",
     "orcid": "0000-0002-1574-7591",
@@ -60527,22 +60415,6 @@ window.AUTHORS_DATA = [
     "year_range": "2024",
     "institutions": [],
     "page": "authorstory_kim-christiaens.html"
-  },
-  {
-    "slug": "kim-vy-h-tran",
-    "display_name": "Kim-Vy H. Tran",
-    "orcid": "",
-    "orcid_url": "",
-    "pub_count": 1,
-    "story_types": [
-      "article"
-    ],
-    "total_citations": 0,
-    "total_mentions": 0,
-    "oa_count": 1,
-    "year_range": "2017",
-    "institutions": [],
-    "page": "authorstory_kim-vy-h-tran.html"
   },
   {
     "slug": "0000-0001-9208-2143",
@@ -63569,22 +63441,6 @@ window.AUTHORS_DATA = [
     "page": "authorstory_0000-0001-6357-2696.html"
   },
   {
-    "slug": "lee-r-spitler",
-    "display_name": "Lee R Spitler",
-    "orcid": "",
-    "orcid_url": "",
-    "pub_count": 1,
-    "story_types": [
-      "article"
-    ],
-    "total_citations": 0,
-    "total_mentions": 0,
-    "oa_count": 1,
-    "year_range": "2017",
-    "institutions": [],
-    "page": "authorstory_lee-r-spitler.html"
-  },
-  {
     "slug": "0000-0001-5185-9876",
     "display_name": "Lee R. Spitler",
     "orcid": "0000-0001-5185-9876",
@@ -65407,22 +65263,6 @@ window.AUTHORS_DATA = [
     "year_range": "2024",
     "institutions": [],
     "page": "authorstory_0000-0002-0980-5046.html"
-  },
-  {
-    "slug": "0000-0002-7109-6332",
-    "display_name": "Luyang Li",
-    "orcid": "0000-0002-7109-6332",
-    "orcid_url": "https://orcid.org/0000-0002-7109-6332",
-    "pub_count": 1,
-    "story_types": [
-      "article"
-    ],
-    "total_citations": 3,
-    "total_mentions": 0,
-    "oa_count": 1,
-    "year_range": "2023",
-    "institutions": [],
-    "page": "authorstory_0000-0002-7109-6332.html"
   },
   {
     "slug": "luis-m-allende",
@@ -73855,22 +73695,6 @@ window.AUTHORS_DATA = [
     "year_range": "2024",
     "institutions": [],
     "page": "authorstory_0000-0003-3544-1095.html"
-  },
-  {
-    "slug": "matteo-fuoli",
-    "display_name": "Matteo Fuoli",
-    "orcid": "",
-    "orcid_url": "",
-    "pub_count": 1,
-    "story_types": [
-      "article"
-    ],
-    "total_citations": 3,
-    "total_mentions": 0,
-    "oa_count": 1,
-    "year_range": "2023",
-    "institutions": [],
-    "page": "authorstory_matteo-fuoli.html"
   },
   {
     "slug": "0000-0002-1444-365X",
@@ -83855,22 +83679,6 @@ window.AUTHORS_DATA = [
     "year_range": "2017",
     "institutions": [],
     "page": "authorstory_0000-0001-5851-6649.html"
-  },
-  {
-    "slug": "pascal-a-oesch",
-    "display_name": "Pascal A. Oesch",
-    "orcid": "",
-    "orcid_url": "",
-    "pub_count": 1,
-    "story_types": [
-      "article"
-    ],
-    "total_citations": 0,
-    "total_mentions": 0,
-    "oa_count": 1,
-    "year_range": "2017",
-    "institutions": [],
-    "page": "authorstory_pascal-a-oesch.html"
   },
   {
     "slug": "pascal-manuel",
@@ -102961,22 +102769,6 @@ window.AUTHORS_DATA = [
     "page": "authorstory_0000-0002-8971-4434.html"
   },
   {
-    "slug": "the-atlas-collaboration",
-    "display_name": "The ATLAS Collaboration",
-    "orcid": "",
-    "orcid_url": "",
-    "pub_count": 1,
-    "story_types": [
-      "article"
-    ],
-    "total_citations": 0,
-    "total_mentions": 0,
-    "oa_count": 0,
-    "year_range": "2012",
-    "institutions": [],
-    "page": "authorstory_the-atlas-collaboration.html"
-  },
-  {
     "slug": "the-bacc-ii-author-team",
     "display_name": "The BACC II Author Team",
     "orcid": "",
@@ -103039,22 +102831,6 @@ window.AUTHORS_DATA = [
     "year_range": "2017",
     "institutions": [],
     "page": "authorstory_0000-0003-2804-0648.html"
-  },
-  {
-    "slug": "themiya-nanayakkara",
-    "display_name": "Themiya Nanayakkara",
-    "orcid": "",
-    "orcid_url": "",
-    "pub_count": 1,
-    "story_types": [
-      "article"
-    ],
-    "total_citations": 0,
-    "total_mentions": 0,
-    "oa_count": 1,
-    "year_range": "2017",
-    "institutions": [],
-    "page": "authorstory_themiya-nanayakkara.html"
   },
   {
     "slug": "theo-viel",
@@ -103727,22 +103503,6 @@ window.AUTHORS_DATA = [
     "year_range": "2017",
     "institutions": [],
     "page": "authorstory_0000-0002-9211-3277.html"
-  },
-  {
-    "slug": "tiantian-yuan",
-    "display_name": "Tiantian Yuan",
-    "orcid": "",
-    "orcid_url": "",
-    "pub_count": 1,
-    "story_types": [
-      "article"
-    ],
-    "total_citations": 0,
-    "total_mentions": 0,
-    "oa_count": 1,
-    "year_range": "2017",
-    "institutions": [],
-    "page": "authorstory_tiantian-yuan.html"
   },
   {
     "slug": "tiara-g-perez-morales",
