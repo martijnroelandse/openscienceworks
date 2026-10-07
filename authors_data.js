@@ -50388,22 +50388,6 @@ window.AUTHORS_DATA = [
     "page": "authorstory_juan-troncoso.html"
   },
   {
-    "slug": "judith",
-    "display_name": "JUDITH",
-    "orcid": "",
-    "orcid_url": "",
-    "pub_count": 1,
-    "story_types": [
-      "article"
-    ],
-    "total_citations": 0,
-    "total_mentions": 0,
-    "oa_count": 1,
-    "year_range": "",
-    "institutions": [],
-    "page": "authorstory_judith.html"
-  },
-  {
     "slug": "judith-gruber",
     "display_name": "Judith Gruber",
     "orcid": "",

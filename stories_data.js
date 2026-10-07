@@ -77956,86 +77956,6 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "articlestory_10.5281_zenodo.11472834.html",
-"title": "American University of Nigeria, Adamawa State Post-U.T.M.E Admission Form for 2024/2025 is out call 09125210477 For More Details On How to Apply And Register Online.Also Sales Of I.J.M.B Form,J.U.P.E.B Form,Predegree Form,Change Of Institution Form,Transfer Form Is still Ongoing Contact office of the admin On 09125210477 For more information on how to purchase the form and register online,for admission assistance and payment of school fee [TUITION FEE AND ACCEPTANCE FEE].",
-"type": "ArticleStory",
-"doi": "10.5281/zenodo.11472834",
-"year": 2024,
-"venue": "Zenodo",
-"venue_name": "Zenodo",
-"publisher": "CERN",
-"concepts": [
-"Nucleofection",
-"Gestational period",
-"TSG101",
-"Liquation",
-"Diafiltration",
-"Dysgeusia",
-"Emperipolesis",
-"Hyporeflexia"
-],
-"roles": [],
-"is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 0,
-"event_count": 0,
-"event_data_status": "archive_unavailable",
-"archived_event_count": null,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
-"has_certified_repository": false,
-"has_open_repository": true,
-"excerpt": "Short impact summary American University of Nigeria, Adamawa State Post-U.T.M.E Admission Form for 2024/2025 is out call 09125210477 For More Details On How to Apply And Register Online.Also Sales Of …",
-"cover_url": "",
-"authors": "JUDITH",
-"all_authors": [
-"JUDITH"
-],
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [],
-"countries": [],
-"citing_institutions": [],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.5281/zenodo.11472834"
-]
-},
-{
 "file": "articlestory_10.5281_zenodo.17117974.html",
 "title": "Archetypometrics, a Pragmateia: Empirical Determination of the Fundamental Archetypes of Fictional Characters",
 "type": "ArticleStory",
@@ -90713,4 +90633,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
-window.STORIES_STATS = {"total": 687, "total_articles": 290, "total_books": 310, "total_data": 61, "total_software": 26, "total_oa": 619, "pct_oa": 90, "total_citations": 1355655, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 686, "total_articles": 289, "total_books": 310, "total_data": 61, "total_software": 26, "total_oa": 618, "pct_oa": 90, "total_citations": 1355655, "num_disciplines": 30};
