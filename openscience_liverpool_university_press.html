@@ -26,8 +26,6 @@
              display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
         h2 span:first-child { flex: 1; }
         .muted { color: #6b7280; font-size: 0.85rem; }
-        .section-label { font-size: .65rem; font-weight: 700; text-transform: uppercase;
-                         letter-spacing: .1em; color: #9ca3af; margin-bottom: .5rem; margin-top: .25rem; }
 
         /* ── Tags / Badges ── */
         .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8;
@@ -53,7 +51,8 @@
                             font-weight: 500; text-decoration: none; color: #6b7280;
                             transition: background .15s, color .15s; }
         .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
-        .print-btn { display: flex; align-items: center; gap: .4rem; padding: .4rem .9rem;
+        .print-btn { display: flex; align-items: center; justify-content: center; gap: .4rem; padding: .4rem .9rem;
+                     min-height: 44px; box-sizing: border-box;
                      background: #2563eb; color: white; border: none; border-radius: .45rem;
                      font-size: .82rem; font-weight: 600; cursor: pointer;
                      box-shadow: 0 2px 8px rgba(37,99,235,.3); transition: background .15s; }
@@ -83,9 +82,9 @@
         .stats-strip-item:last-child { border-right: none; }
         .stats-strip-num { font-family: "Fraunces", Georgia, serif; font-size: 1.9rem; font-weight: 600;
                            color: #2563eb; line-height: 1.1; font-variant-numeric: tabular-nums; }
-        .stats-strip-label { font-size: .68rem; color: #6b7280; text-transform: uppercase;
+        .stats-strip-label { font-size: .69rem; color: #6b7280; text-transform: uppercase;
                              letter-spacing: .06em; margin-top: .25rem; }
-        .stats-strip-sub { font-size: .65rem; color: #b45309; font-weight: 700; margin-top: .2rem; }
+        .stats-strip-sub { display: inline-flex; align-items: center; gap: .25rem; font-size: .69rem; color: #b45309; font-weight: 700; margin-top: .2rem; }
         @media(max-width:640px) {
             .stats-strip { grid-template-columns: repeat(2,1fr); }
             .site-nav { flex-wrap: wrap; gap: .5rem; padding: .55rem 1rem; }
@@ -106,7 +105,7 @@
         .stat-label { font-size: .75rem; color: #64748b; text-transform: uppercase;
                       letter-spacing: .05em; font-weight: 600; }
         .stat-box-muted { background: #fafafa; border-style: dashed; }
-        .stat-box-muted .stat-label { color: #9ca3af; }
+        .stat-box-muted .stat-label { color: #6b7280; }
 
         /* ── Risk card ── */
         .risk-card { border: 2px solid #dc2626; background: #fff5f5; }
@@ -115,7 +114,7 @@
         /* ── Platform mentions ── */
         .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px,1fr)); gap: 1rem; }
         .platform-box { background: white; border-radius: .75rem; padding: 1rem;
-                        text-align: center; border: 1px solid #e2e8f0; border-top-width: 3px; }
+                        text-align: center; border: 1px solid #e2e8f0; }
         .platform-num { font-family: "Fraunces", Georgia, serif; font-size: 1.8rem; font-weight: 600;
                         line-height: 1; margin-bottom: .25rem; font-variant-numeric: tabular-nums; }
         .platform-lbl { font-size: .72rem; color: #6b7280; text-transform: uppercase;
@@ -124,7 +123,7 @@
         /* ── Role pills (same as story pages) ── */
         .roles-domain { margin-bottom: .85rem; }
         .roles-domain:last-of-type { margin-bottom: 0; }
-        .roles-domain-label { font-size: .62rem; font-weight: 700; text-transform: uppercase;
+        .roles-domain-label { font-size: .69rem; font-weight: 700; text-transform: uppercase;
                               letter-spacing: .07em; margin-bottom: .4rem; }
         .roles-row { display: flex; flex-wrap: wrap; gap: .35rem; }
         .role-pill { position: relative; display: inline-flex; align-items: center; gap: .3rem;
@@ -135,7 +134,7 @@
         .role-pill-public     { background: #fffbeb; color: #92400e; border-color: #fde68a; }
         .role-pill-practical  { background: #f0fdf4; color: #065f46; border-color: #bbf7d0; }
         .role-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-        .role-score { font-size: .6rem; font-weight: 700; padding: .05rem .3rem;
+        .role-score { font-size: .69rem; font-weight: 700; padding: .05rem .3rem;
                       border-radius: 999px; margin-left: .1rem; background: rgba(0,0,0,.06); }
 
         /* ── Chart cards ── */
@@ -156,7 +155,8 @@
         /* ── Works table filters ── */
         .works-filters { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: .75rem 0 .25rem; }
         .works-filter-btn { border: 1px solid #e5e7eb; background: #fff; color: #4b5563;
-                            border-radius: 999px; padding: .28rem .75rem; font-size: .78rem;
+                            border-radius: 999px; padding: .28rem .75rem; min-height: 44px; box-sizing: border-box;
+                            font-size: .78rem;
                             font-weight: 600; cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
         .works-filter-btn:hover { background: #f9fafb; color: #111827; }
         .works-filter-btn.is-active { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
@@ -166,6 +166,7 @@
         .award-pill { display: inline-flex; align-items: center; gap: .25rem; background: #fef9c3;
                       color: #92400e; border: 1px solid #fde68a; border-radius: 999px;
                       padding: .1rem .45rem; font-size: .72rem; font-weight: 600; white-space: nowrap; }
+        .sig-icon { width: .85em; height: .85em; flex-shrink: 0; }
         .award-list { margin: 0; padding-left: 1rem; font-size: .75rem; color: #6b7280; }
         tr.is-hidden-by-filter { display: none; }
 
@@ -175,8 +176,9 @@
         .bookshelf-label { font-size: .78rem; font-weight: 700; color: #374151; margin-bottom: .7rem; }
         .shelf-tab-switch { display: flex; gap: .3rem; background: #f3f4f6; border-radius: 999px;
                             padding: .25rem; width: fit-content; margin-bottom: .7rem; }
-        .shelf-tab-btn { border: none; background: transparent; font-size: .72rem; font-weight: 700;
-                         padding: .35rem .85rem; border-radius: 999px; color: #6b7280; cursor: pointer;
+        .shelf-tab-btn { border: none; background: transparent; font-size: .75rem; font-weight: 700;
+                         padding: .35rem .85rem; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center;
+                         border-radius: 999px; color: #6b7280; cursor: pointer;
                          font-family: "Source Sans 3", sans-serif; transition: background .15s, color .15s; }
         .shelf-tab-btn:hover { color: #111827; }
         .shelf-tab-btn.is-active { background: #111827; color: #f9fafb; }
@@ -193,20 +195,20 @@
         .gen-jacket-sm::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
             background: hsl(var(--jh,214) 26% 15%); }
         .gen-jacket-sm .gj-title-sm { font-family: Georgia, 'Times New Roman', serif; font-weight: 600;
-            font-size: .62rem; line-height: 1.15; margin: auto 0; overflow: hidden;
-            display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; }
+            font-size: .75rem; line-height: 1.2; margin: auto 0; overflow: hidden;
+            display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; }
         .shelf-plank { width: 88px; height: 14px; margin-top: -1px; border-radius: 3px;
             background: linear-gradient(180deg, #c88a52 0%, #a86b36 55%, #8a5426 100%);
             box-shadow: 0 6px 10px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.25); }
-        .shelf-title { width: 100%; font-size: .68rem; color: #4b5563; text-align: center; margin-top: .45rem;
-            line-height: 1.25; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        .shelf-title { width: 100%; font-size: .75rem; color: #4b5563; text-align: center; margin-top: .45rem;
+            line-height: 1.3; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
         .shelf-chips { width: 100%; display: flex; justify-content: center; gap: .3rem; margin-top: .35rem; }
-        .shelf-chip { font-size: .62rem; font-weight: 700; border-radius: 999px; padding: .05rem .4rem; white-space: nowrap; }
+        .shelf-chip { font-size: .69rem; font-weight: 700; border-radius: 999px; padding: .05rem .4rem; white-space: nowrap; }
         .shelf-chip-cite { background: #eff6ff; color: #1d4ed8; }
         .shelf-chip-mention { background: #f5f3ff; color: #6d28d9; }
         .shelf-chip-edu { background: #f0fdf4; color: #166534; }
         .shelf-chip-download { background: #ecfeff; color: #0e7490; }
-        .bookshelf-credit { font-size: .72rem; color: #9ca3af; margin-top: .3rem; }
+        .bookshelf-credit { font-size: .75rem; color: #6b7280; margin-top: .3rem; }
 
         /* ── List rows ── */
         .list-row { display: flex; justify-content: space-between; align-items: center;
@@ -215,8 +217,8 @@
 
         /* ── Credo band ── */
         .credo-band { display: flex; gap: .9rem; align-items: flex-start;
-                      border-left: 3px solid #7a2432; background: white;
-                      border-radius: 0 .7rem .7rem 0; padding: 1rem 1.4rem; margin-bottom: 1.75rem; }
+                      background: #fdf4f4; border: 1px solid #f3d9db;
+                      border-radius: .7rem; padding: 1rem 1.4rem; margin-bottom: 1.75rem; }
         .credo-band .mark { font-family: "Fraunces", Georgia, serif; font-weight: 600;
                             font-size: 1.4rem; color: #7a2432; line-height: 1; }
         .credo-band p { margin: 0; font-size: .87rem; line-height: 1.6; color: #4b5563; max-width: 66ch; }
@@ -233,11 +235,11 @@
         /* ── Reach map ── */
         .map-card canvas { width: 100%; height: auto; display: block; border-radius: .6rem;
                             background: #e7edf5; aspect-ratio: 900 / 400; }
-        .map-note { font-size: .74rem; color: #9ca3af; margin-top: .6rem; }
+        .map-note { font-size: .75rem; color: #6b7280; margin-top: .6rem; }
 
         /* ── Footer ── */
         footer { margin-top: 3rem; padding: 1.5rem 0 3rem;
-                 border-top: 1px solid #e5e7eb; color: #9ca3af; font-size: .82rem; }
+                 border-top: 1px solid #e5e7eb; color: #6b7280; font-size: .82rem; }
 
         /* ── Print ── */
         @media print {
@@ -252,7 +254,7 @@
             thead { display: table-header-group; }
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 </head>
 <body>
 
@@ -296,10 +298,9 @@
 <div class="page">
 
   
-  <div class="section-label">Portfolio narrative</div>
   <section class="card">
     <h2><span>The Story So Far</span></h2>
-    <div style="line-height:1.65;"><h3 class='story-subheading'>Executive Summary</h3><p class='story-text'>The Liverpool University Press encompasses 10 works that have collectively generated significant scholarly and public impact. Anchored predominantly in History, Art, and Literature, this collection has amassed a highly concentrated thematic footprint.</p><p class='story-text'>Commitment to open knowledge sharing is a defining characteristic of this dataset. A significant portion of this dataset prioritizes accessibility, with 40% of the portfolio available via Open Access.</p><p class='story-text'>The impact of these works is geographically and institutionally diverse. Noteworthy engagement extends beyond standard academia, with measurable uptake in the Facility and Government sectors. this portfolio demonstrates both rapid public uptake and sustained relevance as a methodological anchor for future synthesis.</p></div>
+    <div style="line-height:1.65;"><p class="story-text">This selection contains 10 works with 669 recorded scholarly citations. Available citing-work metadata identifies 33 countries.</p><p class="story-text">There are 28 recorded Wikipedia article–work matches, including 28 book references verified against an article revision. References and bibliography entries document use of a work; these counts do not measure readership.</p><p class="story-text">Current metadata classifies 4 of these works as open access. Missing usage data and zero recorded mentions on a channel do not establish an absence of engagement.</p></div>
     <div class="muted" style="margin-top:.45rem;">
       Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
     </div>
@@ -312,36 +313,30 @@
   </div>
 
   <!-- Key metrics strip -->
-  <div class="section-label">Key metrics</div>
+  <h2 style="margin-bottom:.75rem;"><span>Key Metrics</span></h2>
   <div class="stats-strip">
     <div class="stats-strip-item">
-      <div class="stats-strip-num">664</div>
+      <div class="stats-strip-num">669</div>
       <div class="stats-strip-label">Total Citations</div>
       
-      <div class="stats-strip-sub">⭐ 4 in Top 10%</div>
+      <div class="stats-strip-sub"><svg class="sig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg> 4 in Top 10%</div>
       
     </div>
     
     <div class="stats-strip-item">
-      <div class="stats-strip-num">28</div>
+      <div class="stats-strip-num">39</div>
       <div class="stats-strip-label">Online Mentions</div>
     </div>
     <div class="stats-strip-item">
       
       <div class="stats-strip-num">40%</div>
       <div class="stats-strip-label">Open Access</div>
-      <div style="font-size:.65rem;color:#6b7280;margin-top:.2rem;">4 of 10 works</div>
-    </div>
-    
-    <div class="stats-strip-item">
-      <div class="stats-strip-num">1</div>
-      <div class="stats-strip-label">With awards</div>
+      <div style="font-size:.75rem;color:#6b7280;margin-top:.2rem;">4 of 10 works</div>
     </div>
     
   </div>
 
   
-  <div class="section-label">On the shelf</div>
   <section class="card">
     <h2><span>Digital Bookshelf</span> <span class="badge">Portfolio</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">The same collection, ranked by whichever evidence you pick — no one ranking is "the" ranking. Articles and data included, not just books — cover art where it resolves.</div>
@@ -354,30 +349,30 @@
       
       <div class="bookshelf-block">
         
-        <div class="shelf-tab-switch">
-          <button type="button" class="shelf-tab-btn is-active" data-shelf-target="shelf-cite-edu-a">Top cited</button>
-          <button type="button" class="shelf-tab-btn" data-shelf-target="shelf-cite-edu-b">Top in education</button>
+        <div class="shelf-tab-switch" role="tablist" aria-label="Top cited / Top in education">
+          <button type="button" class="shelf-tab-btn is-active" role="tab" aria-selected="true" aria-controls="shelf-cite-edu-a" id="shelf-cite-edu-a-tab" data-shelf-target="shelf-cite-edu-a">Top cited</button>
+          <button type="button" class="shelf-tab-btn" role="tab" aria-selected="false" aria-controls="shelf-cite-edu-b" id="shelf-cite-edu-b-tab" data-shelf-target="shelf-cite-edu-b">Top in education</button>
         </div>
         
         
-        <div class="shelf-panel" id="shelf-cite-edu-a">
+        <div class="shelf-panel" id="shelf-cite-edu-a" role="tabpanel" aria-labelledby="shelf-cite-edu-a-tab">
     <div class="bookshelf-row">
       
       <div class="shelf-slot">
         <a href="bookstory_10.3828_978-0-85323-426-5.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9780853234265&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of The Goths in the Fourth Century">
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9780853234265&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of The Goths in the Fourth Century" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">The Goths in the Fourth Century</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">331 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">332 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="bookstory_10.3828_978-0-85323-368-8.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9780853233688&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Caesarius of Arles: Life, Testament, Letters">
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9780853233688&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Caesarius of Arles: Life, Testament, Letters" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Caesarius of Arles: Life, Testament, Letters</div>
@@ -388,7 +383,7 @@
       <div class="shelf-slot">
         <a href="bookstory_10.3828_liverpool_9781789620979.001.0001.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9781789620979&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Introduction to a Poetics of Diversity">
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9781789620979&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Introduction to a Poetics of Diversity" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Introduction to a Poetics of Diversity</div>
@@ -412,7 +407,7 @@
       <div class="shelf-slot">
         <a href="bookstory_10.3828_liverpool_9781789621723.001.0001.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/79f58e31-40cf-4730-b9b2-37fc2ed0bb78/retrieve" alt="Cover of Science Fiction and Climate Change">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/79f58e31-40cf-4730-b9b2-37fc2ed0bb78/retrieve" alt="Cover of Science Fiction and Climate Change" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Science Fiction and Climate Change</div>
@@ -423,11 +418,11 @@
       <div class="shelf-slot">
         <a href="bookstory_10.3828_liverpool_9781789620665.001.0001.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9781789620665&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Postcolonial Realms of Memory">
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9781789620665&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Postcolonial Realms of Memory" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Postcolonial Realms of Memory</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">10 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">13 citations</span></div>
         </a>
       </div>
       
@@ -453,7 +448,7 @@
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Jews in Poland and Russia: 1881-1914 v. 2</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">6 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">7 citations</span></div>
         </a>
       </div>
       
@@ -461,7 +456,7 @@
     </div>
         
         
-        <div class="shelf-panel is-hidden" id="shelf-cite-edu-b">
+        <div class="shelf-panel is-hidden" id="shelf-cite-edu-b" role="tabpanel" aria-labelledby="shelf-cite-edu-b-tab">
     <div class="bookshelf-row">
       
       <div class="shelf-slot">
@@ -473,14 +468,14 @@
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Folk Horror</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">1 teaching mentions</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">5 teaching mentions</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="bookstory_10.3828_liverpool_9781789620665.001.0001.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9781789620665&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Postcolonial Realms of Memory">
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9781789620665&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Postcolonial Realms of Memory" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Postcolonial Realms of Memory</div>
@@ -502,30 +497,8 @@
         <div class="bookshelf-label">Top mentioned</div>
         
         
-        <div class="shelf-panel" id="shelf-mention-dl-a">
+        <div class="shelf-panel" id="shelf-mention-dl-a" >
     <div class="bookshelf-row">
-      
-      <div class="shelf-slot">
-        <a href="bookstory_10.3828_978-0-85323-426-5.html" target="_blank">
-          
-          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9780853234265&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of The Goths in the Fourth Century">
-          
-          <div class="shelf-plank"></div>
-          <div class="shelf-title">The Goths in the Fourth Century</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">12 mentions</span></div>
-        </a>
-      </div>
-      
-      <div class="shelf-slot">
-        <a href="bookstory_10.3828_978-0-85323-368-8.html" target="_blank">
-          
-          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9780853233688&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Caesarius of Arles: Life, Testament, Letters">
-          
-          <div class="shelf-plank"></div>
-          <div class="shelf-title">Caesarius of Arles: Life, Testament, Letters</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">6 mentions</span></div>
-        </a>
-      </div>
       
       <div class="shelf-slot">
         <a href="bookstory_10.3828_liverpool_9781911325239.001.0001.html" target="_blank">
@@ -536,14 +509,36 @@
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Folk Horror</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">3 mentions</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">13 mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3828_978-0-85323-426-5.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9780853234265&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of The Goths in the Fourth Century" loading="lazy">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">The Goths in the Fourth Century</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">12 mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="bookstory_10.3828_978-0-85323-368-8.html" target="_blank">
+          
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9780853233688&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Caesarius of Arles: Life, Testament, Letters" loading="lazy">
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Caesarius of Arles: Life, Testament, Letters</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">6 mentions</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="bookstory_10.3828_liverpool_9781789621723.001.0001.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/79f58e31-40cf-4730-b9b2-37fc2ed0bb78/retrieve" alt="Cover of Science Fiction and Climate Change">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/79f58e31-40cf-4730-b9b2-37fc2ed0bb78/retrieve" alt="Cover of Science Fiction and Climate Change" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Science Fiction and Climate Change</div>
@@ -554,7 +549,7 @@
       <div class="shelf-slot">
         <a href="bookstory_10.3828_liverpool_9781789620665.001.0001.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9781789620665&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Postcolonial Realms of Memory">
+          <img class="shelf-cover-img" src="https://books.google.com/books/content?vid=ISBN9781789620665&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Postcolonial Realms of Memory" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Postcolonial Realms of Memory</div>
@@ -575,6 +570,19 @@
         </a>
       </div>
       
+      <div class="shelf-slot">
+        <a href="bookstory_10.3828_liverpool_9781802077322.001.0001.html" target="_blank">
+          
+          <div class="gen-jacket-sm" style="--jh: 112;" role="img" aria-label="Refugees and Forced Displacement in Northern Ireland's Troubles. Cover image not available.">
+            <span class="gj-title-sm">Refugees and Forced Displacement in Northern Ireland's Troubles</span>
+          </div>
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Refugees and Forced Displacement in Northern Ireland's Troubles</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">1 mentions</span></div>
+        </a>
+      </div>
+      
     </div>
     </div>
         
@@ -589,7 +597,6 @@
 
   
 
-  <div class="section-label">Open science report card</div>
   <section class="card">
     <h2><span>Open Science Indicators</span> <span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">OpenAIRE / PRISM</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">
@@ -621,24 +628,24 @@
       
     
     <div class="stat-box stat-box-muted">
-      <div class="stat-number" style="color:#9ca3af;">&mdash;</div>
+      <div class="stat-number" style="color:#6b7280;">&mdash;</div>
       <div class="stat-label">Open Peer Review</div>
-      <div class="muted" style="font-size:.65rem;margin-top:.35rem;line-height:1.35;">Not yet recorded — absence of data, not absence of review.</div>
+      <div class="muted" style="font-size:.75rem;margin-top:.35rem;line-height:1.35;">Not yet recorded — absence of data, not absence of review.</div>
     </div>
     
   
       
     
     <div class="stat-box stat-box-muted">
-      <div class="stat-number" style="color:#9ca3af;">&mdash;</div>
+      <div class="stat-number" style="color:#6b7280;">&mdash;</div>
       <div class="stat-label" title="Explicit peer-review records returned by PRISM.">PRISM Peer Reviews</div>
-      <div class="muted" style="font-size:.65rem;margin-top:.35rem;line-height:1.35;">Not yet recorded — absence of data, not absence of review.</div>
+      <div class="muted" style="font-size:.75rem;margin-top:.35rem;line-height:1.35;">Not yet recorded — absence of data, not absence of review.</div>
     </div>
     
   
     </div>
     
-    <div class="muted" style="font-size:.7rem;margin-top:.6rem;">OpenAIRE open instances: 20% of works.</div>
+    <div class="muted" style="font-size:.75rem;margin-top:.6rem;">OpenAIRE open instances: 20% of works.</div>
     
     
 
@@ -677,8 +684,8 @@
           
           <span class="role-pill role-pill-academic">
             <span class="role-dot" style="background:#3b82f6;"></span>
-            Reference point for synthesis
-            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">1.8</span>
+            Commercial linkage
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">2.7</span>
           </span>
         
           
@@ -688,7 +695,7 @@
           
           <span class="role-pill role-pill-academic">
             <span class="role-dot" style="background:#3b82f6;"></span>
-            Commercial linkage
+            Reference point for synthesis
             <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">1.8</span>
           </span>
         
@@ -709,19 +716,19 @@
   </section>
 
   <!-- Charts -->
-  <div class="section-label">Citation &amp; attention landscape</div>
+  <h2 style="margin-bottom:.75rem;"><span>Citation &amp; Attention Landscape</span></h2>
   <div class="grid-2" style="margin-bottom:0;">
     <section class="card chart-card" style="margin-bottom:0;">
       <h2><span>Citation Timeline</span></h2>
       <div class="muted" style="margin-top:-.15rem;font-size:.8rem;">Annual citation counts across the portfolio.</div>
       <div class="chart-wrap">
-        <canvas id="citationChart" data-labels="[&#34;1994&#34;, &#34;1997&#34;, &#34;1998&#34;, &#34;1999&#34;, &#34;2000&#34;, &#34;2001&#34;, &#34;2002&#34;, &#34;2003&#34;, &#34;2004&#34;, &#34;2005&#34;, &#34;2006&#34;, &#34;2007&#34;, &#34;2008&#34;, &#34;2009&#34;, &#34;2010&#34;, &#34;2011&#34;, &#34;2012&#34;, &#34;2013&#34;, &#34;2014&#34;, &#34;2015&#34;, &#34;2016&#34;, &#34;2017&#34;, &#34;2018&#34;, &#34;2019&#34;, &#34;2020&#34;, &#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[1, 29, 4, 2, 13, 91, 3, 18, 34, 69, 4, 2, 2, 4, 59, 4, 4, 7, 30, 6, 4, 9, 20, 17, 44, 24, 10, 24, 61, 36, 11]"></canvas>
+        <canvas id="citationChart" data-labels="[&#34;1920&#34;, &#34;1994&#34;, &#34;1997&#34;, &#34;1998&#34;, &#34;1999&#34;, &#34;2000&#34;, &#34;2001&#34;, &#34;2002&#34;, &#34;2003&#34;, &#34;2004&#34;, &#34;2005&#34;, &#34;2006&#34;, &#34;2007&#34;, &#34;2008&#34;, &#34;2009&#34;, &#34;2010&#34;, &#34;2011&#34;, &#34;2012&#34;, &#34;2013&#34;, &#34;2014&#34;, &#34;2015&#34;, &#34;2016&#34;, &#34;2017&#34;, &#34;2018&#34;, &#34;2019&#34;, &#34;2020&#34;, &#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[18, 1, 29, 4, 2, 13, 91, 3, 18, 34, 69, 4, 2, 2, 4, 59, 4, 4, 7, 30, 7, 4, 9, 20, 18, 44, 24, 11, 24, 62, 36, 12]"></canvas>
       </div>
     </section>
     <div class="grid-2" style="margin-bottom:0;gap:1rem;">
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Citing Sectors</span> <span class="badge">ROR</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Archive&#34;, &#34;Company&#34;, &#34;Facility&#34;, &#34;Nonprofit&#34;, &#34;Other&#34;, &#34;Government&#34;, &#34;Funder&#34;]" data-values="[357, 5, 4, 9, 3, 4, 7, 2]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Facility&#34;, &#34;Government&#34;, &#34;Archive&#34;, &#34;Other&#34;, &#34;Nonprofit&#34;]" data-values="[364, 9, 5, 2, 1, 1]"></canvas></div>
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Citation Context</span> <span class="badge">scite</span></h2>
@@ -729,51 +736,49 @@
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Work Types</span> <span class="badge">OpenAlex</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="wtChart" data-labels="[&#34;Book-Chapter&#34;, &#34;Article&#34;, &#34;Paratext&#34;, &#34;Book&#34;, &#34;Other&#34;, &#34;Reference-Entry&#34;, &#34;Book-Review&#34;, &#34;Dissertation&#34;, &#34;Review&#34;]" data-values="[413, 107, 64, 37, 29, 7, 3, 3, 1]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="wtChart" data-labels="[&#34;Book-Chapter&#34;, &#34;Paratext&#34;, &#34;Article&#34;, &#34;Other&#34;, &#34;Book&#34;, &#34;Dissertation&#34;, &#34;Reference-Entry&#34;, &#34;Book-Review&#34;, &#34;Review&#34;]" data-values="[413, 64, 108, 29, 37, 7, 7, 3, 1]"></canvas></div>
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Top Venues</span> <span class="badge">OpenAlex</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="venueChart" data-labels="[&#34;Cambridge University Press eBooks&#34;, &#34;Oxford University Press eBooks&#34;, &#34;Studies in Germanic linguistics&#34;, &#34;Monstrum&#34;, &#34;Dancecult&#34;, &#34;The Journal of Ecclesiastical History&#34;]" data-values="[352, 48, 19, 6, 5, 4]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="venueChart" data-labels="[&#34;Cambridge University Press eBooks&#34;, &#34;Oxford University Press eBooks&#34;, &#34;Studies in Germanic linguistics&#34;, &#34;Duke University Press eBooks&#34;, &#34;Springer eBooks&#34;, &#34;Monstrum&#34;]" data-values="[352, 52, 19, 9, 8, 6]"></canvas></div>
       </section>
     </div>
   </div>
   <div style="margin-bottom:1.75rem;"></div>
 
   <!-- Community -->
-  <div class="section-label">Community engagement &amp; public discourse</div>
   <section class="card">
     <h2><span>Online Mentions by Platform</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:1.25rem;">Breakdown across platforms for the entire portfolio.</div>
     <div class="platform-grid">
-      <div class="platform-box" style="border-top-color:#64748b;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#334155;">28</div>
         <div class="platform-lbl">Wikipedia</div>
       </div>
-      <div class="platform-box" style="border-top-color:#ea580c;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#c2410c;">0</div>
         <div class="platform-lbl">Reddit</div>
       </div>
-      <div class="platform-box" style="border-top-color:#0ea5e9;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#0369a1;">0</div>
         <div class="platform-lbl">Bluesky</div>
       </div>
-      <div class="platform-box" style="border-top-color:#eab308;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#a16207;">0</div>
         <div class="platform-lbl">StackExchange</div>
       </div>
-      <div class="platform-box" style="border-top-color:#db2777;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#be185d;">0</div>
         <div class="platform-lbl">Expert Annotations</div>
       </div>
-      <div class="platform-box" style="border-top-color:#16a34a;">
-        <div class="platform-num" style="color:#15803d;">0</div>
+      <div class="platform-box">
+        <div class="platform-num" style="color:#15803d;">11</div>
         <div class="platform-lbl">News Media</div>
       </div>
     </div>
   </section>
 
   
-  <div class="section-label">Teaching, practice &amp; library</div>
   <section class="card">
     <h2><span>Teaching, Practice &amp; Library Adoption</span></h2>
     <div class="grid-3" style="margin-bottom:0;margin-top:1rem;">
@@ -786,7 +791,7 @@
         <div class="stat-label">Syllabi / OCW</div>
       </div>
       <div class="stat-box">
-        <div class="stat-number" style="color:#dc2626;">2</div>
+        <div class="stat-number" style="color:#dc2626;">6</div>
         <div class="stat-label">Edu Video Lectures</div>
       </div>
       <div class="stat-box">
@@ -806,7 +811,7 @@
   
 
   <!-- Concepts / Roles / Geo -->
-  <div class="section-label">Thematic &amp; impact profile</div>
+  <h2 style="margin-bottom:.75rem;"><span>Thematic &amp; Impact Profile</span></h2>
   <section class="card">
     <h2><span>Dominant Concepts</span> <span class="badge">OpenAlex</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Weighted by AI confidence score.</div>
@@ -858,9 +863,9 @@
   
   <section class="card">
     <h2><span>Reach, mapped</span> <span class="badge">OpenAlex</span></h2>
-    <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Citing-work affiliations trace back to <span class="stats-strip-num" style="font-size:1.1rem;">38</span> countries — circle size shows citation count from that country.</div>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Citing-work affiliations trace back to <span class="stats-strip-num" style="font-size:1.1rem;">33</span> countries — circle size shows citation count from that country.</div>
     <div class="map-card">
-      <canvas id="reach-map" data-countries='[{"count": 157, "label": "United Kingdom"}, {"count": 115, "label": "United States"}, {"count": 29, "label": "Australia"}, {"count": 12, "label": "Germany"}, {"count": 10, "label": "France"}, {"count": 6, "label": "Italy"}, {"count": 6, "label": "Canada"}, {"count": 6, "label": "Poland"}, {"count": 5, "label": "Israel"}, {"count": 5, "label": "Ireland"}, {"count": 5, "label": "Spain"}, {"count": 3, "label": "Mexico"}, {"count": 3, "label": "Greece"}, {"count": 2, "label": "Belgium"}, {"count": 2, "label": "Chile"}]' role="img" aria-label="World map of citing countries, sized by citation count"></canvas>
+      <canvas id="reach-map" data-countries='[{"count": 166, "label": "United Kingdom"}, {"count": 106, "label": "United States"}, {"count": 29, "label": "Australia"}, {"count": 14, "label": "Germany"}, {"count": 13, "label": "France"}, {"count": 7, "label": "Italy"}, {"count": 6, "label": "Israel"}, {"count": 6, "label": "Spain"}, {"count": 6, "label": "Poland"}, {"count": 5, "label": "Canada"}, {"count": 5, "label": "Ireland"}, {"count": 3, "label": "Turkey"}, {"count": 2, "label": "Belgium"}, {"count": 2, "label": "Chile"}, {"count": 1, "label": "China"}]' role="img" aria-label="World map of citing countries, sized by citation count"></canvas>
       <div class="map-note">Full breakdown, including countries not shown on the map, in the list below.</div>
     </div>
   </section>
@@ -872,35 +877,35 @@
       <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Based on author affiliations of citing works — size shows how often each one appears.</div>
       <div>
         
-          <span class="tag tag-1">United Kingdom (157)</span>
+          <span class="tag tag-1">United Kingdom (166)</span>
         
-          <span class="tag tag-1">United States (115)</span>
+          <span class="tag tag-1">United States (106)</span>
         
           <span class="tag tag-1">Australia (29)</span>
         
-          <span class="tag tag-2">Germany (12)</span>
+          <span class="tag tag-2">Germany (14)</span>
         
-          <span class="tag tag-2">France (10)</span>
+          <span class="tag tag-2">France (13)</span>
         
-          <span class="tag tag-2">Italy (6)</span>
+          <span class="tag tag-2">Italy (7)</span>
         
-          <span class="tag tag-2">Canada (6)</span>
+          <span class="tag tag-2">Israel (6)</span>
         
-          <span class="tag tag-2">Poland (6)</span>
+          <span class="tag tag-2">Spain (6)</span>
         
-          <span class="tag tag-soft tag-3">Israel (5)</span>
+          <span class="tag tag-soft tag-3">Poland (6)</span>
+        
+          <span class="tag tag-soft tag-3">Canada (5)</span>
         
           <span class="tag tag-soft tag-3">Ireland (5)</span>
         
-          <span class="tag tag-soft tag-3">Spain (5)</span>
-        
-          <span class="tag tag-soft tag-3">Mexico (3)</span>
-        
-          <span class="tag tag-soft tag-3">Greece (3)</span>
+          <span class="tag tag-soft tag-3">Turkey (3)</span>
         
           <span class="tag tag-soft tag-3">Belgium (2)</span>
         
           <span class="tag tag-soft tag-3">Chile (2)</span>
+        
+          <span class="tag tag-soft tag-3">China (1)</span>
         
       </div>
     </section>
@@ -909,7 +914,7 @@
       <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Canonical names based on author affiliations — size shows how often each one appears.</div>
       <div>
         
-          <span class="tag tag-1">University of Oxford (26)</span>
+          <span class="tag tag-1">University of Oxford (38)</span>
         
           <span class="tag tag-1">University of Warwick (22)</span>
         
@@ -917,27 +922,27 @@
         
           <span class="tag tag-2">Macquarie University (18)</span>
         
-          <span class="tag tag-2">University of Cambridge (15)</span>
-        
-          <span class="tag tag-2">University of Oklahoma (14)</span>
+          <span class="tag tag-2">University of Cambridge (16)</span>
         
           <span class="tag tag-2">The Ohio State University (14)</span>
         
+          <span class="tag tag-2">University of Oklahoma (14)</span>
+        
           <span class="tag tag-2">University of Alabama in Huntsville (12)</span>
+        
+          <span class="tag tag-soft tag-3">King's College London (12)</span>
+        
+          <span class="tag tag-soft tag-3">University of London (11)</span>
         
           <span class="tag tag-soft tag-3">Ohio University (11)</span>
         
           <span class="tag tag-soft tag-3">Jacksonville State University (10)</span>
         
-          <span class="tag tag-soft tag-3">University of Kent (9)</span>
-        
           <span class="tag tag-soft tag-3">University College London (9)</span>
         
-          <span class="tag tag-soft tag-3">University of Leeds (8)</span>
+          <span class="tag tag-soft tag-3">University of Kent (9)</span>
         
           <span class="tag tag-soft tag-3">University of Manchester (8)</span>
-        
-          <span class="tag tag-soft tag-3">King's College London (8)</span>
         
       </div>
     </section>
@@ -955,7 +960,6 @@
   </div>
 
   <!-- Authors -->
-  <div class="section-label">Contributors</div>
   <section class="card">
     <h2><span>Core Authors</span> <span class="badge">Portfolio</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Authors with more than one work in this dataset.</div>
@@ -967,24 +971,23 @@
   </section>
 
   
-  <div class="section-label">OA provenance</div>
   <section class="card">
     <h2><span>Open Access Provenance</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">Primary source used to classify OA per work.</div>
     
     <div class="platform-grid">
       
-      <div class="platform-box" style="border-top-color:#64748b;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#334155;">6</div>
         <div class="platform-lbl">Closed/Unknown</div>
       </div>
       
-      <div class="platform-box" style="border-top-color:#64748b;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#334155;">3</div>
         <div class="platform-lbl">Publisher-claimed</div>
       </div>
       
-      <div class="platform-box" style="border-top-color:#64748b;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#334155;">1</div>
         <div class="platform-lbl">OAPEN</div>
       </div>
@@ -1012,7 +1015,6 @@
   
 
   <!-- Works table -->
-  <div class="section-label">Included works</div>
   <section class="card">
     <h2><span>All Works</span> <span class="badge" id="worksTotalBadge">10 total</span></h2>
     
@@ -1025,17 +1027,14 @@
     
     
     
-    <div class="works-filters" id="worksFilters">
-      <button type="button" class="works-filter-btn is-active" data-filter="all">All works</button>
-      
-      <button type="button" class="works-filter-btn" data-filter="awarded">Award winners (1)</button>
-      <button type="button" class="works-filter-btn" data-filter="unawarded">Without awards (9)</button>
+    <div class="works-filters" id="worksFilters" role="group" aria-label="Filter works">
+      <button type="button" class="works-filter-btn is-active" data-filter="all" aria-pressed="true">All works</button>
       
       
-      <button type="button" class="works-filter-btn" data-filter="prism_context">PRISM context (1)</button>
+      <button type="button" class="works-filter-btn" data-filter="prism_context" aria-pressed="false">PRISM context (1)</button>
       
-      <button type="button" class="works-filter-btn" data-filter="openaire_reach">OpenAIRE reach (10)</button>
-      <button type="button" class="works-filter-btn" data-filter="openaire_open">OpenAIRE open instances (2)</button>
+      <button type="button" class="works-filter-btn" data-filter="openaire_reach" aria-pressed="false">OpenAIRE reach (10)</button>
+      <button type="button" class="works-filter-btn" data-filter="openaire_open" aria-pressed="false">OpenAIRE open instances (2)</button>
       
       
       
@@ -1046,7 +1045,7 @@
     <div class="table-scroll">
       <table id="worksTable">
         <thead>
-          <tr><th>Year</th><th>Type</th><th>Title</th><th>DOI</th><th>Awards</th><th>Citations</th><th>Mentions</th></tr>
+          <tr><th>Year</th><th>Type</th><th>Title</th><th>DOI</th><th>Citations</th><th>Mentions</th></tr>
         </thead>
         <tbody>
           
@@ -1076,13 +1075,7 @@
               
             </td>
             
-            <td>
-              
-                <span class="muted">—</span>
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">331</td>
+            <td style="text-align:right;font-weight:600;">332</td>
             <td style="text-align:right;">12</td>
           </tr>
           
@@ -1109,12 +1102,6 @@
               
               <a href="bookstory_10.3828_978-0-85323-368-8.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3828/978-0-85323-368-8</a>
               <a href="https://doi.org/10.3828/978-0-85323-368-8" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td>
-              
-                <span class="muted">—</span>
               
             </td>
             
@@ -1148,12 +1135,6 @@
               
             </td>
             
-            <td>
-              
-                <span class="muted">—</span>
-              
-            </td>
-            
             <td style="text-align:right;font-weight:600;">54</td>
             <td style="text-align:right;">0</td>
           </tr>
@@ -1184,18 +1165,12 @@
               
             </td>
             
-            <td>
-              
-                <span class="muted">—</span>
-              
-            </td>
-            
             <td style="text-align:right;font-weight:600;">22</td>
-            <td style="text-align:right;">3</td>
+            <td style="text-align:right;">13</td>
           </tr>
           
           <tr
-            data-has-award="1"
+            data-has-award="0"
             data-has-preprint="0"
             data-has-open-review="0"
             data-has-stewardship="0"
@@ -1217,14 +1192,6 @@
               
               <a href="bookstory_10.3828_liverpool_9781789621723.001.0001.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3828/liverpool/9781789621723.001.0001</a>
               <a href="https://doi.org/10.3828/liverpool/9781789621723.001.0001" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td>
-              
-                
-                <span class="award-pill" title="British Science Fiction Association Award Shortlist (Best Non-Fiction, 2020)">🏆 Award</span>
-                
               
             </td>
             
@@ -1258,13 +1225,7 @@
               
             </td>
             
-            <td>
-              
-                <span class="muted">—</span>
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">10</td>
+            <td style="text-align:right;font-weight:600;">13</td>
             <td style="text-align:right;">3</td>
           </tr>
           
@@ -1291,12 +1252,6 @@
               
               <a href="bookstory_10.3828_liverpool_9781786940889.001.0001.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3828/liverpool/9781786940889.001.0001</a>
               <a href="https://doi.org/10.3828/liverpool/9781786940889.001.0001" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td>
-              
-                <span class="muted">—</span>
               
             </td>
             
@@ -1330,13 +1285,7 @@
               
             </td>
             
-            <td>
-              
-                <span class="muted">—</span>
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">6</td>
+            <td style="text-align:right;font-weight:600;">7</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1363,12 +1312,6 @@
               
               <a href="bookstory_10.3828_liverpool_9781802078053.001.0001.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3828/liverpool/9781802078053.001.0001</a>
               <a href="https://doi.org/10.3828/liverpool/9781802078053.001.0001" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td>
-              
-                <span class="muted">—</span>
               
             </td>
             
@@ -1402,14 +1345,8 @@
               
             </td>
             
-            <td>
-              
-                <span class="muted">—</span>
-              
-            </td>
-            
             <td style="text-align:right;font-weight:600;">0</td>
-            <td style="text-align:right;">0</td>
+            <td style="text-align:right;">1</td>
           </tr>
           
         </tbody>
@@ -1419,10 +1356,10 @@
 
   <footer>
     <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem;">
-      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:#9ca3af;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:#6b7280;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
       <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;font-weight:600;text-decoration:none;">Read the Methodology &amp; Legend ↗</a></span>
     </div>
-    <div style="padding-left:1.35rem;">Generated on 2026-09-15 15:38:40 UTC</div>
+    <div style="padding-left:1.35rem;">Generated on 2026-10-07 10:56:18 UTC</div>
   </footer>
 
 </div><!-- /page -->
@@ -1439,7 +1376,7 @@ function makeDoughnut(id, palette) {
   const labels = JSON.parse(canvas.getAttribute('data-labels'));
   const data   = JSON.parse(canvas.getAttribute('data-values'));
   if (!data.length || data.reduce((a,b)=>a+b,0)===0) {
-    canvas.parentElement.innerHTML = '<div style="display:flex;align-items:center;height:100%;color:#9ca3af;font-size:.82rem;">No data available.</div>';
+    canvas.parentElement.innerHTML = '<div style="display:flex;align-items:center;height:100%;color:#6b7280;font-size:.82rem;">No data available.</div>';
     return;
   }
   new Chart(canvas.getContext('2d'), {
@@ -1450,7 +1387,7 @@ function makeDoughnut(id, palette) {
 }
 
 // Citation timeline
-(function(){
+function makeCitationChart(){
   const canvas = document.getElementById('citationChart'); if (!canvas) return;
   const labels = JSON.parse(canvas.getAttribute('data-labels'));
   const data   = JSON.parse(canvas.getAttribute('data-values'));
@@ -1466,7 +1403,7 @@ function makeDoughnut(id, palette) {
       plugins: { legend: { display: false } }
     }
   });
-})();
+}
 
 // Bookshelf tab switching (Cited/Education, Mentions/Downloads)
 document.querySelectorAll('.shelf-tab-switch').forEach(function(switcher){
@@ -1475,15 +1412,28 @@ document.querySelectorAll('.shelf-tab-switch').forEach(function(switcher){
     if (!btn) return;
     const targetId = btn.getAttribute('data-shelf-target');
     const block = switcher.closest('.bookshelf-block');
-    block.querySelectorAll('.shelf-tab-btn').forEach(b => b.classList.toggle('is-active', b === btn));
+    block.querySelectorAll('.shelf-tab-btn').forEach(b => {
+      b.classList.toggle('is-active', b === btn);
+      b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+    });
     block.querySelectorAll('.shelf-panel').forEach(p => p.classList.toggle('is-hidden', p.id !== targetId));
   });
 });
 
-makeDoughnut('sectorChart');
-makeDoughnut('sciteChart', ['#16a34a','#9ca3af','#dc2626']);
-makeDoughnut('wtChart');
-makeDoughnut('venueChart');
+function initCharts(){
+  makeCitationChart();
+  makeDoughnut('sectorChart');
+  makeDoughnut('sciteChart', ['#16a34a','#9ca3af','#dc2626']);
+  makeDoughnut('wtChart');
+  makeDoughnut('venueChart');
+}
+// chart.js loads with `defer`, so wait for it rather than assuming it has
+// already run by the time this inline script is parsed.
+if (window.Chart) {
+  initCharts();
+} else {
+  document.addEventListener('DOMContentLoaded', initCharts);
+}
 
 // Reach map — dot-mask world silhouette (generated from a few simplified
 // continent outlines, not traced coastlines) with bubbles for whichever
@@ -1638,7 +1588,9 @@ makeDoughnut('venueChart');
   function applyFilter(nextMode) {
     mode = nextMode;
     filters.querySelectorAll('[data-filter]').forEach((btn) => {
-      btn.classList.toggle('is-active', btn.getAttribute('data-filter') === mode);
+      const active = btn.getAttribute('data-filter') === mode;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
 
     let shown = 0;

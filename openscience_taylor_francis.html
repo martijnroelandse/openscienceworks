@@ -26,8 +26,6 @@
              display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
         h2 span:first-child { flex: 1; }
         .muted { color: #6b7280; font-size: 0.85rem; }
-        .section-label { font-size: .65rem; font-weight: 700; text-transform: uppercase;
-                         letter-spacing: .1em; color: #9ca3af; margin-bottom: .5rem; margin-top: .25rem; }
 
         /* ── Tags / Badges ── */
         .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8;
@@ -53,7 +51,8 @@
                             font-weight: 500; text-decoration: none; color: #6b7280;
                             transition: background .15s, color .15s; }
         .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
-        .print-btn { display: flex; align-items: center; gap: .4rem; padding: .4rem .9rem;
+        .print-btn { display: flex; align-items: center; justify-content: center; gap: .4rem; padding: .4rem .9rem;
+                     min-height: 44px; box-sizing: border-box;
                      background: #2563eb; color: white; border: none; border-radius: .45rem;
                      font-size: .82rem; font-weight: 600; cursor: pointer;
                      box-shadow: 0 2px 8px rgba(37,99,235,.3); transition: background .15s; }
@@ -83,9 +82,9 @@
         .stats-strip-item:last-child { border-right: none; }
         .stats-strip-num { font-family: "Fraunces", Georgia, serif; font-size: 1.9rem; font-weight: 600;
                            color: #2563eb; line-height: 1.1; font-variant-numeric: tabular-nums; }
-        .stats-strip-label { font-size: .68rem; color: #6b7280; text-transform: uppercase;
+        .stats-strip-label { font-size: .69rem; color: #6b7280; text-transform: uppercase;
                              letter-spacing: .06em; margin-top: .25rem; }
-        .stats-strip-sub { font-size: .65rem; color: #b45309; font-weight: 700; margin-top: .2rem; }
+        .stats-strip-sub { display: inline-flex; align-items: center; gap: .25rem; font-size: .69rem; color: #b45309; font-weight: 700; margin-top: .2rem; }
         @media(max-width:640px) {
             .stats-strip { grid-template-columns: repeat(2,1fr); }
             .site-nav { flex-wrap: wrap; gap: .5rem; padding: .55rem 1rem; }
@@ -106,7 +105,7 @@
         .stat-label { font-size: .75rem; color: #64748b; text-transform: uppercase;
                       letter-spacing: .05em; font-weight: 600; }
         .stat-box-muted { background: #fafafa; border-style: dashed; }
-        .stat-box-muted .stat-label { color: #9ca3af; }
+        .stat-box-muted .stat-label { color: #6b7280; }
 
         /* ── Risk card ── */
         .risk-card { border: 2px solid #dc2626; background: #fff5f5; }
@@ -115,7 +114,7 @@
         /* ── Platform mentions ── */
         .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px,1fr)); gap: 1rem; }
         .platform-box { background: white; border-radius: .75rem; padding: 1rem;
-                        text-align: center; border: 1px solid #e2e8f0; border-top-width: 3px; }
+                        text-align: center; border: 1px solid #e2e8f0; }
         .platform-num { font-family: "Fraunces", Georgia, serif; font-size: 1.8rem; font-weight: 600;
                         line-height: 1; margin-bottom: .25rem; font-variant-numeric: tabular-nums; }
         .platform-lbl { font-size: .72rem; color: #6b7280; text-transform: uppercase;
@@ -124,7 +123,7 @@
         /* ── Role pills (same as story pages) ── */
         .roles-domain { margin-bottom: .85rem; }
         .roles-domain:last-of-type { margin-bottom: 0; }
-        .roles-domain-label { font-size: .62rem; font-weight: 700; text-transform: uppercase;
+        .roles-domain-label { font-size: .69rem; font-weight: 700; text-transform: uppercase;
                               letter-spacing: .07em; margin-bottom: .4rem; }
         .roles-row { display: flex; flex-wrap: wrap; gap: .35rem; }
         .role-pill { position: relative; display: inline-flex; align-items: center; gap: .3rem;
@@ -135,7 +134,7 @@
         .role-pill-public     { background: #fffbeb; color: #92400e; border-color: #fde68a; }
         .role-pill-practical  { background: #f0fdf4; color: #065f46; border-color: #bbf7d0; }
         .role-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-        .role-score { font-size: .6rem; font-weight: 700; padding: .05rem .3rem;
+        .role-score { font-size: .69rem; font-weight: 700; padding: .05rem .3rem;
                       border-radius: 999px; margin-left: .1rem; background: rgba(0,0,0,.06); }
 
         /* ── Chart cards ── */
@@ -156,7 +155,8 @@
         /* ── Works table filters ── */
         .works-filters { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: .75rem 0 .25rem; }
         .works-filter-btn { border: 1px solid #e5e7eb; background: #fff; color: #4b5563;
-                            border-radius: 999px; padding: .28rem .75rem; font-size: .78rem;
+                            border-radius: 999px; padding: .28rem .75rem; min-height: 44px; box-sizing: border-box;
+                            font-size: .78rem;
                             font-weight: 600; cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
         .works-filter-btn:hover { background: #f9fafb; color: #111827; }
         .works-filter-btn.is-active { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
@@ -166,6 +166,7 @@
         .award-pill { display: inline-flex; align-items: center; gap: .25rem; background: #fef9c3;
                       color: #92400e; border: 1px solid #fde68a; border-radius: 999px;
                       padding: .1rem .45rem; font-size: .72rem; font-weight: 600; white-space: nowrap; }
+        .sig-icon { width: .85em; height: .85em; flex-shrink: 0; }
         .award-list { margin: 0; padding-left: 1rem; font-size: .75rem; color: #6b7280; }
         tr.is-hidden-by-filter { display: none; }
 
@@ -175,8 +176,9 @@
         .bookshelf-label { font-size: .78rem; font-weight: 700; color: #374151; margin-bottom: .7rem; }
         .shelf-tab-switch { display: flex; gap: .3rem; background: #f3f4f6; border-radius: 999px;
                             padding: .25rem; width: fit-content; margin-bottom: .7rem; }
-        .shelf-tab-btn { border: none; background: transparent; font-size: .72rem; font-weight: 700;
-                         padding: .35rem .85rem; border-radius: 999px; color: #6b7280; cursor: pointer;
+        .shelf-tab-btn { border: none; background: transparent; font-size: .75rem; font-weight: 700;
+                         padding: .35rem .85rem; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center;
+                         border-radius: 999px; color: #6b7280; cursor: pointer;
                          font-family: "Source Sans 3", sans-serif; transition: background .15s, color .15s; }
         .shelf-tab-btn:hover { color: #111827; }
         .shelf-tab-btn.is-active { background: #111827; color: #f9fafb; }
@@ -193,20 +195,20 @@
         .gen-jacket-sm::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
             background: hsl(var(--jh,214) 26% 15%); }
         .gen-jacket-sm .gj-title-sm { font-family: Georgia, 'Times New Roman', serif; font-weight: 600;
-            font-size: .62rem; line-height: 1.15; margin: auto 0; overflow: hidden;
-            display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; }
+            font-size: .75rem; line-height: 1.2; margin: auto 0; overflow: hidden;
+            display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; }
         .shelf-plank { width: 88px; height: 14px; margin-top: -1px; border-radius: 3px;
             background: linear-gradient(180deg, #c88a52 0%, #a86b36 55%, #8a5426 100%);
             box-shadow: 0 6px 10px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.25); }
-        .shelf-title { width: 100%; font-size: .68rem; color: #4b5563; text-align: center; margin-top: .45rem;
-            line-height: 1.25; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        .shelf-title { width: 100%; font-size: .75rem; color: #4b5563; text-align: center; margin-top: .45rem;
+            line-height: 1.3; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
         .shelf-chips { width: 100%; display: flex; justify-content: center; gap: .3rem; margin-top: .35rem; }
-        .shelf-chip { font-size: .62rem; font-weight: 700; border-radius: 999px; padding: .05rem .4rem; white-space: nowrap; }
+        .shelf-chip { font-size: .69rem; font-weight: 700; border-radius: 999px; padding: .05rem .4rem; white-space: nowrap; }
         .shelf-chip-cite { background: #eff6ff; color: #1d4ed8; }
         .shelf-chip-mention { background: #f5f3ff; color: #6d28d9; }
         .shelf-chip-edu { background: #f0fdf4; color: #166534; }
         .shelf-chip-download { background: #ecfeff; color: #0e7490; }
-        .bookshelf-credit { font-size: .72rem; color: #9ca3af; margin-top: .3rem; }
+        .bookshelf-credit { font-size: .75rem; color: #6b7280; margin-top: .3rem; }
 
         /* ── List rows ── */
         .list-row { display: flex; justify-content: space-between; align-items: center;
@@ -215,8 +217,8 @@
 
         /* ── Credo band ── */
         .credo-band { display: flex; gap: .9rem; align-items: flex-start;
-                      border-left: 3px solid #7a2432; background: white;
-                      border-radius: 0 .7rem .7rem 0; padding: 1rem 1.4rem; margin-bottom: 1.75rem; }
+                      background: #fdf4f4; border: 1px solid #f3d9db;
+                      border-radius: .7rem; padding: 1rem 1.4rem; margin-bottom: 1.75rem; }
         .credo-band .mark { font-family: "Fraunces", Georgia, serif; font-weight: 600;
                             font-size: 1.4rem; color: #7a2432; line-height: 1; }
         .credo-band p { margin: 0; font-size: .87rem; line-height: 1.6; color: #4b5563; max-width: 66ch; }
@@ -233,11 +235,11 @@
         /* ── Reach map ── */
         .map-card canvas { width: 100%; height: auto; display: block; border-radius: .6rem;
                             background: #e7edf5; aspect-ratio: 900 / 400; }
-        .map-note { font-size: .74rem; color: #9ca3af; margin-top: .6rem; }
+        .map-note { font-size: .75rem; color: #6b7280; margin-top: .6rem; }
 
         /* ── Footer ── */
         footer { margin-top: 3rem; padding: 1.5rem 0 3rem;
-                 border-top: 1px solid #e5e7eb; color: #9ca3af; font-size: .82rem; }
+                 border-top: 1px solid #e5e7eb; color: #6b7280; font-size: .82rem; }
 
         /* ── Print ── */
         @media print {
@@ -252,7 +254,7 @@
             thead { display: table-header-group; }
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 </head>
 <body>
 
@@ -300,10 +302,9 @@
 <div class="page">
 
   
-  <div class="section-label">Portfolio narrative</div>
   <section class="card">
     <h2><span>The Story So Far</span></h2>
-    <div style="line-height:1.65;"><p class="story-text">This selection contains 25 works with 3,877 recorded scholarly citations. Recorded downloads total 87,736, reported for 14 of these works. Available citing-work metadata identifies 89 countries.</p><p class="story-text">There are 16 recorded Wikipedia article–work matches, including 14 book references verified against an article revision. References and bibliography entries document use of a work; these counts do not measure readership.</p><p class="story-text">Current metadata classifies 22 of these works as open access. Missing usage data and zero recorded mentions on a channel do not establish an absence of engagement.</p></div>
+    <div style="line-height:1.65;"><p class="story-text">This selection contains 25 works with 3,954 recorded scholarly citations. Recorded downloads total 87,736, reported for 14 of these works. Available citing-work metadata identifies 91 countries.</p><p class="story-text">There are 16 recorded Wikipedia article–work matches, including 14 book references verified against an article revision. References and bibliography entries document use of a work; these counts do not measure readership.</p><p class="story-text">Current metadata classifies 22 of these works as open access. Missing usage data and zero recorded mentions on a channel do not establish an absence of engagement.</p></div>
     <div class="muted" style="margin-top:.45rem;">
       Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
     </div>
@@ -316,37 +317,36 @@
   </div>
 
   <!-- Key metrics strip -->
-  <div class="section-label">Key metrics</div>
+  <h2 style="margin-bottom:.75rem;"><span>Key Metrics</span></h2>
   <div class="stats-strip">
     <div class="stats-strip-item">
-      <div class="stats-strip-num">3,877</div>
+      <div class="stats-strip-num">3,954</div>
       <div class="stats-strip-label">Total Citations</div>
       
-      <div class="stats-strip-sub">🏆 8 in Top 1%</div>
+      <div class="stats-strip-sub"><svg class="sig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg> 9 in Top 1%</div>
       
     </div>
     
     <div class="stats-strip-item">
       <div class="stats-strip-num">87,736</div>
       <div class="stats-strip-label">Downloads</div>
-      <div style="font-size:.65rem;color:#6b7280;margin-top:.2rem;">14 of 25 works · OAPEN/DataCite</div>
+      <div style="font-size:.75rem;color:#6b7280;margin-top:.2rem;">14 of 25 works · OAPEN/DataCite</div>
     </div>
     
     <div class="stats-strip-item">
-      <div class="stats-strip-num">16</div>
+      <div class="stats-strip-num">17</div>
       <div class="stats-strip-label">Online Mentions</div>
     </div>
     <div class="stats-strip-item">
       
       <div class="stats-strip-num">88%</div>
       <div class="stats-strip-label">Open Access</div>
-      <div style="font-size:.65rem;color:#6b7280;margin-top:.2rem;">22 of 25 works</div>
+      <div style="font-size:.75rem;color:#6b7280;margin-top:.2rem;">22 of 25 works</div>
     </div>
     
   </div>
 
   
-  <div class="section-label">On the shelf</div>
   <section class="card">
     <h2><span>Digital Bookshelf</span> <span class="badge">Portfolio</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">The same collection, ranked by whichever evidence you pick — no one ranking is "the" ranking. Articles and data included, not just books — cover art where it resolves.</div>
@@ -359,19 +359,19 @@
       
       <div class="bookshelf-block">
         
-        <div class="shelf-tab-switch">
-          <button type="button" class="shelf-tab-btn is-active" data-shelf-target="shelf-cite-edu-a">Top cited</button>
-          <button type="button" class="shelf-tab-btn" data-shelf-target="shelf-cite-edu-b">Top in education</button>
+        <div class="shelf-tab-switch" role="tablist" aria-label="Top cited / Top in education">
+          <button type="button" class="shelf-tab-btn is-active" role="tab" aria-selected="true" aria-controls="shelf-cite-edu-a" id="shelf-cite-edu-a-tab" data-shelf-target="shelf-cite-edu-a">Top cited</button>
+          <button type="button" class="shelf-tab-btn" role="tab" aria-selected="false" aria-controls="shelf-cite-edu-b" id="shelf-cite-edu-b-tab" data-shelf-target="shelf-cite-edu-b">Top in education</button>
         </div>
         
         
-        <div class="shelf-panel" id="shelf-cite-edu-a">
+        <div class="shelf-panel" id="shelf-cite-edu-a" role="tabpanel" aria-labelledby="shelf-cite-edu-a-tab">
     <div class="bookshelf-row">
       
       <div class="shelf-slot">
         <a href="bookstory_10.1201_b10598.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/d53901c6-d850-4e24-8cd5-898b5478b6f1/retrieve" alt="Cover of Environmental Contaminants in Biota">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/d53901c6-d850-4e24-8cd5-898b5478b6f1/retrieve" alt="Cover of Environmental Contaminants in Biota" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Environmental Contaminants in Biota</div>
@@ -382,33 +382,33 @@
       <div class="shelf-slot">
         <a href="bookstory_10.4324_9781849775069.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/660a8825-911e-4a24-bc6e-221b9f9bb3e5/retrieve" alt="Cover of Dynamic Sustainabilities">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/660a8825-911e-4a24-bc6e-221b9f9bb3e5/retrieve" alt="Cover of Dynamic Sustainabilities" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Dynamic Sustainabilities</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">468 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">473 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="bookstory_10.4324_9781315204956.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/538aff77-291e-4ed0-b4ac-6f60e57ac4a6/retrieve" alt="Cover of Co-Production and Co-Creation">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/538aff77-291e-4ed0-b4ac-6f60e57ac4a6/retrieve" alt="Cover of Co-Production and Co-Creation" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Co-Production and Co-Creation</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">433 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">457 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="bookstory_10.1201_9781003035572.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/39f92976-eec3-42f2-aa57-8761a733ca7f/retrieve" alt="Cover of Sterile Insect Technique">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/39f92976-eec3-42f2-aa57-8761a733ca7f/retrieve" alt="Cover of Sterile Insect Technique" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Sterile Insect Technique</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">382 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">385 citations</span></div>
         </a>
       </div>
       
@@ -421,40 +421,40 @@
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Trace Elements in Abiotic and Biotic Environments</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">375 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">380 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="bookstory_10.4324_9781003021339.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/9d288751-2eb5-46f0-8448-850e9ae9c113/retrieve" alt="Cover of The Routledge Handbook of Research Methods for Social-Ecological Systems">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/9d288751-2eb5-46f0-8448-850e9ae9c113/retrieve" alt="Cover of The Routledge Handbook of Research Methods for Social-Ecological Systems" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">The Routledge Handbook of Research Methods for Social-Ecological Systems</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">351 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">357 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="bookstory_10.4324_9781315712802.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/b21a4b93-363f-4d77-a83d-f35904b7f0f0/retrieve" alt="Cover of Against Meritocracy">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/b21a4b93-363f-4d77-a83d-f35904b7f0f0/retrieve" alt="Cover of Against Meritocracy" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Against Meritocracy</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">319 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">326 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="bookstory_10.4324_9780429351730.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/c7fa6706-b415-4f15-8b3c-117ced543c33/retrieve" alt="Cover of Waiting and the Temporalities of Irregular Migration">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/c7fa6706-b415-4f15-8b3c-117ced543c33/retrieve" alt="Cover of Waiting and the Temporalities of Irregular Migration" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Waiting and the Temporalities of Irregular Migration</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">289 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">294 citations</span></div>
         </a>
       </div>
       
@@ -462,13 +462,13 @@
     </div>
         
         
-        <div class="shelf-panel is-hidden" id="shelf-cite-edu-b">
+        <div class="shelf-panel is-hidden" id="shelf-cite-edu-b" role="tabpanel" aria-labelledby="shelf-cite-edu-b-tab">
     <div class="bookshelf-row">
       
       <div class="shelf-slot">
         <a href="bookstory_10.4324_9781315712802.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/b21a4b93-363f-4d77-a83d-f35904b7f0f0/retrieve" alt="Cover of Against Meritocracy">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/b21a4b93-363f-4d77-a83d-f35904b7f0f0/retrieve" alt="Cover of Against Meritocracy" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Against Meritocracy</div>
@@ -479,7 +479,7 @@
       <div class="shelf-slot">
         <a href="bookstory_10.5117_9789462981102.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/e198ecd7-a8eb-4323-ad84-ba88cb3145ad/retrieve" alt="Cover of List Cultures">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/e198ecd7-a8eb-4323-ad84-ba88cb3145ad/retrieve" alt="Cover of List Cultures" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">List Cultures</div>
@@ -498,19 +498,19 @@
       
       <div class="bookshelf-block">
         
-        <div class="shelf-tab-switch">
-          <button type="button" class="shelf-tab-btn is-active" data-shelf-target="shelf-mention-dl-a">Top mentioned</button>
-          <button type="button" class="shelf-tab-btn" data-shelf-target="shelf-mention-dl-b">Top downloaded</button>
+        <div class="shelf-tab-switch" role="tablist" aria-label="Top mentioned / Top downloaded">
+          <button type="button" class="shelf-tab-btn is-active" role="tab" aria-selected="true" aria-controls="shelf-mention-dl-a" id="shelf-mention-dl-a-tab" data-shelf-target="shelf-mention-dl-a">Top mentioned</button>
+          <button type="button" class="shelf-tab-btn" role="tab" aria-selected="false" aria-controls="shelf-mention-dl-b" id="shelf-mention-dl-b-tab" data-shelf-target="shelf-mention-dl-b">Top downloaded</button>
         </div>
         
         
-        <div class="shelf-panel" id="shelf-mention-dl-a">
+        <div class="shelf-panel" id="shelf-mention-dl-a" role="tabpanel" aria-labelledby="shelf-mention-dl-a-tab">
     <div class="bookshelf-row">
       
       <div class="shelf-slot">
         <a href="bookstory_10.1201_9781003035572.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/39f92976-eec3-42f2-aa57-8761a733ca7f/retrieve" alt="Cover of Sterile Insect Technique">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/39f92976-eec3-42f2-aa57-8761a733ca7f/retrieve" alt="Cover of Sterile Insect Technique" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Sterile Insect Technique</div>
@@ -521,7 +521,7 @@
       <div class="shelf-slot">
         <a href="bookstory_10.4324_9781315712802.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/b21a4b93-363f-4d77-a83d-f35904b7f0f0/retrieve" alt="Cover of Against Meritocracy">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/b21a4b93-363f-4d77-a83d-f35904b7f0f0/retrieve" alt="Cover of Against Meritocracy" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Against Meritocracy</div>
@@ -532,7 +532,7 @@
       <div class="shelf-slot">
         <a href="bookstory_10.4324_9780429351730.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/c7fa6706-b415-4f15-8b3c-117ced543c33/retrieve" alt="Cover of Waiting and the Temporalities of Irregular Migration">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/c7fa6706-b415-4f15-8b3c-117ced543c33/retrieve" alt="Cover of Waiting and the Temporalities of Irregular Migration" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Waiting and the Temporalities of Irregular Migration</div>
@@ -543,7 +543,7 @@
       <div class="shelf-slot">
         <a href="bookstory_10.4324_9781849775069.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/660a8825-911e-4a24-bc6e-221b9f9bb3e5/retrieve" alt="Cover of Dynamic Sustainabilities">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/660a8825-911e-4a24-bc6e-221b9f9bb3e5/retrieve" alt="Cover of Dynamic Sustainabilities" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Dynamic Sustainabilities</div>
@@ -554,7 +554,7 @@
       <div class="shelf-slot">
         <a href="bookstory_10.4324_9781315204956.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/538aff77-291e-4ed0-b4ac-6f60e57ac4a6/retrieve" alt="Cover of Co-Production and Co-Creation">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/538aff77-291e-4ed0-b4ac-6f60e57ac4a6/retrieve" alt="Cover of Co-Production and Co-Creation" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Co-Production and Co-Creation</div>
@@ -578,10 +578,23 @@
       <div class="shelf-slot">
         <a href="bookstory_10.5117_9789463723336.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/cd94981b-36e1-4c70-b21d-83ce72bb519c/retrieve" alt="Cover of Human Trafficking in Medieval Europe">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/cd94981b-36e1-4c70-b21d-83ce72bb519c/retrieve" alt="Cover of Human Trafficking in Medieval Europe" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Human Trafficking in Medieval Europe</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">1 mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="articlestory_10.1080_0015198x.2023.2173506.html" target="_blank">
+          
+          <div class="gen-jacket-sm" style="--jh: 306;" role="img" aria-label="Earning Alpha by Avoiding the Index Rebalancing Crowd. Cover image not available.">
+            <span class="gj-title-sm">Earning Alpha by Avoiding the Index Rebalancing Crowd</span>
+          </div>
+          
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">Earning Alpha by Avoiding the Index Rebalancing Crowd</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">1 mentions</span></div>
         </a>
       </div>
@@ -590,13 +603,13 @@
     </div>
         
         
-        <div class="shelf-panel is-hidden" id="shelf-mention-dl-b">
+        <div class="shelf-panel is-hidden" id="shelf-mention-dl-b" role="tabpanel" aria-labelledby="shelf-mention-dl-b-tab">
     <div class="bookshelf-row">
       
       <div class="shelf-slot">
         <a href="bookstory_10.4324_9781003021339.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/9d288751-2eb5-46f0-8448-850e9ae9c113/retrieve" alt="Cover of The Routledge Handbook of Research Methods for Social-Ecological Systems">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/9d288751-2eb5-46f0-8448-850e9ae9c113/retrieve" alt="Cover of The Routledge Handbook of Research Methods for Social-Ecological Systems" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">The Routledge Handbook of Research Methods for Social-Ecological Systems</div>
@@ -607,7 +620,7 @@
       <div class="shelf-slot">
         <a href="bookstory_10.1201_9781003035572.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/39f92976-eec3-42f2-aa57-8761a733ca7f/retrieve" alt="Cover of Sterile Insect Technique">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/39f92976-eec3-42f2-aa57-8761a733ca7f/retrieve" alt="Cover of Sterile Insect Technique" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Sterile Insect Technique</div>
@@ -618,7 +631,7 @@
       <div class="shelf-slot">
         <a href="bookstory_10.4324_9781315712802.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/b21a4b93-363f-4d77-a83d-f35904b7f0f0/retrieve" alt="Cover of Against Meritocracy">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/b21a4b93-363f-4d77-a83d-f35904b7f0f0/retrieve" alt="Cover of Against Meritocracy" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Against Meritocracy</div>
@@ -629,7 +642,7 @@
       <div class="shelf-slot">
         <a href="bookstory_10.4324_9780429351730.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/c7fa6706-b415-4f15-8b3c-117ced543c33/retrieve" alt="Cover of Waiting and the Temporalities of Irregular Migration">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/c7fa6706-b415-4f15-8b3c-117ced543c33/retrieve" alt="Cover of Waiting and the Temporalities of Irregular Migration" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Waiting and the Temporalities of Irregular Migration</div>
@@ -640,7 +653,7 @@
       <div class="shelf-slot">
         <a href="bookstory_10.4324_9781849775069.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/660a8825-911e-4a24-bc6e-221b9f9bb3e5/retrieve" alt="Cover of Dynamic Sustainabilities">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/660a8825-911e-4a24-bc6e-221b9f9bb3e5/retrieve" alt="Cover of Dynamic Sustainabilities" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Dynamic Sustainabilities</div>
@@ -651,7 +664,7 @@
       <div class="shelf-slot">
         <a href="bookstory_10.5117_9789463723336.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/cd94981b-36e1-4c70-b21d-83ce72bb519c/retrieve" alt="Cover of Human Trafficking in Medieval Europe">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/cd94981b-36e1-4c70-b21d-83ce72bb519c/retrieve" alt="Cover of Human Trafficking in Medieval Europe" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Human Trafficking in Medieval Europe</div>
@@ -675,7 +688,7 @@
       <div class="shelf-slot">
         <a href="bookstory_10.5117_9789462983663.html" target="_blank">
           
-          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/46203ed6-5d14-487f-bdcc-1abd77a7ad6c/retrieve" alt="Cover of Adaptation in the Age of Media Convergence">
+          <img class="shelf-cover-img" src="https://library.oapen.org/rest/bitstreams/46203ed6-5d14-487f-bdcc-1abd77a7ad6c/retrieve" alt="Cover of Adaptation in the Age of Media Convergence" loading="lazy">
           
           <div class="shelf-plank"></div>
           <div class="shelf-title">Adaptation in the Age of Media Convergence</div>
@@ -696,7 +709,6 @@
 
   
 
-  <div class="section-label">Open science report card</div>
   <section class="card">
     <h2><span>Open Science Indicators</span> <span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">Crossref / EuropePMC / OpenAIRE / PRISM</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">
@@ -715,9 +727,9 @@
       
     
     <div class="stat-box stat-box-muted">
-      <div class="stat-number" style="color:#9ca3af;">&mdash;</div>
+      <div class="stat-number" style="color:#6b7280;">&mdash;</div>
       <div class="stat-label">Linked Preprints</div>
-      <div class="muted" style="font-size:.65rem;margin-top:.35rem;line-height:1.35;">Not recorded for any work in this selection.</div>
+      <div class="muted" style="font-size:.75rem;margin-top:.35rem;line-height:1.35;">Not recorded for any work in this selection.</div>
     </div>
     
   
@@ -732,18 +744,18 @@
       
     
     <div class="stat-box stat-box-muted">
-      <div class="stat-number" style="color:#9ca3af;">&mdash;</div>
+      <div class="stat-number" style="color:#6b7280;">&mdash;</div>
       <div class="stat-label">Open Data / Code</div>
-      <div class="muted" style="font-size:.65rem;margin-top:.35rem;line-height:1.35;">Not recorded for any work in this selection.</div>
+      <div class="muted" style="font-size:.75rem;margin-top:.35rem;line-height:1.35;">Not recorded for any work in this selection.</div>
     </div>
     
   
       
     
     <div class="stat-box stat-box-muted">
-      <div class="stat-number" style="color:#9ca3af;">&mdash;</div>
+      <div class="stat-number" style="color:#6b7280;">&mdash;</div>
       <div class="stat-label">Contains RRIDs</div>
-      <div class="muted" style="font-size:.65rem;margin-top:.35rem;line-height:1.35;">Not recorded for any work in this selection.</div>
+      <div class="muted" style="font-size:.75rem;margin-top:.35rem;line-height:1.35;">Not recorded for any work in this selection.</div>
     </div>
     
   
@@ -906,19 +918,19 @@
   </section>
 
   <!-- Charts -->
-  <div class="section-label">Citation &amp; attention landscape</div>
+  <h2 style="margin-bottom:.75rem;"><span>Citation &amp; Attention Landscape</span></h2>
   <div class="grid-2" style="margin-bottom:0;">
     <section class="card chart-card" style="margin-bottom:0;">
       <h2><span>Citation Timeline</span></h2>
       <div class="muted" style="margin-top:-.15rem;font-size:.8rem;">Annual citation counts across the portfolio.</div>
       <div class="chart-wrap">
-        <canvas id="citationChart" data-labels="[&#34;2010&#34;, &#34;2011&#34;, &#34;2012&#34;, &#34;2013&#34;, &#34;2014&#34;, &#34;2015&#34;, &#34;2016&#34;, &#34;2017&#34;, &#34;2018&#34;, &#34;2019&#34;, &#34;2020&#34;, &#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[46, 76, 65, 75, 82, 82, 64, 68, 104, 120, 202, 267, 318, 448, 465, 558, 313]"></canvas>
+        <canvas id="citationChart" data-labels="[&#34;1995&#34;, &#34;1996&#34;, &#34;1997&#34;, &#34;1998&#34;, &#34;1999&#34;, &#34;2000&#34;, &#34;2001&#34;, &#34;2002&#34;, &#34;2003&#34;, &#34;2004&#34;, &#34;2005&#34;, &#34;2006&#34;, &#34;2007&#34;, &#34;2008&#34;, &#34;2009&#34;, &#34;2010&#34;, &#34;2011&#34;, &#34;2012&#34;, &#34;2013&#34;, &#34;2014&#34;, &#34;2015&#34;, &#34;2016&#34;, &#34;2017&#34;, &#34;2018&#34;, &#34;2019&#34;, &#34;2020&#34;, &#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[1, 3, 6, 20, 17, 29, 28, 50, 44, 33, 48, 45, 71, 56, 45, 45, 76, 64, 75, 82, 82, 64, 69, 105, 126, 209, 275, 325, 453, 468, 559, 353]"></canvas>
       </div>
     </section>
     <div class="grid-2" style="margin-bottom:0;gap:1rem;">
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Citing Sectors</span> <span class="badge">ROR</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Government&#34;, &#34;Facility&#34;, &#34;Nonprofit&#34;, &#34;Company&#34;, &#34;Archive&#34;, &#34;Healthcare&#34;, &#34;Other&#34;, &#34;Funder&#34;]" data-values="[3156, 755, 816, 457, 201, 75, 148, 160, 73]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Government&#34;, &#34;Facility&#34;, &#34;Nonprofit&#34;, &#34;Archive&#34;, &#34;Company&#34;, &#34;Funder&#34;, &#34;Healthcare&#34;, &#34;Other&#34;]" data-values="[3227, 780, 779, 376, 59, 87, 71, 89, 98]"></canvas></div>
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Citation Context</span> <span class="badge">scite</span></h2>
@@ -926,43 +938,42 @@
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Work Types</span> <span class="badge">OpenAlex</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="wtChart" data-labels="[&#34;Article&#34;, &#34;Book-Chapter&#34;, &#34;Dissertation&#34;, &#34;Report&#34;, &#34;Book&#34;, &#34;Conference-Paper&#34;, &#34;Other&#34;, &#34;Editorial&#34;, &#34;Preprint&#34;, &#34;Reference-Entry&#34;, &#34;Paratext&#34;, &#34;Retraction&#34;, &#34;Review&#34;, &#34;Book-Review&#34;, &#34;Erratum&#34;, &#34;Peer-Review&#34;, &#34;Data-Paper&#34;]" data-values="[3048, 407, 40, 14, 47, 39, 17, 16, 131, 16, 28, 1, 48, 6, 1, 7, 1]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="wtChart" data-labels="[&#34;Article&#34;, &#34;Book-Chapter&#34;, &#34;Dissertation&#34;, &#34;Report&#34;, &#34;Book&#34;, &#34;Conference-Paper&#34;, &#34;Editorial&#34;, &#34;Other&#34;, &#34;Preprint&#34;, &#34;Reference-Entry&#34;, &#34;Paratext&#34;, &#34;Retraction&#34;, &#34;Review&#34;, &#34;Book-Review&#34;, &#34;Erratum&#34;, &#34;Peer-Review&#34;, &#34;Data-Paper&#34;]" data-values="[3086, 401, 56, 14, 47, 40, 18, 16, 132, 17, 31, 1, 49, 9, 1, 7, 1]"></canvas></div>
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Top Venues</span> <span class="badge">OpenAlex</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="venueChart" data-labels="[&#34;The Science of The Total Environment&#34;, &#34;Environmental Pollution&#34;, &#34;Archives of Environmental Contamination and Toxicology&#34;, &#34;Insects&#34;, &#34;Ecotoxicology&#34;, &#34;Cambridge University Press eBooks&#34;]" data-values="[123, 89, 82, 58, 52, 47]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="venueChart" data-labels="[&#34;The Science of The Total Environment&#34;, &#34;Springer eBooks&#34;, &#34;Environmental Pollution&#34;, &#34;Archives of Environmental Contamination and Toxicology&#34;, &#34;Insects&#34;, &#34;Ecotoxicology&#34;]" data-values="[122, 105, 89, 82, 58, 52]"></canvas></div>
       </section>
     </div>
   </div>
   <div style="margin-bottom:1.75rem;"></div>
 
   <!-- Community -->
-  <div class="section-label">Community engagement &amp; public discourse</div>
   <section class="card">
     <h2><span>Online Mentions by Platform</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:1.25rem;">Breakdown across platforms for the entire portfolio.</div>
     <div class="platform-grid">
-      <div class="platform-box" style="border-top-color:#64748b;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#334155;">16</div>
         <div class="platform-lbl">Wikipedia</div>
       </div>
-      <div class="platform-box" style="border-top-color:#ea580c;">
-        <div class="platform-num" style="color:#c2410c;">0</div>
+      <div class="platform-box">
+        <div class="platform-num" style="color:#c2410c;">1</div>
         <div class="platform-lbl">Reddit</div>
       </div>
-      <div class="platform-box" style="border-top-color:#0ea5e9;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#0369a1;">0</div>
         <div class="platform-lbl">Bluesky</div>
       </div>
-      <div class="platform-box" style="border-top-color:#eab308;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#a16207;">0</div>
         <div class="platform-lbl">StackExchange</div>
       </div>
-      <div class="platform-box" style="border-top-color:#db2777;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#be185d;">0</div>
         <div class="platform-lbl">Expert Annotations</div>
       </div>
-      <div class="platform-box" style="border-top-color:#16a34a;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#15803d;">0</div>
         <div class="platform-lbl">News Media</div>
       </div>
@@ -970,7 +981,6 @@
   </section>
 
   
-  <div class="section-label">Teaching, practice &amp; library</div>
   <section class="card">
     <h2><span>Teaching, Practice &amp; Library Adoption</span></h2>
     <div class="grid-3" style="margin-bottom:0;margin-top:1rem;">
@@ -1003,7 +1013,7 @@
   
 
   <!-- Concepts / Roles / Geo -->
-  <div class="section-label">Thematic &amp; impact profile</div>
+  <h2 style="margin-bottom:.75rem;"><span>Thematic &amp; Impact Profile</span></h2>
   <section class="card">
     <h2><span>Dominant Concepts</span> <span class="badge">OpenAlex</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Weighted by AI confidence score.</div>
@@ -1055,9 +1065,9 @@
   
   <section class="card">
     <h2><span>Reach, mapped</span> <span class="badge">OpenAlex</span></h2>
-    <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Citing-work affiliations trace back to <span class="stats-strip-num" style="font-size:1.1rem;">89</span> countries — circle size shows citation count from that country.</div>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Citing-work affiliations trace back to <span class="stats-strip-num" style="font-size:1.1rem;">91</span> countries — circle size shows citation count from that country.</div>
     <div class="map-card">
-      <canvas id="reach-map" data-countries='[{"count": 864, "label": "United States"}, {"count": 615, "label": "United Kingdom"}, {"count": 274, "label": "Canada"}, {"count": 253, "label": "Germany"}, {"count": 208, "label": "Netherlands"}, {"count": 194, "label": "Australia"}, {"count": 181, "label": "Spain"}, {"count": 181, "label": "Italy"}, {"count": 172, "label": "Sweden"}, {"count": 169, "label": "France"}, {"count": 135, "label": "Norway"}, {"count": 135, "label": "China"}, {"count": 128, "label": "Brazil"}, {"count": 124, "label": "South Africa"}, {"count": 120, "label": "India"}]' role="img" aria-label="World map of citing countries, sized by citation count"></canvas>
+      <canvas id="reach-map" data-countries='[{"count": 818, "label": "United States"}, {"count": 618, "label": "United Kingdom"}, {"count": 270, "label": "Canada"}, {"count": 253, "label": "Germany"}, {"count": 201, "label": "Netherlands"}, {"count": 185, "label": "Australia"}, {"count": 183, "label": "Italy"}, {"count": 180, "label": "Spain"}, {"count": 176, "label": "France"}, {"count": 174, "label": "Sweden"}, {"count": 134, "label": "China"}, {"count": 133, "label": "Norway"}, {"count": 129, "label": "Austria"}, {"count": 128, "label": "Brazil"}, {"count": 119, "label": "South Africa"}]' role="img" aria-label="World map of citing countries, sized by citation count"></canvas>
       <div class="map-note">Full breakdown, including countries not shown on the map, in the list below.</div>
     </div>
   </section>
@@ -1069,35 +1079,35 @@
       <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Based on author affiliations of citing works — size shows how often each one appears.</div>
       <div>
         
-          <span class="tag tag-1">United States (864)</span>
+          <span class="tag tag-1">United States (818)</span>
         
-          <span class="tag tag-1">United Kingdom (615)</span>
+          <span class="tag tag-1">United Kingdom (618)</span>
         
-          <span class="tag tag-1">Canada (274)</span>
+          <span class="tag tag-1">Canada (270)</span>
         
           <span class="tag tag-2">Germany (253)</span>
         
-          <span class="tag tag-2">Netherlands (208)</span>
+          <span class="tag tag-2">Netherlands (201)</span>
         
-          <span class="tag tag-2">Australia (194)</span>
+          <span class="tag tag-2">Australia (185)</span>
         
-          <span class="tag tag-2">Spain (181)</span>
+          <span class="tag tag-2">Italy (183)</span>
         
-          <span class="tag tag-2">Italy (181)</span>
+          <span class="tag tag-2">Spain (180)</span>
         
-          <span class="tag tag-soft tag-3">Sweden (172)</span>
+          <span class="tag tag-soft tag-3">France (176)</span>
         
-          <span class="tag tag-soft tag-3">France (169)</span>
+          <span class="tag tag-soft tag-3">Sweden (174)</span>
         
-          <span class="tag tag-soft tag-3">Norway (135)</span>
+          <span class="tag tag-soft tag-3">China (134)</span>
         
-          <span class="tag tag-soft tag-3">China (135)</span>
+          <span class="tag tag-soft tag-3">Norway (133)</span>
+        
+          <span class="tag tag-soft tag-3">Austria (129)</span>
         
           <span class="tag tag-soft tag-3">Brazil (128)</span>
         
-          <span class="tag tag-soft tag-3">South Africa (124)</span>
-        
-          <span class="tag tag-soft tag-3">India (120)</span>
+          <span class="tag tag-soft tag-3">South Africa (119)</span>
         
       </div>
     </section>
@@ -1106,35 +1116,35 @@
       <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Canonical names based on author affiliations — size shows how often each one appears.</div>
       <div>
         
-          <span class="tag tag-1">United States Geological Survey (109)</span>
+          <span class="tag tag-1">United States Geological Survey (105)</span>
         
-          <span class="tag tag-1">Centre National de la Recherche Scientifique (72)</span>
+          <span class="tag tag-1">International Atomic Energy Agency (88)</span>
         
-          <span class="tag tag-1">International Atomic Energy Agency (68)</span>
+          <span class="tag tag-1">Environment and Climate Change Canada (79)</span>
         
-          <span class="tag tag-2">Environment and Climate Change Canada (67)</span>
+          <span class="tag tag-2">Centre National de la Recherche Scientifique (75)</span>
         
-          <span class="tag tag-2">Stockholm University (62)</span>
+          <span class="tag tag-2">Stockholm University (65)</span>
         
-          <span class="tag tag-2">Stockholm Resilience Centre (58)</span>
+          <span class="tag tag-2">Stockholm Resilience Centre (60)</span>
         
-          <span class="tag tag-2">United States Fish and Wildlife Service (50)</span>
+          <span class="tag tag-2">United States Fish and Wildlife Service (49)</span>
         
           <span class="tag tag-2">University of Sussex (45)</span>
         
-          <span class="tag tag-soft tag-3">Wageningen University & Research (44)</span>
+          <span class="tag tag-soft tag-3">Wageningen University & Research (45)</span>
         
-          <span class="tag tag-soft tag-3">Rutgers, The State University of New Jersey (39)</span>
+          <span class="tag tag-soft tag-3">Rutgers, The State University of New Jersey (41)</span>
         
-          <span class="tag tag-soft tag-3">Environmental and Occupational Health Sciences Institute (34)</span>
+          <span class="tag tag-soft tag-3">Environmental and Occupational Health Sciences Institute (33)</span>
+        
+          <span class="tag tag-soft tag-3">Columbia Environmental Research Center (31)</span>
         
           <span class="tag tag-soft tag-3">Stellenbosch University (30)</span>
         
           <span class="tag tag-soft tag-3">Utrecht University (30)</span>
         
-          <span class="tag tag-soft tag-3">Institut National de Recherche pour l'Agriculture, l'Alimentation et l'Environnement (30)</span>
-        
-          <span class="tag tag-soft tag-3">Centre de Coopération Internationale en Recherche Agronomique pour le Développement (29)</span>
+          <span class="tag tag-soft tag-3">Institut de Recherche pour le Développement (30)</span>
         
       </div>
     </section>
@@ -1160,7 +1170,6 @@
   </div>
 
   <!-- Authors -->
-  <div class="section-label">Contributors</div>
   <section class="card">
     <h2><span>Core Authors</span> <span class="badge">Portfolio</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Authors with more than one work in this dataset.</div>
@@ -1172,24 +1181,23 @@
   </section>
 
   
-  <div class="section-label">OA provenance</div>
   <section class="card">
     <h2><span>Open Access Provenance</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">Primary source used to classify OA per work.</div>
     
     <div class="platform-grid">
       
-      <div class="platform-box" style="border-top-color:#64748b;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#334155;">15</div>
         <div class="platform-lbl">OAPEN</div>
       </div>
       
-      <div class="platform-box" style="border-top-color:#64748b;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#334155;">7</div>
         <div class="platform-lbl">Publisher-claimed</div>
       </div>
       
-      <div class="platform-box" style="border-top-color:#64748b;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#334155;">3</div>
         <div class="platform-lbl">Closed/Unknown</div>
       </div>
@@ -1217,7 +1225,6 @@
   
 
   <!-- Works table -->
-  <div class="section-label">Included works</div>
   <section class="card">
     <h2><span>All Works</span> <span class="badge" id="worksTotalBadge">25 total</span></h2>
     
@@ -1230,14 +1237,14 @@
     
     
     
-    <div class="works-filters" id="worksFilters">
-      <button type="button" class="works-filter-btn is-active" data-filter="all">All works</button>
+    <div class="works-filters" id="worksFilters" role="group" aria-label="Filter works">
+      <button type="button" class="works-filter-btn is-active" data-filter="all" aria-pressed="true">All works</button>
       
-      <button type="button" class="works-filter-btn" data-filter="open_review">Open peer review (10)</button>
-      <button type="button" class="works-filter-btn" data-filter="prism_context">PRISM context (12)</button>
-      <button type="button" class="works-filter-btn" data-filter="prism_peer_review">PRISM peer reviews (10)</button>
-      <button type="button" class="works-filter-btn" data-filter="openaire_reach">OpenAIRE reach (24)</button>
-      <button type="button" class="works-filter-btn" data-filter="openaire_open">OpenAIRE open instances (21)</button>
+      <button type="button" class="works-filter-btn" data-filter="open_review" aria-pressed="false">Open peer review (10)</button>
+      <button type="button" class="works-filter-btn" data-filter="prism_context" aria-pressed="false">PRISM context (12)</button>
+      <button type="button" class="works-filter-btn" data-filter="prism_peer_review" aria-pressed="false">PRISM peer reviews (10)</button>
+      <button type="button" class="works-filter-btn" data-filter="openaire_reach" aria-pressed="false">OpenAIRE reach (24)</button>
+      <button type="button" class="works-filter-btn" data-filter="openaire_open" aria-pressed="false">OpenAIRE open instances (21)</button>
       
       
       
@@ -1308,7 +1315,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">468</td>
+            <td style="text-align:right;font-weight:600;">473</td>
             <td style="text-align:right;">1</td>
           </tr>
           
@@ -1338,7 +1345,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">433</td>
+            <td style="text-align:right;font-weight:600;">457</td>
             <td style="text-align:right;">1</td>
           </tr>
           
@@ -1368,7 +1375,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">382</td>
+            <td style="text-align:right;font-weight:600;">385</td>
             <td style="text-align:right;">7</td>
           </tr>
           
@@ -1398,7 +1405,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">375</td>
+            <td style="text-align:right;font-weight:600;">380</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1428,7 +1435,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">351</td>
+            <td style="text-align:right;font-weight:600;">357</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1458,7 +1465,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">319</td>
+            <td style="text-align:right;font-weight:600;">326</td>
             <td style="text-align:right;">3</td>
           </tr>
           
@@ -1488,7 +1495,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">289</td>
+            <td style="text-align:right;font-weight:600;">294</td>
             <td style="text-align:right;">2</td>
           </tr>
           
@@ -1518,7 +1525,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">107</td>
+            <td style="text-align:right;font-weight:600;">115</td>
             <td style="text-align:right;">1</td>
           </tr>
           
@@ -1548,7 +1555,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">79</td>
+            <td style="text-align:right;font-weight:600;">81</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1578,7 +1585,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">48</td>
+            <td style="text-align:right;font-weight:600;">51</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1608,8 +1615,38 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">13</td>
+            <td style="text-align:right;font-weight:600;">14</td>
             <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2025</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.5117_9789463723336.html" style="color:#111827;text-decoration:none;font-weight:500;">Human Trafficking in Medieval Europe</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.5117_9789463723336.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.5117/9789463723336</a>
+              <a href="https://doi.org/10.5117/9789463723336" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">10</td>
+            <td style="text-align:right;">1</td>
           </tr>
           
           <tr
@@ -1639,7 +1676,7 @@
             </td>
             
             <td style="text-align:right;font-weight:600;">9</td>
-            <td style="text-align:right;">0</td>
+            <td style="text-align:right;">1</td>
           </tr>
           
           <tr
@@ -1760,36 +1797,6 @@
             
             <td style="text-align:right;font-weight:600;">2</td>
             <td style="text-align:right;">0</td>
-          </tr>
-          
-          <tr
-            data-has-award="0"
-            data-has-preprint="0"
-            data-has-open-review="0"
-            data-has-stewardship="0"
-            data-has-rrid="0"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="0"
-            data-has-prism-peer="0"
-            data-funder-keys=""
-          >
-            <td style="white-space:nowrap;">2025</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
-            <td>
-              
-              <a href="bookstory_10.5117_9789463723336.html" style="color:#111827;text-decoration:none;font-weight:500;">Human Trafficking in Medieval Europe</a>
-              
-            </td>
-            <td>
-              
-              <a href="bookstory_10.5117_9789463723336.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.5117/9789463723336</a>
-              <a href="https://doi.org/10.5117/9789463723336" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">2</td>
-            <td style="text-align:right;">1</td>
           </tr>
           
           <tr
@@ -2009,10 +2016,10 @@
 
   <footer>
     <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem;">
-      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:#9ca3af;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:#6b7280;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
       <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;font-weight:600;text-decoration:none;">Read the Methodology &amp; Legend ↗</a></span>
     </div>
-    <div style="padding-left:1.35rem;">Generated on 2026-09-14 15:37:30 UTC</div>
+    <div style="padding-left:1.35rem;">Generated on 2026-10-07 10:56:18 UTC</div>
   </footer>
 
 </div><!-- /page -->
@@ -2029,7 +2036,7 @@ function makeDoughnut(id, palette) {
   const labels = JSON.parse(canvas.getAttribute('data-labels'));
   const data   = JSON.parse(canvas.getAttribute('data-values'));
   if (!data.length || data.reduce((a,b)=>a+b,0)===0) {
-    canvas.parentElement.innerHTML = '<div style="display:flex;align-items:center;height:100%;color:#9ca3af;font-size:.82rem;">No data available.</div>';
+    canvas.parentElement.innerHTML = '<div style="display:flex;align-items:center;height:100%;color:#6b7280;font-size:.82rem;">No data available.</div>';
     return;
   }
   new Chart(canvas.getContext('2d'), {
@@ -2040,7 +2047,7 @@ function makeDoughnut(id, palette) {
 }
 
 // Citation timeline
-(function(){
+function makeCitationChart(){
   const canvas = document.getElementById('citationChart'); if (!canvas) return;
   const labels = JSON.parse(canvas.getAttribute('data-labels'));
   const data   = JSON.parse(canvas.getAttribute('data-values'));
@@ -2056,7 +2063,7 @@ function makeDoughnut(id, palette) {
       plugins: { legend: { display: false } }
     }
   });
-})();
+}
 
 // Bookshelf tab switching (Cited/Education, Mentions/Downloads)
 document.querySelectorAll('.shelf-tab-switch').forEach(function(switcher){
@@ -2065,15 +2072,28 @@ document.querySelectorAll('.shelf-tab-switch').forEach(function(switcher){
     if (!btn) return;
     const targetId = btn.getAttribute('data-shelf-target');
     const block = switcher.closest('.bookshelf-block');
-    block.querySelectorAll('.shelf-tab-btn').forEach(b => b.classList.toggle('is-active', b === btn));
+    block.querySelectorAll('.shelf-tab-btn').forEach(b => {
+      b.classList.toggle('is-active', b === btn);
+      b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+    });
     block.querySelectorAll('.shelf-panel').forEach(p => p.classList.toggle('is-hidden', p.id !== targetId));
   });
 });
 
-makeDoughnut('sectorChart');
-makeDoughnut('sciteChart', ['#16a34a','#9ca3af','#dc2626']);
-makeDoughnut('wtChart');
-makeDoughnut('venueChart');
+function initCharts(){
+  makeCitationChart();
+  makeDoughnut('sectorChart');
+  makeDoughnut('sciteChart', ['#16a34a','#9ca3af','#dc2626']);
+  makeDoughnut('wtChart');
+  makeDoughnut('venueChart');
+}
+// chart.js loads with `defer`, so wait for it rather than assuming it has
+// already run by the time this inline script is parsed.
+if (window.Chart) {
+  initCharts();
+} else {
+  document.addEventListener('DOMContentLoaded', initCharts);
+}
 
 // Reach map — dot-mask world silhouette (generated from a few simplified
 // continent outlines, not traced coastlines) with bubbles for whichever
@@ -2228,7 +2248,9 @@ makeDoughnut('venueChart');
   function applyFilter(nextMode) {
     mode = nextMode;
     filters.querySelectorAll('[data-filter]').forEach((btn) => {
-      btn.classList.toggle('is-active', btn.getAttribute('data-filter') === mode);
+      const active = btn.getAttribute('data-filter') === mode;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
 
     let shown = 0;
