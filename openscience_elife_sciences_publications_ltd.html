@@ -26,8 +26,6 @@
              display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
         h2 span:first-child { flex: 1; }
         .muted { color: #6b7280; font-size: 0.85rem; }
-        .section-label { font-size: .65rem; font-weight: 700; text-transform: uppercase;
-                         letter-spacing: .1em; color: #9ca3af; margin-bottom: .5rem; margin-top: .25rem; }
 
         /* ── Tags / Badges ── */
         .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8;
@@ -53,7 +51,8 @@
                             font-weight: 500; text-decoration: none; color: #6b7280;
                             transition: background .15s, color .15s; }
         .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
-        .print-btn { display: flex; align-items: center; gap: .4rem; padding: .4rem .9rem;
+        .print-btn { display: flex; align-items: center; justify-content: center; gap: .4rem; padding: .4rem .9rem;
+                     min-height: 44px; box-sizing: border-box;
                      background: #2563eb; color: white; border: none; border-radius: .45rem;
                      font-size: .82rem; font-weight: 600; cursor: pointer;
                      box-shadow: 0 2px 8px rgba(37,99,235,.3); transition: background .15s; }
@@ -83,9 +82,9 @@
         .stats-strip-item:last-child { border-right: none; }
         .stats-strip-num { font-family: "Fraunces", Georgia, serif; font-size: 1.9rem; font-weight: 600;
                            color: #2563eb; line-height: 1.1; font-variant-numeric: tabular-nums; }
-        .stats-strip-label { font-size: .68rem; color: #6b7280; text-transform: uppercase;
+        .stats-strip-label { font-size: .69rem; color: #6b7280; text-transform: uppercase;
                              letter-spacing: .06em; margin-top: .25rem; }
-        .stats-strip-sub { font-size: .65rem; color: #b45309; font-weight: 700; margin-top: .2rem; }
+        .stats-strip-sub { display: inline-flex; align-items: center; gap: .25rem; font-size: .69rem; color: #b45309; font-weight: 700; margin-top: .2rem; }
         @media(max-width:640px) {
             .stats-strip { grid-template-columns: repeat(2,1fr); }
             .site-nav { flex-wrap: wrap; gap: .5rem; padding: .55rem 1rem; }
@@ -106,7 +105,7 @@
         .stat-label { font-size: .75rem; color: #64748b; text-transform: uppercase;
                       letter-spacing: .05em; font-weight: 600; }
         .stat-box-muted { background: #fafafa; border-style: dashed; }
-        .stat-box-muted .stat-label { color: #9ca3af; }
+        .stat-box-muted .stat-label { color: #6b7280; }
 
         /* ── Risk card ── */
         .risk-card { border: 2px solid #dc2626; background: #fff5f5; }
@@ -115,7 +114,7 @@
         /* ── Platform mentions ── */
         .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px,1fr)); gap: 1rem; }
         .platform-box { background: white; border-radius: .75rem; padding: 1rem;
-                        text-align: center; border: 1px solid #e2e8f0; border-top-width: 3px; }
+                        text-align: center; border: 1px solid #e2e8f0; }
         .platform-num { font-family: "Fraunces", Georgia, serif; font-size: 1.8rem; font-weight: 600;
                         line-height: 1; margin-bottom: .25rem; font-variant-numeric: tabular-nums; }
         .platform-lbl { font-size: .72rem; color: #6b7280; text-transform: uppercase;
@@ -124,7 +123,7 @@
         /* ── Role pills (same as story pages) ── */
         .roles-domain { margin-bottom: .85rem; }
         .roles-domain:last-of-type { margin-bottom: 0; }
-        .roles-domain-label { font-size: .62rem; font-weight: 700; text-transform: uppercase;
+        .roles-domain-label { font-size: .69rem; font-weight: 700; text-transform: uppercase;
                               letter-spacing: .07em; margin-bottom: .4rem; }
         .roles-row { display: flex; flex-wrap: wrap; gap: .35rem; }
         .role-pill { position: relative; display: inline-flex; align-items: center; gap: .3rem;
@@ -135,7 +134,7 @@
         .role-pill-public     { background: #fffbeb; color: #92400e; border-color: #fde68a; }
         .role-pill-practical  { background: #f0fdf4; color: #065f46; border-color: #bbf7d0; }
         .role-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-        .role-score { font-size: .6rem; font-weight: 700; padding: .05rem .3rem;
+        .role-score { font-size: .69rem; font-weight: 700; padding: .05rem .3rem;
                       border-radius: 999px; margin-left: .1rem; background: rgba(0,0,0,.06); }
 
         /* ── Chart cards ── */
@@ -156,7 +155,8 @@
         /* ── Works table filters ── */
         .works-filters { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: .75rem 0 .25rem; }
         .works-filter-btn { border: 1px solid #e5e7eb; background: #fff; color: #4b5563;
-                            border-radius: 999px; padding: .28rem .75rem; font-size: .78rem;
+                            border-radius: 999px; padding: .28rem .75rem; min-height: 44px; box-sizing: border-box;
+                            font-size: .78rem;
                             font-weight: 600; cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
         .works-filter-btn:hover { background: #f9fafb; color: #111827; }
         .works-filter-btn.is-active { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
@@ -166,6 +166,7 @@
         .award-pill { display: inline-flex; align-items: center; gap: .25rem; background: #fef9c3;
                       color: #92400e; border: 1px solid #fde68a; border-radius: 999px;
                       padding: .1rem .45rem; font-size: .72rem; font-weight: 600; white-space: nowrap; }
+        .sig-icon { width: .85em; height: .85em; flex-shrink: 0; }
         .award-list { margin: 0; padding-left: 1rem; font-size: .75rem; color: #6b7280; }
         tr.is-hidden-by-filter { display: none; }
 
@@ -175,8 +176,9 @@
         .bookshelf-label { font-size: .78rem; font-weight: 700; color: #374151; margin-bottom: .7rem; }
         .shelf-tab-switch { display: flex; gap: .3rem; background: #f3f4f6; border-radius: 999px;
                             padding: .25rem; width: fit-content; margin-bottom: .7rem; }
-        .shelf-tab-btn { border: none; background: transparent; font-size: .72rem; font-weight: 700;
-                         padding: .35rem .85rem; border-radius: 999px; color: #6b7280; cursor: pointer;
+        .shelf-tab-btn { border: none; background: transparent; font-size: .75rem; font-weight: 700;
+                         padding: .35rem .85rem; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center;
+                         border-radius: 999px; color: #6b7280; cursor: pointer;
                          font-family: "Source Sans 3", sans-serif; transition: background .15s, color .15s; }
         .shelf-tab-btn:hover { color: #111827; }
         .shelf-tab-btn.is-active { background: #111827; color: #f9fafb; }
@@ -193,20 +195,20 @@
         .gen-jacket-sm::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
             background: hsl(var(--jh,214) 26% 15%); }
         .gen-jacket-sm .gj-title-sm { font-family: Georgia, 'Times New Roman', serif; font-weight: 600;
-            font-size: .62rem; line-height: 1.15; margin: auto 0; overflow: hidden;
-            display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; }
+            font-size: .75rem; line-height: 1.2; margin: auto 0; overflow: hidden;
+            display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; }
         .shelf-plank { width: 88px; height: 14px; margin-top: -1px; border-radius: 3px;
             background: linear-gradient(180deg, #c88a52 0%, #a86b36 55%, #8a5426 100%);
             box-shadow: 0 6px 10px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.25); }
-        .shelf-title { width: 100%; font-size: .68rem; color: #4b5563; text-align: center; margin-top: .45rem;
-            line-height: 1.25; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        .shelf-title { width: 100%; font-size: .75rem; color: #4b5563; text-align: center; margin-top: .45rem;
+            line-height: 1.3; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
         .shelf-chips { width: 100%; display: flex; justify-content: center; gap: .3rem; margin-top: .35rem; }
-        .shelf-chip { font-size: .62rem; font-weight: 700; border-radius: 999px; padding: .05rem .4rem; white-space: nowrap; }
+        .shelf-chip { font-size: .69rem; font-weight: 700; border-radius: 999px; padding: .05rem .4rem; white-space: nowrap; }
         .shelf-chip-cite { background: #eff6ff; color: #1d4ed8; }
         .shelf-chip-mention { background: #f5f3ff; color: #6d28d9; }
         .shelf-chip-edu { background: #f0fdf4; color: #166534; }
         .shelf-chip-download { background: #ecfeff; color: #0e7490; }
-        .bookshelf-credit { font-size: .72rem; color: #9ca3af; margin-top: .3rem; }
+        .bookshelf-credit { font-size: .75rem; color: #6b7280; margin-top: .3rem; }
 
         /* ── List rows ── */
         .list-row { display: flex; justify-content: space-between; align-items: center;
@@ -215,8 +217,8 @@
 
         /* ── Credo band ── */
         .credo-band { display: flex; gap: .9rem; align-items: flex-start;
-                      border-left: 3px solid #7a2432; background: white;
-                      border-radius: 0 .7rem .7rem 0; padding: 1rem 1.4rem; margin-bottom: 1.75rem; }
+                      background: #fdf4f4; border: 1px solid #f3d9db;
+                      border-radius: .7rem; padding: 1rem 1.4rem; margin-bottom: 1.75rem; }
         .credo-band .mark { font-family: "Fraunces", Georgia, serif; font-weight: 600;
                             font-size: 1.4rem; color: #7a2432; line-height: 1; }
         .credo-band p { margin: 0; font-size: .87rem; line-height: 1.6; color: #4b5563; max-width: 66ch; }
@@ -233,11 +235,11 @@
         /* ── Reach map ── */
         .map-card canvas { width: 100%; height: auto; display: block; border-radius: .6rem;
                             background: #e7edf5; aspect-ratio: 900 / 400; }
-        .map-note { font-size: .74rem; color: #9ca3af; margin-top: .6rem; }
+        .map-note { font-size: .75rem; color: #6b7280; margin-top: .6rem; }
 
         /* ── Footer ── */
         footer { margin-top: 3rem; padding: 1.5rem 0 3rem;
-                 border-top: 1px solid #e5e7eb; color: #9ca3af; font-size: .82rem; }
+                 border-top: 1px solid #e5e7eb; color: #6b7280; font-size: .82rem; }
 
         /* ── Print ── */
         @media print {
@@ -252,7 +254,7 @@
             thead { display: table-header-group; }
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 </head>
 <body>
 
@@ -298,10 +300,9 @@
 <div class="page">
 
   
-  <div class="section-label">Portfolio narrative</div>
   <section class="card">
     <h2><span>The Story So Far</span></h2>
-    <div style="line-height:1.65;"><p class="story-text">This selection contains 22 works with 463 recorded scholarly citations. Available citing-work metadata identifies 55 countries.</p><p class="story-text">There are 4 recorded Wikipedia article–work matches, including 0 book references verified against an article revision. References and bibliography entries document use of a work; these counts do not measure readership.</p><p class="story-text">Current metadata classifies 22 of these works as open access. Missing usage data and zero recorded mentions on a channel do not establish an absence of engagement.</p></div>
+    <div style="line-height:1.65;"><p class="story-text">This selection contains 22 works with 499 recorded scholarly citations. Available citing-work metadata identifies 55 countries.</p><p class="story-text">There are 4 recorded Wikipedia article–work matches, including 0 book references verified against an article revision. References and bibliography entries document use of a work; these counts do not measure readership.</p><p class="story-text">Current metadata classifies 22 of these works as open access. Missing usage data and zero recorded mentions on a channel do not establish an absence of engagement.</p></div>
     <div class="muted" style="margin-top:.45rem;">
       Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
     </div>
@@ -314,13 +315,13 @@
   </div>
 
   <!-- Key metrics strip -->
-  <div class="section-label">Key metrics</div>
+  <h2 style="margin-bottom:.75rem;"><span>Key Metrics</span></h2>
   <div class="stats-strip">
     <div class="stats-strip-item">
-      <div class="stats-strip-num">463</div>
+      <div class="stats-strip-num">499</div>
       <div class="stats-strip-label">Total Citations</div>
       
-      <div class="stats-strip-sub">🏆 2 in Top 1%</div>
+      <div class="stats-strip-sub"><svg class="sig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg> 2 in Top 1%</div>
       
     </div>
     
@@ -332,13 +333,12 @@
       
       <div class="stats-strip-num">100%</div>
       <div class="stats-strip-label">Open Access</div>
-      <div style="font-size:.65rem;color:#6b7280;margin-top:.2rem;">22 of 22 works</div>
+      <div style="font-size:.75rem;color:#6b7280;margin-top:.2rem;">22 of 22 works</div>
     </div>
     
   </div>
 
   
-  <div class="section-label">On the shelf</div>
   <section class="card">
     <h2><span>Digital Bookshelf</span> <span class="badge">Portfolio</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">The same collection, ranked by whichever evidence you pick — no one ranking is "the" ranking. Articles and data included, not just books — cover art where it resolves.</div>
@@ -351,74 +351,74 @@
       
       <div class="bookshelf-block">
         
-        <div class="shelf-tab-switch">
-          <button type="button" class="shelf-tab-btn is-active" data-shelf-target="shelf-cite-edu-a">Top cited</button>
-          <button type="button" class="shelf-tab-btn" data-shelf-target="shelf-cite-edu-b">Top in education</button>
+        <div class="shelf-tab-switch" role="tablist" aria-label="Top cited / Top in education">
+          <button type="button" class="shelf-tab-btn is-active" role="tab" aria-selected="true" aria-controls="shelf-cite-edu-a" id="shelf-cite-edu-a-tab" data-shelf-target="shelf-cite-edu-a">Top cited</button>
+          <button type="button" class="shelf-tab-btn" role="tab" aria-selected="false" aria-controls="shelf-cite-edu-b" id="shelf-cite-edu-b-tab" data-shelf-target="shelf-cite-edu-b">Top in education</button>
         </div>
         
         
-        <div class="shelf-panel" id="shelf-cite-edu-a">
+        <div class="shelf-panel" id="shelf-cite-edu-a" role="tabpanel" aria-labelledby="shelf-cite-edu-a-tab">
     <div class="bookshelf-row">
       
       <div class="shelf-slot">
         <a href="articlestory_10.7554_elife.80660.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 240;" role="img" aria-label="A searchable image resource of Drosophila GAL4 driver expression patterns with single neuron resolution. Cover image not available.">
             <span class="gj-title-sm">A searchable image resource of Drosophila GAL4 driver expression patterns with single neuron resolution</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">A searchable image resource of Drosophila GAL4 driver expression patterns with single neuron resolution</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">126 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">131 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="articlestory_10.7554_elife.79714.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 128;" role="img" aria-label="Stable population structure in Europe since the Iron Age, despite high mobility. Cover image not available.">
             <span class="gj-title-sm">Stable population structure in Europe since the Iron Age, despite high mobility</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Stable population structure in Europe since the Iron Age, despite high mobility</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">67 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">79 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="articlestory_10.7554_eLife.79042.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 220;" role="img" aria-label="Hierarchical architecture of dopaminergic circuits enables second-order conditioning in Drosophila. Cover image not available.">
             <span class="gj-title-sm">Hierarchical architecture of dopaminergic circuits enables second-order conditioning in Drosophila</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Hierarchical architecture of dopaminergic circuits enables second-order conditioning in Drosophila</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">60 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">61 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="articlestory_10.7554_elife.87169.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 221;" role="img" aria-label="Uncovering circuit mechanisms of current sinks and sources with biophysical simulations of primary visual cortex. Cover image not available.">
             <span class="gj-title-sm">Uncovering circuit mechanisms of current sinks and sources with biophysical simulations of primary visual cortex</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Uncovering circuit mechanisms of current sinks and sources with biophysical simulations of primary visual cortex</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">48 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">49 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="articlestory_10.7554_eLife.85756.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 259;" role="img" aria-label="Neural circuit mechanisms for transforming learned olfactory valences into wind-oriented movement. Cover image not available.">
             <span class="gj-title-sm">Neural circuit mechanisms for transforming learned olfactory valences into wind-oriented movement</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Neural circuit mechanisms for transforming learned olfactory valences into wind-oriented movement</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">36 citations</span></div>
@@ -428,39 +428,39 @@
       <div class="shelf-slot">
         <a href="articlestory_10.7554_eLife.85117.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 130;" role="img" aria-label="Mating activates neuroendocrine pathways signaling hunger in Drosophila females. Cover image not available.">
             <span class="gj-title-sm">Mating activates neuroendocrine pathways signaling hunger in Drosophila females</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Mating activates neuroendocrine pathways signaling hunger in Drosophila females</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">29 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">30 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
-        <a href="articlestory_10.7554_eLife.96084.html" target="_blank">
+        <a href="articlestory_10.7554_eLife.98405.html" target="_blank">
           
-          <div class="gen-jacket-sm" style="--jh: 135;" role="img" aria-label="Transforming descending input into motor output: An analysis of the Drosophila Male Adult Nerve Cord connectome. Cover image not available.">
-            <span class="gj-title-sm">Transforming descending input into motor output: An analysis of the Drosophila Male Adult Nerve Cord connectome</span>
+          
+          <div class="gen-jacket-sm" style="--jh: 314;" role="img" aria-label="A split-GAL4 driver line resource for Drosophila neuron types. Cover image not available.">
+            <span class="gj-title-sm">A split-GAL4 driver line resource for Drosophila neuron types</span>
           </div>
-          
           <div class="shelf-plank"></div>
-          <div class="shelf-title">Transforming descending input into motor output: An analysis of the Drosophila Male Adult Nerve Cord connectome</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">20 citations</span></div>
+          <div class="shelf-title">A split-GAL4 driver line resource for Drosophila neuron types</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">22 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="articlestory_10.7554_elife.89373.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 190;" role="img" aria-label="Chromosome-specific maturation of the epigenome in the Drosophila male germline. Cover image not available.">
             <span class="gj-title-sm">Chromosome-specific maturation of the epigenome in the Drosophila male germline</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Chromosome-specific maturation of the epigenome in the Drosophila male germline</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">18 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">20 citations</span></div>
         </a>
       </div>
       
@@ -468,16 +468,16 @@
     </div>
         
         
-        <div class="shelf-panel is-hidden" id="shelf-cite-edu-b">
+        <div class="shelf-panel is-hidden" id="shelf-cite-edu-b" role="tabpanel" aria-labelledby="shelf-cite-edu-b-tab">
     <div class="bookshelf-row">
       
       <div class="shelf-slot">
         <a href="articlestory_10.7554_eLife.85117.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 130;" role="img" aria-label="Mating activates neuroendocrine pathways signaling hunger in Drosophila females. Cover image not available.">
             <span class="gj-title-sm">Mating activates neuroendocrine pathways signaling hunger in Drosophila females</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Mating activates neuroendocrine pathways signaling hunger in Drosophila females</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">1 teaching mentions</span></div>
@@ -498,16 +498,16 @@
         <div class="bookshelf-label">Top mentioned</div>
         
         
-        <div class="shelf-panel" id="shelf-mention-dl-a">
+        <div class="shelf-panel" id="shelf-mention-dl-a" >
     <div class="bookshelf-row">
       
       <div class="shelf-slot">
         <a href="articlestory_10.7554_elife.79714.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 128;" role="img" aria-label="Stable population structure in Europe since the Iron Age, despite high mobility. Cover image not available.">
             <span class="gj-title-sm">Stable population structure in Europe since the Iron Age, despite high mobility</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Stable population structure in Europe since the Iron Age, despite high mobility</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">6 mentions</span></div>
@@ -517,10 +517,10 @@
       <div class="shelf-slot">
         <a href="articlestory_10.7554_eLife.85756.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 259;" role="img" aria-label="Neural circuit mechanisms for transforming learned olfactory valences into wind-oriented movement. Cover image not available.">
             <span class="gj-title-sm">Neural circuit mechanisms for transforming learned olfactory valences into wind-oriented movement</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Neural circuit mechanisms for transforming learned olfactory valences into wind-oriented movement</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">2 mentions</span></div>
@@ -530,10 +530,10 @@
       <div class="shelf-slot">
         <a href="articlestory_10.7554_eLife.104764.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 72;" role="img" aria-label="Cell type-specific driver lines targeting the Drosophila central complex and their use to investigate neuropeptide expression and sleep regulation. Cover image not available.">
             <span class="gj-title-sm">Cell type-specific driver lines targeting the Drosophila central complex and their use to investigate neuropeptide expression and sleep regulation</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Cell type-specific driver lines targeting the Drosophila central complex and their use to investigate neuropeptide expression and sleep regulation</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">2 mentions</span></div>
@@ -543,10 +543,10 @@
       <div class="shelf-slot">
         <a href="articlestory_10.7554_elife.80660.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 240;" role="img" aria-label="A searchable image resource of Drosophila GAL4 driver expression patterns with single neuron resolution. Cover image not available.">
             <span class="gj-title-sm">A searchable image resource of Drosophila GAL4 driver expression patterns with single neuron resolution</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">A searchable image resource of Drosophila GAL4 driver expression patterns with single neuron resolution</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">1 mentions</span></div>
@@ -556,10 +556,10 @@
       <div class="shelf-slot">
         <a href="articlestory_10.7554_eLife.79042.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 220;" role="img" aria-label="Hierarchical architecture of dopaminergic circuits enables second-order conditioning in Drosophila. Cover image not available.">
             <span class="gj-title-sm">Hierarchical architecture of dopaminergic circuits enables second-order conditioning in Drosophila</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Hierarchical architecture of dopaminergic circuits enables second-order conditioning in Drosophila</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">1 mentions</span></div>
@@ -569,10 +569,10 @@
       <div class="shelf-slot">
         <a href="articlestory_10.7554_elife.90486.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 307;" role="img" aria-label="Baited reconstruction with 2D template matching for high-resolution structure determination in vitro and in vivo without template bias. Cover image not available.">
             <span class="gj-title-sm">Baited reconstruction with 2D template matching for high-resolution structure determination in vitro and in vivo without template bias</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Baited reconstruction with 2D template matching for high-resolution structure determination in vitro and in vivo without template bias</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">1 mentions</span></div>
@@ -582,10 +582,10 @@
       <div class="shelf-slot">
         <a href="articlestory_10.7554_elife.107141.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 294;" role="img" aria-label="Biophysical basis for brain folding and misfolding patterns in ferrets and humans. Cover image not available.">
             <span class="gj-title-sm">Biophysical basis for brain folding and misfolding patterns in ferrets and humans</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Biophysical basis for brain folding and misfolding patterns in ferrets and humans</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">1 mentions</span></div>
@@ -606,7 +606,6 @@
 
   
 
-  <div class="section-label">Open science report card</div>
   <section class="card">
     <h2><span>Open Science Indicators</span> <span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">Crossref / EuropePMC / OpenAIRE / PRISM</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">
@@ -675,18 +674,18 @@
       
     
     <div class="stat-box stat-box-muted">
-      <div class="stat-number" style="color:#9ca3af;">&mdash;</div>
+      <div class="stat-number" style="color:#6b7280;">&mdash;</div>
       <div class="stat-label" title="PRISM context means publisher/title metadata was found, even when no explicit review record is returned.">PRISM Context</div>
-      <div class="muted" style="font-size:.65rem;margin-top:.35rem;line-height:1.35;">No PRISM metadata returned for this selection.</div>
+      <div class="muted" style="font-size:.75rem;margin-top:.35rem;line-height:1.35;">No PRISM metadata returned for this selection.</div>
     </div>
     
   
       
     
     <div class="stat-box stat-box-muted">
-      <div class="stat-number" style="color:#9ca3af;">&mdash;</div>
+      <div class="stat-number" style="color:#6b7280;">&mdash;</div>
       <div class="stat-label" title="Explicit peer-review records returned by PRISM.">PRISM Peer Reviews</div>
-      <div class="muted" style="font-size:.65rem;margin-top:.35rem;line-height:1.35;">Not yet recorded — absence of data, not absence of review.</div>
+      <div class="muted" style="font-size:.75rem;margin-top:.35rem;line-height:1.35;">Not yet recorded — absence of data, not absence of review.</div>
     </div>
     
   
@@ -782,19 +781,19 @@
   </section>
 
   <!-- Charts -->
-  <div class="section-label">Citation &amp; attention landscape</div>
+  <h2 style="margin-bottom:.75rem;"><span>Citation &amp; Attention Landscape</span></h2>
   <div class="grid-2" style="margin-bottom:0;">
     <section class="card chart-card" style="margin-bottom:0;">
       <h2><span>Citation Timeline</span></h2>
       <div class="muted" style="margin-top:-.15rem;font-size:.8rem;">Annual citation counts across the portfolio.</div>
       <div class="chart-wrap">
-        <canvas id="citationChart" data-labels="[&#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[5, 63, 164, 182, 76]"></canvas>
+        <canvas id="citationChart" data-labels="[&#34;2020&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[2, 5, 63, 165, 182, 82]"></canvas>
       </div>
     </section>
     <div class="grid-2" style="margin-bottom:0;gap:1rem;">
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Citing Sectors</span> <span class="badge">ROR</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Facility&#34;, &#34;Healthcare&#34;, &#34;Company&#34;, &#34;Nonprofit&#34;, &#34;Government&#34;, &#34;Other&#34;, &#34;Funder&#34;, &#34;Archive&#34;]" data-values="[414, 281, 75, 59, 87, 51, 27, 7, 27]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Facility&#34;, &#34;Government&#34;, &#34;Healthcare&#34;, &#34;Nonprofit&#34;, &#34;Company&#34;, &#34;Funder&#34;, &#34;Other&#34;, &#34;Archive&#34;]" data-values="[426, 287, 73, 60, 65, 10, 8, 21, 16]"></canvas></div>
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Citation Context</span> <span class="badge">scite</span></h2>
@@ -802,43 +801,42 @@
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Work Types</span> <span class="badge">OpenAlex</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="wtChart" data-labels="[&#34;Preprint&#34;, &#34;Article&#34;, &#34;Peer-Review&#34;, &#34;Review&#34;, &#34;Conference-Paper&#34;, &#34;Reference-Entry&#34;, &#34;Book-Chapter&#34;, &#34;Other&#34;, &#34;Dissertation&#34;, &#34;Book&#34;]" data-values="[222, 224, 15, 14, 2, 2, 7, 2, 3, 1]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="wtChart" data-labels="[&#34;Preprint&#34;, &#34;Article&#34;, &#34;Peer-Review&#34;, &#34;Review&#34;, &#34;Conference-Paper&#34;, &#34;Reference-Entry&#34;, &#34;Book-Chapter&#34;, &#34;Other&#34;, &#34;Dissertation&#34;, &#34;Book&#34;]" data-values="[224, 228, 15, 14, 2, 2, 7, 2, 4, 1]"></canvas></div>
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Top Venues</span> <span class="badge">OpenAlex</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="venueChart" data-labels="[&#34;bioRxiv (Cold Spring Harbor Laboratory)&#34;, &#34;eLife&#34;, &#34;Nature&#34;, &#34;Current Biology&#34;, &#34;Proceedings of the National Academy of Sciences&#34;, &#34;Nature Communications&#34;]" data-values="[135, 103, 20, 11, 10, 9]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="venueChart" data-labels="[&#34;bioRxiv (Cold Spring Harbor Laboratory)&#34;, &#34;eLife&#34;, &#34;Nature&#34;, &#34;Current Biology&#34;, &#34;Proceedings of the National Academy of Sciences&#34;, &#34;Nature Communications&#34;]" data-values="[137, 103, 20, 11, 10, 9]"></canvas></div>
       </section>
     </div>
   </div>
   <div style="margin-bottom:1.75rem;"></div>
 
   <!-- Community -->
-  <div class="section-label">Community engagement &amp; public discourse</div>
   <section class="card">
     <h2><span>Online Mentions by Platform</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:1.25rem;">Breakdown across platforms for the entire portfolio.</div>
     <div class="platform-grid">
-      <div class="platform-box" style="border-top-color:#64748b;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#334155;">4</div>
         <div class="platform-lbl">Wikipedia</div>
       </div>
-      <div class="platform-box" style="border-top-color:#ea580c;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#c2410c;">0</div>
         <div class="platform-lbl">Reddit</div>
       </div>
-      <div class="platform-box" style="border-top-color:#0ea5e9;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#0369a1;">0</div>
         <div class="platform-lbl">Bluesky</div>
       </div>
-      <div class="platform-box" style="border-top-color:#eab308;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#a16207;">0</div>
         <div class="platform-lbl">StackExchange</div>
       </div>
-      <div class="platform-box" style="border-top-color:#db2777;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#be185d;">7</div>
         <div class="platform-lbl">Expert Annotations</div>
       </div>
-      <div class="platform-box" style="border-top-color:#16a34a;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#15803d;">3</div>
         <div class="platform-lbl">News Media</div>
       </div>
@@ -846,7 +844,6 @@
   </section>
 
   
-  <div class="section-label">Teaching, practice &amp; library</div>
   <section class="card">
     <h2><span>Teaching, Practice &amp; Library Adoption</span></h2>
     <div class="grid-3" style="margin-bottom:0;margin-top:1rem;">
@@ -879,7 +876,7 @@
   
 
   <!-- Concepts / Roles / Geo -->
-  <div class="section-label">Thematic &amp; impact profile</div>
+  <h2 style="margin-bottom:.75rem;"><span>Thematic &amp; Impact Profile</span></h2>
   <section class="card">
     <h2><span>Dominant Concepts</span> <span class="badge">OpenAlex</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Weighted by AI confidence score.</div>
@@ -933,7 +930,7 @@
     <h2><span>Reach, mapped</span> <span class="badge">OpenAlex</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Citing-work affiliations trace back to <span class="stats-strip-num" style="font-size:1.1rem;">55</span> countries — circle size shows citation count from that country.</div>
     <div class="map-card">
-      <canvas id="reach-map" data-countries='[{"count": 323, "label": "United States"}, {"count": 128, "label": "Germany"}, {"count": 97, "label": "United Kingdom"}, {"count": 48, "label": "Switzerland"}, {"count": 31, "label": "Australia"}, {"count": 31, "label": "Spain"}, {"count": 31, "label": "Italy"}, {"count": 30, "label": "Austria"}, {"count": 28, "label": "Japan"}, {"count": 27, "label": "Canada"}, {"count": 25, "label": "Portugal"}, {"count": 23, "label": "Israel"}, {"count": 22, "label": "France"}, {"count": 21, "label": "Hungary"}, {"count": 19, "label": "China"}]' role="img" aria-label="World map of citing countries, sized by citation count"></canvas>
+      <canvas id="reach-map" data-countries='[{"count": 317, "label": "United States"}, {"count": 134, "label": "Germany"}, {"count": 90, "label": "United Kingdom"}, {"count": 48, "label": "Switzerland"}, {"count": 31, "label": "Australia"}, {"count": 30, "label": "Austria"}, {"count": 28, "label": "Japan"}, {"count": 26, "label": "Canada"}, {"count": 26, "label": "Spain"}, {"count": 25, "label": "Italy"}, {"count": 24, "label": "Portugal"}, {"count": 23, "label": "Israel"}, {"count": 20, "label": "France"}, {"count": 20, "label": "Hungary"}, {"count": 17, "label": "Czechia"}]' role="img" aria-label="World map of citing countries, sized by citation count"></canvas>
       <div class="map-note">Full breakdown, including countries not shown on the map, in the list below.</div>
     </div>
   </section>
@@ -945,35 +942,35 @@
       <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Based on author affiliations of citing works — size shows how often each one appears.</div>
       <div>
         
-          <span class="tag tag-1">United States (323)</span>
+          <span class="tag tag-1">United States (317)</span>
         
-          <span class="tag tag-1">Germany (128)</span>
+          <span class="tag tag-1">Germany (134)</span>
         
-          <span class="tag tag-1">United Kingdom (97)</span>
+          <span class="tag tag-1">United Kingdom (90)</span>
         
           <span class="tag tag-2">Switzerland (48)</span>
         
           <span class="tag tag-2">Australia (31)</span>
         
-          <span class="tag tag-2">Spain (31)</span>
-        
-          <span class="tag tag-2">Italy (31)</span>
-        
           <span class="tag tag-2">Austria (30)</span>
         
-          <span class="tag tag-soft tag-3">Japan (28)</span>
+          <span class="tag tag-2">Japan (28)</span>
         
-          <span class="tag tag-soft tag-3">Canada (27)</span>
+          <span class="tag tag-2">Canada (26)</span>
         
-          <span class="tag tag-soft tag-3">Portugal (25)</span>
+          <span class="tag tag-soft tag-3">Spain (26)</span>
+        
+          <span class="tag tag-soft tag-3">Italy (25)</span>
+        
+          <span class="tag tag-soft tag-3">Portugal (24)</span>
         
           <span class="tag tag-soft tag-3">Israel (23)</span>
         
-          <span class="tag tag-soft tag-3">France (22)</span>
+          <span class="tag tag-soft tag-3">France (20)</span>
         
-          <span class="tag tag-soft tag-3">Hungary (21)</span>
+          <span class="tag tag-soft tag-3">Hungary (20)</span>
         
-          <span class="tag tag-soft tag-3">China (19)</span>
+          <span class="tag tag-soft tag-3">Czechia (17)</span>
         
       </div>
     </section>
@@ -982,21 +979,21 @@
       <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Canonical names based on author affiliations — size shows how often each one appears.</div>
       <div>
         
-          <span class="tag tag-1">Howard Hughes Medical Institute (139)</span>
+          <span class="tag tag-1">Howard Hughes Medical Institute (138)</span>
         
-          <span class="tag tag-1">Janelia Research Campus (116)</span>
+          <span class="tag tag-1">Janelia Research Campus (114)</span>
         
-          <span class="tag tag-1">University of Cambridge (47)</span>
+          <span class="tag tag-1">Columbia University (49)</span>
         
-          <span class="tag tag-2">Harvard University (41)</span>
+          <span class="tag tag-2">University of Cambridge (48)</span>
         
-          <span class="tag tag-2">Columbia University (38)</span>
+          <span class="tag tag-2">Harvard University (46)</span>
         
-          <span class="tag tag-2">MRC Laboratory of Molecular Biology (35)</span>
+          <span class="tag tag-2">MRC Laboratory of Molecular Biology (36)</span>
+        
+          <span class="tag tag-2">Mortimer B. Zuckerman Mind Brain Behavior Institute (36)</span>
         
           <span class="tag tag-2">University of Washington (31)</span>
-        
-          <span class="tag tag-2">Allen Institute for Brain Science (31)</span>
         
           <span class="tag tag-soft tag-3">University of Cologne (31)</span>
         
@@ -1004,11 +1001,11 @@
         
           <span class="tag tag-soft tag-3">The University of Queensland (25)</span>
         
+          <span class="tag tag-soft tag-3">École Polytechnique Fédérale de Lausanne (25)</span>
+        
           <span class="tag tag-soft tag-3">Max Planck Institute for Evolutionary Anthropology (23)</span>
         
-          <span class="tag tag-soft tag-3">École Polytechnique Fédérale de Lausanne (21)</span>
-        
-          <span class="tag tag-soft tag-3">University of Vienna (20)</span>
+          <span class="tag tag-soft tag-3">University of Michigan (20)</span>
         
           <span class="tag tag-soft tag-3">Princeton University (18)</span>
         
@@ -1055,22 +1052,22 @@
           
             
             
-            <span class="tag tag-soft tag-2">Toyobo Biotechnology Foundation (2)</span>
-            
-          
-            
-            
             <span class="tag tag-soft tag-2">UNC Junior Faculty Development Award (2)</span>
             
           
             
             
-            <span class="tag tag-soft tag-3">Japan Society for the Promotion of Science (2)</span>
+            <span class="tag tag-soft tag-2">Toyobo Biotechnology Foundation (2)</span>
             
           
             
             
             <span class="tag tag-soft tag-3">NIBIB NIH HHS (2)</span>
+            
+          
+            
+            
+            <span class="tag tag-soft tag-3">Japan Society for the Promotion of Science (2)</span>
             
           
             
@@ -1095,7 +1092,7 @@
           
             
             
-            <span class="tag tag-soft tag-3">Burroughs Wellcome Fund (1)</span>
+            <span class="tag tag-soft tag-3">Simons Foundation (1)</span>
             
           
         
@@ -1129,7 +1126,6 @@
   </div>
 
   <!-- Authors -->
-  <div class="section-label">Contributors</div>
   <section class="card">
     <h2><span>Core Authors</span> <span class="badge">Portfolio</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Authors with more than one work in this dataset.</div>
@@ -1239,14 +1235,13 @@
   </section>
 
   
-  <div class="section-label">OA provenance</div>
   <section class="card">
     <h2><span>Open Access Provenance</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">Primary source used to classify OA per work.</div>
     
     <div class="platform-grid">
       
-      <div class="platform-box" style="border-top-color:#64748b;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#334155;">22</div>
         <div class="platform-lbl">Publisher-claimed</div>
       </div>
@@ -1260,7 +1255,6 @@
   
 
   <!-- Works table -->
-  <div class="section-label">Included works</div>
   <section class="card">
     <h2><span>All Works</span> <span class="badge" id="worksTotalBadge">22 total</span></h2>
     
@@ -1273,17 +1267,17 @@
     
     
     
-    <div class="works-filters" id="worksFilters">
-      <button type="button" class="works-filter-btn is-active" data-filter="all">All works</button>
+    <div class="works-filters" id="worksFilters" role="group" aria-label="Filter works">
+      <button type="button" class="works-filter-btn is-active" data-filter="all" aria-pressed="true">All works</button>
       
-      <button type="button" class="works-filter-btn" data-filter="open_review">Open peer review (9)</button>
+      <button type="button" class="works-filter-btn" data-filter="open_review" aria-pressed="false">Open peer review (9)</button>
       
       
-      <button type="button" class="works-filter-btn" data-filter="openaire_reach">OpenAIRE reach (22)</button>
-      <button type="button" class="works-filter-btn" data-filter="openaire_open">OpenAIRE open instances (22)</button>
-      <button type="button" class="works-filter-btn" data-filter="preprint">Linked preprints (18)</button>
-      <button type="button" class="works-filter-btn" data-filter="stewardship">Open data/code (16)</button>
-      <button type="button" class="works-filter-btn" data-filter="rrid">Contains RRIDs (10)</button>
+      <button type="button" class="works-filter-btn" data-filter="openaire_reach" aria-pressed="false">OpenAIRE reach (22)</button>
+      <button type="button" class="works-filter-btn" data-filter="openaire_open" aria-pressed="false">OpenAIRE open instances (22)</button>
+      <button type="button" class="works-filter-btn" data-filter="preprint" aria-pressed="false">Linked preprints (18)</button>
+      <button type="button" class="works-filter-btn" data-filter="stewardship" aria-pressed="false">Open data/code (16)</button>
+      <button type="button" class="works-filter-btn" data-filter="rrid" aria-pressed="false">Contains RRIDs (10)</button>
       
       <label for="worksFunderFilter" class="muted" style="font-size:.76rem;">By funder:</label>
       <select id="worksFunderFilter" class="works-filter-select">
@@ -1301,13 +1295,13 @@
         
         <option value="nhgri-nih-hhs">NHGRI NIH HHS (2)</option>
         
-        <option value="toyobo-biotechnology-foundation">Toyobo Biotechnology Foundation (2)</option>
-        
         <option value="unc-junior-faculty-development-award">UNC Junior Faculty Development Award (2)</option>
         
-        <option value="japan-society-for-the-promotion-of-science">Japan Society for the Promotion of Science (2)</option>
+        <option value="toyobo-biotechnology-foundation">Toyobo Biotechnology Foundation (2)</option>
         
         <option value="nibib-nih-hhs">NIBIB NIH HHS (2)</option>
+        
+        <option value="japan-society-for-the-promotion-of-science">Japan Society for the Promotion of Science (2)</option>
         
         <option value="ninds-nih-hhs">NINDS NIH HHS (2)</option>
         
@@ -1317,7 +1311,7 @@
         
         <option value="austrian-science-fund-fwf">Austrian Science Fund FWF (1)</option>
         
-        <option value="burroughs-wellcome-fund">Burroughs Wellcome Fund (1)</option>
+        <option value="simons-foundation">Simons Foundation (1)</option>
         
       </select>
       
@@ -1357,7 +1351,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">126</td>
+            <td style="text-align:right;font-weight:600;">131</td>
             <td style="text-align:right;">1</td>
           </tr>
           
@@ -1387,7 +1381,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">67</td>
+            <td style="text-align:right;font-weight:600;">79</td>
             <td style="text-align:right;">6</td>
           </tr>
           
@@ -1417,7 +1411,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">60</td>
+            <td style="text-align:right;font-weight:600;">61</td>
             <td style="text-align:right;">1</td>
           </tr>
           
@@ -1447,7 +1441,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">48</td>
+            <td style="text-align:right;font-weight:600;">49</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1507,7 +1501,67 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">29</td>
+            <td style="text-align:right;font-weight:600;">30</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr
+            data-has-award="0"
+            data-has-preprint="1"
+            data-has-open-review="0"
+            data-has-stewardship="1"
+            data-has-rrid="1"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys="howard-hughes-medical-institute|nih-hhs"
+          >
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
+            <td>
+              
+              <a href="articlestory_10.7554_eLife.98405.html" style="color:#111827;text-decoration:none;font-weight:500;">A split-GAL4 driver line resource for Drosophila neuron types</a>
+              
+            </td>
+            <td>
+              
+              <a href="articlestory_10.7554_eLife.98405.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/eLife.98405</a>
+              <a href="https://doi.org/10.7554/eLife.98405" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">22</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr
+            data-has-award="0"
+            data-has-preprint="1"
+            data-has-open-review="1"
+            data-has-stewardship="1"
+            data-has-rrid="1"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys="howard-hughes-medical-institute|nhgri-nih-hhs|national-human-genome-research-institute"
+          >
+            <td style="white-space:nowrap;">2023</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
+            <td>
+              
+              <a href="articlestory_10.7554_elife.89373.html" style="color:#111827;text-decoration:none;font-weight:500;">Chromosome-specific maturation of the epigenome in the Drosophila male germline</a>
+              
+            </td>
+            <td>
+              
+              <a href="articlestory_10.7554_elife.89373.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/elife.89373</a>
+              <a href="https://doi.org/10.7554/elife.89373" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">20</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1544,36 +1598,6 @@
           <tr
             data-has-award="0"
             data-has-preprint="1"
-            data-has-open-review="1"
-            data-has-stewardship="1"
-            data-has-rrid="1"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="0"
-            data-has-prism-peer="0"
-            data-funder-keys="howard-hughes-medical-institute|nhgri-nih-hhs|national-human-genome-research-institute"
-          >
-            <td style="white-space:nowrap;">2023</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
-            <td>
-              
-              <a href="articlestory_10.7554_elife.89373.html" style="color:#111827;text-decoration:none;font-weight:500;">Chromosome-specific maturation of the epigenome in the Drosophila male germline</a>
-              
-            </td>
-            <td>
-              
-              <a href="articlestory_10.7554_elife.89373.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/elife.89373</a>
-              <a href="https://doi.org/10.7554/elife.89373" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">18</td>
-            <td style="text-align:right;">0</td>
-          </tr>
-          
-          <tr
-            data-has-award="0"
-            data-has-preprint="1"
             data-has-open-review="0"
             data-has-stewardship="1"
             data-has-rrid="1"
@@ -1581,23 +1605,23 @@
             data-has-openaire-open="1"
             data-has-prism-context="0"
             data-has-prism-peer="0"
-            data-funder-keys="howard-hughes-medical-institute|nih-hhs"
+            data-funder-keys="howard-hughes-medical-institute"
           >
             <td style="white-space:nowrap;">2024</td>
             <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
             <td>
               
-              <a href="articlestory_10.7554_eLife.98405.html" style="color:#111827;text-decoration:none;font-weight:500;">A split-GAL4 driver line resource for Drosophila neuron types</a>
+              <a href="articlestory_10.7554_eLife.94168.html" style="color:#111827;text-decoration:none;font-weight:500;">Driver lines for studying associative learning in Drosophila</a>
               
             </td>
             <td>
               
-              <a href="articlestory_10.7554_eLife.98405.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/eLife.98405</a>
-              <a href="https://doi.org/10.7554/eLife.98405" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              <a href="articlestory_10.7554_eLife.94168.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/eLife.94168</a>
+              <a href="https://doi.org/10.7554/eLife.94168" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">16</td>
+            <td style="text-align:right;font-weight:600;">14</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1627,7 +1651,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">12</td>
+            <td style="text-align:right;font-weight:600;">14</td>
             <td style="text-align:right;">1</td>
           </tr>
           
@@ -1659,36 +1683,6 @@
             
             <td style="text-align:right;font-weight:600;">11</td>
             <td style="text-align:right;">2</td>
-          </tr>
-          
-          <tr
-            data-has-award="0"
-            data-has-preprint="1"
-            data-has-open-review="0"
-            data-has-stewardship="1"
-            data-has-rrid="1"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="0"
-            data-has-prism-peer="0"
-            data-funder-keys="howard-hughes-medical-institute"
-          >
-            <td style="white-space:nowrap;">2024</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
-            <td>
-              
-              <a href="articlestory_10.7554_eLife.94168.html" style="color:#111827;text-decoration:none;font-weight:500;">Driver lines for studying associative learning in Drosophila</a>
-              
-            </td>
-            <td>
-              
-              <a href="articlestory_10.7554_eLife.94168.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/eLife.94168</a>
-              <a href="https://doi.org/10.7554/eLife.94168" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">11</td>
-            <td style="text-align:right;">0</td>
           </tr>
           
           <tr
@@ -1747,7 +1741,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">2</td>
+            <td style="text-align:right;font-weight:600;">3</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1777,7 +1771,37 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">2</td>
+            <td style="text-align:right;font-weight:600;">3</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr
+            data-has-award="0"
+            data-has-preprint="1"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="1"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys="israel-science-foundation|israel-science-foundation-ipmp|israeli-innovation-authority"
+          >
+            <td style="white-space:nowrap;">2025</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
+            <td>
+              
+              <a href="articlestory_10.7554_eLife.108439.html" style="color:#111827;text-decoration:none;font-weight:500;">RadD from Fusobacterium nucleatum Engages NKp46 to Promote Antitumor Cytotoxicity</a>
+              
+            </td>
+            <td>
+              
+              <a href="articlestory_10.7554_eLife.108439.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/eLife.108439</a>
+              <a href="https://doi.org/10.7554/eLife.108439" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">1</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1933,36 +1957,6 @@
           
           <tr
             data-has-award="0"
-            data-has-preprint="1"
-            data-has-open-review="0"
-            data-has-stewardship="0"
-            data-has-rrid="1"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="0"
-            data-has-prism-peer="0"
-            data-funder-keys="israel-science-foundation|israel-science-foundation-ipmp|israeli-innovation-authority"
-          >
-            <td style="white-space:nowrap;">2025</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
-            <td>
-              
-              <a href="articlestory_10.7554_eLife.108439.html" style="color:#111827;text-decoration:none;font-weight:500;">RadD from Fusobacterium nucleatum Engages NKp46 to Promote Antitumor Cytotoxicity</a>
-              
-            </td>
-            <td>
-              
-              <a href="articlestory_10.7554_eLife.108439.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/eLife.108439</a>
-              <a href="https://doi.org/10.7554/eLife.108439" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">0</td>
-            <td style="text-align:right;">0</td>
-          </tr>
-          
-          <tr
-            data-has-award="0"
             data-has-preprint="0"
             data-has-open-review="0"
             data-has-stewardship="0"
@@ -1998,10 +1992,10 @@
 
   <footer>
     <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem;">
-      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:#9ca3af;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:#6b7280;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
       <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;font-weight:600;text-decoration:none;">Read the Methodology &amp; Legend ↗</a></span>
     </div>
-    <div style="padding-left:1.35rem;">Generated on 2026-09-14 15:37:30 UTC</div>
+    <div style="padding-left:1.35rem;">Generated on 2026-10-07 12:14:29 UTC</div>
   </footer>
 
 </div><!-- /page -->
@@ -2018,7 +2012,7 @@ function makeDoughnut(id, palette) {
   const labels = JSON.parse(canvas.getAttribute('data-labels'));
   const data   = JSON.parse(canvas.getAttribute('data-values'));
   if (!data.length || data.reduce((a,b)=>a+b,0)===0) {
-    canvas.parentElement.innerHTML = '<div style="display:flex;align-items:center;height:100%;color:#9ca3af;font-size:.82rem;">No data available.</div>';
+    canvas.parentElement.innerHTML = '<div style="display:flex;align-items:center;height:100%;color:#6b7280;font-size:.82rem;">No data available.</div>';
     return;
   }
   new Chart(canvas.getContext('2d'), {
@@ -2029,7 +2023,7 @@ function makeDoughnut(id, palette) {
 }
 
 // Citation timeline
-(function(){
+function makeCitationChart(){
   const canvas = document.getElementById('citationChart'); if (!canvas) return;
   const labels = JSON.parse(canvas.getAttribute('data-labels'));
   const data   = JSON.parse(canvas.getAttribute('data-values'));
@@ -2045,7 +2039,7 @@ function makeDoughnut(id, palette) {
       plugins: { legend: { display: false } }
     }
   });
-})();
+}
 
 // Bookshelf tab switching (Cited/Education, Mentions/Downloads)
 document.querySelectorAll('.shelf-tab-switch').forEach(function(switcher){
@@ -2054,15 +2048,28 @@ document.querySelectorAll('.shelf-tab-switch').forEach(function(switcher){
     if (!btn) return;
     const targetId = btn.getAttribute('data-shelf-target');
     const block = switcher.closest('.bookshelf-block');
-    block.querySelectorAll('.shelf-tab-btn').forEach(b => b.classList.toggle('is-active', b === btn));
+    block.querySelectorAll('.shelf-tab-btn').forEach(b => {
+      b.classList.toggle('is-active', b === btn);
+      b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+    });
     block.querySelectorAll('.shelf-panel').forEach(p => p.classList.toggle('is-hidden', p.id !== targetId));
   });
 });
 
-makeDoughnut('sectorChart');
-makeDoughnut('sciteChart', ['#16a34a','#9ca3af','#dc2626']);
-makeDoughnut('wtChart');
-makeDoughnut('venueChart');
+function initCharts(){
+  makeCitationChart();
+  makeDoughnut('sectorChart');
+  makeDoughnut('sciteChart', ['#16a34a','#9ca3af','#dc2626']);
+  makeDoughnut('wtChart');
+  makeDoughnut('venueChart');
+}
+// chart.js loads with `defer`, so wait for it rather than assuming it has
+// already run by the time this inline script is parsed.
+if (window.Chart) {
+  initCharts();
+} else {
+  document.addEventListener('DOMContentLoaded', initCharts);
+}
 
 // Reach map — dot-mask world silhouette (generated from a few simplified
 // continent outlines, not traced coastlines) with bubbles for whichever
@@ -2217,7 +2224,9 @@ makeDoughnut('venueChart');
   function applyFilter(nextMode) {
     mode = nextMode;
     filters.querySelectorAll('[data-filter]').forEach((btn) => {
-      btn.classList.toggle('is-active', btn.getAttribute('data-filter') === mode);
+      const active = btn.getAttribute('data-filter') === mode;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
 
     let shown = 0;

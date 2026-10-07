@@ -26,8 +26,6 @@
              display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
         h2 span:first-child { flex: 1; }
         .muted { color: #6b7280; font-size: 0.85rem; }
-        .section-label { font-size: .65rem; font-weight: 700; text-transform: uppercase;
-                         letter-spacing: .1em; color: #9ca3af; margin-bottom: .5rem; margin-top: .25rem; }
 
         /* ── Tags / Badges ── */
         .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8;
@@ -53,7 +51,8 @@
                             font-weight: 500; text-decoration: none; color: #6b7280;
                             transition: background .15s, color .15s; }
         .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
-        .print-btn { display: flex; align-items: center; gap: .4rem; padding: .4rem .9rem;
+        .print-btn { display: flex; align-items: center; justify-content: center; gap: .4rem; padding: .4rem .9rem;
+                     min-height: 44px; box-sizing: border-box;
                      background: #2563eb; color: white; border: none; border-radius: .45rem;
                      font-size: .82rem; font-weight: 600; cursor: pointer;
                      box-shadow: 0 2px 8px rgba(37,99,235,.3); transition: background .15s; }
@@ -83,9 +82,9 @@
         .stats-strip-item:last-child { border-right: none; }
         .stats-strip-num { font-family: "Fraunces", Georgia, serif; font-size: 1.9rem; font-weight: 600;
                            color: #2563eb; line-height: 1.1; font-variant-numeric: tabular-nums; }
-        .stats-strip-label { font-size: .68rem; color: #6b7280; text-transform: uppercase;
+        .stats-strip-label { font-size: .69rem; color: #6b7280; text-transform: uppercase;
                              letter-spacing: .06em; margin-top: .25rem; }
-        .stats-strip-sub { font-size: .65rem; color: #b45309; font-weight: 700; margin-top: .2rem; }
+        .stats-strip-sub { display: inline-flex; align-items: center; gap: .25rem; font-size: .69rem; color: #b45309; font-weight: 700; margin-top: .2rem; }
         @media(max-width:640px) {
             .stats-strip { grid-template-columns: repeat(2,1fr); }
             .site-nav { flex-wrap: wrap; gap: .5rem; padding: .55rem 1rem; }
@@ -106,7 +105,7 @@
         .stat-label { font-size: .75rem; color: #64748b; text-transform: uppercase;
                       letter-spacing: .05em; font-weight: 600; }
         .stat-box-muted { background: #fafafa; border-style: dashed; }
-        .stat-box-muted .stat-label { color: #9ca3af; }
+        .stat-box-muted .stat-label { color: #6b7280; }
 
         /* ── Risk card ── */
         .risk-card { border: 2px solid #dc2626; background: #fff5f5; }
@@ -115,7 +114,7 @@
         /* ── Platform mentions ── */
         .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px,1fr)); gap: 1rem; }
         .platform-box { background: white; border-radius: .75rem; padding: 1rem;
-                        text-align: center; border: 1px solid #e2e8f0; border-top-width: 3px; }
+                        text-align: center; border: 1px solid #e2e8f0; }
         .platform-num { font-family: "Fraunces", Georgia, serif; font-size: 1.8rem; font-weight: 600;
                         line-height: 1; margin-bottom: .25rem; font-variant-numeric: tabular-nums; }
         .platform-lbl { font-size: .72rem; color: #6b7280; text-transform: uppercase;
@@ -124,7 +123,7 @@
         /* ── Role pills (same as story pages) ── */
         .roles-domain { margin-bottom: .85rem; }
         .roles-domain:last-of-type { margin-bottom: 0; }
-        .roles-domain-label { font-size: .62rem; font-weight: 700; text-transform: uppercase;
+        .roles-domain-label { font-size: .69rem; font-weight: 700; text-transform: uppercase;
                               letter-spacing: .07em; margin-bottom: .4rem; }
         .roles-row { display: flex; flex-wrap: wrap; gap: .35rem; }
         .role-pill { position: relative; display: inline-flex; align-items: center; gap: .3rem;
@@ -135,7 +134,7 @@
         .role-pill-public     { background: #fffbeb; color: #92400e; border-color: #fde68a; }
         .role-pill-practical  { background: #f0fdf4; color: #065f46; border-color: #bbf7d0; }
         .role-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-        .role-score { font-size: .6rem; font-weight: 700; padding: .05rem .3rem;
+        .role-score { font-size: .69rem; font-weight: 700; padding: .05rem .3rem;
                       border-radius: 999px; margin-left: .1rem; background: rgba(0,0,0,.06); }
 
         /* ── Chart cards ── */
@@ -156,7 +155,8 @@
         /* ── Works table filters ── */
         .works-filters { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: .75rem 0 .25rem; }
         .works-filter-btn { border: 1px solid #e5e7eb; background: #fff; color: #4b5563;
-                            border-radius: 999px; padding: .28rem .75rem; font-size: .78rem;
+                            border-radius: 999px; padding: .28rem .75rem; min-height: 44px; box-sizing: border-box;
+                            font-size: .78rem;
                             font-weight: 600; cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
         .works-filter-btn:hover { background: #f9fafb; color: #111827; }
         .works-filter-btn.is-active { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
@@ -166,6 +166,7 @@
         .award-pill { display: inline-flex; align-items: center; gap: .25rem; background: #fef9c3;
                       color: #92400e; border: 1px solid #fde68a; border-radius: 999px;
                       padding: .1rem .45rem; font-size: .72rem; font-weight: 600; white-space: nowrap; }
+        .sig-icon { width: .85em; height: .85em; flex-shrink: 0; }
         .award-list { margin: 0; padding-left: 1rem; font-size: .75rem; color: #6b7280; }
         tr.is-hidden-by-filter { display: none; }
 
@@ -175,8 +176,9 @@
         .bookshelf-label { font-size: .78rem; font-weight: 700; color: #374151; margin-bottom: .7rem; }
         .shelf-tab-switch { display: flex; gap: .3rem; background: #f3f4f6; border-radius: 999px;
                             padding: .25rem; width: fit-content; margin-bottom: .7rem; }
-        .shelf-tab-btn { border: none; background: transparent; font-size: .72rem; font-weight: 700;
-                         padding: .35rem .85rem; border-radius: 999px; color: #6b7280; cursor: pointer;
+        .shelf-tab-btn { border: none; background: transparent; font-size: .75rem; font-weight: 700;
+                         padding: .35rem .85rem; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center;
+                         border-radius: 999px; color: #6b7280; cursor: pointer;
                          font-family: "Source Sans 3", sans-serif; transition: background .15s, color .15s; }
         .shelf-tab-btn:hover { color: #111827; }
         .shelf-tab-btn.is-active { background: #111827; color: #f9fafb; }
@@ -193,20 +195,20 @@
         .gen-jacket-sm::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
             background: hsl(var(--jh,214) 26% 15%); }
         .gen-jacket-sm .gj-title-sm { font-family: Georgia, 'Times New Roman', serif; font-weight: 600;
-            font-size: .62rem; line-height: 1.15; margin: auto 0; overflow: hidden;
-            display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; }
+            font-size: .75rem; line-height: 1.2; margin: auto 0; overflow: hidden;
+            display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; }
         .shelf-plank { width: 88px; height: 14px; margin-top: -1px; border-radius: 3px;
             background: linear-gradient(180deg, #c88a52 0%, #a86b36 55%, #8a5426 100%);
             box-shadow: 0 6px 10px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.25); }
-        .shelf-title { width: 100%; font-size: .68rem; color: #4b5563; text-align: center; margin-top: .45rem;
-            line-height: 1.25; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        .shelf-title { width: 100%; font-size: .75rem; color: #4b5563; text-align: center; margin-top: .45rem;
+            line-height: 1.3; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
         .shelf-chips { width: 100%; display: flex; justify-content: center; gap: .3rem; margin-top: .35rem; }
-        .shelf-chip { font-size: .62rem; font-weight: 700; border-radius: 999px; padding: .05rem .4rem; white-space: nowrap; }
+        .shelf-chip { font-size: .69rem; font-weight: 700; border-radius: 999px; padding: .05rem .4rem; white-space: nowrap; }
         .shelf-chip-cite { background: #eff6ff; color: #1d4ed8; }
         .shelf-chip-mention { background: #f5f3ff; color: #6d28d9; }
         .shelf-chip-edu { background: #f0fdf4; color: #166534; }
         .shelf-chip-download { background: #ecfeff; color: #0e7490; }
-        .bookshelf-credit { font-size: .72rem; color: #9ca3af; margin-top: .3rem; }
+        .bookshelf-credit { font-size: .75rem; color: #6b7280; margin-top: .3rem; }
 
         /* ── List rows ── */
         .list-row { display: flex; justify-content: space-between; align-items: center;
@@ -215,8 +217,8 @@
 
         /* ── Credo band ── */
         .credo-band { display: flex; gap: .9rem; align-items: flex-start;
-                      border-left: 3px solid #7a2432; background: white;
-                      border-radius: 0 .7rem .7rem 0; padding: 1rem 1.4rem; margin-bottom: 1.75rem; }
+                      background: #fdf4f4; border: 1px solid #f3d9db;
+                      border-radius: .7rem; padding: 1rem 1.4rem; margin-bottom: 1.75rem; }
         .credo-band .mark { font-family: "Fraunces", Georgia, serif; font-weight: 600;
                             font-size: 1.4rem; color: #7a2432; line-height: 1; }
         .credo-band p { margin: 0; font-size: .87rem; line-height: 1.6; color: #4b5563; max-width: 66ch; }
@@ -233,11 +235,11 @@
         /* ── Reach map ── */
         .map-card canvas { width: 100%; height: auto; display: block; border-radius: .6rem;
                             background: #e7edf5; aspect-ratio: 900 / 400; }
-        .map-note { font-size: .74rem; color: #9ca3af; margin-top: .6rem; }
+        .map-note { font-size: .75rem; color: #6b7280; margin-top: .6rem; }
 
         /* ── Footer ── */
         footer { margin-top: 3rem; padding: 1.5rem 0 3rem;
-                 border-top: 1px solid #e5e7eb; color: #9ca3af; font-size: .82rem; }
+                 border-top: 1px solid #e5e7eb; color: #6b7280; font-size: .82rem; }
 
         /* ── Print ── */
         @media print {
@@ -252,7 +254,7 @@
             thead { display: table-header-group; }
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 </head>
 <body>
 
@@ -296,10 +298,9 @@
 <div class="page">
 
   
-  <div class="section-label">Portfolio narrative</div>
   <section class="card">
     <h2><span>The Story So Far</span></h2>
-    <div style="line-height:1.65;"><p class="story-text">This selection contains 9 works with 23,432 recorded scholarly citations. Available citing-work metadata identifies 65 countries.</p><p class="story-text">There are 0 recorded Wikipedia article–work matches, including 0 book references verified against an article revision. References and bibliography entries document use of a work; these counts do not measure readership.</p><p class="story-text">Current metadata classifies 9 of these works as open access. Missing usage data and zero recorded mentions on a channel do not establish an absence of engagement.</p></div>
+    <div style="line-height:1.65;"><p class="story-text">This selection contains 9 works with 23,761 recorded scholarly citations. Available citing-work metadata identifies 63 countries.</p><p class="story-text">There are 0 recorded Wikipedia article–work matches, including 0 book references verified against an article revision. References and bibliography entries document use of a work; these counts do not measure readership.</p><p class="story-text">Current metadata classifies 9 of these works as open access. Missing usage data and zero recorded mentions on a channel do not establish an absence of engagement.</p></div>
     <div class="muted" style="margin-top:.45rem;">
       Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
     </div>
@@ -312,31 +313,30 @@
   </div>
 
   <!-- Key metrics strip -->
-  <div class="section-label">Key metrics</div>
+  <h2 style="margin-bottom:.75rem;"><span>Key Metrics</span></h2>
   <div class="stats-strip">
     <div class="stats-strip-item">
-      <div class="stats-strip-num">23,432</div>
+      <div class="stats-strip-num">23,761</div>
       <div class="stats-strip-label">Total Citations</div>
       
-      <div class="stats-strip-sub">🏆 3 in Top 1%</div>
+      <div class="stats-strip-sub"><svg class="sig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg> 2 in Top 1%</div>
       
     </div>
     
     <div class="stats-strip-item">
-      <div class="stats-strip-num">2</div>
+      <div class="stats-strip-num">3</div>
       <div class="stats-strip-label">Online Mentions</div>
     </div>
     <div class="stats-strip-item">
       
       <div class="stats-strip-num">100%</div>
       <div class="stats-strip-label">Open Access</div>
-      <div style="font-size:.65rem;color:#6b7280;margin-top:.2rem;">9 of 9 works</div>
+      <div style="font-size:.75rem;color:#6b7280;margin-top:.2rem;">9 of 9 works</div>
     </div>
     
   </div>
 
   
-  <div class="section-label">On the shelf</div>
   <section class="card">
     <h2><span>Digital Bookshelf</span> <span class="badge">Portfolio</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">The same collection, ranked by whichever evidence you pick — no one ranking is "the" ranking. Articles and data included, not just books — cover art where it resolves.</div>
@@ -349,71 +349,74 @@
       
       <div class="bookshelf-block">
         
-        <div class="bookshelf-label">Top cited</div>
+        <div class="shelf-tab-switch" role="tablist" aria-label="Top cited / Top in education">
+          <button type="button" class="shelf-tab-btn is-active" role="tab" aria-selected="true" aria-controls="shelf-cite-edu-a" id="shelf-cite-edu-a-tab" data-shelf-target="shelf-cite-edu-a">Top cited</button>
+          <button type="button" class="shelf-tab-btn" role="tab" aria-selected="false" aria-controls="shelf-cite-edu-b" id="shelf-cite-edu-b-tab" data-shelf-target="shelf-cite-edu-b">Top in education</button>
+        </div>
         
         
-        <div class="shelf-panel" id="shelf-cite-edu-a">
+        <div class="shelf-panel" id="shelf-cite-edu-a" role="tabpanel" aria-labelledby="shelf-cite-edu-a-tab">
     <div class="bookshelf-row">
       
       <div class="shelf-slot">
         <a href="articlestory_10.1371_journal.pone.0061217.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 96;" role="img" aria-label="phyloseq: An R Package for Reproducible Interactive Analysis and Graphics of Microbiome Census Data. Cover image not available.">
             <span class="gj-title-sm">phyloseq: An R Package for Reproducible Interactive Analysis and Graphics of Microbiome Census Data</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">phyloseq: An R Package for Reproducible Interactive Analysis and Graphics of Microbiome Census Data</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">23,165 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">23,486 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="articlestory_10.1371_journal.pcbi.1007128.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 24;" role="img" aria-label="Open collaborative writing with Manubot. Cover image not available.">
             <span class="gj-title-sm">Open collaborative writing with Manubot</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Open collaborative writing with Manubot</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">84 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">85 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="articlestory_10.1371_journal.pbio.3002916.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 204;" role="img" aria-label="Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance. Cover image not available.">
             <span class="gj-title-sm">Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">76 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">80 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="articlestory_10.1371_journal.pone.0253205.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 66;" role="img" aria-label="Automatic classification of medical image modality and anatomical location using convolutional neural network. Cover image not available.">
             <span class="gj-title-sm">Automatic classification of medical image modality and anatomical location using convolutional neural network</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Automatic classification of medical image modality and anatomical location using convolutional neural network</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">36 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">38 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="articlestory_10.1371_journal.pone.0000000.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 19;" role="img" aria-label="PLoS Journals Sandbox: A Place to Learn and Play. Cover image not available.">
             <span class="gj-title-sm">PLoS Journals Sandbox: A Place to Learn and Play</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">PLoS Journals Sandbox: A Place to Learn and Play</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">28 citations</span></div>
@@ -423,23 +426,23 @@
       <div class="shelf-slot">
         <a href="articlestory_10.1371_journal.pone.0281234.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 339;" role="img" aria-label="Maternal serum vitamin D level in early pregnancy and risk for preeclampsia: A case-control study in Southern Sweden. Cover image not available.">
             <span class="gj-title-sm">Maternal serum vitamin D level in early pregnancy and risk for preeclampsia: A case-control study in Southern Sweden</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Maternal serum vitamin D level in early pregnancy and risk for preeclampsia: A case-control study in Southern Sweden</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">24 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">25 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="articlestory_10.1371_journal.pone.0003059.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 276;" role="img" aria-label="Cre-Dependent Expression of Multiple Transgenes in Isolated Neurons of the Adult Forebrain. Cover image not available.">
             <span class="gj-title-sm">Cre-Dependent Expression of Multiple Transgenes in Isolated Neurons of the Adult Forebrain</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Cre-Dependent Expression of Multiple Transgenes in Isolated Neurons of the Adult Forebrain</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">16 citations</span></div>
@@ -449,10 +452,10 @@
       <div class="shelf-slot">
         <a href="articlestory_10.1371_journal.ppat.1011861.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 148;" role="img" aria-label="Using viral sequence diversity to estimate time of HIV infection in infants. Cover image not available.">
             <span class="gj-title-sm">Using viral sequence diversity to estimate time of HIV infection in infants</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Using viral sequence diversity to estimate time of HIV infection in infants</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">3 citations</span></div>
@@ -462,6 +465,25 @@
     </div>
     </div>
         
+        
+        <div class="shelf-panel is-hidden" id="shelf-cite-edu-b" role="tabpanel" aria-labelledby="shelf-cite-edu-b-tab">
+    <div class="bookshelf-row">
+      
+      <div class="shelf-slot">
+        <a href="articlestory_10.1371_journal.pone.0061217.html" target="_blank">
+          
+          
+          <div class="gen-jacket-sm" style="--jh: 96;" role="img" aria-label="phyloseq: An R Package for Reproducible Interactive Analysis and Graphics of Microbiome Census Data. Cover image not available.">
+            <span class="gj-title-sm">phyloseq: An R Package for Reproducible Interactive Analysis and Graphics of Microbiome Census Data</span>
+          </div>
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">phyloseq: An R Package for Reproducible Interactive Analysis and Graphics of Microbiome Census Data</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">2 teaching mentions</span></div>
+        </a>
+      </div>
+      
+    </div>
+    </div>
         
       </div>
       
@@ -474,19 +496,19 @@
         <div class="bookshelf-label">Top mentioned</div>
         
         
-        <div class="shelf-panel" id="shelf-mention-dl-a">
+        <div class="shelf-panel" id="shelf-mention-dl-a" >
     <div class="bookshelf-row">
       
       <div class="shelf-slot">
         <a href="articlestory_10.1371_journal.pbio.3002916.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 204;" role="img" aria-label="Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance. Cover image not available.">
             <span class="gj-title-sm">Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">2 mentions</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">3 mentions</span></div>
         </a>
       </div>
       
@@ -504,7 +526,6 @@
 
   
 
-  <div class="section-label">Open science report card</div>
   <section class="card">
     <h2><span>Open Science Indicators</span> <span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">Crossref / EuropePMC / OpenAIRE / PRISM</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">
@@ -531,9 +552,9 @@
       
     
     <div class="stat-box stat-box-muted">
-      <div class="stat-number" style="color:#9ca3af;">&mdash;</div>
+      <div class="stat-number" style="color:#6b7280;">&mdash;</div>
       <div class="stat-label">Open Peer Review</div>
-      <div class="muted" style="font-size:.65rem;margin-top:.35rem;line-height:1.35;">Not yet recorded — absence of data, not absence of review.</div>
+      <div class="muted" style="font-size:.75rem;margin-top:.35rem;line-height:1.35;">Not yet recorded — absence of data, not absence of review.</div>
     </div>
     
   
@@ -574,18 +595,18 @@
       
     
     <div class="stat-box stat-box-muted">
-      <div class="stat-number" style="color:#9ca3af;">&mdash;</div>
+      <div class="stat-number" style="color:#6b7280;">&mdash;</div>
       <div class="stat-label" title="PRISM context means publisher/title metadata was found, even when no explicit review record is returned.">PRISM Context</div>
-      <div class="muted" style="font-size:.65rem;margin-top:.35rem;line-height:1.35;">No PRISM metadata returned for this selection.</div>
+      <div class="muted" style="font-size:.75rem;margin-top:.35rem;line-height:1.35;">No PRISM metadata returned for this selection.</div>
     </div>
     
   
       
     
     <div class="stat-box stat-box-muted">
-      <div class="stat-number" style="color:#9ca3af;">&mdash;</div>
+      <div class="stat-number" style="color:#6b7280;">&mdash;</div>
       <div class="stat-label" title="Explicit peer-review records returned by PRISM.">PRISM Peer Reviews</div>
-      <div class="muted" style="font-size:.65rem;margin-top:.35rem;line-height:1.35;">Not yet recorded — absence of data, not absence of review.</div>
+      <div class="muted" style="font-size:.75rem;margin-top:.35rem;line-height:1.35;">Not yet recorded — absence of data, not absence of review.</div>
     </div>
     
   
@@ -670,19 +691,19 @@
   </section>
 
   <!-- Charts -->
-  <div class="section-label">Citation &amp; attention landscape</div>
+  <h2 style="margin-bottom:.75rem;"><span>Citation &amp; Attention Landscape</span></h2>
   <div class="grid-2" style="margin-bottom:0;">
     <section class="card chart-card" style="margin-bottom:0;">
       <h2><span>Citation Timeline</span></h2>
       <div class="muted" style="margin-top:-.15rem;font-size:.8rem;">Annual citation counts across the portfolio.</div>
       <div class="chart-wrap">
-        <canvas id="citationChart" data-labels="[&#34;2007&#34;, &#34;2008&#34;, &#34;2009&#34;, &#34;2010&#34;, &#34;2011&#34;, &#34;2012&#34;, &#34;2013&#34;, &#34;2014&#34;, &#34;2015&#34;, &#34;2016&#34;, &#34;2017&#34;, &#34;2018&#34;, &#34;2019&#34;, &#34;2020&#34;, &#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[1, 1, 4, 1, 1, 1, 8, 43, 117, 283, 544, 854, 1287, 2060, 2601, 2794, 2926, 3090, 3293, 2118]"></canvas>
+        <canvas id="citationChart" data-labels="[&#34;1986&#34;, &#34;1988&#34;, &#34;1989&#34;, &#34;1995&#34;, &#34;1998&#34;, &#34;1999&#34;, &#34;2006&#34;, &#34;2007&#34;, &#34;2008&#34;, &#34;2009&#34;, &#34;2010&#34;, &#34;2011&#34;, &#34;2012&#34;, &#34;2013&#34;, &#34;2014&#34;, &#34;2015&#34;, &#34;2016&#34;, &#34;2017&#34;, &#34;2018&#34;, &#34;2019&#34;, &#34;2020&#34;, &#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[2, 1, 1, 1, 1, 1, 1, 1, 3, 6, 2, 2, 1, 8, 43, 117, 282, 548, 863, 1309, 2083, 2618, 2808, 2943, 3112, 3293, 2322]"></canvas>
       </div>
     </section>
     <div class="grid-2" style="margin-bottom:0;gap:1rem;">
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Citing Sectors</span> <span class="badge">ROR</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Facility&#34;, &#34;Government&#34;, &#34;Healthcare&#34;, &#34;Nonprofit&#34;, &#34;Company&#34;, &#34;Other&#34;, &#34;Archive&#34;, &#34;Funder&#34;]" data-values="[20172, 9200, 4949, 4020, 2813, 1911, 1123, 828, 751]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Facility&#34;, &#34;Government&#34;, &#34;Healthcare&#34;, &#34;Nonprofit&#34;, &#34;Company&#34;, &#34;Other&#34;, &#34;Archive&#34;, &#34;Funder&#34;]" data-values="[20550, 9295, 5328, 3651, 2238, 1021, 812, 756, 735]"></canvas></div>
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Citation Context</span> <span class="badge">scite</span></h2>
@@ -690,43 +711,42 @@
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Work Types</span> <span class="badge">OpenAlex</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="wtChart" data-labels="[&#34;Article&#34;, &#34;Preprint&#34;, &#34;Peer-Review&#34;, &#34;Dissertation&#34;, &#34;Book-Chapter&#34;, &#34;Dataset&#34;, &#34;Review&#34;, &#34;Conference-Paper&#34;, &#34;Data-Paper&#34;, &#34;Other&#34;, &#34;Book&#34;, &#34;Report&#34;, &#34;Supplementary-Materials&#34;, &#34;Reference-Entry&#34;, &#34;Book-Review&#34;]" data-values="[17365, 3631, 430, 276, 84, 71, 55, 56, 25, 14, 8, 7, 7, 4, 2]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="wtChart" data-labels="[&#34;Article&#34;, &#34;Preprint&#34;, &#34;Peer-Review&#34;, &#34;Dissertation&#34;, &#34;Book-Chapter&#34;, &#34;Dataset&#34;, &#34;Review&#34;, &#34;Conference-Paper&#34;, &#34;Data-Paper&#34;, &#34;Other&#34;, &#34;Book&#34;, &#34;Report&#34;, &#34;Supplementary-Materials&#34;, &#34;Reference-Entry&#34;, &#34;Book-Review&#34;]" data-values="[17542, 3635, 430, 422, 85, 71, 56, 57, 25, 13, 9, 7, 7, 4, 2]"></canvas></div>
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Top Venues</span> <span class="badge">OpenAlex</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="venueChart" data-labels="[&#34;bioRxiv (Cold Spring Harbor Laboratory)&#34;, &#34;Frontiers in Microbiology&#34;, &#34;Scientific Reports&#34;, &#34;Research Square&#34;, &#34;PLoS ONE&#34;, &#34;Microorganisms&#34;]" data-values="[2222, 979, 751, 749, 431, 409]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="venueChart" data-labels="[&#34;bioRxiv (Cold Spring Harbor Laboratory)&#34;, &#34;Frontiers in Microbiology&#34;, &#34;Research Square&#34;, &#34;Scientific Reports&#34;, &#34;PLoS ONE&#34;, &#34;Microorganisms&#34;]" data-values="[2225, 989, 753, 751, 432, 410]"></canvas></div>
       </section>
     </div>
   </div>
   <div style="margin-bottom:1.75rem;"></div>
 
   <!-- Community -->
-  <div class="section-label">Community engagement &amp; public discourse</div>
   <section class="card">
     <h2><span>Online Mentions by Platform</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:1.25rem;">Breakdown across platforms for the entire portfolio.</div>
     <div class="platform-grid">
-      <div class="platform-box" style="border-top-color:#64748b;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#334155;">0</div>
         <div class="platform-lbl">Wikipedia</div>
       </div>
-      <div class="platform-box" style="border-top-color:#ea580c;">
-        <div class="platform-num" style="color:#c2410c;">0</div>
+      <div class="platform-box">
+        <div class="platform-num" style="color:#c2410c;">1</div>
         <div class="platform-lbl">Reddit</div>
       </div>
-      <div class="platform-box" style="border-top-color:#0ea5e9;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#0369a1;">1</div>
         <div class="platform-lbl">Bluesky</div>
       </div>
-      <div class="platform-box" style="border-top-color:#eab308;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#a16207;">0</div>
         <div class="platform-lbl">StackExchange</div>
       </div>
-      <div class="platform-box" style="border-top-color:#db2777;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#be185d;">0</div>
         <div class="platform-lbl">Expert Annotations</div>
       </div>
-      <div class="platform-box" style="border-top-color:#16a34a;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#15803d;">1</div>
         <div class="platform-lbl">News Media</div>
       </div>
@@ -734,9 +754,39 @@
   </section>
 
   
+  <section class="card">
+    <h2><span>Teaching, Practice &amp; Library Adoption</span></h2>
+    <div class="grid-3" style="margin-bottom:0;margin-top:1rem;">
+      <div class="stat-box">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Library Holdings</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Syllabi / OCW</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number" style="color:#dc2626;">2</div>
+        <div class="stat-label">Edu Video Lectures</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">0</div>
+        <div class="stat-label">OER / Open Texts</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Formal Reviews</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Chapter Cites</div>
+      </div>
+    </div>
+  </section>
+  
 
   <!-- Concepts / Roles / Geo -->
-  <div class="section-label">Thematic &amp; impact profile</div>
+  <h2 style="margin-bottom:.75rem;"><span>Thematic &amp; Impact Profile</span></h2>
   <section class="card">
     <h2><span>Dominant Concepts</span> <span class="badge">OpenAlex</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Weighted by AI confidence score.</div>
@@ -788,9 +838,9 @@
   
   <section class="card">
     <h2><span>Reach, mapped</span> <span class="badge">OpenAlex</span></h2>
-    <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Citing-work affiliations trace back to <span class="stats-strip-num" style="font-size:1.1rem;">65</span> countries — circle size shows citation count from that country.</div>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Citing-work affiliations trace back to <span class="stats-strip-num" style="font-size:1.1rem;">63</span> countries — circle size shows citation count from that country.</div>
     <div class="map-card">
-      <canvas id="reach-map" data-countries='[{"count": 8137, "label": "United States"}, {"count": 2145, "label": "Germany"}, {"count": 1869, "label": "United Kingdom"}, {"count": 1791, "label": "France"}, {"count": 1689, "label": "Canada"}, {"count": 1453, "label": "China"}, {"count": 1381, "label": "Australia"}, {"count": 1304, "label": "Spain"}, {"count": 1144, "label": "Italy"}, {"count": 1133, "label": "Netherlands"}, {"count": 953, "label": "Denmark"}, {"count": 852, "label": "Brazil"}, {"count": 808, "label": "Switzerland"}, {"count": 705, "label": "Sweden"}, {"count": 633, "label": "Belgium"}]' role="img" aria-label="World map of citing countries, sized by citation count"></canvas>
+      <canvas id="reach-map" data-countries='[{"count": 7791, "label": "United States"}, {"count": 2120, "label": "Germany"}, {"count": 1787, "label": "United Kingdom"}, {"count": 1690, "label": "France"}, {"count": 1666, "label": "Canada"}, {"count": 1433, "label": "China"}, {"count": 1332, "label": "Australia"}, {"count": 1258, "label": "Spain"}, {"count": 1136, "label": "Italy"}, {"count": 1107, "label": "Netherlands"}, {"count": 951, "label": "Denmark"}, {"count": 838, "label": "Brazil"}, {"count": 806, "label": "Switzerland"}, {"count": 707, "label": "Sweden"}, {"count": 639, "label": "Belgium"}]' role="img" aria-label="World map of citing countries, sized by citation count"></canvas>
       <div class="map-note">Full breakdown, including countries not shown on the map, in the list below.</div>
     </div>
   </section>
@@ -802,35 +852,35 @@
       <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Based on author affiliations of citing works — size shows how often each one appears.</div>
       <div>
         
-          <span class="tag tag-1">United States (8137)</span>
+          <span class="tag tag-1">United States (7791)</span>
         
-          <span class="tag tag-1">Germany (2145)</span>
+          <span class="tag tag-1">Germany (2120)</span>
         
-          <span class="tag tag-1">United Kingdom (1869)</span>
+          <span class="tag tag-1">United Kingdom (1787)</span>
         
-          <span class="tag tag-2">France (1791)</span>
+          <span class="tag tag-2">France (1690)</span>
         
-          <span class="tag tag-2">Canada (1689)</span>
+          <span class="tag tag-2">Canada (1666)</span>
         
-          <span class="tag tag-2">China (1453)</span>
+          <span class="tag tag-2">China (1433)</span>
         
-          <span class="tag tag-2">Australia (1381)</span>
+          <span class="tag tag-2">Australia (1332)</span>
         
-          <span class="tag tag-2">Spain (1304)</span>
+          <span class="tag tag-2">Spain (1258)</span>
         
-          <span class="tag tag-soft tag-3">Italy (1144)</span>
+          <span class="tag tag-soft tag-3">Italy (1136)</span>
         
-          <span class="tag tag-soft tag-3">Netherlands (1133)</span>
+          <span class="tag tag-soft tag-3">Netherlands (1107)</span>
         
-          <span class="tag tag-soft tag-3">Denmark (953)</span>
+          <span class="tag tag-soft tag-3">Denmark (951)</span>
         
-          <span class="tag tag-soft tag-3">Brazil (852)</span>
+          <span class="tag tag-soft tag-3">Brazil (838)</span>
         
-          <span class="tag tag-soft tag-3">Switzerland (808)</span>
+          <span class="tag tag-soft tag-3">Switzerland (806)</span>
         
-          <span class="tag tag-soft tag-3">Sweden (705)</span>
+          <span class="tag tag-soft tag-3">Sweden (707)</span>
         
-          <span class="tag tag-soft tag-3">Belgium (633)</span>
+          <span class="tag tag-soft tag-3">Belgium (639)</span>
         
       </div>
     </section>
@@ -839,35 +889,35 @@
       <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Canonical names based on author affiliations — size shows how often each one appears.</div>
       <div>
         
-          <span class="tag tag-1">Centre National de la Recherche Scientifique (769)</span>
+          <span class="tag tag-1">Centre National de la Recherche Scientifique (808)</span>
         
-          <span class="tag tag-1">Institut National de Recherche pour l'Agriculture, l'Alimentation et l'Environnement (600)</span>
+          <span class="tag tag-1">Institut National de Recherche pour l'Agriculture, l'Alimentation et l'Environnement (620)</span>
         
-          <span class="tag tag-1">University of Copenhagen (519)</span>
+          <span class="tag tag-1">University of Copenhagen (535)</span>
         
-          <span class="tag tag-2">Wageningen University & Research (371)</span>
+          <span class="tag tag-2">Consejo Superior de Investigaciones Científicas (395)</span>
         
-          <span class="tag tag-2">Institut de Recherche pour le Développement (310)</span>
+          <span class="tag tag-2">Wageningen University & Research (384)</span>
         
-          <span class="tag tag-2">Cornell University (298)</span>
+          <span class="tag tag-2">Institut de Recherche pour le Développement (343)</span>
         
-          <span class="tag tag-2">University of Florida (286)</span>
+          <span class="tag tag-2">Chinese Academy of Sciences (314)</span>
         
-          <span class="tag tag-2">University of California, Davis (284)</span>
+          <span class="tag tag-2">University of Florida (301)</span>
         
-          <span class="tag tag-soft tag-3">Aarhus University (273)</span>
+          <span class="tag tag-soft tag-3">Agricultural Research Service (299)</span>
         
-          <span class="tag tag-soft tag-3">Chinese Academy of Sciences (264)</span>
+          <span class="tag tag-soft tag-3">University of California, Davis (293)</span>
         
-          <span class="tag tag-soft tag-3">Ghent University (256)</span>
+          <span class="tag tag-soft tag-3">Harvard University (293)</span>
         
-          <span class="tag tag-soft tag-3">Université Paris-Saclay (255)</span>
+          <span class="tag tag-soft tag-3">Aarhus University (276)</span>
         
-          <span class="tag tag-soft tag-3">University of California San Diego (253)</span>
+          <span class="tag tag-soft tag-3">University of California San Diego (276)</span>
         
-          <span class="tag tag-soft tag-3">Harvard University (239)</span>
+          <span class="tag tag-soft tag-3">Ghent University (266)</span>
         
-          <span class="tag tag-soft tag-3">Sorbonne Université (238)</span>
+          <span class="tag tag-soft tag-3">Université Paris-Saclay (259)</span>
         
       </div>
     </section>
@@ -902,7 +952,7 @@
           
             
             
-            <span class="tag tag-soft tag-2">Cancer Prevention and Research Institute of Texas (1)</span>
+            <span class="tag tag-soft tag-2">Gordon and Betty Moore Foundation (1)</span>
             
           
             
@@ -912,17 +962,17 @@
           
             
             
-            <span class="tag tag-soft tag-2">Gordon and Betty Moore Foundation (1)</span>
+            <span class="tag tag-soft tag-2">Cancer Prevention and Research Institute of Texas (1)</span>
             
           
             
             
-            <span class="tag tag-soft tag-2">Open Philanthropy Project (1)</span>
+            <span class="tag tag-soft tag-2">National Institute of Health (1)</span>
             
           
             
             
-            <span class="tag tag-soft tag-3">Division of Intramural Research, National Institute of Allergy and Infectious Diseases (1)</span>
+            <span class="tag tag-soft tag-3">Open Philanthropy Project (1)</span>
             
           
             
@@ -937,12 +987,12 @@
           
             
             
-            <span class="tag tag-soft tag-3">Medical Research Council (1)</span>
+            <span class="tag tag-soft tag-3">Division of Intramural Research, National Institute of Allergy and Infectious Diseases (1)</span>
             
           
             
             
-            <span class="tag tag-soft tag-3">National Institute of Health (1)</span>
+            <span class="tag tag-soft tag-3">Medical Research Council (1)</span>
             
           
             
@@ -980,7 +1030,6 @@
   </div>
 
   <!-- Authors -->
-  <div class="section-label">Contributors</div>
   <section class="card">
     <h2><span>Core Authors</span> <span class="badge">Portfolio</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Authors with more than one work in this dataset.</div>
@@ -995,14 +1044,13 @@
   </section>
 
   
-  <div class="section-label">OA provenance</div>
   <section class="card">
     <h2><span>Open Access Provenance</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">Primary source used to classify OA per work.</div>
     
     <div class="platform-grid">
       
-      <div class="platform-box" style="border-top-color:#64748b;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#334155;">9</div>
         <div class="platform-lbl">Publisher-claimed</div>
       </div>
@@ -1014,9 +1062,8 @@
   
 
   
-  <div class="section-label">Integrity alerts</div>
   <section class="card risk-card">
-    <h2><span>Portfolio Risk &amp; Credibility</span> <span class="badge" style="background:#fee2e2;color:#dc2626;">⚠ Alerts</span></h2>
+    <h2><span>Portfolio Risk &amp; Credibility</span> <span class="badge" style="background:#fee2e2;color:#991b1b;display:inline-flex;align-items:center;gap:.25rem;"><svg class="sig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> Alerts</span></h2>
     <div class="muted" style="margin-top:-.25rem;margin-bottom:1.25rem;color:#991b1b;">Integrity signals detected across this portfolio — read alongside OA provenance above, both are about how far to trust the metadata.</div>
     <div class="grid-3" style="margin-bottom:1.25rem;">
       <div class="stat-box" style="background:white;border-color:#fecaca;">
@@ -1038,7 +1085,7 @@
       
       
       <li style="margin-bottom:.4rem;">
-        <span class="badge" style="background:#fef2f2;color:#ef4444;border:1px solid #fecaca;">PubPeer (2 threads)</span>
+        <span class="badge" style="background:#fef2f2;color:#991b1b;border:1px solid #fecaca;">PubPeer (2 threads)</span>
         <strong>Automatic classification of medical image modality and anatomical location using convolutional neural network</strong>
         <a href="https://pubpeer.com/publications/93519E9454B552D0EE5791408D7BDB" target="_blank" style="color:#dc2626;margin-left:.3rem;">Read discussions ↗</a>
       </li>
@@ -1048,7 +1095,6 @@
   
 
   <!-- Works table -->
-  <div class="section-label">Included works</div>
   <section class="card">
     <h2><span>All Works</span> <span class="badge" id="worksTotalBadge">9 total</span></h2>
     
@@ -1061,17 +1107,17 @@
     
     
     
-    <div class="works-filters" id="worksFilters">
-      <button type="button" class="works-filter-btn is-active" data-filter="all">All works</button>
+    <div class="works-filters" id="worksFilters" role="group" aria-label="Filter works">
+      <button type="button" class="works-filter-btn is-active" data-filter="all" aria-pressed="true">All works</button>
       
       
       
       
-      <button type="button" class="works-filter-btn" data-filter="openaire_reach">OpenAIRE reach (9)</button>
-      <button type="button" class="works-filter-btn" data-filter="openaire_open">OpenAIRE open instances (9)</button>
-      <button type="button" class="works-filter-btn" data-filter="preprint">Linked preprints (1)</button>
-      <button type="button" class="works-filter-btn" data-filter="stewardship">Open data/code (4)</button>
-      <button type="button" class="works-filter-btn" data-filter="rrid">Contains RRIDs (2)</button>
+      <button type="button" class="works-filter-btn" data-filter="openaire_reach" aria-pressed="false">OpenAIRE reach (9)</button>
+      <button type="button" class="works-filter-btn" data-filter="openaire_open" aria-pressed="false">OpenAIRE open instances (9)</button>
+      <button type="button" class="works-filter-btn" data-filter="preprint" aria-pressed="false">Linked preprints (1)</button>
+      <button type="button" class="works-filter-btn" data-filter="stewardship" aria-pressed="false">Open data/code (4)</button>
+      <button type="button" class="works-filter-btn" data-filter="rrid" aria-pressed="false">Contains RRIDs (2)</button>
       
       <label for="worksFunderFilter" class="muted" style="font-size:.76rem;">By funder:</label>
       <select id="worksFunderFilter" class="works-filter-select">
@@ -1085,23 +1131,23 @@
         
         <option value="howard-hughes-medical-institute">Howard Hughes Medical Institute (2)</option>
         
-        <option value="cancer-prevention-and-research-institute-of-texas">Cancer Prevention and Research Institute of Texas (1)</option>
+        <option value="gordon-and-betty-moore-foundation">Gordon and Betty Moore Foundation (1)</option>
         
         <option value="alfred-p-sloan-foundation">Alfred P. Sloan Foundation (1)</option>
         
-        <option value="gordon-and-betty-moore-foundation">Gordon and Betty Moore Foundation (1)</option>
+        <option value="cancer-prevention-and-research-institute-of-texas">Cancer Prevention and Research Institute of Texas (1)</option>
+        
+        <option value="national-institute-of-health">National Institute of Health (1)</option>
         
         <option value="open-philanthropy-project">Open Philanthropy Project (1)</option>
-        
-        <option value="division-of-intramural-research-national-institute-of-allergy-and-infectious-diseases">Division of Intramural Research, National Institute of Allergy and Infectious Diseases (1)</option>
         
         <option value="biotechnology-and-biological-sciences-research-council">Biotechnology and Biological Sciences Research Council (1)</option>
         
         <option value="medical-research-foundation">Medical Research Foundation (1)</option>
         
-        <option value="medical-research-council">Medical Research Council (1)</option>
+        <option value="division-of-intramural-research-national-institute-of-allergy-and-infectious-diseases">Division of Intramural Research, National Institute of Allergy and Infectious Diseases (1)</option>
         
-        <option value="national-institute-of-health">National Institute of Health (1)</option>
+        <option value="medical-research-council">Medical Research Council (1)</option>
         
         <option value="european-union-interreg-v-ks">European Union, Interreg VÖKS (1)</option>
         
@@ -1145,7 +1191,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">23165</td>
+            <td style="text-align:right;font-weight:600;">23486</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1175,7 +1221,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">84</td>
+            <td style="text-align:right;font-weight:600;">85</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1205,8 +1251,8 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">76</td>
-            <td style="text-align:right;">2</td>
+            <td style="text-align:right;font-weight:600;">80</td>
+            <td style="text-align:right;">3</td>
           </tr>
           
           <tr
@@ -1235,7 +1281,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">36</td>
+            <td style="text-align:right;font-weight:600;">38</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1295,7 +1341,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">24</td>
+            <td style="text-align:right;font-weight:600;">25</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1396,10 +1442,10 @@
 
   <footer>
     <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem;">
-      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:#9ca3af;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:#6b7280;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
       <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;font-weight:600;text-decoration:none;">Read the Methodology &amp; Legend ↗</a></span>
     </div>
-    <div style="padding-left:1.35rem;">Generated on 2026-09-14 15:37:30 UTC</div>
+    <div style="padding-left:1.35rem;">Generated on 2026-10-07 12:14:29 UTC</div>
   </footer>
 
 </div><!-- /page -->
@@ -1416,7 +1462,7 @@ function makeDoughnut(id, palette) {
   const labels = JSON.parse(canvas.getAttribute('data-labels'));
   const data   = JSON.parse(canvas.getAttribute('data-values'));
   if (!data.length || data.reduce((a,b)=>a+b,0)===0) {
-    canvas.parentElement.innerHTML = '<div style="display:flex;align-items:center;height:100%;color:#9ca3af;font-size:.82rem;">No data available.</div>';
+    canvas.parentElement.innerHTML = '<div style="display:flex;align-items:center;height:100%;color:#6b7280;font-size:.82rem;">No data available.</div>';
     return;
   }
   new Chart(canvas.getContext('2d'), {
@@ -1427,7 +1473,7 @@ function makeDoughnut(id, palette) {
 }
 
 // Citation timeline
-(function(){
+function makeCitationChart(){
   const canvas = document.getElementById('citationChart'); if (!canvas) return;
   const labels = JSON.parse(canvas.getAttribute('data-labels'));
   const data   = JSON.parse(canvas.getAttribute('data-values'));
@@ -1443,7 +1489,7 @@ function makeDoughnut(id, palette) {
       plugins: { legend: { display: false } }
     }
   });
-})();
+}
 
 // Bookshelf tab switching (Cited/Education, Mentions/Downloads)
 document.querySelectorAll('.shelf-tab-switch').forEach(function(switcher){
@@ -1452,15 +1498,28 @@ document.querySelectorAll('.shelf-tab-switch').forEach(function(switcher){
     if (!btn) return;
     const targetId = btn.getAttribute('data-shelf-target');
     const block = switcher.closest('.bookshelf-block');
-    block.querySelectorAll('.shelf-tab-btn').forEach(b => b.classList.toggle('is-active', b === btn));
+    block.querySelectorAll('.shelf-tab-btn').forEach(b => {
+      b.classList.toggle('is-active', b === btn);
+      b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+    });
     block.querySelectorAll('.shelf-panel').forEach(p => p.classList.toggle('is-hidden', p.id !== targetId));
   });
 });
 
-makeDoughnut('sectorChart');
-makeDoughnut('sciteChart', ['#16a34a','#9ca3af','#dc2626']);
-makeDoughnut('wtChart');
-makeDoughnut('venueChart');
+function initCharts(){
+  makeCitationChart();
+  makeDoughnut('sectorChart');
+  makeDoughnut('sciteChart', ['#16a34a','#9ca3af','#dc2626']);
+  makeDoughnut('wtChart');
+  makeDoughnut('venueChart');
+}
+// chart.js loads with `defer`, so wait for it rather than assuming it has
+// already run by the time this inline script is parsed.
+if (window.Chart) {
+  initCharts();
+} else {
+  document.addEventListener('DOMContentLoaded', initCharts);
+}
 
 // Reach map — dot-mask world silhouette (generated from a few simplified
 // continent outlines, not traced coastlines) with bubbles for whichever
@@ -1615,7 +1674,9 @@ makeDoughnut('venueChart');
   function applyFilter(nextMode) {
     mode = nextMode;
     filters.querySelectorAll('[data-filter]').forEach((btn) => {
-      btn.classList.toggle('is-active', btn.getAttribute('data-filter') === mode);
+      const active = btn.getAttribute('data-filter') === mode;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
 
     let shown = 0;
