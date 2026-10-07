@@ -26,8 +26,6 @@
              display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
         h2 span:first-child { flex: 1; }
         .muted { color: #6b7280; font-size: 0.85rem; }
-        .section-label { font-size: .65rem; font-weight: 700; text-transform: uppercase;
-                         letter-spacing: .1em; color: #9ca3af; margin-bottom: .5rem; margin-top: .25rem; }
 
         /* ── Tags / Badges ── */
         .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8;
@@ -53,7 +51,8 @@
                             font-weight: 500; text-decoration: none; color: #6b7280;
                             transition: background .15s, color .15s; }
         .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
-        .print-btn { display: flex; align-items: center; gap: .4rem; padding: .4rem .9rem;
+        .print-btn { display: flex; align-items: center; justify-content: center; gap: .4rem; padding: .4rem .9rem;
+                     min-height: 44px; box-sizing: border-box;
                      background: #2563eb; color: white; border: none; border-radius: .45rem;
                      font-size: .82rem; font-weight: 600; cursor: pointer;
                      box-shadow: 0 2px 8px rgba(37,99,235,.3); transition: background .15s; }
@@ -83,9 +82,9 @@
         .stats-strip-item:last-child { border-right: none; }
         .stats-strip-num { font-family: "Fraunces", Georgia, serif; font-size: 1.9rem; font-weight: 600;
                            color: #2563eb; line-height: 1.1; font-variant-numeric: tabular-nums; }
-        .stats-strip-label { font-size: .68rem; color: #6b7280; text-transform: uppercase;
+        .stats-strip-label { font-size: .69rem; color: #6b7280; text-transform: uppercase;
                              letter-spacing: .06em; margin-top: .25rem; }
-        .stats-strip-sub { font-size: .65rem; color: #b45309; font-weight: 700; margin-top: .2rem; }
+        .stats-strip-sub { display: inline-flex; align-items: center; gap: .25rem; font-size: .69rem; color: #b45309; font-weight: 700; margin-top: .2rem; }
         @media(max-width:640px) {
             .stats-strip { grid-template-columns: repeat(2,1fr); }
             .site-nav { flex-wrap: wrap; gap: .5rem; padding: .55rem 1rem; }
@@ -106,7 +105,7 @@
         .stat-label { font-size: .75rem; color: #64748b; text-transform: uppercase;
                       letter-spacing: .05em; font-weight: 600; }
         .stat-box-muted { background: #fafafa; border-style: dashed; }
-        .stat-box-muted .stat-label { color: #9ca3af; }
+        .stat-box-muted .stat-label { color: #6b7280; }
 
         /* ── Risk card ── */
         .risk-card { border: 2px solid #dc2626; background: #fff5f5; }
@@ -115,7 +114,7 @@
         /* ── Platform mentions ── */
         .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px,1fr)); gap: 1rem; }
         .platform-box { background: white; border-radius: .75rem; padding: 1rem;
-                        text-align: center; border: 1px solid #e2e8f0; border-top-width: 3px; }
+                        text-align: center; border: 1px solid #e2e8f0; }
         .platform-num { font-family: "Fraunces", Georgia, serif; font-size: 1.8rem; font-weight: 600;
                         line-height: 1; margin-bottom: .25rem; font-variant-numeric: tabular-nums; }
         .platform-lbl { font-size: .72rem; color: #6b7280; text-transform: uppercase;
@@ -124,7 +123,7 @@
         /* ── Role pills (same as story pages) ── */
         .roles-domain { margin-bottom: .85rem; }
         .roles-domain:last-of-type { margin-bottom: 0; }
-        .roles-domain-label { font-size: .62rem; font-weight: 700; text-transform: uppercase;
+        .roles-domain-label { font-size: .69rem; font-weight: 700; text-transform: uppercase;
                               letter-spacing: .07em; margin-bottom: .4rem; }
         .roles-row { display: flex; flex-wrap: wrap; gap: .35rem; }
         .role-pill { position: relative; display: inline-flex; align-items: center; gap: .3rem;
@@ -135,7 +134,7 @@
         .role-pill-public     { background: #fffbeb; color: #92400e; border-color: #fde68a; }
         .role-pill-practical  { background: #f0fdf4; color: #065f46; border-color: #bbf7d0; }
         .role-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-        .role-score { font-size: .6rem; font-weight: 700; padding: .05rem .3rem;
+        .role-score { font-size: .69rem; font-weight: 700; padding: .05rem .3rem;
                       border-radius: 999px; margin-left: .1rem; background: rgba(0,0,0,.06); }
 
         /* ── Chart cards ── */
@@ -156,7 +155,8 @@
         /* ── Works table filters ── */
         .works-filters { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: .75rem 0 .25rem; }
         .works-filter-btn { border: 1px solid #e5e7eb; background: #fff; color: #4b5563;
-                            border-radius: 999px; padding: .28rem .75rem; font-size: .78rem;
+                            border-radius: 999px; padding: .28rem .75rem; min-height: 44px; box-sizing: border-box;
+                            font-size: .78rem;
                             font-weight: 600; cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
         .works-filter-btn:hover { background: #f9fafb; color: #111827; }
         .works-filter-btn.is-active { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
@@ -166,6 +166,7 @@
         .award-pill { display: inline-flex; align-items: center; gap: .25rem; background: #fef9c3;
                       color: #92400e; border: 1px solid #fde68a; border-radius: 999px;
                       padding: .1rem .45rem; font-size: .72rem; font-weight: 600; white-space: nowrap; }
+        .sig-icon { width: .85em; height: .85em; flex-shrink: 0; }
         .award-list { margin: 0; padding-left: 1rem; font-size: .75rem; color: #6b7280; }
         tr.is-hidden-by-filter { display: none; }
 
@@ -175,8 +176,9 @@
         .bookshelf-label { font-size: .78rem; font-weight: 700; color: #374151; margin-bottom: .7rem; }
         .shelf-tab-switch { display: flex; gap: .3rem; background: #f3f4f6; border-radius: 999px;
                             padding: .25rem; width: fit-content; margin-bottom: .7rem; }
-        .shelf-tab-btn { border: none; background: transparent; font-size: .72rem; font-weight: 700;
-                         padding: .35rem .85rem; border-radius: 999px; color: #6b7280; cursor: pointer;
+        .shelf-tab-btn { border: none; background: transparent; font-size: .75rem; font-weight: 700;
+                         padding: .35rem .85rem; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center;
+                         border-radius: 999px; color: #6b7280; cursor: pointer;
                          font-family: "Source Sans 3", sans-serif; transition: background .15s, color .15s; }
         .shelf-tab-btn:hover { color: #111827; }
         .shelf-tab-btn.is-active { background: #111827; color: #f9fafb; }
@@ -193,20 +195,20 @@
         .gen-jacket-sm::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
             background: hsl(var(--jh,214) 26% 15%); }
         .gen-jacket-sm .gj-title-sm { font-family: Georgia, 'Times New Roman', serif; font-weight: 600;
-            font-size: .62rem; line-height: 1.15; margin: auto 0; overflow: hidden;
-            display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; }
+            font-size: .75rem; line-height: 1.2; margin: auto 0; overflow: hidden;
+            display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; }
         .shelf-plank { width: 88px; height: 14px; margin-top: -1px; border-radius: 3px;
             background: linear-gradient(180deg, #c88a52 0%, #a86b36 55%, #8a5426 100%);
             box-shadow: 0 6px 10px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.25); }
-        .shelf-title { width: 100%; font-size: .68rem; color: #4b5563; text-align: center; margin-top: .45rem;
-            line-height: 1.25; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        .shelf-title { width: 100%; font-size: .75rem; color: #4b5563; text-align: center; margin-top: .45rem;
+            line-height: 1.3; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
         .shelf-chips { width: 100%; display: flex; justify-content: center; gap: .3rem; margin-top: .35rem; }
-        .shelf-chip { font-size: .62rem; font-weight: 700; border-radius: 999px; padding: .05rem .4rem; white-space: nowrap; }
+        .shelf-chip { font-size: .69rem; font-weight: 700; border-radius: 999px; padding: .05rem .4rem; white-space: nowrap; }
         .shelf-chip-cite { background: #eff6ff; color: #1d4ed8; }
         .shelf-chip-mention { background: #f5f3ff; color: #6d28d9; }
         .shelf-chip-edu { background: #f0fdf4; color: #166534; }
         .shelf-chip-download { background: #ecfeff; color: #0e7490; }
-        .bookshelf-credit { font-size: .72rem; color: #9ca3af; margin-top: .3rem; }
+        .bookshelf-credit { font-size: .75rem; color: #6b7280; margin-top: .3rem; }
 
         /* ── List rows ── */
         .list-row { display: flex; justify-content: space-between; align-items: center;
@@ -215,8 +217,8 @@
 
         /* ── Credo band ── */
         .credo-band { display: flex; gap: .9rem; align-items: flex-start;
-                      border-left: 3px solid #7a2432; background: white;
-                      border-radius: 0 .7rem .7rem 0; padding: 1rem 1.4rem; margin-bottom: 1.75rem; }
+                      background: #fdf4f4; border: 1px solid #f3d9db;
+                      border-radius: .7rem; padding: 1rem 1.4rem; margin-bottom: 1.75rem; }
         .credo-band .mark { font-family: "Fraunces", Georgia, serif; font-weight: 600;
                             font-size: 1.4rem; color: #7a2432; line-height: 1; }
         .credo-band p { margin: 0; font-size: .87rem; line-height: 1.6; color: #4b5563; max-width: 66ch; }
@@ -233,11 +235,11 @@
         /* ── Reach map ── */
         .map-card canvas { width: 100%; height: auto; display: block; border-radius: .6rem;
                             background: #e7edf5; aspect-ratio: 900 / 400; }
-        .map-note { font-size: .74rem; color: #9ca3af; margin-top: .6rem; }
+        .map-note { font-size: .75rem; color: #6b7280; margin-top: .6rem; }
 
         /* ── Footer ── */
         footer { margin-top: 3rem; padding: 1.5rem 0 3rem;
-                 border-top: 1px solid #e5e7eb; color: #9ca3af; font-size: .82rem; }
+                 border-top: 1px solid #e5e7eb; color: #6b7280; font-size: .82rem; }
 
         /* ── Print ── */
         @media print {
@@ -252,7 +254,7 @@
             thead { display: table-header-group; }
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 </head>
 <body>
 
@@ -296,10 +298,9 @@
 <div class="page">
 
   
-  <div class="section-label">Portfolio narrative</div>
   <section class="card">
     <h2><span>The Story So Far</span></h2>
-    <div style="line-height:1.65;"><p class="story-text">This selection contains 37 works with 448,819 recorded scholarly citations. Available citing-work metadata identifies 97 countries.</p><p class="story-text">There are 14 recorded Wikipedia article–work matches, including 0 book references verified against an article revision. References and bibliography entries document use of a work; these counts do not measure readership.</p><p class="story-text">Current metadata classifies 36 of these works as open access. Missing usage data and zero recorded mentions on a channel do not establish an absence of engagement.</p></div>
+    <div style="line-height:1.65;"><p class="story-text">This selection contains 37 works with 449,003 recorded scholarly citations. Available citing-work metadata identifies 92 countries.</p><p class="story-text">There are 14 recorded Wikipedia article–work matches, including 0 book references verified against an article revision. References and bibliography entries document use of a work; these counts do not measure readership.</p><p class="story-text">Current metadata classifies 36 of these works as open access. Missing usage data and zero recorded mentions on a channel do not establish an absence of engagement.</p></div>
     <div class="muted" style="margin-top:.45rem;">
       Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
     </div>
@@ -312,13 +313,13 @@
   </div>
 
   <!-- Key metrics strip -->
-  <div class="section-label">Key metrics</div>
+  <h2 style="margin-bottom:.75rem;"><span>Key Metrics</span></h2>
   <div class="stats-strip">
     <div class="stats-strip-item">
-      <div class="stats-strip-num">448,819</div>
+      <div class="stats-strip-num">449,003</div>
       <div class="stats-strip-label">Total Citations</div>
       
-      <div class="stats-strip-sub">🏆 14 in Top 1%</div>
+      <div class="stats-strip-sub"><svg class="sig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg> 14 in Top 1%</div>
       
     </div>
     
@@ -330,13 +331,12 @@
       
       <div class="stats-strip-num">97%</div>
       <div class="stats-strip-label">Open Access</div>
-      <div style="font-size:.65rem;color:#6b7280;margin-top:.2rem;">36 of 37 works</div>
+      <div style="font-size:.75rem;color:#6b7280;margin-top:.2rem;">36 of 37 works</div>
     </div>
     
   </div>
 
   
-  <div class="section-label">On the shelf</div>
   <section class="card">
     <h2><span>Digital Bookshelf</span> <span class="badge">Portfolio</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">The same collection, ranked by whichever evidence you pick — no one ranking is "the" ranking. Articles and data included, not just books — cover art where it resolves.</div>
@@ -349,116 +349,116 @@
       
       <div class="bookshelf-block">
         
-        <div class="shelf-tab-switch">
-          <button type="button" class="shelf-tab-btn is-active" data-shelf-target="shelf-cite-edu-a">Top cited</button>
-          <button type="button" class="shelf-tab-btn" data-shelf-target="shelf-cite-edu-b">Top in education</button>
+        <div class="shelf-tab-switch" role="tablist" aria-label="Top cited / Top in education">
+          <button type="button" class="shelf-tab-btn is-active" role="tab" aria-selected="true" aria-controls="shelf-cite-edu-a" id="shelf-cite-edu-a-tab" data-shelf-target="shelf-cite-edu-a">Top cited</button>
+          <button type="button" class="shelf-tab-btn" role="tab" aria-selected="false" aria-controls="shelf-cite-edu-b" id="shelf-cite-edu-b-tab" data-shelf-target="shelf-cite-edu-b">Top in education</button>
         </div>
         
         
-        <div class="shelf-panel" id="shelf-cite-edu-a">
+        <div class="shelf-panel" id="shelf-cite-edu-a" role="tabpanel" aria-labelledby="shelf-cite-edu-a-tab">
     <div class="bookshelf-row">
       
       <div class="shelf-slot">
         <a href="articlestory_10.1016_s0021-9258(19)52451-6.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 272;" role="img" aria-label="PROTEIN MEASUREMENT WITH THE FOLIN PHENOL REAGENT. Cover image not available.">
             <span class="gj-title-sm">PROTEIN MEASUREMENT WITH THE FOLIN PHENOL REAGENT</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">PROTEIN MEASUREMENT WITH THE FOLIN PHENOL REAGENT</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">319,012 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">318,859 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="articlestory_10.1016_s0021-9258(18)64849-5.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 242;" role="img" aria-label="A SIMPLE METHOD FOR THE ISOLATION AND PURIFICATION OF TOTAL LIPIDES FROM ANIMAL TISSUES. Cover image not available.">
             <span class="gj-title-sm">A SIMPLE METHOD FOR THE ISOLATION AND PURIFICATION OF TOTAL LIPIDES FROM ANIMAL TISSUES</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">A SIMPLE METHOD FOR THE ISOLATION AND PURIFICATION OF TOTAL LIPIDES FROM ANIMAL TISSUES</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">65,279 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">65,474 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="articlestory_10.3168_jds.s0022-0302(91)78551-2.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 192;" role="img" aria-label="Methods for Dietary Fiber, Neutral Detergent Fiber, and Nonstarch Polysaccharides in Relation to Animal Nutrition. Cover image not available.">
             <span class="gj-title-sm">Methods for Dietary Fiber, Neutral Detergent Fiber, and Nonstarch Polysaccharides in Relation to Animal Nutrition</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Methods for Dietary Fiber, Neutral Detergent Fiber, and Nonstarch Polysaccharides in Relation to Animal Nutrition</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">28,605 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">28,726 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="articlestory_10.1016_s0021-9258(19)83641-4.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 35;" role="img" aria-label="A new generation of Ca2+ indicators with greatly improved fluorescence properties.. Cover image not available.">
             <span class="gj-title-sm">A new generation of Ca2+ indicators with greatly improved fluorescence properties.</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">A new generation of Ca2+ indicators with greatly improved fluorescence properties.</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">21,781 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">21,788 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="articlestory_10.1016_j.physletb.2012.08.020.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 130;" role="img" aria-label="Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC. Cover image not available.">
             <span class="gj-title-sm">Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">10,875 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">10,824 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="articlestory_10.5334_aogh.2831.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 194;" role="img" aria-label="Human Health and Ocean Pollution. Cover image not available.">
             <span class="gj-title-sm">Human Health and Ocean Pollution</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Human Health and Ocean Pollution</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">762 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">772 citations</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
+        <a href="articlestory_10.1016_j.redox.2020.101530.html" target="_blank">
+          
+          
+          <div class="gen-jacket-sm" style="--jh: 14;" role="img" aria-label="The aryl hydrocarbon receptor as a target of environmental stressors – Implications for pollution mediated stress and inflammatory responses. Cover image not available.">
+            <span class="gj-title-sm">The aryl hydrocarbon receptor as a target of environmental stressors – Implications for pollution mediated stress and inflammatory responses</span>
+          </div>
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">The aryl hydrocarbon receptor as a target of environmental stressors – Implications for pollution mediated stress and inflammatory responses</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">508 citations</span></div>
         </a>
       </div>
       
       <div class="shelf-slot">
         <a href="articlestory_10.1016_j.celrep.2022.110986.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 180;" role="img" aria-label="Tumor metabolite lactate promotes tumorigenesis by modulating MOESIN lactylation and enhancing TGF-β signaling in regulatory T cells. Cover image not available.">
             <span class="gj-title-sm">Tumor metabolite lactate promotes tumorigenesis by modulating MOESIN lactylation and enhancing TGF-β signaling in regulatory T cells</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Tumor metabolite lactate promotes tumorigenesis by modulating MOESIN lactylation and enhancing TGF-β signaling in regulatory T cells</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">500 citations</span></div>
-        </a>
-      </div>
-      
-      <div class="shelf-slot">
-        <a href="articlestory_10.1016_j.molmet.2021.101351.html" target="_blank">
-          
-          <div class="gen-jacket-sm" style="--jh: 10;" role="img" aria-label="GLP-1 physiology informs the pharmacotherapy of obesity. Cover image not available.">
-            <span class="gj-title-sm">GLP-1 physiology informs the pharmacotherapy of obesity</span>
-          </div>
-          
-          <div class="shelf-plank"></div>
-          <div class="shelf-title">GLP-1 physiology informs the pharmacotherapy of obesity</div>
-          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">500 citations</span></div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-cite">506 citations</span></div>
         </a>
       </div>
       
@@ -466,16 +466,16 @@
     </div>
         
         
-        <div class="shelf-panel is-hidden" id="shelf-cite-edu-b">
+        <div class="shelf-panel is-hidden" id="shelf-cite-edu-b" role="tabpanel" aria-labelledby="shelf-cite-edu-b-tab">
     <div class="bookshelf-row">
       
       <div class="shelf-slot">
         <a href="articlestory_10.1016_j.physletb.2012.08.020.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 130;" role="img" aria-label="Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC. Cover image not available.">
             <span class="gj-title-sm">Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">5 teaching mentions</span></div>
@@ -485,10 +485,10 @@
       <div class="shelf-slot">
         <a href="articlestory_10.1016_j.jacc.2022.01.038.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 297;" role="img" aria-label="Effects of Experimental Sleep Restriction on Energy Intake, Energy Expenditure, and Visceral Obesity. Cover image not available.">
             <span class="gj-title-sm">Effects of Experimental Sleep Restriction on Energy Intake, Energy Expenditure, and Visceral Obesity</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Effects of Experimental Sleep Restriction on Energy Intake, Energy Expenditure, and Visceral Obesity</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">5 teaching mentions</span></div>
@@ -496,12 +496,25 @@
       </div>
       
       <div class="shelf-slot">
+        <a href="articlestory_10.1016_j.molmet.2021.101351.html" target="_blank">
+          
+          
+          <div class="gen-jacket-sm" style="--jh: 10;" role="img" aria-label="GLP-1 physiology informs the pharmacotherapy of obesity. Cover image not available.">
+            <span class="gj-title-sm">GLP-1 physiology informs the pharmacotherapy of obesity</span>
+          </div>
+          <div class="shelf-plank"></div>
+          <div class="shelf-title">GLP-1 physiology informs the pharmacotherapy of obesity</div>
+          <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">3 teaching mentions</span></div>
+        </a>
+      </div>
+      
+      <div class="shelf-slot">
         <a href="articlestory_10.5334_aogh.2831.html" target="_blank">
+          
           
           <div class="gen-jacket-sm" style="--jh: 194;" role="img" aria-label="Human Health and Ocean Pollution. Cover image not available.">
             <span class="gj-title-sm">Human Health and Ocean Pollution</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Human Health and Ocean Pollution</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">2 teaching mentions</span></div>
@@ -511,10 +524,10 @@
       <div class="shelf-slot">
         <a href="articlestory_10.1016_j.neuron.2022.09.009.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 209;" role="img" aria-label="A brain atlas of synapse protein lifetime across the mouse lifespan. Cover image not available.">
             <span class="gj-title-sm">A brain atlas of synapse protein lifetime across the mouse lifespan</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">A brain atlas of synapse protein lifetime across the mouse lifespan</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-edu">1 teaching mentions</span></div>
@@ -535,16 +548,16 @@
         <div class="bookshelf-label">Top mentioned</div>
         
         
-        <div class="shelf-panel" id="shelf-mention-dl-a">
+        <div class="shelf-panel" id="shelf-mention-dl-a" >
     <div class="bookshelf-row">
       
       <div class="shelf-slot">
         <a href="articlestory_10.1016_j.physletb.2012.08.020.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 130;" role="img" aria-label="Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC. Cover image not available.">
             <span class="gj-title-sm">Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">11 mentions</span></div>
@@ -554,10 +567,10 @@
       <div class="shelf-slot">
         <a href="articlestory_10.1016_j.cell.2023.11.010.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 164;" role="img" aria-label="Temporally multiplexed imaging of dynamic signaling networks in living cells. Cover image not available.">
             <span class="gj-title-sm">Temporally multiplexed imaging of dynamic signaling networks in living cells</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Temporally multiplexed imaging of dynamic signaling networks in living cells</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">5 mentions</span></div>
@@ -567,10 +580,10 @@
       <div class="shelf-slot">
         <a href="articlestory_10.1182_blood.2023022222.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 323;" role="img" aria-label="Causes and consequences of clonal hematopoiesis. Cover image not available.">
             <span class="gj-title-sm">Causes and consequences of clonal hematopoiesis</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Causes and consequences of clonal hematopoiesis</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">4 mentions</span></div>
@@ -580,10 +593,10 @@
       <div class="shelf-slot">
         <a href="articlestory_10.1016_j.devcel.2023.11.004.html" target="_blank">
           
+          
           <div class="gen-jacket-sm" style="--jh: 260;" role="img" aria-label="Shaping the brain: The emergence of cortical structure and folding. Cover image not available.">
             <span class="gj-title-sm">Shaping the brain: The emergence of cortical structure and folding</span>
           </div>
-          
           <div class="shelf-plank"></div>
           <div class="shelf-title">Shaping the brain: The emergence of cortical structure and folding</div>
           <div class="shelf-chips"><span class="shelf-chip shelf-chip-mention">1 mentions</span></div>
@@ -604,7 +617,6 @@
 
   
 
-  <div class="section-label">Open science report card</div>
   <section class="card">
     <h2><span>Open Science Indicators</span> <span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">Crossref / EuropePMC / OpenAIRE / PRISM</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">
@@ -631,9 +643,9 @@
       
     
     <div class="stat-box stat-box-muted">
-      <div class="stat-number" style="color:#9ca3af;">&mdash;</div>
+      <div class="stat-number" style="color:#6b7280;">&mdash;</div>
       <div class="stat-label">Open Peer Review</div>
-      <div class="muted" style="font-size:.65rem;margin-top:.35rem;line-height:1.35;">Not yet recorded — absence of data, not absence of review.</div>
+      <div class="muted" style="font-size:.75rem;margin-top:.35rem;line-height:1.35;">Not yet recorded — absence of data, not absence of review.</div>
     </div>
     
   
@@ -674,18 +686,18 @@
       
     
     <div class="stat-box stat-box-muted">
-      <div class="stat-number" style="color:#9ca3af;">&mdash;</div>
+      <div class="stat-number" style="color:#6b7280;">&mdash;</div>
       <div class="stat-label" title="PRISM context means publisher/title metadata was found, even when no explicit review record is returned.">PRISM Context</div>
-      <div class="muted" style="font-size:.65rem;margin-top:.35rem;line-height:1.35;">No PRISM metadata returned for this selection.</div>
+      <div class="muted" style="font-size:.75rem;margin-top:.35rem;line-height:1.35;">No PRISM metadata returned for this selection.</div>
     </div>
     
   
       
     
     <div class="stat-box stat-box-muted">
-      <div class="stat-number" style="color:#9ca3af;">&mdash;</div>
+      <div class="stat-number" style="color:#6b7280;">&mdash;</div>
       <div class="stat-label" title="Explicit peer-review records returned by PRISM.">PRISM Peer Reviews</div>
-      <div class="muted" style="font-size:.65rem;margin-top:.35rem;line-height:1.35;">Not yet recorded — absence of data, not absence of review.</div>
+      <div class="muted" style="font-size:.75rem;margin-top:.35rem;line-height:1.35;">Not yet recorded — absence of data, not absence of review.</div>
     </div>
     
   
@@ -814,19 +826,19 @@
   </section>
 
   <!-- Charts -->
-  <div class="section-label">Citation &amp; attention landscape</div>
+  <h2 style="margin-bottom:.75rem;"><span>Citation &amp; Attention Landscape</span></h2>
   <div class="grid-2" style="margin-bottom:0;">
     <section class="card chart-card" style="margin-bottom:0;">
       <h2><span>Citation Timeline</span></h2>
       <div class="muted" style="margin-top:-.15rem;font-size:.8rem;">Annual citation counts across the portfolio.</div>
       <div class="chart-wrap">
-        <canvas id="citationChart" data-labels="[&#34;1950&#34;, &#34;1952&#34;, &#34;1953&#34;, &#34;1954&#34;, &#34;1955&#34;, &#34;1956&#34;, &#34;1957&#34;, &#34;1958&#34;, &#34;1959&#34;, &#34;1960&#34;, &#34;1961&#34;, &#34;1962&#34;, &#34;1963&#34;, &#34;1964&#34;, &#34;1965&#34;, &#34;1966&#34;, &#34;1967&#34;, &#34;1968&#34;, &#34;1969&#34;, &#34;1970&#34;, &#34;1971&#34;, &#34;1972&#34;, &#34;1973&#34;, &#34;1974&#34;, &#34;1975&#34;, &#34;1976&#34;, &#34;1977&#34;, &#34;1978&#34;, &#34;1979&#34;, &#34;1980&#34;, &#34;1981&#34;, &#34;1982&#34;, &#34;1983&#34;, &#34;1984&#34;, &#34;1985&#34;, &#34;1986&#34;, &#34;1987&#34;, &#34;1988&#34;, &#34;1989&#34;, &#34;1990&#34;, &#34;1991&#34;, &#34;1992&#34;, &#34;1993&#34;, &#34;1994&#34;, &#34;1995&#34;, &#34;1996&#34;, &#34;1997&#34;, &#34;1998&#34;, &#34;1999&#34;, &#34;2000&#34;, &#34;2001&#34;, &#34;2002&#34;, &#34;2003&#34;, &#34;2004&#34;, &#34;2005&#34;, &#34;2006&#34;, &#34;2007&#34;, &#34;2008&#34;, &#34;2009&#34;, &#34;2010&#34;, &#34;2011&#34;, &#34;2012&#34;, &#34;2013&#34;, &#34;2014&#34;, &#34;2015&#34;, &#34;2016&#34;, &#34;2017&#34;, &#34;2018&#34;, &#34;2019&#34;, &#34;2020&#34;, &#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[1, 8, 33, 35, 104, 99, 150, 212, 334, 465, 563, 804, 921, 1188, 1557, 1872, 2164, 2639, 3113, 3795, 4518, 5283, 5729, 6201, 6796, 7479, 8067, 8813, 9080, 9200, 9412, 9705, 9441, 9426, 9459, 9524, 9384, 9344, 9287, 8870, 8595, 8457, 7331, 7117, 6902, 6453, 6549, 6580, 6612, 6466, 5870, 5935, 6215, 6117, 6374, 6614, 6483, 6577, 6929, 7140, 7524, 8232, 9338, 9619, 9117, 8328, 7708, 7486, 7807, 8404, 8535, 8206, 7838, 7784, 7207, 4816]"></canvas>
+        <canvas id="citationChart" data-labels="[&#34;1879&#34;, &#34;1889&#34;, &#34;1900&#34;, &#34;1925&#34;, &#34;1926&#34;, &#34;1936&#34;, &#34;1939&#34;, &#34;1945&#34;, &#34;1946&#34;, &#34;1948&#34;, &#34;1950&#34;, &#34;1952&#34;, &#34;1953&#34;, &#34;1954&#34;, &#34;1955&#34;, &#34;1956&#34;, &#34;1957&#34;, &#34;1958&#34;, &#34;1959&#34;, &#34;1960&#34;, &#34;1961&#34;, &#34;1962&#34;, &#34;1963&#34;, &#34;1964&#34;, &#34;1965&#34;, &#34;1966&#34;, &#34;1967&#34;, &#34;1968&#34;, &#34;1969&#34;, &#34;1970&#34;, &#34;1971&#34;, &#34;1972&#34;, &#34;1973&#34;, &#34;1974&#34;, &#34;1975&#34;, &#34;1976&#34;, &#34;1977&#34;, &#34;1978&#34;, &#34;1979&#34;, &#34;1980&#34;, &#34;1981&#34;, &#34;1982&#34;, &#34;1983&#34;, &#34;1984&#34;, &#34;1985&#34;, &#34;1986&#34;, &#34;1987&#34;, &#34;1988&#34;, &#34;1989&#34;, &#34;1990&#34;, &#34;1991&#34;, &#34;1992&#34;, &#34;1993&#34;, &#34;1994&#34;, &#34;1995&#34;, &#34;1996&#34;, &#34;1997&#34;, &#34;1998&#34;, &#34;1999&#34;, &#34;2000&#34;, &#34;2001&#34;, &#34;2002&#34;, &#34;2003&#34;, &#34;2004&#34;, &#34;2005&#34;, &#34;2006&#34;, &#34;2007&#34;, &#34;2008&#34;, &#34;2009&#34;, &#34;2010&#34;, &#34;2011&#34;, &#34;2012&#34;, &#34;2013&#34;, &#34;2014&#34;, &#34;2015&#34;, &#34;2016&#34;, &#34;2017&#34;, &#34;2018&#34;, &#34;2019&#34;, &#34;2020&#34;, &#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 8, 34, 35, 104, 99, 150, 212, 333, 465, 563, 804, 920, 1186, 1552, 1865, 2157, 2632, 3104, 3790, 4498, 5265, 5712, 6184, 6778, 7474, 8048, 8806, 9069, 9187, 9393, 9694, 9427, 9407, 9442, 9505, 9370, 9332, 9271, 8855, 8590, 8450, 7321, 7110, 6896, 6441, 6530, 6562, 6603, 6455, 5861, 5922, 6212, 6109, 6369, 6604, 6477, 6571, 6918, 7151, 7541, 8206, 9313, 9595, 9112, 8320, 7713, 7516, 7858, 8426, 8510, 8220, 7789, 7803, 7211, 5295]"></canvas>
       </div>
     </section>
     <div class="grid-2" style="margin-bottom:0;gap:1rem;">
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Citing Sectors</span> <span class="badge">ROR</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Facility&#34;, &#34;Healthcare&#34;, &#34;Government&#34;, &#34;Nonprofit&#34;, &#34;Company&#34;, &#34;Other&#34;, &#34;Funder&#34;, &#34;Archive&#34;]" data-values="[334868, 82490, 60884, 49632, 18983, 18625, 6966, 3297, 1305]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Healthcare&#34;, &#34;Facility&#34;, &#34;Government&#34;, &#34;Nonprofit&#34;, &#34;Company&#34;, &#34;Funder&#34;, &#34;Other&#34;, &#34;Archive&#34;]" data-values="[341444, 56688, 71524, 54897, 11899, 10014, 4387, 2498, 670]"></canvas></div>
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Citation Context</span> <span class="badge">scite</span></h2>
@@ -834,43 +846,42 @@
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Work Types</span> <span class="badge">OpenAlex</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="wtChart" data-labels="[&#34;Article&#34;, &#34;Book-Chapter&#34;, &#34;Dissertation&#34;, &#34;Preprint&#34;, &#34;Conference-Paper&#34;, &#34;Paratext&#34;, &#34;Other&#34;, &#34;Book&#34;, &#34;Erratum&#34;, &#34;Report&#34;, &#34;Peer-Review&#34;, &#34;Conference-Abstract&#34;, &#34;Review&#34;, &#34;Reference-Entry&#34;, &#34;Book-Review&#34;, &#34;Supplementary-Materials&#34;, &#34;Data-Paper&#34;, &#34;Editorial&#34;, &#34;Dataset&#34;]" data-values="[427328, 8149, 5298, 3372, 1697, 411, 554, 185, 133, 162, 249, 74, 387, 125, 24, 41, 29, 27, 4]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="wtChart" data-labels="[&#34;Article&#34;, &#34;Book-Chapter&#34;, &#34;Dissertation&#34;, &#34;Preprint&#34;, &#34;Conference-Paper&#34;, &#34;Other&#34;, &#34;Paratext&#34;, &#34;Book&#34;, &#34;Erratum&#34;, &#34;Report&#34;, &#34;Peer-Review&#34;, &#34;Conference-Abstract&#34;, &#34;Review&#34;, &#34;Reference-Entry&#34;, &#34;Book-Review&#34;, &#34;Supplementary-Materials&#34;, &#34;Data-Paper&#34;, &#34;Editorial&#34;, &#34;Dataset&#34;, &#34;Letter&#34;]" data-values="[427102, 8121, 5649, 3239, 1702, 532, 390, 186, 133, 161, 248, 73, 391, 125, 24, 41, 29, 25, 4, 1]"></canvas></div>
       </section>
       <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
         <h2 style="font-size:.95rem;"><span>Top Venues</span> <span class="badge">OpenAlex</span></h2>
-        <div class="chart-wrap" style="height:170px;"><canvas id="venueChart" data-labels="[&#34;Journal of Biological Chemistry&#34;, &#34;PubMed&#34;, &#34;Journal of Neurochemistry&#34;, &#34;Biochemical and Biophysical Research Communications&#34;, &#34;Biochemical Pharmacology&#34;, &#34;Archives of Biochemistry and Biophysics&#34;]" data-values="[16304, 6396, 5544, 5460, 4756, 4498]"></canvas></div>
+        <div class="chart-wrap" style="height:170px;"><canvas id="venueChart" data-labels="[&#34;Journal of Biological Chemistry&#34;, &#34;PubMed&#34;, &#34;Journal of Neurochemistry&#34;, &#34;Biochemical and Biophysical Research Communications&#34;, &#34;Biochemical Pharmacology&#34;, &#34;Archives of Biochemistry and Biophysics&#34;]" data-values="[16304, 5884, 5544, 5460, 4757, 4498]"></canvas></div>
       </section>
     </div>
   </div>
   <div style="margin-bottom:1.75rem;"></div>
 
   <!-- Community -->
-  <div class="section-label">Community engagement &amp; public discourse</div>
   <section class="card">
     <h2><span>Online Mentions by Platform</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:1.25rem;">Breakdown across platforms for the entire portfolio.</div>
     <div class="platform-grid">
-      <div class="platform-box" style="border-top-color:#64748b;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#334155;">14</div>
         <div class="platform-lbl">Wikipedia</div>
       </div>
-      <div class="platform-box" style="border-top-color:#ea580c;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#c2410c;">1</div>
         <div class="platform-lbl">Reddit</div>
       </div>
-      <div class="platform-box" style="border-top-color:#0ea5e9;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#0369a1;">0</div>
         <div class="platform-lbl">Bluesky</div>
       </div>
-      <div class="platform-box" style="border-top-color:#eab308;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#a16207;">0</div>
         <div class="platform-lbl">StackExchange</div>
       </div>
-      <div class="platform-box" style="border-top-color:#db2777;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#be185d;">2</div>
         <div class="platform-lbl">Expert Annotations</div>
       </div>
-      <div class="platform-box" style="border-top-color:#16a34a;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#15803d;">4</div>
         <div class="platform-lbl">News Media</div>
       </div>
@@ -878,7 +889,6 @@
   </section>
 
   
-  <div class="section-label">Teaching, practice &amp; library</div>
   <section class="card">
     <h2><span>Teaching, Practice &amp; Library Adoption</span></h2>
     <div class="grid-3" style="margin-bottom:0;margin-top:1rem;">
@@ -891,7 +901,7 @@
         <div class="stat-label">Syllabi / OCW</div>
       </div>
       <div class="stat-box">
-        <div class="stat-number" style="color:#dc2626;">13</div>
+        <div class="stat-number" style="color:#dc2626;">16</div>
         <div class="stat-label">Edu Video Lectures</div>
       </div>
       <div class="stat-box">
@@ -911,7 +921,7 @@
   
 
   <!-- Concepts / Roles / Geo -->
-  <div class="section-label">Thematic &amp; impact profile</div>
+  <h2 style="margin-bottom:.75rem;"><span>Thematic &amp; Impact Profile</span></h2>
   <section class="card">
     <h2><span>Dominant Concepts</span> <span class="badge">OpenAlex</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Weighted by AI confidence score.</div>
@@ -963,9 +973,9 @@
   
   <section class="card">
     <h2><span>Reach, mapped</span> <span class="badge">OpenAlex</span></h2>
-    <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Citing-work affiliations trace back to <span class="stats-strip-num" style="font-size:1.1rem;">97</span> countries — circle size shows citation count from that country.</div>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Citing-work affiliations trace back to <span class="stats-strip-num" style="font-size:1.1rem;">92</span> countries — circle size shows citation count from that country.</div>
     <div class="map-card">
-      <canvas id="reach-map" data-countries='[{"count": 127749, "label": "United States"}, {"count": 36760, "label": "Japan"}, {"count": 34810, "label": "India"}, {"count": 23841, "label": "United Kingdom"}, {"count": 20288, "label": "Germany"}, {"count": 19571, "label": "France"}, {"count": 18981, "label": "China"}, {"count": 18029, "label": "Canada"}, {"count": 16530, "label": "Italy"}, {"count": 15374, "label": "Brazil"}, {"count": 12425, "label": "Spain"}, {"count": 8016, "label": "Sweden"}, {"count": 7843, "label": "Australia"}, {"count": 7192, "label": "Netherlands"}, {"count": 6791, "label": "Turkey"}]' role="img" aria-label="World map of citing countries, sized by citation count"></canvas>
+      <canvas id="reach-map" data-countries='[{"count": 120581, "label": "United States"}, {"count": 35741, "label": "Japan"}, {"count": 33557, "label": "India"}, {"count": 21557, "label": "United Kingdom"}, {"count": 20179, "label": "Germany"}, {"count": 18832, "label": "France"}, {"count": 18210, "label": "China"}, {"count": 17338, "label": "Canada"}, {"count": 16240, "label": "Italy"}, {"count": 15182, "label": "Brazil"}, {"count": 12093, "label": "Spain"}, {"count": 7971, "label": "Sweden"}, {"count": 7319, "label": "Australia"}, {"count": 6869, "label": "Netherlands"}, {"count": 6785, "label": "Turkey"}]' role="img" aria-label="World map of citing countries, sized by citation count"></canvas>
       <div class="map-note">Full breakdown, including countries not shown on the map, in the list below.</div>
     </div>
   </section>
@@ -977,35 +987,35 @@
       <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Based on author affiliations of citing works — size shows how often each one appears.</div>
       <div>
         
-          <span class="tag tag-1">United States (127749)</span>
+          <span class="tag tag-1">United States (120581)</span>
         
-          <span class="tag tag-1">Japan (36760)</span>
+          <span class="tag tag-1">Japan (35741)</span>
         
-          <span class="tag tag-1">India (34810)</span>
+          <span class="tag tag-1">India (33557)</span>
         
-          <span class="tag tag-2">United Kingdom (23841)</span>
+          <span class="tag tag-2">United Kingdom (21557)</span>
         
-          <span class="tag tag-2">Germany (20288)</span>
+          <span class="tag tag-2">Germany (20179)</span>
         
-          <span class="tag tag-2">France (19571)</span>
+          <span class="tag tag-2">France (18832)</span>
         
-          <span class="tag tag-2">China (18981)</span>
+          <span class="tag tag-2">China (18210)</span>
         
-          <span class="tag tag-2">Canada (18029)</span>
+          <span class="tag tag-2">Canada (17338)</span>
         
-          <span class="tag tag-soft tag-3">Italy (16530)</span>
+          <span class="tag tag-soft tag-3">Italy (16240)</span>
         
-          <span class="tag tag-soft tag-3">Brazil (15374)</span>
+          <span class="tag tag-soft tag-3">Brazil (15182)</span>
         
-          <span class="tag tag-soft tag-3">Spain (12425)</span>
+          <span class="tag tag-soft tag-3">Spain (12093)</span>
         
-          <span class="tag tag-soft tag-3">Sweden (8016)</span>
+          <span class="tag tag-soft tag-3">Sweden (7971)</span>
         
-          <span class="tag tag-soft tag-3">Australia (7843)</span>
+          <span class="tag tag-soft tag-3">Australia (7319)</span>
         
-          <span class="tag tag-soft tag-3">Netherlands (7192)</span>
+          <span class="tag tag-soft tag-3">Netherlands (6869)</span>
         
-          <span class="tag tag-soft tag-3">Turkey (6791)</span>
+          <span class="tag tag-soft tag-3">Turkey (6785)</span>
         
       </div>
     </section>
@@ -1014,35 +1024,35 @@
       <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Canonical names based on author affiliations — size shows how often each one appears.</div>
       <div>
         
-          <span class="tag tag-1">Centre National de la Recherche Scientifique (6063)</span>
+          <span class="tag tag-1">Centre National de la Recherche Scientifique (7313)</span>
         
-          <span class="tag tag-1">Inserm (4845)</span>
+          <span class="tag tag-1">National Institutes of Health (6139)</span>
         
-          <span class="tag tag-1">National Institutes of Health (4032)</span>
+          <span class="tag tag-1">Inserm (5211)</span>
         
-          <span class="tag tag-2">Harvard University (3266)</span>
+          <span class="tag tag-2">Harvard University (4042)</span>
         
-          <span class="tag tag-2">University of Wisconsin–Madison (2706)</span>
+          <span class="tag tag-2">University of Wisconsin–Madison (2812)</span>
         
-          <span class="tag tag-2">Cornell University (2621)</span>
+          <span class="tag tag-2">Universidade de São Paulo (2767)</span>
         
-          <span class="tag tag-2">The University of Tokyo (2436)</span>
+          <span class="tag tag-2">Consejo Nacional de Investigaciones Científicas y Técnicas (2737)</span>
         
-          <span class="tag tag-2">Universidade de São Paulo (2410)</span>
+          <span class="tag tag-2">The University of Tokyo (2606)</span>
         
-          <span class="tag tag-soft tag-3">Consejo Nacional de Investigaciones Científicas y Técnicas (2122)</span>
+          <span class="tag tag-soft tag-3">Cornell University (2319)</span>
         
-          <span class="tag tag-soft tag-3">Johns Hopkins University (2101)</span>
+          <span class="tag tag-soft tag-3">University of California, Los Angeles (2062)</span>
         
-          <span class="tag tag-soft tag-3">Kyoto University (1833)</span>
+          <span class="tag tag-soft tag-3">United States Department of Veterans Affairs (1944)</span>
         
-          <span class="tag tag-soft tag-3">United States Department of Veterans Affairs (1825)</span>
+          <span class="tag tag-soft tag-3">Johns Hopkins University (1897)</span>
         
-          <span class="tag tag-soft tag-3">University of California, Davis (1822)</span>
+          <span class="tag tag-soft tag-3">University of California, Davis (1874)</span>
         
-          <span class="tag tag-soft tag-3">University of Toronto (1813)</span>
+          <span class="tag tag-soft tag-3">University of Toronto (1859)</span>
         
-          <span class="tag tag-soft tag-3">Karolinska Institutet (1716)</span>
+          <span class="tag tag-soft tag-3">Kyoto University (1848)</span>
         
       </div>
     </section>
@@ -1077,12 +1087,12 @@
           
             
             
-            <span class="tag tag-2" style="background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;">NHGRI NIH HHS (5)</span>
+            <span class="tag tag-2" style="background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;">NIGMS NIH HHS (5)</span>
             
           
             
             
-            <span class="tag tag-2" style="background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;">NIGMS NIH HHS (5)</span>
+            <span class="tag tag-2" style="background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;">NHGRI NIH HHS (5)</span>
             
           
             
@@ -1153,7 +1163,6 @@
   </div>
 
   <!-- Authors -->
-  <div class="section-label">Contributors</div>
   <section class="card">
     <h2><span>Core Authors</span> <span class="badge">Portfolio</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Authors with more than one work in this dataset.</div>
@@ -1168,19 +1177,18 @@
   </section>
 
   
-  <div class="section-label">OA provenance</div>
   <section class="card">
     <h2><span>Open Access Provenance</span></h2>
     <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">Primary source used to classify OA per work.</div>
     
     <div class="platform-grid">
       
-      <div class="platform-box" style="border-top-color:#64748b;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#334155;">36</div>
         <div class="platform-lbl">Publisher-claimed</div>
       </div>
       
-      <div class="platform-box" style="border-top-color:#64748b;">
+      <div class="platform-box">
         <div class="platform-num" style="color:#334155;">1</div>
         <div class="platform-lbl">Closed/Unknown</div>
       </div>
@@ -1192,9 +1200,8 @@
   
 
   
-  <div class="section-label">Integrity alerts</div>
   <section class="card risk-card">
-    <h2><span>Portfolio Risk &amp; Credibility</span> <span class="badge" style="background:#fee2e2;color:#dc2626;">⚠ Alerts</span></h2>
+    <h2><span>Portfolio Risk &amp; Credibility</span> <span class="badge" style="background:#fee2e2;color:#991b1b;display:inline-flex;align-items:center;gap:.25rem;"><svg class="sig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> Alerts</span></h2>
     <div class="muted" style="margin-top:-.25rem;margin-bottom:1.25rem;color:#991b1b;">Integrity signals detected across this portfolio — read alongside OA provenance above, both are about how far to trust the metadata.</div>
     <div class="grid-3" style="margin-bottom:1.25rem;">
       <div class="stat-box" style="background:white;border-color:#fecaca;">
@@ -1216,7 +1223,7 @@
       
       
       <li style="margin-bottom:.4rem;">
-        <span class="badge" style="background:#fef2f2;color:#ef4444;border:1px solid #fecaca;">PubPeer (4 threads)</span>
+        <span class="badge" style="background:#fef2f2;color:#991b1b;border:1px solid #fecaca;">PubPeer (4 threads)</span>
         <strong>Tumor metabolite lactate promotes tumorigenesis by modulating MOESIN lactylation and enhancing TGF-β signaling in regulatory T cells</strong>
         <a href="https://pubpeer.com/publications/9AC9143473667186E3A99D36C12EA4" target="_blank" style="color:#dc2626;margin-left:.3rem;">Read discussions ↗</a>
       </li>
@@ -1226,7 +1233,6 @@
   
 
   <!-- Works table -->
-  <div class="section-label">Included works</div>
   <section class="card">
     <h2><span>All Works</span> <span class="badge" id="worksTotalBadge">37 total</span></h2>
     
@@ -1239,17 +1245,17 @@
     
     
     
-    <div class="works-filters" id="worksFilters">
-      <button type="button" class="works-filter-btn is-active" data-filter="all">All works</button>
+    <div class="works-filters" id="worksFilters" role="group" aria-label="Filter works">
+      <button type="button" class="works-filter-btn is-active" data-filter="all" aria-pressed="true">All works</button>
       
       
       
       
-      <button type="button" class="works-filter-btn" data-filter="openaire_reach">OpenAIRE reach (27)</button>
-      <button type="button" class="works-filter-btn" data-filter="openaire_open">OpenAIRE open instances (26)</button>
-      <button type="button" class="works-filter-btn" data-filter="preprint">Linked preprints (5)</button>
-      <button type="button" class="works-filter-btn" data-filter="stewardship">Open data/code (6)</button>
-      <button type="button" class="works-filter-btn" data-filter="rrid">Contains RRIDs (8)</button>
+      <button type="button" class="works-filter-btn" data-filter="openaire_reach" aria-pressed="false">OpenAIRE reach (27)</button>
+      <button type="button" class="works-filter-btn" data-filter="openaire_open" aria-pressed="false">OpenAIRE open instances (26)</button>
+      <button type="button" class="works-filter-btn" data-filter="preprint" aria-pressed="false">Linked preprints (5)</button>
+      <button type="button" class="works-filter-btn" data-filter="stewardship" aria-pressed="false">Open data/code (6)</button>
+      <button type="button" class="works-filter-btn" data-filter="rrid" aria-pressed="false">Contains RRIDs (8)</button>
       
       <label for="worksFunderFilter" class="muted" style="font-size:.76rem;">By funder:</label>
       <select id="worksFunderFilter" class="works-filter-select">
@@ -1263,9 +1269,9 @@
         
         <option value="nimh-nih-hhs">NIMH NIH HHS (5)</option>
         
-        <option value="nhgri-nih-hhs">NHGRI NIH HHS (5)</option>
-        
         <option value="nigms-nih-hhs">NIGMS NIH HHS (5)</option>
+        
+        <option value="nhgri-nih-hhs">NHGRI NIH HHS (5)</option>
         
         <option value="deutsche-forschungsgemeinschaft">Deutsche Forschungsgemeinschaft (4)</option>
         
@@ -1323,7 +1329,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">319012</td>
+            <td style="text-align:right;font-weight:600;">318859</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1353,7 +1359,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">65279</td>
+            <td style="text-align:right;font-weight:600;">65474</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1383,7 +1389,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">28605</td>
+            <td style="text-align:right;font-weight:600;">28726</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1413,7 +1419,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">21781</td>
+            <td style="text-align:right;font-weight:600;">21788</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1443,7 +1449,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">10875</td>
+            <td style="text-align:right;font-weight:600;">10824</td>
             <td style="text-align:right;">11</td>
           </tr>
           
@@ -1473,67 +1479,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">762</td>
-            <td style="text-align:right;">0</td>
-          </tr>
-          
-          <tr
-            data-has-award="0"
-            data-has-preprint="0"
-            data-has-open-review="0"
-            data-has-stewardship="0"
-            data-has-rrid="1"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="0"
-            data-has-prism-peer="0"
-            data-funder-keys="chinese-academy-of-meteorological-sciences|foundation-of-jiangsu-collaborative-innovation-center-of-biomedical-functional-materials|medical-science-and-technology-project-of-zhejiang-province|national-natural-science-foundation-of-china"
-          >
-            <td style="white-space:nowrap;">2022</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
-            <td>
-              
-              <a href="articlestory_10.1016_j.celrep.2022.110986.html" style="color:#111827;text-decoration:none;font-weight:500;">Tumor metabolite lactate promotes tumorigenesis by modulating MOESIN lactylation and enhancing TGF-β signaling in regulatory T cells</a>
-              
-            </td>
-            <td>
-              
-              <a href="articlestory_10.1016_j.celrep.2022.110986.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1016/j.celrep.2022.110986</a>
-              <a href="https://doi.org/10.1016/j.celrep.2022.110986" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">500</td>
-            <td style="text-align:right;">0</td>
-          </tr>
-          
-          <tr
-            data-has-award="0"
-            data-has-preprint="0"
-            data-has-open-review="0"
-            data-has-stewardship="0"
-            data-has-rrid="0"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="0"
-            data-has-prism-peer="0"
-            data-funder-keys="azrieli-foundation|cihr|cihr-inmd|canadian-institutes-of-health-research|international-development-research-centre|israel-science-foundation|novo-nordisk-fonden|novo-nordisk-foundation"
-          >
-            <td style="white-space:nowrap;">2021</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
-            <td>
-              
-              <a href="articlestory_10.1016_j.molmet.2021.101351.html" style="color:#111827;text-decoration:none;font-weight:500;">GLP-1 physiology informs the pharmacotherapy of obesity</a>
-              
-            </td>
-            <td>
-              
-              <a href="articlestory_10.1016_j.molmet.2021.101351.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1016/j.molmet.2021.101351</a>
-              <a href="https://doi.org/10.1016/j.molmet.2021.101351" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">500</td>
+            <td style="text-align:right;font-weight:600;">772</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1563,7 +1509,67 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">500</td>
+            <td style="text-align:right;font-weight:600;">508</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="1"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys="chinese-academy-of-meteorological-sciences|foundation-of-jiangsu-collaborative-innovation-center-of-biomedical-functional-materials|medical-science-and-technology-project-of-zhejiang-province|national-natural-science-foundation-of-china"
+          >
+            <td style="white-space:nowrap;">2022</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
+            <td>
+              
+              <a href="articlestory_10.1016_j.celrep.2022.110986.html" style="color:#111827;text-decoration:none;font-weight:500;">Tumor metabolite lactate promotes tumorigenesis by modulating MOESIN lactylation and enhancing TGF-β signaling in regulatory T cells</a>
+              
+            </td>
+            <td>
+              
+              <a href="articlestory_10.1016_j.celrep.2022.110986.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1016/j.celrep.2022.110986</a>
+              <a href="https://doi.org/10.1016/j.celrep.2022.110986" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">506</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys="azrieli-foundation|cihr|cihr-inmd|canadian-institutes-of-health-research|international-development-research-centre|israel-science-foundation|novo-nordisk-fonden|novo-nordisk-foundation"
+          >
+            <td style="white-space:nowrap;">2021</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
+            <td>
+              
+              <a href="articlestory_10.1016_j.molmet.2021.101351.html" style="color:#111827;text-decoration:none;font-weight:500;">GLP-1 physiology informs the pharmacotherapy of obesity</a>
+              
+            </td>
+            <td>
+              
+              <a href="articlestory_10.1016_j.molmet.2021.101351.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1016/j.molmet.2021.101351</a>
+              <a href="https://doi.org/10.1016/j.molmet.2021.101351" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">505</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1593,7 +1599,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">161</td>
+            <td style="text-align:right;font-weight:600;">165</td>
             <td style="text-align:right;">4</td>
           </tr>
           
@@ -1653,7 +1659,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">122</td>
+            <td style="text-align:right;font-weight:600;">124</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1683,7 +1689,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">93</td>
+            <td style="text-align:right;font-weight:600;">103</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1713,7 +1719,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">91</td>
+            <td style="text-align:right;font-weight:600;">93</td>
             <td style="text-align:right;">1</td>
           </tr>
           
@@ -1773,7 +1779,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">73</td>
+            <td style="text-align:right;font-weight:600;">76</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1803,7 +1809,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">59</td>
+            <td style="text-align:right;font-weight:600;">60</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1863,7 +1869,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">43</td>
+            <td style="text-align:right;font-weight:600;">44</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1923,37 +1929,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">33</td>
-            <td style="text-align:right;">0</td>
-          </tr>
-          
-          <tr
-            data-has-award="0"
-            data-has-preprint="1"
-            data-has-open-review="0"
-            data-has-stewardship="1"
-            data-has-rrid="1"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="0"
-            data-has-prism-peer="0"
-            data-funder-keys="bio-oriented-technology-research-advancement-institution|chan-zuckerberg-initiative|hhmi|nci-nih-hhs|nhlbi-nih-hhs|nida-nih-hhs|niddk-nih-hhs|nigms-nih-hhs|national-cancer-institute|national-institute-of-diabetes-and-digestive-and-kidney-diseases|national-institute-of-mental-health|national-institute-on-drug-abuse|national-institutes-of-health"
-          >
-            <td style="white-space:nowrap;">2025</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
-            <td>
-              
-              <a href="articlestory_10.1016_j.cell.2025.11.030.html" style="color:#111827;text-decoration:none;font-weight:500;">Mapping cellular targets of covalent cancer drugs in the entire mammalian body</a>
-              
-            </td>
-            <td>
-              
-              <a href="articlestory_10.1016_j.cell.2025.11.030.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1016/j.cell.2025.11.030</a>
-              <a href="https://doi.org/10.1016/j.cell.2025.11.030" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">8</td>
+            <td style="text-align:right;font-weight:600;">35</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -1983,7 +1959,37 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">6</td>
+            <td style="text-align:right;font-weight:600;">10</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr
+            data-has-award="0"
+            data-has-preprint="1"
+            data-has-open-review="0"
+            data-has-stewardship="1"
+            data-has-rrid="1"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys="bio-oriented-technology-research-advancement-institution|chan-zuckerberg-initiative|hhmi|nci-nih-hhs|nhlbi-nih-hhs|nida-nih-hhs|niddk-nih-hhs|nigms-nih-hhs|national-cancer-institute|national-institute-of-diabetes-and-digestive-and-kidney-diseases|national-institute-of-mental-health|national-institute-on-drug-abuse|national-institutes-of-health"
+          >
+            <td style="white-space:nowrap;">2025</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
+            <td>
+              
+              <a href="articlestory_10.1016_j.cell.2025.11.030.html" style="color:#111827;text-decoration:none;font-weight:500;">Mapping cellular targets of covalent cancer drugs in the entire mammalian body</a>
+              
+            </td>
+            <td>
+              
+              <a href="articlestory_10.1016_j.cell.2025.11.030.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1016/j.cell.2025.11.030</a>
+              <a href="https://doi.org/10.1016/j.cell.2025.11.030" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">9</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -2013,7 +2019,7 @@
               
             </td>
             
-            <td style="text-align:right;font-weight:600;">4</td>
+            <td style="text-align:right;font-weight:600;">5</td>
             <td style="text-align:right;">0</td>
           </tr>
           
@@ -2040,6 +2046,36 @@
               
               <a href="articlestory_10.1016_j.ajhg.2025.12.014.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1016/j.ajhg.2025.12.014</a>
               <a href="https://doi.org/10.1016/j.ajhg.2025.12.014" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">4</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
+            <td>
+              
+              <a href="articlestory_10.1016_j.childyouth.2024.108113.html" style="color:#111827;text-decoration:none;font-weight:500;">Predictors of re-referral to children’s social care services: An analysis of the national datasets for England</a>
+              
+            </td>
+            <td>
+              
+              <a href="articlestory_10.1016_j.childyouth.2024.108113.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1016/j.childyouth.2024.108113</a>
+              <a href="https://doi.org/10.1016/j.childyouth.2024.108113" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
               
             </td>
             
@@ -2177,6 +2213,36 @@
             data-has-openaire-open="1"
             data-has-prism-context="0"
             data-has-prism-peer="0"
+            data-funder-keys=""
+          >
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
+            <td>
+              
+              <a href="articlestory_10.1016_j.wneu.2024.12.014.html" style="color:#111827;text-decoration:none;font-weight:500;">Delayed Screw Migration Following Anterior Cervical Discectomy and Fusion</a>
+              
+            </td>
+            <td>
+              
+              <a href="articlestory_10.1016_j.wneu.2024.12.014.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1016/j.wneu.2024.12.014</a>
+              <a href="https://doi.org/10.1016/j.wneu.2024.12.014" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">1</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr
+            data-has-award="0"
+            data-has-preprint="0"
+            data-has-open-review="0"
+            data-has-stewardship="0"
+            data-has-rrid="0"
+            data-has-openaire-reach="1"
+            data-has-openaire-open="1"
+            data-has-prism-context="0"
+            data-has-prism-peer="0"
             data-funder-keys="nhgri-nih-hhs|nibib-nih-hhs"
           >
             <td style="white-space:nowrap;">2026</td>
@@ -2220,36 +2286,6 @@
               
               <a href="articlestory_10.1016_j.celrep.2025.116739.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1016/j.celrep.2025.116739</a>
               <a href="https://doi.org/10.1016/j.celrep.2025.116739" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">0</td>
-            <td style="text-align:right;">0</td>
-          </tr>
-          
-          <tr
-            data-has-award="0"
-            data-has-preprint="0"
-            data-has-open-review="0"
-            data-has-stewardship="0"
-            data-has-rrid="0"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="0"
-            data-has-prism-peer="0"
-            data-funder-keys=""
-          >
-            <td style="white-space:nowrap;">2024</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
-            <td>
-              
-              <a href="articlestory_10.1016_j.childyouth.2024.108113.html" style="color:#111827;text-decoration:none;font-weight:500;">Predictors of re-referral to children’s social care services: An analysis of the national datasets for England</a>
-              
-            </td>
-            <td>
-              
-              <a href="articlestory_10.1016_j.childyouth.2024.108113.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1016/j.childyouth.2024.108113</a>
-              <a href="https://doi.org/10.1016/j.childyouth.2024.108113" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
               
             </td>
             
@@ -2377,36 +2413,6 @@
             <td style="text-align:right;">0</td>
           </tr>
           
-          <tr
-            data-has-award="0"
-            data-has-preprint="0"
-            data-has-open-review="0"
-            data-has-stewardship="0"
-            data-has-rrid="0"
-            data-has-openaire-reach="1"
-            data-has-openaire-open="1"
-            data-has-prism-context="0"
-            data-has-prism-peer="0"
-            data-funder-keys=""
-          >
-            <td style="white-space:nowrap;">2024</td>
-            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Journal Article</span></td>
-            <td>
-              
-              <a href="articlestory_10.1016_j.wneu.2024.12.014.html" style="color:#111827;text-decoration:none;font-weight:500;">Delayed Screw Migration Following Anterior Cervical Discectomy and Fusion</a>
-              
-            </td>
-            <td>
-              
-              <a href="articlestory_10.1016_j.wneu.2024.12.014.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1016/j.wneu.2024.12.014</a>
-              <a href="https://doi.org/10.1016/j.wneu.2024.12.014" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
-              
-            </td>
-            
-            <td style="text-align:right;font-weight:600;">0</td>
-            <td style="text-align:right;">0</td>
-          </tr>
-          
         </tbody>
       </table>
     </div>
@@ -2414,10 +2420,10 @@
 
   <footer>
     <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem;">
-      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:#9ca3af;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:#6b7280;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
       <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;font-weight:600;text-decoration:none;">Read the Methodology &amp; Legend ↗</a></span>
     </div>
-    <div style="padding-left:1.35rem;">Generated on 2026-09-14 15:37:30 UTC</div>
+    <div style="padding-left:1.35rem;">Generated on 2026-10-07 12:14:29 UTC</div>
   </footer>
 
 </div><!-- /page -->
@@ -2434,7 +2440,7 @@ function makeDoughnut(id, palette) {
   const labels = JSON.parse(canvas.getAttribute('data-labels'));
   const data   = JSON.parse(canvas.getAttribute('data-values'));
   if (!data.length || data.reduce((a,b)=>a+b,0)===0) {
-    canvas.parentElement.innerHTML = '<div style="display:flex;align-items:center;height:100%;color:#9ca3af;font-size:.82rem;">No data available.</div>';
+    canvas.parentElement.innerHTML = '<div style="display:flex;align-items:center;height:100%;color:#6b7280;font-size:.82rem;">No data available.</div>';
     return;
   }
   new Chart(canvas.getContext('2d'), {
@@ -2445,7 +2451,7 @@ function makeDoughnut(id, palette) {
 }
 
 // Citation timeline
-(function(){
+function makeCitationChart(){
   const canvas = document.getElementById('citationChart'); if (!canvas) return;
   const labels = JSON.parse(canvas.getAttribute('data-labels'));
   const data   = JSON.parse(canvas.getAttribute('data-values'));
@@ -2461,7 +2467,7 @@ function makeDoughnut(id, palette) {
       plugins: { legend: { display: false } }
     }
   });
-})();
+}
 
 // Bookshelf tab switching (Cited/Education, Mentions/Downloads)
 document.querySelectorAll('.shelf-tab-switch').forEach(function(switcher){
@@ -2470,15 +2476,28 @@ document.querySelectorAll('.shelf-tab-switch').forEach(function(switcher){
     if (!btn) return;
     const targetId = btn.getAttribute('data-shelf-target');
     const block = switcher.closest('.bookshelf-block');
-    block.querySelectorAll('.shelf-tab-btn').forEach(b => b.classList.toggle('is-active', b === btn));
+    block.querySelectorAll('.shelf-tab-btn').forEach(b => {
+      b.classList.toggle('is-active', b === btn);
+      b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+    });
     block.querySelectorAll('.shelf-panel').forEach(p => p.classList.toggle('is-hidden', p.id !== targetId));
   });
 });
 
-makeDoughnut('sectorChart');
-makeDoughnut('sciteChart', ['#16a34a','#9ca3af','#dc2626']);
-makeDoughnut('wtChart');
-makeDoughnut('venueChart');
+function initCharts(){
+  makeCitationChart();
+  makeDoughnut('sectorChart');
+  makeDoughnut('sciteChart', ['#16a34a','#9ca3af','#dc2626']);
+  makeDoughnut('wtChart');
+  makeDoughnut('venueChart');
+}
+// chart.js loads with `defer`, so wait for it rather than assuming it has
+// already run by the time this inline script is parsed.
+if (window.Chart) {
+  initCharts();
+} else {
+  document.addEventListener('DOMContentLoaded', initCharts);
+}
 
 // Reach map — dot-mask world silhouette (generated from a few simplified
 // continent outlines, not traced coastlines) with bubbles for whichever
@@ -2633,7 +2652,9 @@ makeDoughnut('venueChart');
   function applyFilter(nextMode) {
     mode = nextMode;
     filters.querySelectorAll('[data-filter]').forEach((btn) => {
-      btn.classList.toggle('is-active', btn.getAttribute('data-filter') === mode);
+      const active = btn.getAttribute('data-filter') === mode;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
 
     let shown = 0;

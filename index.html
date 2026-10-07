@@ -2069,9 +2069,12 @@ function renderBookshelfCard(box) {
       const jacketInner = isArticle
         ? `<span class="gj-title-sm">${escHtml(it.title)}</span><span class="gj-lines" aria-hidden="true"><span></span><span></span><span></span></span>`
         : `<span class="gj-title-sm">${escHtml(it.title)}</span>`;
-      const cover = it.cover_url
-        ? `<img class="shelf-cover-img" src="${escHtml(it.cover_url)}" alt="Cover of ${escHtml(it.title)}">`
-        : `<div class="${jacketClass}" style="--jh: ${it.cover_hue != null ? it.cover_hue : 214};" role="img" aria-label="${jacketAlt}">${jacketInner}</div>`;
+      // The generated jacket is always in the markup: shown when there is no cover, and swapped in by
+      // onerror/onload when a cover image fails to load (blocked hotlink, 404, 1px placeholder).
+      const cover = (it.cover_url
+        ? `<img class="shelf-cover-img" src="${escHtml(it.cover_url)}" alt="Cover of ${escHtml(it.title)}" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='';}" onload="if(this.naturalWidth<3){this.onerror();}">`
+        : "")
+        + `<div class="${jacketClass}" style="--jh: ${it.cover_hue != null ? it.cover_hue : 214};${it.cover_url ? " display:none;" : ""}" role="img" aria-label="${jacketAlt}">${jacketInner}</div>`;
       const badge = shelfTypeBadge(it.type);
       const link = it.story_url ? `href="${escHtml(it.story_url)}" target="_blank"` : "";
       return `<div class="shelf-slot"><a ${link}><div class="shelf-cover-wrap">${cover}${badge}</div><div class="shelf-plank"></div><div class="shelf-title">${escHtml(it.title)}</div><div class="shelf-chips"><span class="shelf-chip ${s.chipClass}">${fmt(it[s.field])} ${s.unit}</span></div></a></div>`;

@@ -4055,7 +4055,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Capital in the Twenty-First Century (2014), published by Harvard University Press, has been cited 13,820 times — enough that OpenAlex puts it in the top 1% of works in its field a…",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780674369542&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.4159_9780674369542.jpg",
 "authors": "Thomas Piketty",
 "all_authors": [
 "Thomas Piketty"
@@ -4209,7 +4209,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary An Introduction to Statistical Learning (2013), published by Springer Nature, has been cited 12,048 times — enough that OpenAlex puts it in the top 1% of works in its field and ye…",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-1-4614-7138-7",
+"cover_url": "covers/bookstory_10.1007_978-1-4614-7138-7.jpg",
 "authors": "Gareth James, Daniela Witten, Trevor Hastie et al.",
 "all_authors": [
 "Gareth James",
@@ -11436,7 +11436,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The Great Urban Transformation (2010), published by Oxford University PressOxford, has been cited 732 times — enough that OpenAlex puts it in the top 1% of works in its field and …",
-"cover_url": "https://books.google.com/books/content?vid=ISBN0199568049&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.1093_acprof_oso_9780199568048.001.0001.jpg",
 "authors": "You-tien Hsing",
 "all_authors": [
 "You-tien Hsing"
@@ -12814,7 +12814,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Human Pose Estimation via Convolutional Part Heatmap Regression (2016), published by Springer Nature, has been cited 544 times — enough that OpenAlex puts it in the top 1% of work…",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9783319464787&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.1007_978-3-319-46478-7_44.jpg",
 "authors": "Adrian Bulat, Georgios Tzimiropoulos",
 "all_authors": [
 "Adrian Bulat",
@@ -15053,7 +15053,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Goods and Services of Marine Bivalves (2019), published by Springer Nature, has been cited 506 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-319-96776-9",
+"cover_url": "covers/bookstory_10.1007_978-3-319-96776-9.jpg",
 "authors": "Aad C. Smaal, Joao G. Ferreira, Jon Grant et al.",
 "all_authors": [
 "Aad C. Smaal",
@@ -16017,7 +16017,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Higher Education in the Era of the Fourth Industrial Revolution (2018), published by Springer Nature, has been cited 490 times — enough that OpenAlex puts it in the top 1% of work…",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-981-13-0194-0",
+"cover_url": "covers/bookstory_10.1007_978-981-13-0194-0.jpg",
 "authors": "Nancy W. Gleason",
 "all_authors": [
 "Nancy W. Gleason"
@@ -16321,7 +16321,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Taking Stock of Industrial Ecology (2016), published by Springer Nature, has been cited 480 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-319-20571-7",
+"cover_url": "covers/bookstory_10.1007_978-3-319-20571-7.jpg",
 "authors": "Roland Clift, Angela Druckman",
 "all_authors": [
 "Roland Clift",
@@ -17379,7 +17379,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Integrated Risk and Uncertainty Assessment of Climate Change Response Policies (2015), published by Cambridge University Press, has been cited 392 times — enough that OpenAlex put…",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781107058217&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.1017_cbo9781107415416.008.jpg",
 "authors": "Intergovernmental Panel on Climate Change",
 "all_authors": [
 "Intergovernmental Panel on Climate Change"
@@ -18147,7 +18147,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Particle Accelerator Physics (2015), published by Springer Nature, has been cited 365 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9783319183176&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.1007_978-3-319-18317-6.jpg",
 "authors": "Helmut Wiedemann",
 "all_authors": [
 "Helmut Wiedemann"
@@ -18299,7 +18299,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The Cellular Automaton Interpretation of Quantum Mechanics (2016), published by Springer Nature, has been cited 360 times — enough that OpenAlex puts it in the top 1% of works in …",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-319-41285-6",
+"cover_url": "covers/bookstory_10.1007_978-3-319-41285-6.jpg",
 "authors": "Gerard 't Hooft",
 "all_authors": [
 "Gerard 't Hooft"
@@ -18895,7 +18895,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Patient-Reported Outcomes In Performance Measurement (2015), published by RTI Press, has been cited 334 times — enough that OpenAlex puts it in the top 10% of works in its field a…",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781934831144&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.3768_rtipress.2015.bk.0014.1509.jpg",
 "authors": "David Cella, Elizabeth Hahn, Sally Jensen et al.",
 "all_authors": [
 "David Cella",
@@ -19040,7 +19040,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The Goths in the Fourth Century (1991), published by Liverpool University Press, has been cited 332 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780853234265&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.3828_978-0-85323-426-5.jpg",
 "authors": "Peter Heather, John Matthews",
 "all_authors": [
 "Peter Heather",
@@ -19187,7 +19187,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Everything Flows (2018), published by Oxford University PressOxford, has been cited 328 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN0198779631&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.1093_oso_9780198779636.001.0001.jpg",
 "authors": "Daniel J. Nicholson, John Dupré",
 "all_authors": [
 "Daniel J. Nicholson",
@@ -21210,7 +21210,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary De meeste mensen deugen (2019), published by De Correspondent Uitgevers B.V., has been cited 237 times.",
-"cover_url": "https://covers.openlibrary.org/b/id/10218373-L.jpg",
+"cover_url": "covers/bookstory_isbn_9789082942187.jpg",
 "authors": "Rutger Bregman",
 "all_authors": [
 "Rutger Bregman"
@@ -22326,7 +22326,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Caesarius of Arles: Life, Testament, Letters (1994), published by Liverpool University Press, has been cited 211 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780853233688&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.3828_978-0-85323-368-8.jpg",
 "authors": "William E. Klingshirn",
 "all_authors": [
 "William E. Klingshirn"
@@ -23366,7 +23366,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Coronavirus Politics (2021), published by University of Michigan Press, has been cited 168 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780472038626&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.3998_mpub.11927713.png",
 "authors": "Scott Greer, Elizabeth King, Elize Fonseca et al.",
 "all_authors": [
 "Scott Greer",
@@ -23524,7 +23524,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Measurement of Nontariff Barriers (1998), published by University of Michigan Press, has been cited 166 times — enough that OpenAlex puts it in the top 10% of works in its field a…",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780472109319&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.3998_mpub.15472.jpg",
 "authors": "Alan Deardorff, Robert Stern",
 "all_authors": [
 "Alan Deardorff",
@@ -23976,7 +23976,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Opening Science (2014), published by Springer Nature, has been cited 165 times — enough that OpenAlex puts it in the top 10% of works in its field and year.",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-319-00026-8",
+"cover_url": "covers/bookstory_10.1007_978-3-319-00026-8.jpg",
 "authors": "Sönke Bartling, Sascha Friesike",
 "all_authors": [
 "Sönke Bartling",
@@ -24274,7 +24274,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Quantifying the Impact of Technical Barriers to Trade (2001), published by University of Michigan Press, has been cited 153 times — enough that OpenAlex puts it in the top 10% of …",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780472112470&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.3998_mpub.17144.jpg",
 "authors": "Keith Maskus, John Wilson, John Wilson",
 "all_authors": [
 "Keith Maskus",
@@ -24428,7 +24428,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Handbook of Open, Distance and Digital Education (2023), published by Springer Nature, has been cited 150 times.",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-981-19-2080-6",
+"cover_url": "covers/bookstory_10.1007_978-981-19-2080-6.jpg",
 "authors": "Olaf Zawacki-Richter, Insung Jung",
 "all_authors": [
 "Olaf Zawacki-Richter",
@@ -29342,7 +29342,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Artificial Intelligence for a Better Future (2021), published by Springer Nature, has been cited 71 times — enough that OpenAlex puts it in the top 1% of works in its field and ye…",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-030-69978-9",
+"cover_url": "covers/bookstory_10.1007_978-3-030-69978-9.jpg",
 "authors": "Bernd Carsten Stahl",
 "all_authors": [
 "Bernd Carsten Stahl"
@@ -30519,7 +30519,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Smith, Turgot, and the ‘Four Stages’ Theory (1977), published by Springer Nature, has been cited 61 times — enough that OpenAlex puts it in the top 10% of works in its field and y…",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781489973030&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.1007_978-1-4899-7303-0_2.png",
 "authors": "Ronald L. Meek",
 "all_authors": [
 "Ronald L. Meek"
@@ -31506,7 +31506,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Introduction to a Poetics of Diversity (2020), published by Liverpool University Press, has been cited 54 times — enough that OpenAlex puts it in the top 10% of works in its field…",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781789620979&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.3828_liverpool_9781789620979.001.0001.jpg",
 "authors": "Édouard Glissant",
 "all_authors": [
 "Édouard Glissant"
@@ -32010,7 +32010,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Democracy and Empire (2023), published by Cambridge University Press, has been cited 52 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781009383998&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.1017_9781009383981.jpg",
 "authors": "Inés Valdez",
 "all_authors": [
 "Inés Valdez"
@@ -33412,7 +33412,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Institutions and Investments (2000), published by University of Michigan Press, has been cited 43 times — enough that OpenAlex puts it in the top 10% of works in its field and yea…",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780472111787&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.3998_mpub.16284.jpg",
 "authors": "Jun Fu",
 "all_authors": [
 "Jun Fu"
@@ -33550,7 +33550,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Elizabeth Bishop and the Literary Archive (2020), published by Lever Press, has been cited 42 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781643150116&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.3998_mpub.11649332.jpg",
 "authors": "Bethany Hicok",
 "all_authors": [
 "Bethany Hicok"
@@ -33673,7 +33673,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The Role of the Judge in International Trade Regulation (2003), published by University of Michigan Press, has been cited 42 times — enough that OpenAlex puts it in the top 10% of…",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780472024995&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.3998_mpub.17801.png",
 "authors": "Thomas Cottier, Petros Mavroidis, Patrick Blatter",
 "all_authors": [
 "Thomas Cottier",
@@ -33955,7 +33955,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Glass Making in the Greco-Roman World: Results of the ARCHGLASS project (2015), published by Leuven University Press, has been cited 40 times — enough that OpenAlex puts it in the…",
-"cover_url": "https://lup.be/wp-content/uploads/2024/01/66353_jpg_rgb_original.jpg",
+"cover_url": "covers/bookstory_10.11116_9789461661579.jpg",
 "authors": "Patrick Degryse",
 "all_authors": [
 "Patrick Degryse"
@@ -35251,7 +35251,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Social Dimensions of U.S.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780472110995&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.3998_mpub.16818.jpg",
 "authors": "Alan Deardorff, Robert Stern",
 "all_authors": [
 "Alan Deardorff",
@@ -35392,7 +35392,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Enlightenment and genocide, contradictions of modernity, published by Peter Lang Verlag, has been cited 33 times.",
-"cover_url": "https://covers.openlibrary.org/b/id/5213719-L.jpg",
+"cover_url": "covers/bookstory_isbn_9789052019192.jpg",
 "authors": "B. Strath",
 "all_authors": [
 "B. Strath"
@@ -37483,7 +37483,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary States-in-Waiting (2024), published by Cambridge University Press, has been cited 24 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781009305822&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.1017_9781009305815.jpg",
 "authors": "Lydia Walker",
 "all_authors": [
 "Lydia Walker"
@@ -37624,7 +37624,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Advances in Knowledge Discovery and Data Mining (2020), published by Springer Nature, has been cited 23 times — enough that OpenAlex puts it in the top 10% of works in its field a…",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-030-47436-2",
+"cover_url": "covers/bookstory_10.1007_978-3-030-47436-2.jpg",
 "authors": "Hady W. Lauw, Raymond Chi-Wing Wong, Alexandros Ntoulas et al.",
 "all_authors": [
 "Hady W. Lauw",
@@ -37769,7 +37769,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Smart Cities (2024), published by Springer Nature, has been cited 23 times — enough that OpenAlex puts it in the top 10% of works in its field and year.",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-031-35664-3",
+"cover_url": "covers/bookstory_10.1007_978-3-031-35664-3.jpg",
 "authors": "Fateh Belaïd, Anvita Arora",
 "all_authors": [
 "Fateh Belaïd",
@@ -39195,7 +39195,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Upland Geopolitics (2022), published by University of Washington Press, has been cited 17 times — enough that OpenAlex puts it in the top 10% of works in its field and year.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780295750507&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.1515_9780295750507.jpg",
 "authors": "Michael B. Dwyer",
 "all_authors": [
 "Michael B. Dwyer"
@@ -40381,7 +40381,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Essays on Plato’s Epistemology (2016), published by Leuven University Press, has been cited 16 times — enough that OpenAlex puts it in the top 10% of works in its field and year.",
-"cover_url": "",
+"cover_url": "covers/bookstory_10.11116_EPE_AMP.jpg",
 "authors": "Franco Trabattoni",
 "all_authors": [
 "Franco Trabattoni"
@@ -42860,7 +42860,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Postcolonial Realms of Memory (2020), published by Liverpool University Press, has been cited 13 times — enough that OpenAlex puts it in the top 10% of works in its field and year…",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781789620665&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.3828_liverpool_9781789620665.001.0001.jpg",
 "authors": "Etienne Achille, Charles Forsdick, Lydie Moudileno",
 "all_authors": [
 "Etienne Achille",
@@ -43877,7 +43877,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Research-Based Perspectives on the Psychophysiology of Yoga (2018), published by IGI Global Publishing, has been cited 12 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781522527893&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.4018_978-1-5225-2788-6.png",
 "authors": "Shirley Telles, Nilkamal Singh",
 "all_authors": [
 "Shirley Telles",
@@ -45853,7 +45853,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Streaming the Formula 1 Rivalry (2024), published by Peter Lang Verlag, has been cited 10 times — enough that OpenAlex puts it in the top 10% of works in its field and year.",
-"cover_url": "https://cdn.openpublishing.com/thumbnail/products/1376330/large.webp",
+"cover_url": "covers/bookstory_10.3726_b21634.jpg",
 "authors": "Raymond Boyle, Richard Haynes",
 "all_authors": [
 "Raymond Boyle",
@@ -46885,7 +46885,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The Wheat Genome (2024), published by Springer Nature, has been cited 9 times.",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-031-38294-9",
+"cover_url": "covers/bookstory_10.1007_978-3-031-38294-9.jpg",
 "authors": "Rudi Appels, Kellye Eversole, Catherine Feuillet et al.",
 "all_authors": [
 "Rudi Appels",
@@ -48180,7 +48180,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Justice in Climate Policy (2024), published by Springer Nature, has been cited 7 times.",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-031-59427-4",
+"cover_url": "covers/bookstory_10.1007_978-3-031-59427-4.jpg",
 "authors": "Annick de Vries, Gijsbert Werner, Elsenoor Wijlhuizen et al.",
 "all_authors": [
 "Annick de Vries",
@@ -50637,7 +50637,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Kernels of Resistance (2024), published by University of Washington Press, has been cited 6 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780295753317&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.1515_9780295753317.jpg",
 "authors": "Liza Grandia",
 "all_authors": [
 "Liza Grandia"
@@ -53095,7 +53095,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Gender and Christianity in Modern Europe (2012), published by Leuven University Press, has been cited 5 times.",
-"cover_url": "",
+"cover_url": "covers/bookstory_10.11116_GCME_KAD.jpg",
 "authors": "Patrick Pasture",
 "all_authors": [
 "Patrick Pasture"
@@ -60032,7 +60032,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary When the World Turned Upside Down (2023), published by Peter Lang Verlag, has been cited 3 times.",
-"cover_url": "https://cdn.openpublishing.com/thumbnail/products/1290258/large.webp",
+"cover_url": "covers/bookstory_10.3726_b20055.jpg",
 "authors": "Luis Martínez-Fernández",
 "all_authors": [
 "Luis Martínez-Fernández"
@@ -62366,7 +62366,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Traditions of Analysis and Synthesis (2025), published by Springer Nature, has been cited 2 times.",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-031-76398-4",
+"cover_url": "covers/bookstory_10.1007_978-3-031-76398-4.jpg",
 "authors": "William R. Newman, Jutta Schickore",
 "all_authors": [
 "William R. Newman",
@@ -62582,7 +62582,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Cold War Triangle (2021), published by Leuven University Press, has been cited 2 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9789461663979&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.11116_9789461663979.png",
 "authors": "Renilde Loeckx",
 "all_authors": [
 "Renilde Loeckx"
@@ -63044,7 +63044,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary A Small Nation in the Turmoil of the Second World War (2013), published by Leuven University Press, has been cited 2 times.",
-"cover_url": "",
+"cover_url": "covers/bookstory_10.11116_SNTSWW.jpg",
 "authors": "Herman Van der Wee",
 "all_authors": [
 "Herman Van der Wee"
@@ -63154,7 +63154,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Poet-Monks (2024), published by Cornell University Press, has been cited 2 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781501773853&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.1515_9781501773853.jpg",
 "authors": "Thomas J. Mazanec",
 "all_authors": [
 "Thomas J. Mazanec"
@@ -68615,7 +68615,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Everyday Welfare in Modern British History (2025), published by Springer Nature, has been cited 1 time.",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-031-64987-5",
+"cover_url": "covers/bookstory_10.1007_978-3-031-64987-5.jpg",
 "authors": "Caitríona Beaumont, Eve Colpus, Ruth Davidson",
 "all_authors": [
 "Caitríona Beaumont",
@@ -68712,7 +68712,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Redefining Global Governance (2025), published by Springer Nature, has been cited 1 time.",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-031-69793-7",
+"cover_url": "covers/bookstory_10.1007_978-3-031-69793-7.jpg",
 "authors": "Irma Johanna Mosquera Valderrama, Frederik Heitmüller, Julien Chaisse et al.",
 "all_authors": [
 "Irma Johanna Mosquera Valderrama",
@@ -68819,7 +68819,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Integrating the UN SDGs into WTO Law (2025), published by Springer Nature, has been cited 1 time.",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-031-73876-0",
+"cover_url": "covers/bookstory_10.1007_978-3-031-73876-0.jpg",
 "authors": "Xinyan Zhao",
 "all_authors": [
 "Xinyan Zhao"
@@ -68900,7 +68900,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary QPLEX: A Computational Modeling and Analysis Methodology for Stochastic Systems (2025), published by Springer Nature, has been cited 1 time.",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-031-74870-7",
+"cover_url": "covers/bookstory_10.1007_978-3-031-74870-7.jpg",
 "authors": "Antonius B. Dieker, Steven T. Hackman",
 "all_authors": [
 "Antonius B. Dieker",
@@ -69014,7 +69014,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Proceedings of the IUTAM Symposium on Turbulent/Non-Turbulent Interface in Turbulent Shear Flows (2025), published by Springer Nature, has been cited 1 time.",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-031-78151-3",
+"cover_url": "covers/bookstory_10.1007_978-3-031-78151-3.jpg",
 "authors": "Jinjun Wang, Ivan Marusic",
 "all_authors": [
 "Jinjun Wang",
@@ -69223,7 +69223,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Smelly Shoes—An Opportunity for Shoe Rack Re-Design (2022), published by Springer Nature, has been cited 1 time.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9789811622298&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.1007_978-981-16-2229-8_33.jpg",
 "authors": "Vikash Kumar, Sarthak Mittal",
 "all_authors": [
 "Vikash Kumar",
@@ -69311,7 +69311,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Empowering At-Risk Youth in and Through Vocational Education (2025), published by Springer Nature, has been cited 1 time.",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-981-96-0613-9",
+"cover_url": "covers/bookstory_10.1007_978-981-96-0613-9.jpg",
 "authors": "Vidmantas Tūtlys, Tarja Irene Tikkanen, Meril Ümarik et al.",
 "all_authors": [
 "Vidmantas Tūtlys",
@@ -69416,7 +69416,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Collective Memory, Marginality, and Spatial Politics in Urban Indonesia.",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-981-97-4304-9",
+"cover_url": "covers/bookstory_10.1007_978-981-97-4304-9.jpg",
 "authors": "Manneke Budiman, Abidin Kusno",
 "all_authors": [
 "Manneke Budiman",
@@ -69519,7 +69519,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Dynamic Analysis of Offshore Wind Turbine Foundations in Soft Clays (2025), published by Springer Nature, has been cited 1 time.",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-981-97-9454-6",
+"cover_url": "covers/bookstory_10.1007_978-981-97-9454-6.jpg",
 "authors": "Xinglei Cheng, Dechun Lu, Piguang Wang",
 "all_authors": [
 "Xinglei Cheng",
@@ -69715,7 +69715,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Tracheal Transplantation (2019), published by Leuven University Press, has been cited 1 time.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9789461662965&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.11116_9789461662965.jpg",
 "authors": "Pierre Delaere",
 "all_authors": [
 "Pierre Delaere"
@@ -71257,7 +71257,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The Romero Memory (2024), published by Leuven University Press, has been cited 1 time.",
-"cover_url": "",
+"cover_url": "covers/bookstory_10.11116_9789461665621.jpg",
 "authors": "Judith Gruber, Jonas Van Mulder, Kim Christiaens et al.",
 "all_authors": [
 "Judith Gruber",
@@ -71365,7 +71365,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary New Multicultural Identities in Europe (2014), published by Leuven University Press, has been cited 1 time.",
-"cover_url": "",
+"cover_url": "covers/bookstory_10.11116_NMIE_CII.jpg",
 "authors": "Erkan Toğuşlu",
 "all_authors": [
 "Erkan Toğuşlu"
@@ -72630,7 +72630,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Giovanni Battista Ramusio.",
-"cover_url": "",
+"cover_url": "covers/bookstory_10.30687_978-88-6969-901-6.png",
 "authors": "Samuela Simion, Eugenio Burgio",
 "all_authors": [
 "Samuela Simion",
@@ -73043,7 +73043,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Christian Democracy and Labour after World War II (2023), published by Peter Lang Verlag, has been cited 1 time.",
-"cover_url": "https://cdn.openpublishing.com/thumbnail/products/1313443/large.webp",
+"cover_url": "covers/bookstory_10.3726_b21088.jpg",
 "authors": "Andrea Maria Locatelli, Cecilia Maria Bravi",
 "all_authors": [
 "Andrea Maria Locatelli",
@@ -73146,7 +73146,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Urban Fantasy (2024), published by Lever Press, has been cited 1 time.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781643150642&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.3998_mpub.14414299.jpg",
 "authors": "Stefan Ekman",
 "all_authors": [
 "Stefan Ekman"
@@ -73229,7 +73229,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Eddington philosophe (2023), published by Éditions de la Sorbonne, has been cited 1 time.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9791035110437&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.4000_12vuh.png",
 "authors": "Florian Laguens",
 "all_authors": [
 "Florian Laguens"
@@ -81773,7 +81773,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary De stad op de berg (2021), published by Leuven University Press, has no recorded citations yet, but it is discussed on Wikipedia.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9789461664051&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.11116_9789461664051.jpg",
 "authors": "Jo Tollebeek, Liesbet Nys",
 "all_authors": [
 "Jo Tollebeek",
@@ -82378,7 +82378,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Stilte in de klas (2022), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 2,627 times.",
-"cover_url": "https://lup.be/wp-content/uploads/2024/01/jpg_rgb_original-347-scaled.jpg",
+"cover_url": "covers/bookstory_10.11116_9789461664792.jpg",
 "authors": "Pieter Verstraete",
 "all_authors": [
 "Pieter Verstraete"
@@ -84140,7 +84140,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Modern Islamic Thinking and Activism (2014), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 3,350 times.",
-"cover_url": "",
+"cover_url": "covers/bookstory_10.11116_MITA_CII.jpg",
 "authors": "Erkan Toguslu",
 "all_authors": [
 "Erkan Toguslu"
@@ -84862,7 +84862,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Body, Capital, and Screens (2020), published by Amsterdam University Press, has no recorded citations yet, but it has been downloaded 1,956 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9789048540310&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.2307_j.ctv12sdvgj.jpg",
 "authors": "Christian Bonah, Anja Laukötter",
 "all_authors": [
 "Christian Bonah",
@@ -84949,7 +84949,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Sprachenräume der Schweiz (2026), published by Gunter Narr Verlag, has no recorded citations, downloads or public discussion yet.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9783381104123&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.24053_9783381104123.png",
 "authors": "Elvira Glaser, Johannes Kabatek, Barbara Sonnenhauser",
 "all_authors": [
 "Elvira Glaser",
@@ -85654,7 +85654,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Art, Identity and Cosmopolitanism (2024), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
-"cover_url": "https://cdn.openpublishing.com/thumbnail/products/1330533/large.webp",
+"cover_url": "covers/bookstory_10.3726_b18017.jpg",
 "authors": "Samuel Shaw",
 "all_authors": [
 "Samuel Shaw"
@@ -85966,7 +85966,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Compositions, A Life (2023), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
-"cover_url": "https://cdn.openpublishing.com/thumbnail/products/1311827/large.webp",
+"cover_url": "covers/bookstory_10.3726_b21156.jpg",
 "authors": "Judith Summerfield",
 "all_authors": [
 "Judith Summerfield"
@@ -86185,7 +86185,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The Art of Thinking in a Digital World (2024), published by Peter Lang Verlag, has no recorded citations yet, but it is used in teaching.",
-"cover_url": "https://cdn.openpublishing.com/thumbnail/products/1436624/large.webp",
+"cover_url": "covers/bookstory_10.3726_b21758.jpg",
 "authors": "Luc de Brabandere",
 "all_authors": [
 "Luc de Brabandere"
@@ -86266,7 +86266,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Knowledge and practical knowledge (2024), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
-"cover_url": "https://cdn.openpublishing.com/thumbnail/products/1438907/large.webp",
+"cover_url": "covers/bookstory_10.3726_b21787.jpg",
 "authors": "Silvia Carbone",
 "all_authors": [
 "Silvia Carbone"
@@ -86439,7 +86439,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Abortion Pills (2024), published by Amherst College Press, has no recorded citations yet, but it has been downloaded 179 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781943208852&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.3998_mpub.14469549.jpg",
 "authors": "Carrie Baker",
 "all_authors": [
 "Carrie Baker"
@@ -86603,7 +86603,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Women in the Silent Cinema (2017), published by Amsterdam University Press, has no recorded citations yet, but it has been downloaded 1,654 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9789048524518&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "covers/bookstory_10.5117_9789089647191.jpg",
 "authors": "Annette Förster",
 "all_authors": [
 "Annette Förster"
