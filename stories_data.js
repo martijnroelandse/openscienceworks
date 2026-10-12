@@ -963,7 +963,7 @@ window.STORIES_DATA = [
 "OpenAlex/Crossref"
 ],
 "oa_claimed_not_in_doab": false,
-"citation_count": 47957,
+"citation_count": 47097,
 "event_count": 0,
 "event_data_status": "historical_archive",
 "archived_event_count": 200,
@@ -971,7 +971,7 @@ window.STORIES_DATA = [
 "sdg_ids": [],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 5,
+"ta_youtube": 11,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": true,
@@ -1047,7 +1047,7 @@ window.STORIES_DATA = [
 "bluesky": 2,
 "hypothesis": 1,
 "reddit": 3,
-"substack": 1
+"substack": 2
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -1058,67 +1058,67 @@ window.STORIES_DATA = [
 "sectors": [
 {
 "label": "Education",
-"count": 43262
+"count": 39902
 },
 {
 "label": "Facility",
-"count": 18330
+"count": 16815
 },
 {
 "label": "Government",
-"count": 8605
+"count": 7987
 },
 {
 "label": "Healthcare",
-"count": 8201
+"count": 7670
 },
 {
 "label": "Nonprofit",
-"count": 3978
+"count": 3611
 }
 ],
 "countries": [
 {
 "label": "United States",
-"count": 16253
+"count": 14566
 },
 {
 "label": "China",
-"count": 9876
+"count": 9495
 },
 {
 "label": "Germany",
-"count": 5242
+"count": 4757
 },
 {
 "label": "United Kingdom",
-"count": 5137
+"count": 4630
 },
 {
 "label": "France",
-"count": 2908
+"count": 2627
 }
 ],
 "citing_institutions": [
 {
 "label": "Centre National de la Recherche Scientifique",
-"count": 1920
+"count": 1717
 },
 {
 "label": "Chinese Academy of Sciences",
-"count": 1460
+"count": 1400
 },
 {
 "label": "Harvard University",
-"count": 1126
+"count": 999
 },
 {
 "label": "Howard Hughes Medical Institute",
-"count": 1020
+"count": 867
 },
 {
 "label": "University of Chinese Academy of Sciences",
-"count": 804
+"count": 785
 }
 ],
 "scite_supporting": 636,
@@ -4514,7 +4514,7 @@ window.STORIES_DATA = [
 "OpenAlex/Crossref"
 ],
 "oa_claimed_not_in_doab": false,
-"citation_count": 10824,
+"citation_count": 10609,
 "event_count": 0,
 "event_data_status": "historical_archive",
 "archived_event_count": 200,
@@ -4522,7 +4522,7 @@ window.STORIES_DATA = [
 "sdg_ids": [],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 5,
+"ta_youtube": 11,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
@@ -7508,19 +7508,19 @@ window.STORIES_DATA = [
 "sectors": [
 {
 "label": "Education",
-"count": 8523
+"count": 8515
 },
 {
 "label": "Facility",
-"count": 5055
+"count": 5047
 },
 {
 "label": "Government",
-"count": 1951
+"count": 1946
 },
 {
 "label": "Nonprofit",
-"count": 607
+"count": 604
 },
 {
 "label": "Other",
@@ -7530,45 +7530,45 @@ window.STORIES_DATA = [
 "countries": [
 {
 "label": "United States",
-"count": 2482
+"count": 2480
 },
 {
 "label": "Germany",
-"count": 1695
+"count": 1694
 },
 {
 "label": "United Kingdom",
-"count": 1288
+"count": 1292
 },
 {
 "label": "Switzerland",
-"count": 1246
+"count": 1244
 },
 {
 "label": "China",
-"count": 1105
+"count": 1103
 }
 ],
 "citing_institutions": [
 {
 "label": "European Organization for Nuclear Research",
-"count": 1185
+"count": 1183
 },
 {
 "label": "Centre National de la Recherche Scientifique",
-"count": 1007
+"count": 1004
 },
 {
 "label": "Deutsches Elektronen-Synchrotron DESY",
-"count": 875
+"count": 872
 },
 {
 "label": "Institut National de Physique Nucléaire et de Physique des Particules",
-"count": 794
+"count": 793
 },
 {
 "label": "Institute of High Energy Physics",
-"count": 674
+"count": 673
 }
 ],
 "scite_supporting": 175,
@@ -8315,7 +8315,7 @@ window.STORIES_DATA = [
 "OpenAlex/Crossref"
 ],
 "oa_claimed_not_in_doab": false,
-"citation_count": 2930,
+"citation_count": 2914,
 "event_count": 0,
 "event_data_status": "historical_archive",
 "archived_event_count": 200,
@@ -8323,7 +8323,7 @@ window.STORIES_DATA = [
 "sdg_ids": [],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 5,
+"ta_youtube": 12,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
@@ -8396,51 +8396,51 @@ window.STORIES_DATA = [
 "sectors": [
 {
 "label": "Education",
-"count": 1988
+"count": 1977
 },
 {
 "label": "Healthcare",
-"count": 1643
+"count": 1640
 },
 {
 "label": "Facility",
-"count": 416
+"count": 413
 },
 {
 "label": "Nonprofit",
-"count": 310
+"count": 308
 },
 {
 "label": "Government",
-"count": 246
+"count": 243
 }
 ],
 "countries": [
 {
 "label": "United States",
-"count": 1367
+"count": 1360
 },
 {
 "label": "United Kingdom",
-"count": 228
+"count": 225
 },
 {
 "label": "Canada",
-"count": 198
+"count": 196
 },
 {
 "label": "Germany",
-"count": 179
+"count": 177
 },
 {
 "label": "Australia",
-"count": 120
+"count": 119
 }
 ],
 "citing_institutions": [
 {
 "label": "Harvard University",
-"count": 128
+"count": 127
 },
 {
 "label": "National Cancer Institute",
@@ -9668,7 +9668,7 @@ window.STORIES_DATA = [
 "OpenAlex/Crossref"
 ],
 "oa_claimed_not_in_doab": false,
-"citation_count": 1498,
+"citation_count": 1488,
 "event_count": 0,
 "event_data_status": "historical_archive",
 "archived_event_count": 200,
@@ -9676,7 +9676,7 @@ window.STORIES_DATA = [
 "sdg_ids": [],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 1,
+"ta_youtube": 6,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
@@ -9729,67 +9729,67 @@ window.STORIES_DATA = [
 "sectors": [
 {
 "label": "Education",
-"count": 1195
+"count": 1143
 },
 {
 "label": "Healthcare",
-"count": 766
+"count": 735
 },
 {
 "label": "Facility",
-"count": 244
+"count": 234
 },
 {
 "label": "Government",
-"count": 172
+"count": 167
 },
 {
 "label": "Nonprofit",
-"count": 115
+"count": 108
 }
 ],
 "countries": [
 {
 "label": "United States",
-"count": 382
+"count": 356
 },
 {
 "label": "Italy",
-"count": 133
+"count": 129
 },
 {
 "label": "United Kingdom",
-"count": 128
+"count": 123
 },
 {
 "label": "China",
-"count": 120
+"count": 115
 },
 {
 "label": "Spain",
-"count": 83
+"count": 79
 }
 ],
 "citing_institutions": [
 {
 "label": "Harvard University",
-"count": 42
+"count": 39
 },
 {
 "label": "Inserm",
-"count": 32
+"count": 31
 },
 {
 "label": "Brigham and Women's Hospital",
-"count": 25
+"count": 23
 },
 {
 "label": "University of Toronto",
-"count": 23
+"count": 22
 },
 {
 "label": "University of Michigan",
-"count": 23
+"count": 20
 }
 ],
 "scite_supporting": 76,
@@ -23712,7 +23712,7 @@ window.STORIES_DATA = [
 },
 {
 "label": "Company",
-"count": 22
+"count": 21
 },
 {
 "label": "Nonprofit",
@@ -43070,7 +43070,7 @@ window.STORIES_DATA = [
 "count": 3
 },
 {
-"label": "FZU ‒ Institute of Physics of the Academy of Sciences of the Czech Republic",
+"label": "FZU - Institute of Physics of the Czech Academy of Sciences",
 "count": 3
 },
 {
@@ -89963,4 +89963,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
-window.STORIES_STATS = {"total": 683, "total_articles": 286, "total_books": 310, "total_data": 61, "total_software": 26, "total_oa": 616, "pct_oa": 90, "total_citations": 1385399, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 683, "total_articles": 286, "total_books": 310, "total_data": 61, "total_software": 26, "total_oa": 616, "pct_oa": 90, "total_citations": 1384298, "num_disciplines": 30};
