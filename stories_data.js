@@ -930,205 +930,6 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "articlestory_10.1038_s41586-021-03819-2.html",
-"title": "Highly accurate protein structure prediction with AlphaFold",
-"type": "ArticleStory",
-"doi": "10.1038/s41586-021-03819-2",
-"year": 2021,
-"venue": "Nature Portfolio",
-"venue_name": "Nature",
-"publisher": "Springer Nature",
-"concepts": [
-"Protein structure prediction",
-"Computer science",
-"CASP",
-"Protein structure",
-"Threading (protein sequence)",
-"Artificial intelligence",
-"Machine learning",
-"Structural bioinformatics"
-],
-"roles": [
-"Scholarly Uptake",
-"High-Visibility Uptake",
-"Pedagogical Anchor",
-"Active Public Discourse",
-"Rapid Uptake"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 47097,
-"event_count": 0,
-"event_data_status": "historical_archive",
-"archived_event_count": 200,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 11,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": true,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": true,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary Highly accurate protein structure prediction with AlphaFold (2021) in Nature.",
-"cover_url": "",
-"authors": "John Jumper, Richard Evans, Alexander Pritzel et al.",
-"all_authors": [
-"John Jumper",
-"Richard Evans",
-"Alexander Pritzel",
-"Tim Green",
-"Michael Figurnov",
-"Olaf Ronneberger",
-"Kathryn Tunyasuvunakool",
-"Russ Bates",
-"Augustin Žídek",
-"Anna Potapenko",
-"Alex Bridgland",
-"Clemens Meyer",
-"Simon Köhl",
-"Andrew J. Ballard",
-"Andrew Cowie",
-"Bernardino Romera‐Paredes",
-"Stanislav Nikolov",
-"Rishub Jain",
-"Jonas Adler",
-"Trevor Back",
-"Stig Petersen",
-"David Reiman",
-"Ellen Clancy",
-"Michał Zieliński",
-"Martin Steinegger",
-"Michalina Pacholska",
-"Tamas Berghammer",
-"Sebastian W. Bodenstein",
-"David Silver",
-"Oriol Vinyals",
-"Andrew Senior",
-"Koray Kavukcuoglu",
-"Pushmeet Kohli",
-"Demis Hassabis"
-],
-"institutions": [
-"Google DeepMind (United Kingdom)",
-"Seoul National University"
-],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"Substack",
-"Wikipedia",
-"Bluesky",
-"Hypothesis",
-"Reddit",
-"News",
-"Blogs"
-],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {
-"wikipedia": 9,
-"bluesky": 2,
-"hypothesis": 1,
-"reddit": 3,
-"substack": 2
-},
-"is_top1pct": true,
-"is_top10pct": true,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 4,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 39902
-},
-{
-"label": "Facility",
-"count": 16815
-},
-{
-"label": "Government",
-"count": 7987
-},
-{
-"label": "Healthcare",
-"count": 7670
-},
-{
-"label": "Nonprofit",
-"count": 3611
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 14566
-},
-{
-"label": "China",
-"count": 9495
-},
-{
-"label": "Germany",
-"count": 4757
-},
-{
-"label": "United Kingdom",
-"count": 4630
-},
-{
-"label": "France",
-"count": 2627
-}
-],
-"citing_institutions": [
-{
-"label": "Centre National de la Recherche Scientifique",
-"count": 1717
-},
-{
-"label": "Chinese Academy of Sciences",
-"count": 1400
-},
-{
-"label": "Harvard University",
-"count": 999
-},
-{
-"label": "Howard Hughes Medical Institute",
-"count": 867
-},
-{
-"label": "University of Chinese Academy of Sciences",
-"count": 785
-}
-],
-"scite_supporting": 636,
-"scite_contradicting": 19,
-"version_count": 1,
-"version_dois": [
-"10.1038/s41586-021-03819-2"
-]
-},
-{
 "file": "articlestory_10.1093_bioinformatics_btp616.html",
 "title": "<tt>edgeR</tt> : a Bioconductor package for differential expression analysis of digital gene expression data",
 "type": "ArticleStory",
@@ -1430,6 +1231,205 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.1107/s2053229614024218"
+]
+},
+{
+"file": "articlestory_10.1038_s41586-021-03819-2.html",
+"title": "Highly accurate protein structure prediction with AlphaFold",
+"type": "ArticleStory",
+"doi": "10.1038/s41586-021-03819-2",
+"year": 2021,
+"venue": "Nature Portfolio",
+"venue_name": "Nature",
+"publisher": "Springer Nature",
+"concepts": [
+"Protein structure prediction",
+"Computer science",
+"CASP",
+"Protein structure",
+"Threading (protein sequence)",
+"Artificial intelligence",
+"Machine learning",
+"Structural bioinformatics"
+],
+"roles": [
+"Scholarly Uptake",
+"High-Visibility Uptake",
+"Pedagogical Anchor",
+"Active Public Discourse",
+"Rapid Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
+"citation_count": 43412,
+"event_count": 0,
+"event_data_status": "historical_archive",
+"archived_event_count": 200,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 16,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": true,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": true,
+"has_openaire_reach": true,
+"has_openaire_open_instance": true,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Highly accurate protein structure prediction with AlphaFold (2021) in Nature.",
+"cover_url": "",
+"authors": "John Jumper, Richard Evans, Alexander Pritzel et al.",
+"all_authors": [
+"John Jumper",
+"Richard Evans",
+"Alexander Pritzel",
+"Tim Green",
+"Michael Figurnov",
+"Olaf Ronneberger",
+"Kathryn Tunyasuvunakool",
+"Russ Bates",
+"Augustin Žídek",
+"Anna Potapenko",
+"Alex Bridgland",
+"Clemens Meyer",
+"Simon Köhl",
+"Andrew J. Ballard",
+"Andrew Cowie",
+"Bernardino Romera‐Paredes",
+"Stanislav Nikolov",
+"Rishub Jain",
+"Jonas Adler",
+"Trevor Back",
+"Stig Petersen",
+"David Reiman",
+"Ellen Clancy",
+"Michał Zieliński",
+"Martin Steinegger",
+"Michalina Pacholska",
+"Tamas Berghammer",
+"Sebastian W. Bodenstein",
+"David Silver",
+"Oriol Vinyals",
+"Andrew Senior",
+"Koray Kavukcuoglu",
+"Pushmeet Kohli",
+"Demis Hassabis"
+],
+"institutions": [
+"Google DeepMind (United Kingdom)",
+"Seoul National University"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Substack",
+"Wikipedia",
+"Bluesky",
+"Hypothesis",
+"Reddit",
+"News",
+"Blogs"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {
+"wikipedia": 9,
+"bluesky": 2,
+"hypothesis": 1,
+"reddit": 3,
+"substack": 2
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 4,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 39384
+},
+{
+"label": "Facility",
+"count": 16568
+},
+{
+"label": "Government",
+"count": 7886
+},
+{
+"label": "Healthcare",
+"count": 7596
+},
+{
+"label": "Nonprofit",
+"count": 3552
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 14258
+},
+{
+"label": "China",
+"count": 9495
+},
+{
+"label": "Germany",
+"count": 4673
+},
+{
+"label": "United Kingdom",
+"count": 4537
+},
+{
+"label": "France",
+"count": 2571
+}
+],
+"citing_institutions": [
+{
+"label": "Centre National de la Recherche Scientifique",
+"count": 1678
+},
+{
+"label": "Chinese Academy of Sciences",
+"count": 1400
+},
+{
+"label": "Harvard University",
+"count": 977
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 840
+},
+{
+"label": "University of Chinese Academy of Sciences",
+"count": 789
+}
+],
+"scite_supporting": 636,
+"scite_contradicting": 19,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41586-021-03819-2"
 ]
 },
 {
@@ -4514,7 +4514,7 @@ window.STORIES_DATA = [
 "OpenAlex/Crossref"
 ],
 "oa_claimed_not_in_doab": false,
-"citation_count": 10609,
+"citation_count": 10525,
 "event_count": 0,
 "event_data_status": "historical_archive",
 "archived_event_count": 200,
@@ -4522,7 +4522,7 @@ window.STORIES_DATA = [
 "sdg_ids": [],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 11,
+"ta_youtube": 13,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
@@ -7508,19 +7508,19 @@ window.STORIES_DATA = [
 "sectors": [
 {
 "label": "Education",
-"count": 8515
+"count": 8455
 },
 {
 "label": "Facility",
-"count": 5047
+"count": 5005
 },
 {
 "label": "Government",
-"count": 1946
+"count": 1935
 },
 {
 "label": "Nonprofit",
-"count": 604
+"count": 599
 },
 {
 "label": "Other",
@@ -7530,45 +7530,45 @@ window.STORIES_DATA = [
 "countries": [
 {
 "label": "United States",
-"count": 2480
+"count": 2692
 },
 {
 "label": "Germany",
-"count": 1694
-},
-{
-"label": "United Kingdom",
-"count": 1292
-},
-{
-"label": "Switzerland",
-"count": 1244
+"count": 1992
 },
 {
 "label": "China",
-"count": 1103
+"count": 1578
+},
+{
+"label": "United Kingdom",
+"count": 1557
+},
+{
+"label": "Switzerland",
+"count": 1507
 }
 ],
 "citing_institutions": [
 {
 "label": "European Organization for Nuclear Research",
-"count": 1183
+"count": 1178
 },
 {
 "label": "Centre National de la Recherche Scientifique",
-"count": 1004
+"count": 1002
 },
 {
 "label": "Deutsches Elektronen-Synchrotron DESY",
-"count": 872
+"count": 866
 },
 {
 "label": "Institut National de Physique Nucléaire et de Physique des Particules",
-"count": 793
+"count": 791
 },
 {
 "label": "Institute of High Energy Physics",
-"count": 673
+"count": 671
 }
 ],
 "scite_supporting": 175,
@@ -8315,7 +8315,7 @@ window.STORIES_DATA = [
 "OpenAlex/Crossref"
 ],
 "oa_claimed_not_in_doab": false,
-"citation_count": 2914,
+"citation_count": 2908,
 "event_count": 0,
 "event_data_status": "historical_archive",
 "archived_event_count": 200,
@@ -8323,7 +8323,7 @@ window.STORIES_DATA = [
 "sdg_ids": [],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 12,
+"ta_youtube": 13,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
@@ -8396,19 +8396,19 @@ window.STORIES_DATA = [
 "sectors": [
 {
 "label": "Education",
-"count": 1977
+"count": 1975
 },
 {
 "label": "Healthcare",
-"count": 1640
+"count": 1638
 },
 {
 "label": "Facility",
-"count": 413
+"count": 412
 },
 {
 "label": "Nonprofit",
-"count": 308
+"count": 307
 },
 {
 "label": "Government",
@@ -8418,7 +8418,7 @@ window.STORIES_DATA = [
 "countries": [
 {
 "label": "United States",
-"count": 1360
+"count": 1357
 },
 {
 "label": "United Kingdom",
@@ -8430,7 +8430,7 @@ window.STORIES_DATA = [
 },
 {
 "label": "Germany",
-"count": 177
+"count": 176
 },
 {
 "label": "Australia",
@@ -8451,12 +8451,12 @@ window.STORIES_DATA = [
 "count": 89
 },
 {
-"label": "Johns Hopkins University",
+"label": "Erasmus MC",
 "count": 86
 },
 {
-"label": "Erasmus MC",
-"count": 86
+"label": "Johns Hopkins University",
+"count": 85
 }
 ],
 "scite_supporting": 15,
@@ -8650,14 +8650,15 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 1984,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -9668,7 +9669,7 @@ window.STORIES_DATA = [
 "OpenAlex/Crossref"
 ],
 "oa_claimed_not_in_doab": false,
-"citation_count": 1488,
+"citation_count": 1428,
 "event_count": 0,
 "event_data_status": "historical_archive",
 "archived_event_count": 200,
@@ -9729,19 +9730,19 @@ window.STORIES_DATA = [
 "sectors": [
 {
 "label": "Education",
-"count": 1143
+"count": 1136
 },
 {
 "label": "Healthcare",
-"count": 735
+"count": 730
 },
 {
 "label": "Facility",
-"count": 234
+"count": 231
 },
 {
 "label": "Government",
-"count": 167
+"count": 166
 },
 {
 "label": "Nonprofit",
@@ -9751,19 +9752,19 @@ window.STORIES_DATA = [
 "countries": [
 {
 "label": "United States",
-"count": 356
+"count": 355
 },
 {
 "label": "Italy",
-"count": 129
+"count": 130
 },
 {
 "label": "United Kingdom",
-"count": 123
+"count": 122
 },
 {
 "label": "China",
-"count": 115
+"count": 114
 },
 {
 "label": "Spain",
@@ -9777,7 +9778,7 @@ window.STORIES_DATA = [
 },
 {
 "label": "Inserm",
-"count": 31
+"count": 30
 },
 {
 "label": "Brigham and Women's Hospital",
@@ -10155,7 +10156,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary The Equilibrium Theory of Inhomogeneous Polymers (2005), published by Oxford University PressOxford, has been cited 1,208 times — enough that OpenAlex puts it in the top 10% of wo…",
+"excerpt": "Short impact summary The Equilibrium Theory of Inhomogeneous Polymers (2005), published by Oxford University Press, has been cited 1,208 times — enough that OpenAlex puts it in the top 10% of works in…",
 "cover_url": "https://library.oapen.org/rest/bitstreams/484a32b0-6318-4299-9162-cadc239d1b23/retrieve",
 "authors": "Glenn Fredrickson",
 "all_authors": [
@@ -10282,13 +10283,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 1188,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -10308,7 +10310,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Statistical Physics of Spin Glasses and Information Processing (2001), published by Oxford University PressOxford, has been cited 1,188 times — enough that OpenAlex puts it in the…",
+"excerpt": "Short impact summary Statistical Physics of Spin Glasses and Information Processing (2001), published by Oxford University Press, has been cited 1,188 times — enough that OpenAlex puts it in the top 1…",
 "cover_url": "https://library.oapen.org/rest/bitstreams/587fd4e2-2684-4238-a461-8c180b0e1ad7/retrieve",
 "authors": "Hidetoshi Nishimori",
 "all_authors": [
@@ -10584,13 +10586,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 972,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -10733,14 +10736,15 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 899,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -11049,14 +11053,15 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 801,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -11435,7 +11440,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary The Great Urban Transformation (2010), published by Oxford University PressOxford, has been cited 732 times — enough that OpenAlex puts it in the top 1% of works in its field and …",
+"excerpt": "Short impact summary The Great Urban Transformation (2010), published by Oxford University Press, has been cited 732 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
 "cover_url": "covers/bookstory_10.1093_acprof_oso_9780199568048.001.0001.jpg",
 "authors": "You-tien Hsing",
 "all_authors": [
@@ -11710,14 +11715,15 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 719,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -11860,14 +11866,15 @@ window.STORIES_DATA = [
 "Reference Point for Synthesis"
 ],
 "is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 711,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -12010,12 +12017,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 686,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -12327,14 +12336,15 @@ window.STORIES_DATA = [
 "Reference Point for Synthesis"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 668,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -12508,7 +12518,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Women, Culture, and Development (1995), published by Oxford University PressOxford, has been cited 630 times — enough that OpenAlex puts it in the top 1% of works in its field and…",
+"excerpt": "Short impact summary Women, Culture, and Development (1995), published by Oxford University Press, has been cited 630 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
 "cover_url": "https://library.oapen.org/rest/bitstreams/1f3692d1-ade5-4734-98ad-9604825baf6d/retrieve",
 "authors": "Martha C. Nussbaum, Jonathan Glover",
 "all_authors": [
@@ -12633,14 +12643,15 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 589,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -15024,13 +15035,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 506,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -15990,13 +16002,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 490,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -16141,14 +16154,15 @@ window.STORIES_DATA = [
 "Reference Point for Synthesis"
 ],
 "is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 483,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -16168,7 +16182,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Conceptual Engineering and Conceptual Ethics (2020), published by Oxford University PressOxford, has been cited 483 times — enough that OpenAlex puts it in the top 1% of works in …",
+"excerpt": "Short impact summary Conceptual Engineering and Conceptual Ethics (2020), published by Oxford University Press, has been cited 483 times — enough that OpenAlex puts it in the top 1% of works in its fi…",
 "cover_url": "https://library.oapen.org/rest/bitstreams/0b083d74-5c3a-4330-8d45-3fb0f2364306/retrieve",
 "authors": "Alexis Burgess, Herman Cappelen, David Plunkett",
 "all_authors": [
@@ -16294,13 +16308,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 480,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -16436,13 +16451,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 473,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -16745,14 +16761,15 @@ window.STORIES_DATA = [
 "Reference Point for Synthesis"
 ],
 "is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 457,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -17502,14 +17519,15 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 389,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -17654,13 +17672,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 385,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -17811,12 +17830,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 380,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -18117,14 +18138,15 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 365,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -18271,14 +18293,15 @@ window.STORIES_DATA = [
 "Reference Point for Synthesis"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 360,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -18420,13 +18443,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 357,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -19186,7 +19210,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Everything Flows (2018), published by Oxford University PressOxford, has been cited 328 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
+"excerpt": "Short impact summary Everything Flows (2018), published by Oxford University Press, has been cited 328 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
 "cover_url": "covers/bookstory_10.1093_oso_9780198779636.001.0001.jpg",
 "authors": "Daniel J. Nicholson, John Dupré",
 "all_authors": [
@@ -19456,13 +19480,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 326,
 "event_count": 0,
 "event_data_status": "historical_archive",
@@ -19609,14 +19634,15 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 309,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -19757,13 +19783,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 300,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -19785,7 +19812,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Aesthetics as Philosophy of Perception (2016), published by Oxford University PressOxford, has been cited 300 times — enough that OpenAlex puts it in the top 1% of works in its fi…",
+"excerpt": "Short impact summary Aesthetics as Philosophy of Perception (2016), published by Oxford University Press, has been cited 300 times — enough that OpenAlex puts it in the top 1% of works in its field an…",
 "cover_url": "https://library.oapen.org/rest/bitstreams/f4bdc42b-fb37-4efa-8a45-a09dc123e48f/retrieve",
 "authors": "Bence Nanay",
 "all_authors": [
@@ -19910,13 +19937,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 294,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -23337,9 +23365,10 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -23472,6 +23501,154 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.3998/mpub.11927713"
+]
+},
+{
+"file": "articlestory_10.1038_nrd.2016.136.html",
+"title": "Parsing clinical success rates",
+"type": "ArticleStory",
+"doi": "10.1038/nrd.2016.136",
+"year": 2016,
+"venue": "Nature Portfolio",
+"venue_name": "Nature Reviews Drug Discovery",
+"publisher": "Springer Nature",
+"concepts": [
+"Parsing",
+"Medicine",
+"Computer science",
+"Intensive care medicine",
+"Natural language processing"
+],
+"roles": [
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Active Public Discourse"
+],
+"is_oa": true,
+"oa_status": "bronze",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
+"citation_count": 167,
+"event_count": 0,
+"event_data_status": "archive_unavailable",
+"archived_event_count": null,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": true,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Parsing clinical success rates (2016) in Nature Reviews Drug Discovery.",
+"cover_url": "",
+"authors": "Asher Mullard",
+"all_authors": [
+"Asher Mullard"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Substack"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {
+"substack": 4
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 138
+},
+{
+"label": "Healthcare",
+"count": 53
+},
+{
+"label": "Facility",
+"count": 27
+},
+{
+"label": "Company",
+"count": 21
+},
+{
+"label": "Nonprofit",
+"count": 19
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 61
+},
+{
+"label": "United Kingdom",
+"count": 27
+},
+{
+"label": "Germany",
+"count": 15
+},
+{
+"label": "Canada",
+"count": 12
+},
+{
+"label": "China",
+"count": 12
+}
+],
+"citing_institutions": [
+{
+"label": "Harvard University",
+"count": 7
+},
+{
+"label": "Washington University in St. Louis",
+"count": 5
+},
+{
+"label": "University of Cambridge",
+"count": 4
+},
+{
+"label": "University of Michigan",
+"count": 4
+},
+{
+"label": "Karolinska Institutet",
+"count": 4
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/nrd.2016.136"
 ]
 },
 {
@@ -23620,154 +23797,6 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.3998/mpub.15472"
-]
-},
-{
-"file": "articlestory_10.1038_nrd.2016.136.html",
-"title": "Parsing clinical success rates",
-"type": "ArticleStory",
-"doi": "10.1038/nrd.2016.136",
-"year": 2016,
-"venue": "Nature Portfolio",
-"venue_name": "Nature Reviews Drug Discovery",
-"publisher": "Springer Nature",
-"concepts": [
-"Parsing",
-"Medicine",
-"Computer science",
-"Intensive care medicine",
-"Natural language processing"
-],
-"roles": [
-"High-Visibility Uptake",
-"Scholarly Uptake",
-"Active Public Discourse"
-],
-"is_oa": true,
-"oa_status": "bronze",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 165,
-"event_count": 0,
-"event_data_status": "archive_unavailable",
-"archived_event_count": null,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary Parsing clinical success rates (2016) in Nature Reviews Drug Discovery.",
-"cover_url": "",
-"authors": "Asher Mullard",
-"all_authors": [
-"Asher Mullard"
-],
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"Substack"
-],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {
-"substack": 4
-},
-"is_top1pct": true,
-"is_top10pct": true,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 137
-},
-{
-"label": "Healthcare",
-"count": 52
-},
-{
-"label": "Facility",
-"count": 26
-},
-{
-"label": "Company",
-"count": 21
-},
-{
-"label": "Nonprofit",
-"count": 19
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 60
-},
-{
-"label": "United Kingdom",
-"count": 27
-},
-{
-"label": "Germany",
-"count": 15
-},
-{
-"label": "Canada",
-"count": 12
-},
-{
-"label": "China",
-"count": 12
-}
-],
-"citing_institutions": [
-{
-"label": "Harvard University",
-"count": 7
-},
-{
-"label": "Washington University in St. Louis",
-"count": 5
-},
-{
-"label": "University of Cambridge",
-"count": 4
-},
-{
-"label": "University of Michigan",
-"count": 4
-},
-{
-"label": "Karolinska Institutet",
-"count": 4
-}
-],
-"scite_supporting": 1,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.1038/nrd.2016.136"
 ]
 },
 {
@@ -23950,8 +23979,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -26196,14 +26226,15 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 103,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -31163,14 +31194,15 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "diamond",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 55,
 "event_count": 0,
 "event_data_status": "historical_archive",
@@ -33103,14 +33135,15 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 47,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -35610,14 +35643,15 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 31,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -36041,8 +36075,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -37456,6 +37491,7 @@ window.STORIES_DATA = [
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
+"OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
@@ -37741,7 +37777,7 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
 "OAPEN",
@@ -38411,15 +38447,16 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 22,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -38879,14 +38916,15 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 18,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -39170,6 +39208,7 @@ window.STORIES_DATA = [
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
+"OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
@@ -39309,14 +39348,15 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 17,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -39446,14 +39486,15 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 17,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -39586,14 +39627,15 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 17,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -40216,9 +40258,10 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -40354,13 +40397,15 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 16,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -40823,9 +40868,10 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -42065,13 +42111,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 14,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -43462,9 +43509,10 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -43611,9 +43659,10 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -43746,14 +43795,15 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 12,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -44324,15 +44374,16 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 11,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -45436,9 +45487,10 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -45801,8 +45853,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "OpenAlex/Crossref"
 ],
@@ -45937,6 +45990,7 @@ window.STORIES_DATA = [
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
+"OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
@@ -47284,13 +47338,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 9,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -47710,9 +47765,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -47852,15 +47908,16 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 8,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -48305,9 +48362,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -48444,8 +48502,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -48558,9 +48617,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -48690,15 +48750,16 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 7,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -50201,9 +50262,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -50340,13 +50402,15 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 6,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -50474,9 +50538,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -50607,14 +50672,16 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
+"OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 6,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -50842,13 +50909,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 6,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -52546,9 +52614,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -52669,9 +52738,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -52799,9 +52869,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -52950,6 +53021,7 @@ window.STORIES_DATA = [
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -53066,9 +53138,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -53314,14 +53387,15 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 5,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -54862,9 +54936,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -54975,9 +55050,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -55114,9 +55190,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -55253,8 +55330,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -55384,9 +55462,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -55504,9 +55583,10 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -55634,9 +55714,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -55725,9 +55806,10 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -55845,9 +55927,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -55987,6 +56070,7 @@ window.STORIES_DATA = [
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -56117,14 +56201,15 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 4,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -58523,9 +58608,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -58649,9 +58735,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -58753,9 +58840,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -58882,9 +58970,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -58988,9 +59077,10 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -59119,9 +59209,10 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -59238,9 +59329,10 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -59341,9 +59433,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -59467,6 +59560,7 @@ window.STORIES_DATA = [
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -59587,8 +59681,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "OpenAlex/Crossref"
 ],
@@ -62313,9 +62408,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -62422,6 +62518,7 @@ window.STORIES_DATA = [
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -62550,13 +62647,15 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 2,
 "event_count": 0,
 "event_data_status": "historical_archive",
@@ -62665,13 +62764,15 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 2,
 "event_count": 0,
 "event_data_status": "historical_archive",
@@ -62778,6 +62879,7 @@ window.STORIES_DATA = [
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -62881,13 +62983,15 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 2,
 "event_count": 0,
 "event_data_status": "historical_archive",
@@ -62988,9 +63092,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
@@ -63203,14 +63308,15 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 2,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -63615,8 +63721,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "OpenAlex/Crossref"
 ],
@@ -69464,9 +69571,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -69553,6 +69661,7 @@ window.STORIES_DATA = [
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -69668,9 +69777,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -69757,9 +69867,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -69867,9 +69978,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -69978,9 +70090,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -70087,9 +70200,10 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -70184,13 +70298,15 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -70289,13 +70405,15 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
 "event_data_status": "historical_archive",
@@ -70374,9 +70492,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -70480,9 +70599,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -70596,6 +70716,7 @@ window.STORIES_DATA = [
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -70696,9 +70817,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -70781,9 +70903,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -70892,13 +71015,15 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -70998,13 +71123,15 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -71200,9 +71327,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -71616,14 +71744,15 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -71899,14 +72028,15 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -72192,9 +72322,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -72276,14 +72407,15 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -72981,9 +73113,10 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -73144,13 +73277,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -73249,13 +73383,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -80510,13 +80645,14 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -80596,9 +80732,10 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -80678,9 +80815,10 @@ window.STORIES_DATA = [
 ],
 "roles": [],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -80767,13 +80905,15 @@ window.STORIES_DATA = [
 "Public Visibility & Knowledge Base"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "event_data_status": "historical_archive",
@@ -80850,9 +80990,10 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -80934,9 +81075,10 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -81022,8 +81164,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -81108,9 +81251,10 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -81189,9 +81333,10 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -81274,9 +81419,10 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -81366,9 +81512,10 @@ window.STORIES_DATA = [
 "Public Visibility & Knowledge Base"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -81540,13 +81687,15 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "event_data_status": "historical_archive",
@@ -81627,9 +81776,10 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -81713,9 +81863,10 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -81796,9 +81947,10 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -81882,13 +82034,15 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "event_data_status": "historical_archive",
@@ -81972,13 +82126,15 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -82055,9 +82211,10 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -82142,9 +82299,10 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -82237,9 +82395,10 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -82332,9 +82491,10 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -82420,8 +82580,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -82506,13 +82667,15 @@ window.STORIES_DATA = [
 ],
 "roles": [],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -82583,9 +82746,10 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -82673,9 +82837,10 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -82767,13 +82932,15 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "event_data_status": "historical_archive",
@@ -82854,9 +83021,10 @@ window.STORIES_DATA = [
 ],
 "roles": [],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -82939,13 +83107,15 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -83028,9 +83198,10 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -83115,9 +83286,10 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -83212,6 +83384,7 @@ window.STORIES_DATA = [
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -83299,9 +83472,10 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -83389,9 +83563,10 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -83479,6 +83654,7 @@ window.STORIES_DATA = [
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -83646,9 +83822,10 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -83738,13 +83915,15 @@ window.STORIES_DATA = [
 "Active Public Discourse"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "event_data_status": "historical_archive",
@@ -83819,9 +83998,10 @@ window.STORIES_DATA = [
 ],
 "roles": [],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -83898,14 +84078,15 @@ window.STORIES_DATA = [
 ],
 "roles": [],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "OAPEN",
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -83974,9 +84155,10 @@ window.STORIES_DATA = [
 ],
 "roles": [],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -84464,9 +84646,10 @@ window.STORIES_DATA = [
 ],
 "roles": [],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -84541,9 +84724,10 @@ window.STORIES_DATA = [
 ],
 "roles": [],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -86115,9 +86299,10 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_status": "gold",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
@@ -86210,13 +86395,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OAPEN",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -86284,8 +86470,9 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OpenAlex/Crossref",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "OpenAlex/Crossref"
 ],
 "oa_claimed_not_in_doab": false,
@@ -86870,12 +87057,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
+"DOAB",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
-"oa_claimed_not_in_doab": true,
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
@@ -87030,8 +87218,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OpenAlex/Crossref",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "OpenAlex/Crossref"
 ],
 "oa_claimed_not_in_doab": false,
@@ -89963,4 +90152,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
-window.STORIES_STATS = {"total": 683, "total_articles": 286, "total_books": 310, "total_data": 61, "total_software": 26, "total_oa": 616, "pct_oa": 90, "total_citations": 1384091, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 683, "total_articles": 286, "total_books": 310, "total_data": 61, "total_software": 26, "total_oa": 616, "pct_oa": 90, "total_citations": 1380258, "num_disciplines": 30};

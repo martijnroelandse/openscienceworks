@@ -823,7 +823,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10826,
+    "total_citations": 10742,
     "total_mentions": 11,
     "oa_count": 3,
     "year_range": "2012–2024",
@@ -1115,7 +1115,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10826,
+    "total_citations": 10742,
     "total_mentions": 11,
     "oa_count": 3,
     "year_range": "2012–2024",
@@ -1383,7 +1383,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10826,
+    "total_citations": 10742,
     "total_mentions": 11,
     "oa_count": 3,
     "year_range": "2012–2024",
@@ -6016,7 +6016,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10826,
+    "total_citations": 10742,
     "total_mentions": 11,
     "oa_count": 2,
     "year_range": "2012–2024",
@@ -6281,7 +6281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6297,7 +6297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6313,7 +6313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6329,7 +6329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6345,7 +6345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6361,7 +6361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6377,7 +6377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6393,7 +6393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6409,7 +6409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6425,7 +6425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6441,7 +6441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6457,7 +6457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6473,7 +6473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6489,7 +6489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6505,7 +6505,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6521,7 +6521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6537,7 +6537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6553,7 +6553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6569,7 +6569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6585,7 +6585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6601,7 +6601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6617,7 +6617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6633,7 +6633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6649,7 +6649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6665,7 +6665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6681,7 +6681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6697,7 +6697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6713,7 +6713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6729,7 +6729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6745,7 +6745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6761,7 +6761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6777,7 +6777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6793,7 +6793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6809,7 +6809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6825,7 +6825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6841,7 +6841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6857,7 +6857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6873,7 +6873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6889,7 +6889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6905,7 +6905,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6921,7 +6921,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6937,7 +6937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6953,7 +6953,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6969,7 +6969,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -6985,7 +6985,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7001,7 +7001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7017,7 +7017,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7033,7 +7033,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7049,7 +7049,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7065,7 +7065,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7081,7 +7081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7097,7 +7097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7129,7 +7129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7145,7 +7145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7161,7 +7161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7177,7 +7177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7193,7 +7193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7209,7 +7209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7225,7 +7225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7241,7 +7241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7257,7 +7257,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7273,7 +7273,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7289,7 +7289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7305,7 +7305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7321,7 +7321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7337,7 +7337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7369,7 +7369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7385,7 +7385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7401,7 +7401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7417,7 +7417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7433,7 +7433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7465,7 +7465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7481,7 +7481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7497,7 +7497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7513,7 +7513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7529,7 +7529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7545,7 +7545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7561,7 +7561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7577,7 +7577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7593,7 +7593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7609,7 +7609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7625,7 +7625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7641,7 +7641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7657,7 +7657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7673,7 +7673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7689,7 +7689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7705,7 +7705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7721,7 +7721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7737,7 +7737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7753,7 +7753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7769,7 +7769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7785,7 +7785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7801,7 +7801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7817,7 +7817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7833,7 +7833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7849,7 +7849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7865,7 +7865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7881,7 +7881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7897,7 +7897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7913,7 +7913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7929,7 +7929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7945,7 +7945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7961,7 +7961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -7977,7 +7977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8009,7 +8009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8025,7 +8025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8041,7 +8041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8073,7 +8073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8089,7 +8089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8105,7 +8105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8121,7 +8121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8137,7 +8137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8153,7 +8153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8169,7 +8169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8185,7 +8185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8201,7 +8201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8217,7 +8217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8233,7 +8233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8249,7 +8249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8265,7 +8265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8281,7 +8281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8297,7 +8297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8329,7 +8329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8345,7 +8345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8361,7 +8361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8377,7 +8377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8393,7 +8393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8409,7 +8409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8425,7 +8425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8441,7 +8441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8457,7 +8457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8473,7 +8473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8489,7 +8489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8505,7 +8505,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8521,7 +8521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8537,7 +8537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8553,7 +8553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8569,7 +8569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8585,7 +8585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8601,7 +8601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8617,7 +8617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8633,7 +8633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8649,7 +8649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8665,7 +8665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8681,7 +8681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8697,7 +8697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8713,7 +8713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8729,7 +8729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8745,7 +8745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8761,7 +8761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8777,7 +8777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8793,7 +8793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8809,7 +8809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8825,7 +8825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8841,7 +8841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8857,7 +8857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8873,7 +8873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8889,7 +8889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8905,7 +8905,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8921,7 +8921,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8937,7 +8937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8953,7 +8953,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8969,7 +8969,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -8985,7 +8985,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9001,7 +9001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9017,7 +9017,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9033,7 +9033,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9049,7 +9049,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9065,7 +9065,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9081,7 +9081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9113,7 +9113,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9129,7 +9129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9145,7 +9145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9161,7 +9161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9177,7 +9177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9193,7 +9193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9209,7 +9209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9225,7 +9225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9241,7 +9241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9257,7 +9257,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9273,7 +9273,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9289,7 +9289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9305,7 +9305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9321,7 +9321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9337,7 +9337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9353,7 +9353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9369,7 +9369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9385,7 +9385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9401,7 +9401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9417,7 +9417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9433,7 +9433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9449,7 +9449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9465,7 +9465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9481,7 +9481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9497,7 +9497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9513,7 +9513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9529,7 +9529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9545,7 +9545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9561,7 +9561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9577,7 +9577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9593,7 +9593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9609,7 +9609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9625,7 +9625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9641,7 +9641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9657,7 +9657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9673,7 +9673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9689,7 +9689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9705,7 +9705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9721,7 +9721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9737,7 +9737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9753,7 +9753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9769,7 +9769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9801,7 +9801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9817,7 +9817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9833,7 +9833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9849,7 +9849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9865,7 +9865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9881,7 +9881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9897,7 +9897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9913,7 +9913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9929,7 +9929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9945,7 +9945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9961,7 +9961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9977,7 +9977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -9993,7 +9993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10009,7 +10009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10041,7 +10041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10057,7 +10057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10073,7 +10073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10089,7 +10089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10105,7 +10105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10121,7 +10121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10137,7 +10137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10153,7 +10153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10169,7 +10169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10185,7 +10185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10201,7 +10201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10217,7 +10217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10233,7 +10233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10249,7 +10249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10265,7 +10265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10281,7 +10281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10297,7 +10297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10313,7 +10313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10329,7 +10329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10345,7 +10345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10361,7 +10361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10377,7 +10377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10393,7 +10393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10409,7 +10409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10425,7 +10425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10441,7 +10441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10457,7 +10457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10473,7 +10473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10489,7 +10489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10505,7 +10505,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10521,7 +10521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10537,7 +10537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10553,7 +10553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10569,7 +10569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10585,7 +10585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10617,7 +10617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10633,7 +10633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10649,7 +10649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10665,7 +10665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10681,7 +10681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10697,7 +10697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10713,7 +10713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10729,7 +10729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10745,7 +10745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10761,7 +10761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10793,7 +10793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10809,7 +10809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10825,7 +10825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10841,7 +10841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10857,7 +10857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10873,7 +10873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10889,7 +10889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10905,7 +10905,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10921,7 +10921,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10937,7 +10937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10953,7 +10953,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10969,7 +10969,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -10985,7 +10985,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -11001,7 +11001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -11017,7 +11017,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -11033,7 +11033,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -11049,7 +11049,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -11065,7 +11065,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -12489,7 +12489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -12697,7 +12697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -13609,7 +13609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 1488,
+    "total_citations": 1428,
     "total_mentions": 19,
     "oa_count": 1,
     "year_range": "2020",
@@ -14217,7 +14217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -14297,7 +14297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -14409,7 +14409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -15081,7 +15081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -15401,7 +15401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -16281,7 +16281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 165,
+    "total_citations": 167,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2016",
@@ -16601,7 +16601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -16793,7 +16793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -16809,7 +16809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -16825,7 +16825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -16841,7 +16841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -16857,7 +16857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -16873,7 +16873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -16889,7 +16889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -16905,7 +16905,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -16921,7 +16921,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -16937,7 +16937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -16953,7 +16953,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -16969,7 +16969,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -16985,7 +16985,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17001,7 +17001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17017,7 +17017,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17033,7 +17033,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17049,7 +17049,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17065,7 +17065,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17081,7 +17081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17097,7 +17097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17113,7 +17113,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17129,7 +17129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17145,7 +17145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17161,7 +17161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17177,7 +17177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17193,7 +17193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17209,7 +17209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17225,7 +17225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17241,7 +17241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17257,7 +17257,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17273,7 +17273,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17289,7 +17289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17305,7 +17305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17321,7 +17321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17337,7 +17337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17353,7 +17353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17369,7 +17369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17385,7 +17385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17401,7 +17401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17417,7 +17417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17433,7 +17433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17449,7 +17449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17465,7 +17465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17481,7 +17481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17497,7 +17497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17529,7 +17529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17545,7 +17545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17561,7 +17561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17577,7 +17577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17593,7 +17593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17609,7 +17609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17625,7 +17625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17641,7 +17641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17657,7 +17657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17673,7 +17673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17689,7 +17689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17705,7 +17705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17721,7 +17721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17737,7 +17737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17753,7 +17753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17769,7 +17769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17785,7 +17785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17801,7 +17801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17817,7 +17817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17833,7 +17833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17849,7 +17849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17865,7 +17865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17881,7 +17881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17897,7 +17897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17913,7 +17913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17929,7 +17929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17961,7 +17961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17977,7 +17977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -17993,7 +17993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -18009,7 +18009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -18025,7 +18025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -18041,7 +18041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -18057,7 +18057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -18073,7 +18073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -18089,7 +18089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -18105,7 +18105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -18137,7 +18137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -18185,7 +18185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -18201,7 +18201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -18217,7 +18217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -18233,7 +18233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -18249,7 +18249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -18265,7 +18265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -18313,7 +18313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -18393,7 +18393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -19033,7 +19033,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -20169,7 +20169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20185,7 +20185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20201,7 +20201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20217,7 +20217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20233,7 +20233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20249,7 +20249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20265,7 +20265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20281,7 +20281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20297,7 +20297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20329,7 +20329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20345,7 +20345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20361,7 +20361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20377,7 +20377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20393,7 +20393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20409,7 +20409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20425,7 +20425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20441,7 +20441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20457,7 +20457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20489,7 +20489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20505,7 +20505,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20521,7 +20521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20537,7 +20537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20553,7 +20553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20569,7 +20569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20585,7 +20585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20601,7 +20601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20617,7 +20617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20633,7 +20633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20649,7 +20649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20665,7 +20665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20681,7 +20681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20697,7 +20697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20713,7 +20713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20729,7 +20729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20745,7 +20745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20761,7 +20761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20777,7 +20777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20793,7 +20793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20809,7 +20809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20825,7 +20825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20841,7 +20841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20857,7 +20857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20873,7 +20873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20889,7 +20889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20905,7 +20905,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20921,7 +20921,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20937,7 +20937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20953,7 +20953,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20969,7 +20969,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -20985,7 +20985,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21001,7 +21001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21017,7 +21017,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21033,7 +21033,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21049,7 +21049,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21065,7 +21065,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21081,7 +21081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21097,7 +21097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21113,7 +21113,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21129,7 +21129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21145,7 +21145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21161,7 +21161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21177,7 +21177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21193,7 +21193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21209,7 +21209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21225,7 +21225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21241,7 +21241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21257,7 +21257,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21273,7 +21273,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21289,7 +21289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21305,7 +21305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21321,7 +21321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21337,7 +21337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21353,7 +21353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21369,7 +21369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21385,7 +21385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21401,7 +21401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21417,7 +21417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21433,7 +21433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21449,7 +21449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21481,7 +21481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21497,7 +21497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21513,7 +21513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21529,7 +21529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21545,7 +21545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21561,7 +21561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21577,7 +21577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21593,7 +21593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21609,7 +21609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21625,7 +21625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21641,7 +21641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21657,7 +21657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21673,7 +21673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21689,7 +21689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21705,7 +21705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21737,7 +21737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21769,7 +21769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21785,7 +21785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21801,7 +21801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21817,7 +21817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21833,7 +21833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21849,7 +21849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21865,7 +21865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21881,7 +21881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21897,7 +21897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21913,7 +21913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21929,7 +21929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21945,7 +21945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21961,7 +21961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21977,7 +21977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -21993,7 +21993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22009,7 +22009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22025,7 +22025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22041,7 +22041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22057,7 +22057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22073,7 +22073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22089,7 +22089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22105,7 +22105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22137,7 +22137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22153,7 +22153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22169,7 +22169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22217,7 +22217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22233,7 +22233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22249,7 +22249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22265,7 +22265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22281,7 +22281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22297,7 +22297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22313,7 +22313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22329,7 +22329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22345,7 +22345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22361,7 +22361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22377,7 +22377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22393,7 +22393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22409,7 +22409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22425,7 +22425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22441,7 +22441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22457,7 +22457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22473,7 +22473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22489,7 +22489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22505,7 +22505,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22521,7 +22521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22537,7 +22537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -22553,7 +22553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -23593,7 +23593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -24553,7 +24553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -24857,7 +24857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -25433,7 +25433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -26057,7 +26057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26073,7 +26073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26089,7 +26089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26105,7 +26105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26121,7 +26121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26137,7 +26137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26153,7 +26153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26169,7 +26169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26185,7 +26185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26201,7 +26201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26217,7 +26217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26233,7 +26233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26249,7 +26249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26265,7 +26265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26281,7 +26281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26297,7 +26297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26313,7 +26313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26329,7 +26329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26345,7 +26345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26361,7 +26361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26377,7 +26377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26393,7 +26393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26409,7 +26409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26425,7 +26425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26441,7 +26441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26457,7 +26457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26473,7 +26473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26489,7 +26489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26505,7 +26505,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26521,7 +26521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26537,7 +26537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26553,7 +26553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26569,7 +26569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26585,7 +26585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26601,7 +26601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26617,7 +26617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26633,7 +26633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26649,7 +26649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26665,7 +26665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26681,7 +26681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26697,7 +26697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26713,7 +26713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26729,7 +26729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26745,7 +26745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26761,7 +26761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26777,7 +26777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26793,7 +26793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26809,7 +26809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26825,7 +26825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26841,7 +26841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26857,7 +26857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26873,7 +26873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26889,7 +26889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26905,7 +26905,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26921,7 +26921,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26937,7 +26937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26953,7 +26953,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26969,7 +26969,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -26985,7 +26985,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27001,7 +27001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27017,7 +27017,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27033,7 +27033,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27049,7 +27049,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27065,7 +27065,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27081,7 +27081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27097,7 +27097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27113,7 +27113,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27129,7 +27129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27145,7 +27145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27161,7 +27161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27177,7 +27177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27193,7 +27193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27209,7 +27209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27225,7 +27225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27241,7 +27241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27257,7 +27257,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27273,7 +27273,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27289,7 +27289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27305,7 +27305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27321,7 +27321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27353,7 +27353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27369,7 +27369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27385,7 +27385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27401,7 +27401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27417,7 +27417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27433,7 +27433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27449,7 +27449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27465,7 +27465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27481,7 +27481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27497,7 +27497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27513,7 +27513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27529,7 +27529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27545,7 +27545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27561,7 +27561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27577,7 +27577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27593,7 +27593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27609,7 +27609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27625,7 +27625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27641,7 +27641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27657,7 +27657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27673,7 +27673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27689,7 +27689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27705,7 +27705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27721,7 +27721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27737,7 +27737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27753,7 +27753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27769,7 +27769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27785,7 +27785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27801,7 +27801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27817,7 +27817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27833,7 +27833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27849,7 +27849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27865,7 +27865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27881,7 +27881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27897,7 +27897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27913,7 +27913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27929,7 +27929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27945,7 +27945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27961,7 +27961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27977,7 +27977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -27993,7 +27993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28009,7 +28009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28025,7 +28025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28041,7 +28041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28057,7 +28057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28073,7 +28073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28089,7 +28089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28105,7 +28105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28121,7 +28121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28137,7 +28137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28153,7 +28153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28169,7 +28169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28185,7 +28185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28201,7 +28201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28217,7 +28217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28249,7 +28249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28265,7 +28265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28281,7 +28281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28297,7 +28297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28313,7 +28313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28329,7 +28329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28345,7 +28345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28361,7 +28361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -28521,7 +28521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -29433,7 +29433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -29801,7 +29801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -29865,7 +29865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -30265,7 +30265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -30841,7 +30841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31289,7 +31289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -31529,7 +31529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31545,7 +31545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31577,7 +31577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31593,7 +31593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31609,7 +31609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31625,7 +31625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31641,7 +31641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31657,7 +31657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31673,7 +31673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31689,7 +31689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31721,7 +31721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31737,7 +31737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31753,7 +31753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31769,7 +31769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31785,7 +31785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31801,7 +31801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31817,7 +31817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -31833,7 +31833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31849,7 +31849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31865,7 +31865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31881,7 +31881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31897,7 +31897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31913,7 +31913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31929,7 +31929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31945,7 +31945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31961,7 +31961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31977,7 +31977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -31993,7 +31993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32009,7 +32009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32025,7 +32025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32041,7 +32041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32057,7 +32057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32073,7 +32073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32089,7 +32089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32105,7 +32105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32121,7 +32121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32137,7 +32137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32153,7 +32153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32169,7 +32169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32185,7 +32185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32201,7 +32201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32217,7 +32217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32233,7 +32233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32249,7 +32249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32265,7 +32265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32281,7 +32281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32297,7 +32297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32313,7 +32313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32329,7 +32329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32345,7 +32345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32361,7 +32361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32377,7 +32377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32393,7 +32393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32409,7 +32409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32425,7 +32425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32441,7 +32441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32457,7 +32457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32489,7 +32489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32521,7 +32521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32537,7 +32537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32553,7 +32553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32569,7 +32569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32585,7 +32585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32601,7 +32601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32617,7 +32617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32633,7 +32633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32649,7 +32649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32665,7 +32665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32681,7 +32681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32697,7 +32697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32713,7 +32713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32729,7 +32729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32745,7 +32745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32761,7 +32761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32777,7 +32777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32793,7 +32793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32809,7 +32809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32825,7 +32825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32841,7 +32841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32857,7 +32857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32873,7 +32873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32889,7 +32889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32905,7 +32905,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32921,7 +32921,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32937,7 +32937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32953,7 +32953,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32969,7 +32969,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -32985,7 +32985,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33001,7 +33001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33017,7 +33017,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33033,7 +33033,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33049,7 +33049,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33065,7 +33065,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33081,7 +33081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33097,7 +33097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33113,7 +33113,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33129,7 +33129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33145,7 +33145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33161,7 +33161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33177,7 +33177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33193,7 +33193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33209,7 +33209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33225,7 +33225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33241,7 +33241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33289,7 +33289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33305,7 +33305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33321,7 +33321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33337,7 +33337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33353,7 +33353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33369,7 +33369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33385,7 +33385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33401,7 +33401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33417,7 +33417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -33609,7 +33609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -34169,7 +34169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -35353,7 +35353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35369,7 +35369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35385,7 +35385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35401,7 +35401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35417,7 +35417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35433,7 +35433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35449,7 +35449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35465,7 +35465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35481,7 +35481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35497,7 +35497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35513,7 +35513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35529,7 +35529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35545,7 +35545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35561,7 +35561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35577,7 +35577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35593,7 +35593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35609,7 +35609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35625,7 +35625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35641,7 +35641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35657,7 +35657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35673,7 +35673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35689,7 +35689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35705,7 +35705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35721,7 +35721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35737,7 +35737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35753,7 +35753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35769,7 +35769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35785,7 +35785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35801,7 +35801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35817,7 +35817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35833,7 +35833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35849,7 +35849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35865,7 +35865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35881,7 +35881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35913,7 +35913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35929,7 +35929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35945,7 +35945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35961,7 +35961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35977,7 +35977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -35993,7 +35993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36009,7 +36009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36025,7 +36025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36041,7 +36041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36057,7 +36057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36073,7 +36073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36089,7 +36089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36105,7 +36105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36121,7 +36121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36137,7 +36137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36153,7 +36153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36169,7 +36169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36185,7 +36185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36201,7 +36201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36217,7 +36217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36233,7 +36233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36249,7 +36249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36265,7 +36265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36281,7 +36281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36297,7 +36297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36313,7 +36313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36329,7 +36329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36345,7 +36345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36361,7 +36361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36377,7 +36377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36393,7 +36393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36409,7 +36409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36425,7 +36425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36441,7 +36441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36457,7 +36457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36473,7 +36473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36489,7 +36489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36521,7 +36521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36537,7 +36537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36553,7 +36553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36569,7 +36569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36585,7 +36585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36601,7 +36601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36617,7 +36617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36633,7 +36633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36649,7 +36649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36665,7 +36665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36681,7 +36681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36697,7 +36697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36713,7 +36713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36729,7 +36729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36745,7 +36745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36761,7 +36761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36777,7 +36777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36793,7 +36793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36809,7 +36809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36825,7 +36825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36841,7 +36841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36857,7 +36857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36873,7 +36873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36889,7 +36889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36905,7 +36905,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36921,7 +36921,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -36937,7 +36937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -37081,7 +37081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -37577,7 +37577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38249,7 +38249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38265,7 +38265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38281,7 +38281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38297,7 +38297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38313,7 +38313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38329,7 +38329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38345,7 +38345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38361,7 +38361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38377,7 +38377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38393,7 +38393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38409,7 +38409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38425,7 +38425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38441,7 +38441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38457,7 +38457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38473,7 +38473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38489,7 +38489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38505,7 +38505,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38521,7 +38521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38537,7 +38537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38553,7 +38553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38569,7 +38569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38585,7 +38585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38601,7 +38601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38617,7 +38617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38633,7 +38633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38665,7 +38665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38681,7 +38681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38697,7 +38697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38713,7 +38713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38729,7 +38729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38745,7 +38745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38761,7 +38761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38777,7 +38777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38793,7 +38793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38809,7 +38809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38825,7 +38825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38841,7 +38841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38857,7 +38857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38873,7 +38873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38889,7 +38889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38905,7 +38905,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38921,7 +38921,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38937,7 +38937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38953,7 +38953,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38969,7 +38969,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -38985,7 +38985,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39001,7 +39001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39017,7 +39017,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39033,7 +39033,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39049,7 +39049,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39065,7 +39065,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39081,7 +39081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39097,7 +39097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39113,7 +39113,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39129,7 +39129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39145,7 +39145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39161,7 +39161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39177,7 +39177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39193,7 +39193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39209,7 +39209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39225,7 +39225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39241,7 +39241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39257,7 +39257,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39273,7 +39273,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39289,7 +39289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39305,7 +39305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39321,7 +39321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39337,7 +39337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39353,7 +39353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39369,7 +39369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39385,7 +39385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39401,7 +39401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39417,7 +39417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39449,7 +39449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39465,7 +39465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39481,7 +39481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39497,7 +39497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39513,7 +39513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39529,7 +39529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39545,7 +39545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39561,7 +39561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39577,7 +39577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39593,7 +39593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39609,7 +39609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39625,7 +39625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39641,7 +39641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39657,7 +39657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39673,7 +39673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39689,7 +39689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39705,7 +39705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39721,7 +39721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39737,7 +39737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39753,7 +39753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39769,7 +39769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39785,7 +39785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39801,7 +39801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39817,7 +39817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39833,7 +39833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39849,7 +39849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39865,7 +39865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39881,7 +39881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39897,7 +39897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39913,7 +39913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39929,7 +39929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39945,7 +39945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39961,7 +39961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39977,7 +39977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -39993,7 +39993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40009,7 +40009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40025,7 +40025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40041,7 +40041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40057,7 +40057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40073,7 +40073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40089,7 +40089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40105,7 +40105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40121,7 +40121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40137,7 +40137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40153,7 +40153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40169,7 +40169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40185,7 +40185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40201,7 +40201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40217,7 +40217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40233,7 +40233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40249,7 +40249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40265,7 +40265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40281,7 +40281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40297,7 +40297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40313,7 +40313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -40329,7 +40329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -41097,7 +41097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -41705,7 +41705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -42137,7 +42137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42153,7 +42153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42169,7 +42169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42185,7 +42185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42201,7 +42201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42217,7 +42217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42233,7 +42233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42249,7 +42249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42281,7 +42281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42297,7 +42297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42313,7 +42313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42329,7 +42329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42345,7 +42345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42361,7 +42361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42377,7 +42377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42393,7 +42393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42409,7 +42409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42425,7 +42425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42441,7 +42441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42457,7 +42457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42489,7 +42489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42505,7 +42505,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42521,7 +42521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42537,7 +42537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42553,7 +42553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42569,7 +42569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42585,7 +42585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42601,7 +42601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42617,7 +42617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42633,7 +42633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42649,7 +42649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42665,7 +42665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42681,7 +42681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42697,7 +42697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42713,7 +42713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42729,7 +42729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42745,7 +42745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42761,7 +42761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42777,7 +42777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42793,7 +42793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42809,7 +42809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42825,7 +42825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42841,7 +42841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42857,7 +42857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42873,7 +42873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42889,7 +42889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42905,7 +42905,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42921,7 +42921,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42937,7 +42937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42953,7 +42953,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -42969,7 +42969,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43001,7 +43001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43017,7 +43017,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43033,7 +43033,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43049,7 +43049,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43065,7 +43065,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43081,7 +43081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43097,7 +43097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43113,7 +43113,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43129,7 +43129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43145,7 +43145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43161,7 +43161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43177,7 +43177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43193,7 +43193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43209,7 +43209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43225,7 +43225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43241,7 +43241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43257,7 +43257,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43273,7 +43273,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43289,7 +43289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43305,7 +43305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43321,7 +43321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43337,7 +43337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43353,7 +43353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43385,7 +43385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43401,7 +43401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43417,7 +43417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43433,7 +43433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43449,7 +43449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -43465,7 +43465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -44953,7 +44953,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45113,7 +45113,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45513,7 +45513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45529,7 +45529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45545,7 +45545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45561,7 +45561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45577,7 +45577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45593,7 +45593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45609,7 +45609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45625,7 +45625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45641,7 +45641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45657,7 +45657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45673,7 +45673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45689,7 +45689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45705,7 +45705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45721,7 +45721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45737,7 +45737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45753,7 +45753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45769,7 +45769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45785,7 +45785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45801,7 +45801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45817,7 +45817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45833,7 +45833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45849,7 +45849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45865,7 +45865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45881,7 +45881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45897,7 +45897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45913,7 +45913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45929,7 +45929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45945,7 +45945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45961,7 +45961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45977,7 +45977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -45993,7 +45993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46009,7 +46009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46025,7 +46025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46041,7 +46041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46057,7 +46057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46073,7 +46073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46089,7 +46089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46105,7 +46105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46121,7 +46121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46137,7 +46137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46153,7 +46153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46169,7 +46169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46185,7 +46185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46201,7 +46201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46217,7 +46217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46233,7 +46233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46249,7 +46249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46265,7 +46265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46281,7 +46281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46297,7 +46297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46313,7 +46313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46329,7 +46329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46345,7 +46345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46361,7 +46361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46377,7 +46377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46393,7 +46393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46409,7 +46409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46425,7 +46425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -46873,7 +46873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47417,7 +47417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47449,7 +47449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47465,7 +47465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47481,7 +47481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47497,7 +47497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47513,7 +47513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47529,7 +47529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47545,7 +47545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47561,7 +47561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47577,7 +47577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47593,7 +47593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47609,7 +47609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47625,7 +47625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47641,7 +47641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47657,7 +47657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47673,7 +47673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47689,7 +47689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47705,7 +47705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47721,7 +47721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47737,7 +47737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47753,7 +47753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47769,7 +47769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47785,7 +47785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47801,7 +47801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47817,7 +47817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47833,7 +47833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47849,7 +47849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47865,7 +47865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47881,7 +47881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47897,7 +47897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47913,7 +47913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47929,7 +47929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47945,7 +47945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47961,7 +47961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47977,7 +47977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -47993,7 +47993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48009,7 +48009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48025,7 +48025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48041,7 +48041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48057,7 +48057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48073,7 +48073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48089,7 +48089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48105,7 +48105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48121,7 +48121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48137,7 +48137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48153,7 +48153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48169,7 +48169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48185,7 +48185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48201,7 +48201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48217,7 +48217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48233,7 +48233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48249,7 +48249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48265,7 +48265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48281,7 +48281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48297,7 +48297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48313,7 +48313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48329,7 +48329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48345,7 +48345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48361,7 +48361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48377,7 +48377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48393,7 +48393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48409,7 +48409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48425,7 +48425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48441,7 +48441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48457,7 +48457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48473,7 +48473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48489,7 +48489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48505,7 +48505,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48521,7 +48521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48537,7 +48537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48569,7 +48569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48585,7 +48585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48601,7 +48601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48617,7 +48617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48633,7 +48633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48649,7 +48649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48665,7 +48665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48681,7 +48681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48697,7 +48697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48713,7 +48713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48729,7 +48729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48745,7 +48745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48761,7 +48761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48777,7 +48777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48793,7 +48793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48809,7 +48809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48825,7 +48825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48841,7 +48841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48857,7 +48857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48873,7 +48873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48889,7 +48889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48921,7 +48921,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48937,7 +48937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48953,7 +48953,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48969,7 +48969,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -48985,7 +48985,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49001,7 +49001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49017,7 +49017,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49033,7 +49033,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49049,7 +49049,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49065,7 +49065,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49081,7 +49081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49097,7 +49097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49113,7 +49113,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49145,7 +49145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49161,7 +49161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49177,7 +49177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49193,7 +49193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49209,7 +49209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49225,7 +49225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49241,7 +49241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49257,7 +49257,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49273,7 +49273,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49289,7 +49289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49305,7 +49305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49321,7 +49321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49337,7 +49337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49353,7 +49353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49369,7 +49369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49385,7 +49385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49401,7 +49401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49417,7 +49417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49433,7 +49433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49449,7 +49449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49465,7 +49465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49481,7 +49481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49497,7 +49497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49513,7 +49513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49529,7 +49529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49545,7 +49545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49561,7 +49561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49577,7 +49577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49593,7 +49593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49609,7 +49609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49625,7 +49625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49657,7 +49657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49673,7 +49673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49689,7 +49689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49705,7 +49705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49721,7 +49721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49737,7 +49737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49753,7 +49753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49769,7 +49769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49785,7 +49785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49801,7 +49801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49817,7 +49817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49833,7 +49833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49849,7 +49849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49865,7 +49865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49881,7 +49881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49897,7 +49897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49913,7 +49913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49929,7 +49929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49945,7 +49945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49961,7 +49961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49977,7 +49977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -49993,7 +49993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50009,7 +50009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50025,7 +50025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50041,7 +50041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50057,7 +50057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50073,7 +50073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50089,7 +50089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50105,7 +50105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50121,7 +50121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50137,7 +50137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50153,7 +50153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50169,7 +50169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50185,7 +50185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50201,7 +50201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50217,7 +50217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50233,7 +50233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50249,7 +50249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50265,7 +50265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50281,7 +50281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50297,7 +50297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50313,7 +50313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50329,7 +50329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50345,7 +50345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50361,7 +50361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50377,7 +50377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50393,7 +50393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50409,7 +50409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50425,7 +50425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50441,7 +50441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50457,7 +50457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50473,7 +50473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50489,7 +50489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50505,7 +50505,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50521,7 +50521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50537,7 +50537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50553,7 +50553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50569,7 +50569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50585,7 +50585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50601,7 +50601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50617,7 +50617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50633,7 +50633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50649,7 +50649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50665,7 +50665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50697,7 +50697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50713,7 +50713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50729,7 +50729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50745,7 +50745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50761,7 +50761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50777,7 +50777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50793,7 +50793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50809,7 +50809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50825,7 +50825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50841,7 +50841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50857,7 +50857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50873,7 +50873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50889,7 +50889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50905,7 +50905,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50921,7 +50921,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50937,7 +50937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50953,7 +50953,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50969,7 +50969,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -50985,7 +50985,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51001,7 +51001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51017,7 +51017,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51033,7 +51033,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51049,7 +51049,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51065,7 +51065,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51081,7 +51081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51097,7 +51097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51113,7 +51113,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51129,7 +51129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51145,7 +51145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51161,7 +51161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51177,7 +51177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51193,7 +51193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51209,7 +51209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51225,7 +51225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51241,7 +51241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51257,7 +51257,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51273,7 +51273,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51305,7 +51305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51321,7 +51321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -51337,7 +51337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -54681,7 +54681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -55001,7 +55001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -55017,7 +55017,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -55241,7 +55241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -55321,7 +55321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -55913,7 +55913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -57305,7 +57305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57321,7 +57321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57337,7 +57337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57353,7 +57353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57369,7 +57369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57385,7 +57385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57401,7 +57401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57417,7 +57417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57433,7 +57433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57465,7 +57465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57481,7 +57481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57497,7 +57497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57513,7 +57513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57529,7 +57529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57545,7 +57545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57561,7 +57561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57577,7 +57577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57593,7 +57593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57609,7 +57609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57625,7 +57625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57641,7 +57641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57657,7 +57657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57673,7 +57673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57689,7 +57689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57705,7 +57705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57721,7 +57721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57737,7 +57737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57753,7 +57753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57769,7 +57769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57785,7 +57785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57801,7 +57801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57817,7 +57817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57833,7 +57833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57849,7 +57849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57865,7 +57865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57881,7 +57881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57913,7 +57913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57929,7 +57929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57945,7 +57945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57961,7 +57961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57977,7 +57977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -57993,7 +57993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58009,7 +58009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58025,7 +58025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58041,7 +58041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58057,7 +58057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58073,7 +58073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58089,7 +58089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58105,7 +58105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58121,7 +58121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58137,7 +58137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58153,7 +58153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58169,7 +58169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58185,7 +58185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58201,7 +58201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58217,7 +58217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58233,7 +58233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58249,7 +58249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58265,7 +58265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58281,7 +58281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58297,7 +58297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58313,7 +58313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58329,7 +58329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58345,7 +58345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58361,7 +58361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58377,7 +58377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58393,7 +58393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58409,7 +58409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58425,7 +58425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58441,7 +58441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58457,7 +58457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58473,7 +58473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58489,7 +58489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58521,7 +58521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58537,7 +58537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58553,7 +58553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58569,7 +58569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58585,7 +58585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58601,7 +58601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58617,7 +58617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58633,7 +58633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58649,7 +58649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58665,7 +58665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58681,7 +58681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58697,7 +58697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58713,7 +58713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58729,7 +58729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58745,7 +58745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58761,7 +58761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58777,7 +58777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58793,7 +58793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58809,7 +58809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58825,7 +58825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58841,7 +58841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58857,7 +58857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58873,7 +58873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58889,7 +58889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58905,7 +58905,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58921,7 +58921,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -58937,7 +58937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -59673,7 +59673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -60633,7 +60633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -61209,7 +61209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61225,7 +61225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61241,7 +61241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61257,7 +61257,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61273,7 +61273,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61289,7 +61289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61305,7 +61305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61321,7 +61321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61337,7 +61337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61353,7 +61353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61369,7 +61369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61385,7 +61385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61401,7 +61401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61417,7 +61417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61433,7 +61433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61449,7 +61449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61465,7 +61465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61481,7 +61481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61497,7 +61497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61513,7 +61513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61529,7 +61529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61545,7 +61545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61561,7 +61561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61577,7 +61577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61593,7 +61593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61609,7 +61609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61625,7 +61625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61641,7 +61641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61673,7 +61673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61689,7 +61689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61705,7 +61705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61721,7 +61721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61737,7 +61737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61753,7 +61753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61769,7 +61769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61785,7 +61785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61801,7 +61801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61817,7 +61817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61833,7 +61833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61849,7 +61849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61865,7 +61865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61881,7 +61881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61897,7 +61897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61913,7 +61913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61929,7 +61929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61945,7 +61945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61961,7 +61961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61977,7 +61977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -61993,7 +61993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62009,7 +62009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62025,7 +62025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62041,7 +62041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62057,7 +62057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62089,7 +62089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62105,7 +62105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62121,7 +62121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62137,7 +62137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62153,7 +62153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62169,7 +62169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62185,7 +62185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62201,7 +62201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62217,7 +62217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62233,7 +62233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62249,7 +62249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62265,7 +62265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62281,7 +62281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62297,7 +62297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62313,7 +62313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62329,7 +62329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62345,7 +62345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62361,7 +62361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62377,7 +62377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62409,7 +62409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62425,7 +62425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62441,7 +62441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62457,7 +62457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62473,7 +62473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62489,7 +62489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62505,7 +62505,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62521,7 +62521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62537,7 +62537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62553,7 +62553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62585,7 +62585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62601,7 +62601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62617,7 +62617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62633,7 +62633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62649,7 +62649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62665,7 +62665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62681,7 +62681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62697,7 +62697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62713,7 +62713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62729,7 +62729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62745,7 +62745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62761,7 +62761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62777,7 +62777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62793,7 +62793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62809,7 +62809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62825,7 +62825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -62905,7 +62905,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -64617,7 +64617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65433,7 +65433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65449,7 +65449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65465,7 +65465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65481,7 +65481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65497,7 +65497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65513,7 +65513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65529,7 +65529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65545,7 +65545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65561,7 +65561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65577,7 +65577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65593,7 +65593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65609,7 +65609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65625,7 +65625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65641,7 +65641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65657,7 +65657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65673,7 +65673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65689,7 +65689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65705,7 +65705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65721,7 +65721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65737,7 +65737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65753,7 +65753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65769,7 +65769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65785,7 +65785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65801,7 +65801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65817,7 +65817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65833,7 +65833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65849,7 +65849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65865,7 +65865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65881,7 +65881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65897,7 +65897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65913,7 +65913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65929,7 +65929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65945,7 +65945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65961,7 +65961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65977,7 +65977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -65993,7 +65993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66009,7 +66009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66025,7 +66025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66041,7 +66041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66057,7 +66057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66073,7 +66073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66089,7 +66089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66105,7 +66105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66121,7 +66121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66137,7 +66137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66153,7 +66153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66169,7 +66169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66185,7 +66185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66201,7 +66201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66217,7 +66217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66233,7 +66233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66265,7 +66265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66281,7 +66281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66297,7 +66297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66313,7 +66313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66329,7 +66329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66345,7 +66345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66361,7 +66361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66377,7 +66377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66393,7 +66393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66409,7 +66409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66425,7 +66425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66441,7 +66441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66457,7 +66457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66473,7 +66473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66489,7 +66489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66505,7 +66505,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66521,7 +66521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66537,7 +66537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66553,7 +66553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66569,7 +66569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66585,7 +66585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66617,7 +66617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66633,7 +66633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66649,7 +66649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66665,7 +66665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66681,7 +66681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66697,7 +66697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66713,7 +66713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66729,7 +66729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66745,7 +66745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66761,7 +66761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66777,7 +66777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66793,7 +66793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66809,7 +66809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66825,7 +66825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66841,7 +66841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66857,7 +66857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66873,7 +66873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66889,7 +66889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66905,7 +66905,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66921,7 +66921,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66937,7 +66937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66953,7 +66953,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66969,7 +66969,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -66985,7 +66985,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67001,7 +67001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67017,7 +67017,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67033,7 +67033,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67049,7 +67049,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67065,7 +67065,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67081,7 +67081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67097,7 +67097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67113,7 +67113,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67129,7 +67129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67145,7 +67145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67161,7 +67161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67177,7 +67177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67193,7 +67193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67209,7 +67209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67225,7 +67225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67241,7 +67241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67257,7 +67257,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67273,7 +67273,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67289,7 +67289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67305,7 +67305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67321,7 +67321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67337,7 +67337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67353,7 +67353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67369,7 +67369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67385,7 +67385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67401,7 +67401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67417,7 +67417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67433,7 +67433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67449,7 +67449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67465,7 +67465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67481,7 +67481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67497,7 +67497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67513,7 +67513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67529,7 +67529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67545,7 +67545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67561,7 +67561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67577,7 +67577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67593,7 +67593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67609,7 +67609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67625,7 +67625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67641,7 +67641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67657,7 +67657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67673,7 +67673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67689,7 +67689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67705,7 +67705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67721,7 +67721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67737,7 +67737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67753,7 +67753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67769,7 +67769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67785,7 +67785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67801,7 +67801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67817,7 +67817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67833,7 +67833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67849,7 +67849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67865,7 +67865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67881,7 +67881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67897,7 +67897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67913,7 +67913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67929,7 +67929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67945,7 +67945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67961,7 +67961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67977,7 +67977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -67993,7 +67993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68009,7 +68009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68025,7 +68025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68041,7 +68041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68057,7 +68057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68089,7 +68089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68105,7 +68105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68121,7 +68121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68137,7 +68137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68153,7 +68153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68169,7 +68169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68185,7 +68185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68201,7 +68201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68217,7 +68217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68233,7 +68233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68249,7 +68249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68265,7 +68265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68281,7 +68281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68297,7 +68297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68313,7 +68313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68329,7 +68329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68345,7 +68345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68361,7 +68361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68393,7 +68393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68409,7 +68409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68425,7 +68425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68457,7 +68457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68473,7 +68473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68489,7 +68489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68521,7 +68521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68537,7 +68537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68553,7 +68553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68569,7 +68569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68585,7 +68585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68601,7 +68601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68617,7 +68617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68633,7 +68633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68649,7 +68649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68665,7 +68665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68681,7 +68681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68697,7 +68697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68713,7 +68713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68729,7 +68729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68745,7 +68745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68761,7 +68761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68777,7 +68777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68793,7 +68793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68809,7 +68809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68825,7 +68825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68841,7 +68841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68873,7 +68873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68889,7 +68889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68905,7 +68905,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68921,7 +68921,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68937,7 +68937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68953,7 +68953,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68969,7 +68969,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -68985,7 +68985,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69001,7 +69001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69017,7 +69017,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69033,7 +69033,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69049,7 +69049,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69065,7 +69065,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69081,7 +69081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69097,7 +69097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69113,7 +69113,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69129,7 +69129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69145,7 +69145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69161,7 +69161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69177,7 +69177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69193,7 +69193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69209,7 +69209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69225,7 +69225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69241,7 +69241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69257,7 +69257,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69273,7 +69273,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69289,7 +69289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69305,7 +69305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69321,7 +69321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69337,7 +69337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69353,7 +69353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69385,7 +69385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69401,7 +69401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69417,7 +69417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69433,7 +69433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69449,7 +69449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69465,7 +69465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69481,7 +69481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69497,7 +69497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69513,7 +69513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69529,7 +69529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69545,7 +69545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69561,7 +69561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69577,7 +69577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69593,7 +69593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69609,7 +69609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69625,7 +69625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69641,7 +69641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69657,7 +69657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69673,7 +69673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69689,7 +69689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69705,7 +69705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69721,7 +69721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69737,7 +69737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69753,7 +69753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69769,7 +69769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69785,7 +69785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69801,7 +69801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69817,7 +69817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69833,7 +69833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69849,7 +69849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69865,7 +69865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69881,7 +69881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69897,7 +69897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69913,7 +69913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69929,7 +69929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69945,7 +69945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69961,7 +69961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69977,7 +69977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -69993,7 +69993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70009,7 +70009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70025,7 +70025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70041,7 +70041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70057,7 +70057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70073,7 +70073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70089,7 +70089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70105,7 +70105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70121,7 +70121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70137,7 +70137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70153,7 +70153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70169,7 +70169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70185,7 +70185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70201,7 +70201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70217,7 +70217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70233,7 +70233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70249,7 +70249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70265,7 +70265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70281,7 +70281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70297,7 +70297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70313,7 +70313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70329,7 +70329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70345,7 +70345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70361,7 +70361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70377,7 +70377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70393,7 +70393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70409,7 +70409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70425,7 +70425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70441,7 +70441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70457,7 +70457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70473,7 +70473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70489,7 +70489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70521,7 +70521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70553,7 +70553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -70569,7 +70569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -71001,7 +71001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 1488,
+    "total_citations": 1428,
     "total_mentions": 19,
     "oa_count": 1,
     "year_range": "2020",
@@ -73097,7 +73097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -75129,7 +75129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -75481,7 +75481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -75529,7 +75529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -76553,7 +76553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -76953,7 +76953,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -76969,7 +76969,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -76985,7 +76985,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77001,7 +77001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77017,7 +77017,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77033,7 +77033,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77049,7 +77049,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77065,7 +77065,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77081,7 +77081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77097,7 +77097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77113,7 +77113,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77129,7 +77129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77145,7 +77145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77161,7 +77161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77177,7 +77177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77193,7 +77193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77209,7 +77209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77225,7 +77225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77241,7 +77241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77257,7 +77257,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77273,7 +77273,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77289,7 +77289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77305,7 +77305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77321,7 +77321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77337,7 +77337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77353,7 +77353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77369,7 +77369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77385,7 +77385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77401,7 +77401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77433,7 +77433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77449,7 +77449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77465,7 +77465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77481,7 +77481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77497,7 +77497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77513,7 +77513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77529,7 +77529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77545,7 +77545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77561,7 +77561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77577,7 +77577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77593,7 +77593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77609,7 +77609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77625,7 +77625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77641,7 +77641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77657,7 +77657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77673,7 +77673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77689,7 +77689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77705,7 +77705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77721,7 +77721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77737,7 +77737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77753,7 +77753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77769,7 +77769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77785,7 +77785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77801,7 +77801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77817,7 +77817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77833,7 +77833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77849,7 +77849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77865,7 +77865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77881,7 +77881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77897,7 +77897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77913,7 +77913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77929,7 +77929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77945,7 +77945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77961,7 +77961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77977,7 +77977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -77993,7 +77993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -79929,7 +79929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -79945,7 +79945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -79961,7 +79961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -79977,7 +79977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -79993,7 +79993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80009,7 +80009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80025,7 +80025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80041,7 +80041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80057,7 +80057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80073,7 +80073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80089,7 +80089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80105,7 +80105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80121,7 +80121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80137,7 +80137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80153,7 +80153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80169,7 +80169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80185,7 +80185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80201,7 +80201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80217,7 +80217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80233,7 +80233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80249,7 +80249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80265,7 +80265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80281,7 +80281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80297,7 +80297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80313,7 +80313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80329,7 +80329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80345,7 +80345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80361,7 +80361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80377,7 +80377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80393,7 +80393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80409,7 +80409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80425,7 +80425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80441,7 +80441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80457,7 +80457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80473,7 +80473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80617,7 +80617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -80665,7 +80665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -80937,7 +80937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -81081,7 +81081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81097,7 +81097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81113,7 +81113,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81129,7 +81129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81145,7 +81145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81161,7 +81161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81177,7 +81177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81193,7 +81193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81209,7 +81209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81225,7 +81225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81241,7 +81241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81257,7 +81257,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81273,7 +81273,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81289,7 +81289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81305,7 +81305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81337,7 +81337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81353,7 +81353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81369,7 +81369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81385,7 +81385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81401,7 +81401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81417,7 +81417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81433,7 +81433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81449,7 +81449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81465,7 +81465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81481,7 +81481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81497,7 +81497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81513,7 +81513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81545,7 +81545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81561,7 +81561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81577,7 +81577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81593,7 +81593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81609,7 +81609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81625,7 +81625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81641,7 +81641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81657,7 +81657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81673,7 +81673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81689,7 +81689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81705,7 +81705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81721,7 +81721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81737,7 +81737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81753,7 +81753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81769,7 +81769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81785,7 +81785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81801,7 +81801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81817,7 +81817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81833,7 +81833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81849,7 +81849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81865,7 +81865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81881,7 +81881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81897,7 +81897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81913,7 +81913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81929,7 +81929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81945,7 +81945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81961,7 +81961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81977,7 +81977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -81993,7 +81993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82009,7 +82009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82025,7 +82025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82041,7 +82041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82057,7 +82057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82073,7 +82073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82089,7 +82089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82105,7 +82105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82121,7 +82121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82137,7 +82137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82153,7 +82153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82169,7 +82169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82185,7 +82185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82201,7 +82201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82217,7 +82217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82233,7 +82233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82249,7 +82249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82265,7 +82265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82281,7 +82281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82297,7 +82297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82313,7 +82313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82329,7 +82329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82345,7 +82345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82361,7 +82361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82377,7 +82377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82393,7 +82393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82409,7 +82409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82425,7 +82425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82441,7 +82441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82457,7 +82457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82473,7 +82473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82489,7 +82489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82505,7 +82505,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82521,7 +82521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82537,7 +82537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82553,7 +82553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82569,7 +82569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82585,7 +82585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82601,7 +82601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82617,7 +82617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82633,7 +82633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82649,7 +82649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82665,7 +82665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82681,7 +82681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82697,7 +82697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82713,7 +82713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82729,7 +82729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82745,7 +82745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82761,7 +82761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82777,7 +82777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82793,7 +82793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82809,7 +82809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82825,7 +82825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82841,7 +82841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82857,7 +82857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82873,7 +82873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82889,7 +82889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82905,7 +82905,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82921,7 +82921,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82937,7 +82937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82953,7 +82953,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82969,7 +82969,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -82985,7 +82985,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83001,7 +83001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83017,7 +83017,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83033,7 +83033,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83049,7 +83049,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83065,7 +83065,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83081,7 +83081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83097,7 +83097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83113,7 +83113,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83129,7 +83129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83145,7 +83145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83161,7 +83161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83177,7 +83177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83193,7 +83193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83209,7 +83209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83225,7 +83225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83241,7 +83241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83257,7 +83257,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83289,7 +83289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83305,7 +83305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83321,7 +83321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83337,7 +83337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83353,7 +83353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83369,7 +83369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83385,7 +83385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83401,7 +83401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -83961,7 +83961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -83993,7 +83993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -84409,7 +84409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -84777,7 +84777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -84793,7 +84793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -84809,7 +84809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -84825,7 +84825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -84857,7 +84857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -85465,7 +85465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -85561,7 +85561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -85593,7 +85593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -85609,7 +85609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -85881,7 +85881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -85897,7 +85897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -85913,7 +85913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -85929,7 +85929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -85945,7 +85945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -85961,7 +85961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -85977,7 +85977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -85993,7 +85993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86041,7 +86041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86057,7 +86057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86073,7 +86073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86105,7 +86105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86121,7 +86121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86137,7 +86137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86153,7 +86153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86169,7 +86169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86185,7 +86185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86201,7 +86201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86217,7 +86217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86233,7 +86233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86249,7 +86249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86265,7 +86265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86281,7 +86281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86297,7 +86297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86313,7 +86313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86329,7 +86329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86345,7 +86345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86361,7 +86361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86377,7 +86377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86393,7 +86393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86409,7 +86409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86425,7 +86425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86441,7 +86441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86457,7 +86457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86473,7 +86473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86489,7 +86489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86505,7 +86505,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86521,7 +86521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86537,7 +86537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86553,7 +86553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86569,7 +86569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86585,7 +86585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86601,7 +86601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86617,7 +86617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86633,7 +86633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86649,7 +86649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86665,7 +86665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86681,7 +86681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86697,7 +86697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86713,7 +86713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86729,7 +86729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86745,7 +86745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86761,7 +86761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86777,7 +86777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86793,7 +86793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86809,7 +86809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86825,7 +86825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86841,7 +86841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86857,7 +86857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86873,7 +86873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86889,7 +86889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86905,7 +86905,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86921,7 +86921,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86937,7 +86937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86953,7 +86953,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86969,7 +86969,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -86985,7 +86985,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87001,7 +87001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87017,7 +87017,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87033,7 +87033,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87049,7 +87049,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87065,7 +87065,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87081,7 +87081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87097,7 +87097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87113,7 +87113,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87129,7 +87129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87145,7 +87145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87161,7 +87161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87177,7 +87177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87193,7 +87193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87209,7 +87209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87225,7 +87225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87241,7 +87241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87257,7 +87257,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87273,7 +87273,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87289,7 +87289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87305,7 +87305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87321,7 +87321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87337,7 +87337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87353,7 +87353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87369,7 +87369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87385,7 +87385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87401,7 +87401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87417,7 +87417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87433,7 +87433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87449,7 +87449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87465,7 +87465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87481,7 +87481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87497,7 +87497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87513,7 +87513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87529,7 +87529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87545,7 +87545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87561,7 +87561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87577,7 +87577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87593,7 +87593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87609,7 +87609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87625,7 +87625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87641,7 +87641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87657,7 +87657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87673,7 +87673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87689,7 +87689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87705,7 +87705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87721,7 +87721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87737,7 +87737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87753,7 +87753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87769,7 +87769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87785,7 +87785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87801,7 +87801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87817,7 +87817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87833,7 +87833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87849,7 +87849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87865,7 +87865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87881,7 +87881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87897,7 +87897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87913,7 +87913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87929,7 +87929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87945,7 +87945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87961,7 +87961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87977,7 +87977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -87993,7 +87993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -88009,7 +88009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -88025,7 +88025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -88041,7 +88041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -88057,7 +88057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -88073,7 +88073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -88089,7 +88089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -88105,7 +88105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -88121,7 +88121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -88137,7 +88137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -89241,7 +89241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -89305,7 +89305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -89561,7 +89561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -89993,7 +89993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -90889,7 +90889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -91129,7 +91129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91145,7 +91145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91161,7 +91161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91177,7 +91177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91193,7 +91193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91209,7 +91209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91225,7 +91225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91241,7 +91241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91257,7 +91257,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91273,7 +91273,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91289,7 +91289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91305,7 +91305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91321,7 +91321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91337,7 +91337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91353,7 +91353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91369,7 +91369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91385,7 +91385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91401,7 +91401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91417,7 +91417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91433,7 +91433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91449,7 +91449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91465,7 +91465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91481,7 +91481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91497,7 +91497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91513,7 +91513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91529,7 +91529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91545,7 +91545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91561,7 +91561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91577,7 +91577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91593,7 +91593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91609,7 +91609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91625,7 +91625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91641,7 +91641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91657,7 +91657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91673,7 +91673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91689,7 +91689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91705,7 +91705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91721,7 +91721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91737,7 +91737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91753,7 +91753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91769,7 +91769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91785,7 +91785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91801,7 +91801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91817,7 +91817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91833,7 +91833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91849,7 +91849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91865,7 +91865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91881,7 +91881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91897,7 +91897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91913,7 +91913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91929,7 +91929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91945,7 +91945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91961,7 +91961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91977,7 +91977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -91993,7 +91993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92009,7 +92009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92025,7 +92025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92041,7 +92041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92057,7 +92057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92073,7 +92073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92089,7 +92089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92105,7 +92105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92121,7 +92121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92137,7 +92137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92169,7 +92169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92185,7 +92185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92201,7 +92201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92217,7 +92217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92233,7 +92233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92249,7 +92249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92265,7 +92265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92281,7 +92281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92297,7 +92297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92313,7 +92313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92329,7 +92329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92345,7 +92345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92361,7 +92361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92377,7 +92377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92393,7 +92393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92409,7 +92409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92425,7 +92425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92441,7 +92441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92457,7 +92457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92473,7 +92473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92489,7 +92489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92505,7 +92505,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92521,7 +92521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92537,7 +92537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92553,7 +92553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92569,7 +92569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92585,7 +92585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92601,7 +92601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92617,7 +92617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92633,7 +92633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92649,7 +92649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92665,7 +92665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92681,7 +92681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92697,7 +92697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92713,7 +92713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92729,7 +92729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92745,7 +92745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92777,7 +92777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92793,7 +92793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92809,7 +92809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92825,7 +92825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92841,7 +92841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92857,7 +92857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92873,7 +92873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92889,7 +92889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92905,7 +92905,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92921,7 +92921,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92937,7 +92937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92953,7 +92953,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92969,7 +92969,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -92985,7 +92985,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93001,7 +93001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93017,7 +93017,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93033,7 +93033,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93049,7 +93049,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93065,7 +93065,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93081,7 +93081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93097,7 +93097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93113,7 +93113,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93129,7 +93129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93145,7 +93145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93161,7 +93161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93177,7 +93177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93193,7 +93193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93209,7 +93209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93225,7 +93225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93241,7 +93241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93257,7 +93257,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93273,7 +93273,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93289,7 +93289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93305,7 +93305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93321,7 +93321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93337,7 +93337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93353,7 +93353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93369,7 +93369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93385,7 +93385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93401,7 +93401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93417,7 +93417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93433,7 +93433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93449,7 +93449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93465,7 +93465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93481,7 +93481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93513,7 +93513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93529,7 +93529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93545,7 +93545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93561,7 +93561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93577,7 +93577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93593,7 +93593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93609,7 +93609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93625,7 +93625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93641,7 +93641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93657,7 +93657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93673,7 +93673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93689,7 +93689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93705,7 +93705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93721,7 +93721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93737,7 +93737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93753,7 +93753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93769,7 +93769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93785,7 +93785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93801,7 +93801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93817,7 +93817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93833,7 +93833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93849,7 +93849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93865,7 +93865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93881,7 +93881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93897,7 +93897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93913,7 +93913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93929,7 +93929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93945,7 +93945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93961,7 +93961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93977,7 +93977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -93993,7 +93993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94009,7 +94009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94025,7 +94025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94041,7 +94041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94057,7 +94057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94073,7 +94073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94089,7 +94089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94105,7 +94105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94121,7 +94121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94137,7 +94137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94153,7 +94153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94169,7 +94169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94185,7 +94185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94201,7 +94201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94217,7 +94217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94233,7 +94233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94249,7 +94249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94265,7 +94265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94281,7 +94281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94297,7 +94297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94313,7 +94313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94329,7 +94329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94345,7 +94345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94377,7 +94377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94393,7 +94393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94409,7 +94409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94425,7 +94425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94441,7 +94441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94457,7 +94457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94473,7 +94473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94489,7 +94489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94505,7 +94505,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94521,7 +94521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94537,7 +94537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94553,7 +94553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94569,7 +94569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94585,7 +94585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94601,7 +94601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94617,7 +94617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94633,7 +94633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94649,7 +94649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94665,7 +94665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94681,7 +94681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94697,7 +94697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94713,7 +94713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94729,7 +94729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94745,7 +94745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94761,7 +94761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94777,7 +94777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94793,7 +94793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94809,7 +94809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94825,7 +94825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94841,7 +94841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94857,7 +94857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94873,7 +94873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94889,7 +94889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94921,7 +94921,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94937,7 +94937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94969,7 +94969,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -94985,7 +94985,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -95001,7 +95001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -95017,7 +95017,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -95033,7 +95033,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -95049,7 +95049,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -95065,7 +95065,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -95081,7 +95081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -95097,7 +95097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -95113,7 +95113,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -95689,7 +95689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 1488,
+    "total_citations": 1428,
     "total_mentions": 19,
     "oa_count": 1,
     "year_range": "2020",
@@ -95993,7 +95993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -96521,7 +96521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -97897,7 +97897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -98489,7 +98489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 1488,
+    "total_citations": 1428,
     "total_mentions": 19,
     "oa_count": 1,
     "year_range": "2020",
@@ -98617,7 +98617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -99369,7 +99369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -99881,7 +99881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100041,7 +100041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100057,7 +100057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100073,7 +100073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100089,7 +100089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100105,7 +100105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100121,7 +100121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100137,7 +100137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100153,7 +100153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100169,7 +100169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100185,7 +100185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100201,7 +100201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100217,7 +100217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100233,7 +100233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100249,7 +100249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100265,7 +100265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100281,7 +100281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100297,7 +100297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100313,7 +100313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100329,7 +100329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100345,7 +100345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100361,7 +100361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100377,7 +100377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100393,7 +100393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100409,7 +100409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100425,7 +100425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100441,7 +100441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100457,7 +100457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100473,7 +100473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100489,7 +100489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100505,7 +100505,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100521,7 +100521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100537,7 +100537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100553,7 +100553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100569,7 +100569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100585,7 +100585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100601,7 +100601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100617,7 +100617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100633,7 +100633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100649,7 +100649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100665,7 +100665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100681,7 +100681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100697,7 +100697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100713,7 +100713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100729,7 +100729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100745,7 +100745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100761,7 +100761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100777,7 +100777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100793,7 +100793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100809,7 +100809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100825,7 +100825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100841,7 +100841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100857,7 +100857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100873,7 +100873,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100889,7 +100889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100905,7 +100905,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100921,7 +100921,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100937,7 +100937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100953,7 +100953,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100969,7 +100969,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -100985,7 +100985,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101001,7 +101001,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101017,7 +101017,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101033,7 +101033,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101049,7 +101049,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101065,7 +101065,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101081,7 +101081,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101097,7 +101097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101113,7 +101113,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101129,7 +101129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101145,7 +101145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101161,7 +101161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101177,7 +101177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101193,7 +101193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101209,7 +101209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101225,7 +101225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101241,7 +101241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101257,7 +101257,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101273,7 +101273,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101289,7 +101289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101305,7 +101305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101321,7 +101321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101337,7 +101337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101353,7 +101353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101369,7 +101369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101385,7 +101385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101401,7 +101401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101417,7 +101417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101433,7 +101433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101449,7 +101449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101465,7 +101465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101481,7 +101481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101497,7 +101497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101513,7 +101513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101529,7 +101529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101545,7 +101545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101561,7 +101561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101577,7 +101577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101593,7 +101593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101609,7 +101609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101625,7 +101625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101641,7 +101641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101657,7 +101657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101689,7 +101689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101705,7 +101705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101721,7 +101721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101737,7 +101737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101753,7 +101753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101769,7 +101769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101785,7 +101785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101801,7 +101801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101817,7 +101817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101833,7 +101833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101849,7 +101849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101865,7 +101865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101881,7 +101881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101897,7 +101897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101913,7 +101913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101929,7 +101929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101945,7 +101945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101961,7 +101961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101977,7 +101977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -101993,7 +101993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -102009,7 +102009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -102025,7 +102025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -102041,7 +102041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -102057,7 +102057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -102073,7 +102073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -102089,7 +102089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -102105,7 +102105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -102121,7 +102121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -102137,7 +102137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -102153,7 +102153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -102169,7 +102169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -102297,7 +102297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -102345,7 +102345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -102729,7 +102729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -103193,7 +103193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -103625,7 +103625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -103721,7 +103721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 1488,
+    "total_citations": 1428,
     "total_mentions": 19,
     "oa_count": 1,
     "year_range": "2020",
@@ -103785,7 +103785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2914,
+    "total_citations": 2908,
     "total_mentions": 2,
     "oa_count": 1,
     "year_range": "2009",
@@ -104409,7 +104409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 47097,
+    "total_citations": 43412,
     "total_mentions": 17,
     "oa_count": 1,
     "year_range": "2021",
@@ -104649,7 +104649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -104665,7 +104665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -104681,7 +104681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -104697,7 +104697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -104713,7 +104713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -104729,7 +104729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -104745,7 +104745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -104761,7 +104761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -104777,7 +104777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -104793,7 +104793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -104809,7 +104809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -104825,7 +104825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -104857,7 +104857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105065,7 +105065,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105097,7 +105097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105113,7 +105113,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105129,7 +105129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105145,7 +105145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105161,7 +105161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105177,7 +105177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105193,7 +105193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105209,7 +105209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105225,7 +105225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105241,7 +105241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105257,7 +105257,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105273,7 +105273,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105289,7 +105289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105305,7 +105305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105321,7 +105321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105337,7 +105337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105353,7 +105353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105369,7 +105369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105385,7 +105385,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105401,7 +105401,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105417,7 +105417,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105449,7 +105449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105465,7 +105465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105481,7 +105481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105497,7 +105497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105513,7 +105513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105529,7 +105529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105545,7 +105545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105561,7 +105561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105577,7 +105577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105593,7 +105593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105609,7 +105609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105625,7 +105625,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105641,7 +105641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105657,7 +105657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105673,7 +105673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105689,7 +105689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105705,7 +105705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105721,7 +105721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105737,7 +105737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105753,7 +105753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105769,7 +105769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105785,7 +105785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105801,7 +105801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105817,7 +105817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105833,7 +105833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105849,7 +105849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105865,7 +105865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105881,7 +105881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105897,7 +105897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105913,7 +105913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105929,7 +105929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105945,7 +105945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105961,7 +105961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105977,7 +105977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -105993,7 +105993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106009,7 +106009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106025,7 +106025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106041,7 +106041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106057,7 +106057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106073,7 +106073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106089,7 +106089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106105,7 +106105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106121,7 +106121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106137,7 +106137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106153,7 +106153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106169,7 +106169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106185,7 +106185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106201,7 +106201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106217,7 +106217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106233,7 +106233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106249,7 +106249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106265,7 +106265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106281,7 +106281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106297,7 +106297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106313,7 +106313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106329,7 +106329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106345,7 +106345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106361,7 +106361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106377,7 +106377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106393,7 +106393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106409,7 +106409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106425,7 +106425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106441,7 +106441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106457,7 +106457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106473,7 +106473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106489,7 +106489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106505,7 +106505,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106521,7 +106521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -106537,7 +106537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107433,7 +107433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107449,7 +107449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107465,7 +107465,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107481,7 +107481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107497,7 +107497,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107513,7 +107513,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107529,7 +107529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107545,7 +107545,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107561,7 +107561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107577,7 +107577,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107593,7 +107593,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107609,7 +107609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107641,7 +107641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107657,7 +107657,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107673,7 +107673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107689,7 +107689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107705,7 +107705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107721,7 +107721,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107737,7 +107737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107753,7 +107753,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107769,7 +107769,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107785,7 +107785,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107801,7 +107801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107817,7 +107817,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107833,7 +107833,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107849,7 +107849,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107881,7 +107881,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107897,7 +107897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107913,7 +107913,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107929,7 +107929,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107945,7 +107945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107961,7 +107961,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107977,7 +107977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -107993,7 +107993,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -108009,7 +108009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -108025,7 +108025,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -108041,7 +108041,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -108057,7 +108057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -108073,7 +108073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -108089,7 +108089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -109097,7 +109097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -109129,7 +109129,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -109145,7 +109145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -109161,7 +109161,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -109177,7 +109177,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -109193,7 +109193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -109209,7 +109209,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -109225,7 +109225,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -109241,7 +109241,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -109273,7 +109273,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -109289,7 +109289,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -109321,7 +109321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -109337,7 +109337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -109353,7 +109353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -109369,7 +109369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110057,7 +110057,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110073,7 +110073,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110089,7 +110089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110105,7 +110105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110121,7 +110121,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110137,7 +110137,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110153,7 +110153,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110169,7 +110169,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110185,7 +110185,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110201,7 +110201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110217,7 +110217,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110233,7 +110233,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110249,7 +110249,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110265,7 +110265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110281,7 +110281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110297,7 +110297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110313,7 +110313,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110329,7 +110329,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110345,7 +110345,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110361,7 +110361,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110377,7 +110377,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110393,7 +110393,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110409,7 +110409,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110425,7 +110425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110441,7 +110441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110457,7 +110457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110473,7 +110473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110489,7 +110489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110505,7 +110505,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110521,7 +110521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110537,7 +110537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110553,7 +110553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110569,7 +110569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110585,7 +110585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110601,7 +110601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110617,7 +110617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110633,7 +110633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110649,7 +110649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110665,7 +110665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110681,7 +110681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110697,7 +110697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110713,7 +110713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110729,7 +110729,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110745,7 +110745,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110761,7 +110761,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110777,7 +110777,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110793,7 +110793,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110809,7 +110809,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110825,7 +110825,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110841,7 +110841,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -110857,7 +110857,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -112425,7 +112425,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -112441,7 +112441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -112457,7 +112457,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -112473,7 +112473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -112489,7 +112489,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -112505,7 +112505,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -112521,7 +112521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -112537,7 +112537,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -112553,7 +112553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -112569,7 +112569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -112585,7 +112585,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -112601,7 +112601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -112617,7 +112617,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -112633,7 +112633,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -112649,7 +112649,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -112665,7 +112665,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -112681,7 +112681,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -112697,7 +112697,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -112713,7 +112713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -113337,7 +113337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -113433,7 +113433,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -113481,7 +113481,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -113529,7 +113529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -113561,7 +113561,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -113609,7 +113609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
@@ -113641,7 +113641,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10609,
+    "total_citations": 10525,
     "total_mentions": 11,
     "oa_count": 1,
     "year_range": "2012",
