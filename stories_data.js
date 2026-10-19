@@ -4189,7 +4189,7 @@ window.STORIES_DATA = [
 "oa_provenance_source": "Closed/Unknown",
 "oa_provenance_sources": [],
 "oa_claimed_not_in_doab": false,
-"citation_count": 12048,
+"citation_count": 11841,
 "event_count": 0,
 "event_data_status": "historical_archive",
 "archived_event_count": 174,
@@ -4197,7 +4197,7 @@ window.STORIES_DATA = [
 "sdg_ids": [],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 1,
+"ta_youtube": 6,
 "ta_ol_holdings": 1,
 "ta_otl": false,
 "has_peer_review": false,
@@ -4248,67 +4248,67 @@ window.STORIES_DATA = [
 "sectors": [
 {
 "label": "Education",
-"count": 10593
+"count": 10437
 },
 {
 "label": "Facility",
-"count": 1989
+"count": 1960
 },
 {
 "label": "Government",
-"count": 1200
+"count": 1178
 },
 {
 "label": "Healthcare",
-"count": 971
+"count": 954
 },
 {
 "label": "Company",
-"count": 526
+"count": 518
 }
 ],
 "countries": [
 {
 "label": "United States",
-"count": 3597
+"count": 3502
 },
 {
 "label": "China",
-"count": 982
+"count": 976
 },
 {
 "label": "Germany",
-"count": 901
+"count": 883
 },
 {
 "label": "United Kingdom",
-"count": 839
+"count": 822
 },
 {
 "label": "Italy",
-"count": 649
+"count": 634
 }
 ],
 "citing_institutions": [
 {
 "label": "Centre National de la Recherche Scientifique",
-"count": 149
+"count": 144
 },
 {
 "label": "Harvard University",
-"count": 142
+"count": 138
 },
 {
 "label": "Stanford University",
-"count": 103
-},
-{
-"label": "University of Toronto",
-"count": 97
+"count": 99
 },
 {
 "label": "Chinese Academy of Sciences",
-"count": 97
+"count": 96
+},
+{
+"label": "University of Toronto",
+"count": 94
 }
 ],
 "scite_supporting": 51,
@@ -44802,163 +44802,6 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "articlestory_10.1002_mrm.29349.html",
-"title": "SENSE EPI reconstruction with 2D phase error correction and channel‐wise noise removal",
-"type": "ArticleStory",
-"doi": "10.1002/mrm.29349",
-"year": 2022,
-"venue": "Magnetic Resonance in Medicine",
-"venue_name": "Magnetic Resonance in Medicine",
-"publisher": "John Wiley & Sons",
-"concepts": [
-"Noise reduction",
-"Imaging phantom",
-"Noise (video)",
-"Computer science",
-"Pipeline (software)",
-"Algorithm",
-"Ground truth",
-"Sensitivity (control systems)"
-],
-"roles": [
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 10,
-"event_count": 0,
-"event_data_status": "archive_unavailable",
-"archived_event_count": null,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary SENSE EPI reconstruction with 2D phase error correction and channel‐wise noise removal (2022) in Magnetic Resonance in Medicine.",
-"cover_url": "",
-"authors": "Elizabeth Powell, Torben Schneider, Marco Battiston et al.",
-"all_authors": [
-"Elizabeth Powell",
-"Torben Schneider",
-"Marco Battiston",
-"Francesco Grussu",
-"Ahmed Toosy",
-"Jonathan D. Clayden",
-"Claudia A. M. Gandini Wheeler‐Kingshott"
-],
-"institutions": [
-"Queen Mary University of London",
-"Philips (Finland)",
-"Great Ormond Street Hospital"
-],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [
-"Rosetrees"
-],
-"sectors": [
-{
-"label": "Education",
-"count": 10
-},
-{
-"label": "Healthcare",
-"count": 6
-},
-{
-"label": "Facility",
-"count": 5
-},
-{
-"label": "Government",
-"count": 4
-},
-{
-"label": "Company",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "United Kingdom",
-"count": 5
-},
-{
-"label": "United States",
-"count": 4
-},
-{
-"label": "Canada",
-"count": 1
-},
-{
-"label": "China",
-"count": 1
-},
-{
-"label": "Spain",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "National Institutes of Health",
-"count": 3
-},
-{
-"label": "University of Nottingham",
-"count": 3
-},
-{
-"label": "National Institute of Biomedical Imaging and Bioengineering",
-"count": 3
-},
-{
-"label": "New Jersey Institute of Technology",
-"count": 2
-},
-{
-"label": "University College London",
-"count": 2
-}
-],
-"scite_supporting": 2,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.1002/mrm.29349"
-]
-},
-{
 "file": "articlestory_10.1016_j.cell.2025.11.041.html",
 "title": "Mechanisms of HSV-1 helicase-primase inhibition and replication fork complex assembly",
 "type": "ArticleStory",
@@ -46202,6 +46045,163 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.5744/9781683401988"
+]
+},
+{
+"file": "articlestory_10.1002_mrm.29349.html",
+"title": "SENSE EPI reconstruction with 2D phase error correction and channel‐wise noise removal",
+"type": "ArticleStory",
+"doi": "10.1002/mrm.29349",
+"year": 2022,
+"venue": "Magnetic Resonance in Medicine",
+"venue_name": "Magnetic Resonance in Medicine",
+"publisher": "John Wiley & Sons",
+"concepts": [
+"Noise reduction",
+"Imaging phantom",
+"Noise (video)",
+"Computer science",
+"Pipeline (software)",
+"Algorithm",
+"Ground truth",
+"Sensitivity (control systems)"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
+"citation_count": 9,
+"event_count": 0,
+"event_data_status": "archive_unavailable",
+"archived_event_count": null,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": true,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary SENSE EPI reconstruction with 2D phase error correction and channel‐wise noise removal (2022) in Magnetic Resonance in Medicine.",
+"cover_url": "",
+"authors": "Elizabeth Powell, Torben Schneider, Marco Battiston et al.",
+"all_authors": [
+"Elizabeth Powell",
+"Torben Schneider",
+"Marco Battiston",
+"Francesco Grussu",
+"Ahmed Toosy",
+"Jonathan D. Clayden",
+"Claudia A. M. Gandini Wheeler‐Kingshott"
+],
+"institutions": [
+"Queen Mary University of London",
+"Philips (Finland)",
+"Great Ormond Street Hospital"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Rosetrees"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 8
+},
+{
+"label": "Healthcare",
+"count": 6
+},
+{
+"label": "Facility",
+"count": 4
+},
+{
+"label": "Government",
+"count": 3
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 4
+},
+{
+"label": "United States",
+"count": 3
+},
+{
+"label": "Canada",
+"count": 1
+},
+{
+"label": "China",
+"count": 1
+},
+{
+"label": "Spain",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "National Institutes of Health",
+"count": 2
+},
+{
+"label": "University of Nottingham",
+"count": 2
+},
+{
+"label": "National Institute of Biomedical Imaging and Bioengineering",
+"count": 2
+},
+{
+"label": "University College London",
+"count": 2
+},
+{
+"label": "Cardiff University",
+"count": 2
+}
+],
+"scite_supporting": 2,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1002/mrm.29349"
 ]
 },
 {
@@ -56842,6 +56842,151 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "articlestory_10.1002_anie.202519203.html",
+"title": "Surface Avidity of Anionic Polypeptide Coatings on Layer‐by‐Layer Nanoparticles Target Cancer‐Associated Amino Acid Transporters",
+"type": "ArticleStory",
+"doi": "10.1002/anie.202519203",
+"year": 2025,
+"venue": "Angewandte Chemie International Edition",
+"venue_name": "Angewandte Chemie International Edition",
+"publisher": "John Wiley & Sons",
+"concepts": [
+"Avidity",
+"Chemistry",
+"Transporter",
+"Amino acid",
+"Biochemistry",
+"Cancer cell",
+"Amino acid transporter",
+"In vitro"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
+"citation_count": 3,
+"event_count": 0,
+"event_data_status": "archive_unavailable",
+"archived_event_count": null,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": true,
+"has_openaire_reach": true,
+"has_openaire_open_instance": true,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Surface Avidity of Anionic Polypeptide Coatings on Layer‐by‐Layer Nanoparticles Target Cancer‐Associated Amino Acid Transporters (2025) in Angewandte Chemie International Edition.",
+"cover_url": "",
+"authors": "Ivan S. Pires, Margaret M. Billingsley, Ezra Gordon et al.",
+"all_authors": [
+"Ivan S. Pires",
+"Margaret M. Billingsley",
+"Ezra Gordon",
+"Andrew J. Pickering",
+"Eva Cai",
+"Gonzalo J. Esparza",
+"Mae L. Pryor",
+"Alexander D. Stoneman",
+"Aidan Kindopp",
+"Darrell J. Irvine",
+"Paula T. Hammond"
+],
+"institutions": [
+"Massachusetts Institute of Technology",
+"Harvard–MIT Division of Health Sciences and Technology",
+"Howard Hughes Medical Institute"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"National Institutes of Health",
+"Cancer Research UK",
+"NIH HHS",
+"Howard Hughes Medical Institute",
+"Ragon Institute of MGH, MIT, and Harvard"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 3
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 2
+},
+{
+"label": "Healthcare",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 3
+}
+],
+"citing_institutions": [
+{
+"label": "Massachusetts Institute of Technology",
+"count": 3
+},
+{
+"label": "Broad Institute",
+"count": 2
+},
+{
+"label": "Scripps Research Institute",
+"count": 1
+},
+{
+"label": "Georgia Institute of Technology",
+"count": 1
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1002/anie.202519203"
+]
+},
+{
 "file": "articlestory_10.1007_s11999.0000000000000172.html",
 "title": "CORR Insights®: Preoperative Pain Sensitization Is Associated With Postoperative Pillar Pain After Open Carpal Tunnel Release",
 "type": "ArticleStory",
@@ -60352,151 +60497,6 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.5281/zenodo.7821721"
-]
-},
-{
-"file": "articlestory_10.1002_anie.202519203.html",
-"title": "Surface Avidity of Anionic Polypeptide Coatings on Layer‐by‐Layer Nanoparticles Target Cancer‐Associated Amino Acid Transporters",
-"type": "ArticleStory",
-"doi": "10.1002/anie.202519203",
-"year": 2025,
-"venue": "Angewandte Chemie International Edition",
-"venue_name": "Angewandte Chemie International Edition",
-"publisher": "John Wiley & Sons",
-"concepts": [
-"Avidity",
-"Chemistry",
-"Transporter",
-"Amino acid",
-"Biochemistry",
-"Cancer cell",
-"Amino acid transporter",
-"In vitro"
-],
-"roles": [
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 2,
-"event_count": 0,
-"event_data_status": "archive_unavailable",
-"archived_event_count": null,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": true,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary Surface Avidity of Anionic Polypeptide Coatings on Layer‐by‐Layer Nanoparticles Target Cancer‐Associated Amino Acid Transporters (2025) in Angewandte Chemie International Edition.",
-"cover_url": "",
-"authors": "Ivan S. Pires, Margaret M. Billingsley, Ezra Gordon et al.",
-"all_authors": [
-"Ivan S. Pires",
-"Margaret M. Billingsley",
-"Ezra Gordon",
-"Andrew J. Pickering",
-"Eva Cai",
-"Gonzalo J. Esparza",
-"Mae L. Pryor",
-"Alexander D. Stoneman",
-"Aidan Kindopp",
-"Darrell J. Irvine",
-"Paula T. Hammond"
-],
-"institutions": [
-"Massachusetts Institute of Technology",
-"Harvard–MIT Division of Health Sciences and Technology",
-"Howard Hughes Medical Institute"
-],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [
-"National Institutes of Health",
-"Cancer Research UK",
-"NIH HHS",
-"Howard Hughes Medical Institute",
-"Ragon Institute of MGH, MIT, and Harvard"
-],
-"sectors": [
-{
-"label": "Education",
-"count": 2
-},
-{
-"label": "Facility",
-"count": 2
-},
-{
-"label": "Nonprofit",
-"count": 2
-},
-{
-"label": "Healthcare",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 2
-}
-],
-"citing_institutions": [
-{
-"label": "Broad Institute",
-"count": 2
-},
-{
-"label": "Massachusetts Institute of Technology",
-"count": 2
-},
-{
-"label": "Scripps Research Institute",
-"count": 1
-},
-{
-"label": "Howard Hughes Medical Institute",
-"count": 1
-},
-{
-"label": "Institute for Soldier Nanotechnologies",
-"count": 1
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.1002/anie.202519203"
 ]
 },
 {
@@ -89963,4 +89963,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
-window.STORIES_STATS = {"total": 683, "total_articles": 286, "total_books": 310, "total_data": 61, "total_software": 26, "total_oa": 616, "pct_oa": 90, "total_citations": 1384298, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 683, "total_articles": 286, "total_books": 310, "total_data": 61, "total_software": 26, "total_oa": 616, "pct_oa": 90, "total_citations": 1384091, "num_disciplines": 30};
