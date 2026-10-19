@@ -1748,7 +1748,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2,
+    "total_citations": 3,
     "total_mentions": 0,
     "oa_count": 2,
     "year_range": "2025–2025",
@@ -1836,7 +1836,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2,
+    "total_citations": 3,
     "total_mentions": 0,
     "oa_count": 2,
     "year_range": "2025–2025",
@@ -2003,7 +2003,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2,
+    "total_citations": 3,
     "total_mentions": 0,
     "oa_count": 2,
     "year_range": "2025–2025",
@@ -2639,7 +2639,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2,
+    "total_citations": 3,
     "total_mentions": 0,
     "oa_count": 2,
     "year_range": "2025–2025",
@@ -2872,7 +2872,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2,
+    "total_citations": 3,
     "total_mentions": 0,
     "oa_count": 2,
     "year_range": "2025–2025",
@@ -2888,7 +2888,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2,
+    "total_citations": 3,
     "total_mentions": 0,
     "oa_count": 2,
     "year_range": "2025–2025",
@@ -3105,7 +3105,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2,
+    "total_citations": 3,
     "total_mentions": 0,
     "oa_count": 2,
     "year_range": "2025–2025",
@@ -3370,7 +3370,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2,
+    "total_citations": 3,
     "total_mentions": 0,
     "oa_count": 2,
     "year_range": "2025–2025",
@@ -4182,7 +4182,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2,
+    "total_citations": 3,
     "total_mentions": 0,
     "oa_count": 2,
     "year_range": "2025–2025",
@@ -4245,7 +4245,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2,
+    "total_citations": 3,
     "total_mentions": 0,
     "oa_count": 2,
     "year_range": "2025–2025",
@@ -4845,7 +4845,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 2,
+    "total_citations": 3,
     "total_mentions": 0,
     "oa_count": 2,
     "year_range": "2025–2025",
@@ -11945,7 +11945,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10,
+    "total_citations": 9,
     "total_mentions": 0,
     "oa_count": 1,
     "year_range": "2022",
@@ -25353,7 +25353,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10,
+    "total_citations": 9,
     "total_mentions": 0,
     "oa_count": 1,
     "year_range": "2022",
@@ -34089,7 +34089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10,
+    "total_citations": 9,
     "total_mentions": 0,
     "oa_count": 1,
     "year_range": "2022",
@@ -37705,7 +37705,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10,
+    "total_citations": 9,
     "total_mentions": 0,
     "oa_count": 1,
     "year_range": "2022",
@@ -55337,7 +55337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10,
+    "total_citations": 9,
     "total_mentions": 0,
     "oa_count": 1,
     "year_range": "2022",
@@ -71305,7 +71305,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10,
+    "total_citations": 9,
     "total_mentions": 0,
     "oa_count": 1,
     "year_range": "2022",
@@ -104281,7 +104281,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 10,
+    "total_citations": 9,
     "total_mentions": 0,
     "oa_count": 1,
     "year_range": "2022",
