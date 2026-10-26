@@ -11193,7 +11193,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -14521,7 +14521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -14601,7 +14601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -15337,7 +15337,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -15737,7 +15737,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -18441,7 +18441,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -20473,7 +20473,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -28601,7 +28601,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -29449,7 +29449,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -30713,7 +30713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -34009,7 +34009,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -41145,7 +41145,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -41321,7 +41321,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -41897,7 +41897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -42265,7 +42265,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -44553,7 +44553,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -51865,7 +51865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -53369,7 +53369,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -54937,7 +54937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -59801,7 +59801,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -60201,7 +60201,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -62937,7 +62937,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -64713,7 +64713,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -72521,7 +72521,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -73529,7 +73529,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -75609,7 +75609,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -76905,7 +76905,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -79865,7 +79865,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -89977,7 +89977,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -90089,7 +90089,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -90297,7 +90297,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -95897,7 +95897,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -96569,7 +96569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -99673,7 +99673,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -102985,7 +102985,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -103097,7 +103097,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -103689,7 +103689,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -104569,7 +104569,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -106969,7 +106969,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
@@ -108889,7 +108889,7 @@ window.AUTHORS_DATA = [
     "story_types": [
       "article"
     ],
-    "total_citations": 7761,
+    "total_citations": 7588,
     "total_mentions": 14,
     "oa_count": 1,
     "year_range": "2020",
