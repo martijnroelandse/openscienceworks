@@ -1275,7 +1275,7 @@ window.STORIES_DATA = [
 "sdg_ids": [],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 16,
+"ta_youtube": 20,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": true,
@@ -4522,7 +4522,7 @@ window.STORIES_DATA = [
 "sdg_ids": [],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 13,
+"ta_youtube": 15,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
@@ -7806,7 +7806,7 @@ window.STORIES_DATA = [
 "OpenAlex/Crossref"
 ],
 "oa_claimed_not_in_doab": false,
-"citation_count": 7761,
+"citation_count": 7588,
 "event_count": 0,
 "event_data_status": "archive_unavailable",
 "archived_event_count": null,
@@ -7814,7 +7814,7 @@ window.STORIES_DATA = [
 "sdg_ids": [],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 4,
+"ta_youtube": 7,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": true,
@@ -7904,67 +7904,67 @@ window.STORIES_DATA = [
 "sectors": [
 {
 "label": "Education",
-"count": 6343
+"count": 5943
 },
 {
 "label": "Healthcare",
-"count": 3832
+"count": 3637
 },
 {
 "label": "Facility",
-"count": 1668
+"count": 1523
 },
 {
 "label": "Government",
-"count": 1054
+"count": 983
 },
 {
 "label": "Nonprofit",
-"count": 737
+"count": 674
 }
 ],
 "countries": [
 {
 "label": "United States",
-"count": 2812
+"count": 2593
 },
 {
 "label": "United Kingdom",
-"count": 652
+"count": 598
 },
 {
 "label": "China",
-"count": 606
+"count": 578
 },
 {
 "label": "India",
-"count": 588
+"count": 570
 },
 {
 "label": "Italy",
-"count": 483
+"count": 463
 }
 ],
 "citing_institutions": [
 {
 "label": "Harvard University",
-"count": 243
-},
-{
-"label": "National Institutes of Health",
-"count": 129
+"count": 229
 },
 {
 "label": "Inserm",
-"count": 129
+"count": 123
 },
 {
-"label": "University of Washington",
-"count": 126
+"label": "National Institutes of Health",
+"count": 118
 },
 {
 "label": "Johns Hopkins University",
-"count": 120
+"count": 115
+},
+{
+"label": "University of Washington",
+"count": 114
 }
 ],
 "scite_supporting": 190,
@@ -10607,7 +10607,7 @@ window.STORIES_DATA = [
 "ta_youtube": 0,
 "ta_ol_holdings": 5,
 "ta_otl": false,
-"has_peer_review": true,
+"has_peer_review": false,
 "has_prism_context": true,
 "has_prism_peer_review": true,
 "has_reuse": false,
@@ -13287,7 +13287,7 @@ window.STORIES_DATA = [
 "ta_youtube": 1,
 "ta_ol_holdings": 1,
 "ta_otl": false,
-"has_peer_review": true,
+"has_peer_review": false,
 "has_prism_context": true,
 "has_prism_peer_review": true,
 "has_reuse": false,
@@ -16470,7 +16470,7 @@ window.STORIES_DATA = [
 "ta_youtube": 0,
 "ta_ol_holdings": 9,
 "ta_otl": false,
-"has_peer_review": true,
+"has_peer_review": false,
 "has_prism_context": true,
 "has_prism_peer_review": true,
 "has_reuse": false,
@@ -16781,7 +16781,7 @@ window.STORIES_DATA = [
 "ta_youtube": 0,
 "ta_ol_holdings": 3,
 "ta_otl": false,
-"has_peer_review": true,
+"has_peer_review": false,
 "has_prism_context": true,
 "has_prism_peer_review": true,
 "has_reuse": false,
@@ -17691,7 +17691,7 @@ window.STORIES_DATA = [
 "ta_youtube": 0,
 "ta_ol_holdings": 7,
 "ta_otl": false,
-"has_peer_review": true,
+"has_peer_review": false,
 "has_prism_context": true,
 "has_prism_peer_review": true,
 "has_reuse": false,
@@ -17851,7 +17851,7 @@ window.STORIES_DATA = [
 "ta_youtube": 0,
 "ta_ol_holdings": 9,
 "ta_otl": false,
-"has_peer_review": true,
+"has_peer_review": false,
 "has_prism_context": true,
 "has_prism_peer_review": true,
 "has_reuse": false,
@@ -18462,7 +18462,7 @@ window.STORIES_DATA = [
 "ta_youtube": 0,
 "ta_ol_holdings": 5,
 "ta_otl": false,
-"has_peer_review": true,
+"has_peer_review": false,
 "has_prism_context": true,
 "has_prism_peer_review": true,
 "has_reuse": false,
@@ -18910,7 +18910,7 @@ window.STORIES_DATA = [
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
-"has_peer_review": true,
+"has_peer_review": false,
 "has_prism_context": true,
 "has_prism_peer_review": true,
 "has_reuse": false,
@@ -19499,7 +19499,7 @@ window.STORIES_DATA = [
 "ta_youtube": 1,
 "ta_ol_holdings": 5,
 "ta_otl": false,
-"has_peer_review": true,
+"has_peer_review": false,
 "has_prism_context": true,
 "has_prism_peer_review": true,
 "has_reuse": false,
@@ -19958,7 +19958,7 @@ window.STORIES_DATA = [
 "ta_youtube": 0,
 "ta_ol_holdings": 6,
 "ta_otl": false,
-"has_peer_review": true,
+"has_peer_review": false,
 "has_prism_context": true,
 "has_prism_peer_review": true,
 "has_reuse": false,
@@ -23386,7 +23386,7 @@ window.STORIES_DATA = [
 "ta_youtube": 3,
 "ta_ol_holdings": 3,
 "ta_otl": false,
-"has_peer_review": true,
+"has_peer_review": false,
 "has_prism_context": true,
 "has_prism_peer_review": true,
 "has_reuse": false,
@@ -35665,7 +35665,7 @@ window.STORIES_DATA = [
 "ta_youtube": 3,
 "ta_ol_holdings": 0,
 "ta_otl": false,
-"has_peer_review": true,
+"has_peer_review": false,
 "has_prism_context": true,
 "has_prism_peer_review": true,
 "has_reuse": false,
@@ -39647,7 +39647,7 @@ window.STORIES_DATA = [
 "ta_youtube": 3,
 "ta_ol_holdings": 5,
 "ta_otl": true,
-"has_peer_review": true,
+"has_peer_review": false,
 "has_prism_context": true,
 "has_prism_peer_review": true,
 "has_reuse": false,
@@ -42130,7 +42130,7 @@ window.STORIES_DATA = [
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
-"has_peer_review": true,
+"has_peer_review": false,
 "has_prism_context": true,
 "has_prism_peer_review": true,
 "has_reuse": false,
@@ -73296,7 +73296,7 @@ window.STORIES_DATA = [
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
-"has_peer_review": true,
+"has_peer_review": false,
 "has_prism_context": true,
 "has_prism_peer_review": true,
 "has_reuse": false,
@@ -90152,4 +90152,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
-window.STORIES_STATS = {"total": 683, "total_articles": 286, "total_books": 310, "total_data": 61, "total_software": 26, "total_oa": 616, "pct_oa": 90, "total_citations": 1380258, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 683, "total_articles": 286, "total_books": 310, "total_data": 61, "total_software": 26, "total_oa": 616, "pct_oa": 90, "total_citations": 1380085, "num_disciplines": 30};
