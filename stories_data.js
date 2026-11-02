@@ -4043,7 +4043,7 @@ window.STORIES_DATA = [
 ],
 "has_teaching": true,
 "ta_ocw": 5,
-"ta_youtube": 3,
+"ta_youtube": 4,
 "ta_ol_holdings": 19,
 "ta_otl": false,
 "has_peer_review": false,
@@ -21226,7 +21226,7 @@ window.STORIES_DATA = [
 "sdg_ids": [],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 5,
+"ta_youtube": 8,
 "ta_ol_holdings": 20,
 "ta_otl": false,
 "has_peer_review": false,
@@ -45334,6 +45334,165 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.1007_978-3-031-38294-9.html",
+"title": "The Wheat Genome",
+"type": "BookStory",
+"doi": "10.1007/978-3-031-38294-9",
+"year": 2024,
+"venue": "Springer Nature",
+"venue_name": "",
+"publisher": "Springer Nature",
+"concepts": [
+"Genome",
+"Computational biology",
+"Biology",
+"Sequence (biology)",
+"Whole genome sequencing",
+"Genetics",
+"Gene"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"OAPEN",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
+"citation_count": 10,
+"event_count": 0,
+"event_data_status": "archive_unavailable",
+"archived_event_count": null,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 1,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": true,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": true,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary The Wheat Genome (2024), published by Springer Nature, has been cited 9 times.",
+"cover_url": "covers/bookstory_10.1007_978-3-031-38294-9.jpg",
+"authors": "Rudi Appels, Kellye Eversole, Catherine Feuillet et al.",
+"all_authors": [
+"Rudi Appels",
+"Kellye Eversole",
+"Catherine Feuillet",
+"Dusti Gallagher"
+],
+"institutions": [
+"La Trobe University",
+"Inari Agriculture (United States)",
+"Link Consulting"
+],
+"download_count": 1336,
+"series_name": "Compendium of plant genomes",
+"series_id": "https://openalex.org/S4210212246",
+"belongs_to_series": true,
+"mention_platforms": [
+"Hypothesis",
+"News"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {
+"hypothesis": 2,
+"news": 5
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 7
+},
+{
+"label": "Government",
+"count": 7
+},
+{
+"label": "Facility",
+"count": 4
+},
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Other",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 4
+},
+{
+"label": "Russia",
+"count": 3
+},
+{
+"label": "Spain",
+"count": 1
+},
+{
+"label": "Italy",
+"count": 1
+},
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Institute of Cytology and Genetics",
+"count": 3
+},
+{
+"label": "Siberian Branch of the Russian Academy of Sciences",
+"count": 3
+},
+{
+"label": "University of Nebraska–Lincoln",
+"count": 1
+},
+{
+"label": "Shanxi Agricultural University",
+"count": 1
+},
+{
+"label": "Agricultural Research Service",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1007/978-3-031-38294-9"
+]
+},
+{
 "file": "bookstory_10.1017_9781009486682.html",
 "title": "Foreign in Two Homelands",
 "type": "BookStory",
@@ -46886,161 +47045,6 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.7490/f1000research.1116751.1"
-]
-},
-{
-"file": "bookstory_10.1007_978-3-031-38294-9.html",
-"title": "The Wheat Genome",
-"type": "BookStory",
-"doi": "10.1007/978-3-031-38294-9",
-"year": 2024,
-"venue": "Springer Nature",
-"venue_name": "",
-"publisher": "Springer Nature",
-"concepts": [
-"Genome",
-"Computational biology",
-"Biology",
-"Sequence (biology)",
-"Whole genome sequencing",
-"Genetics",
-"Gene"
-],
-"roles": [
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "gold",
-"oa_provenance_source": "DOAB",
-"oa_provenance_sources": [
-"DOAB",
-"OAPEN",
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 9,
-"event_count": 0,
-"event_data_status": "archive_unavailable",
-"archived_event_count": null,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 1,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": true,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary The Wheat Genome (2024), published by Springer Nature, has been cited 9 times.",
-"cover_url": "covers/bookstory_10.1007_978-3-031-38294-9.jpg",
-"authors": "Rudi Appels, Kellye Eversole, Catherine Feuillet et al.",
-"all_authors": [
-"Rudi Appels",
-"Kellye Eversole",
-"Catherine Feuillet",
-"Dusti Gallagher"
-],
-"institutions": [
-"La Trobe University",
-"Inari Agriculture (United States)",
-"Link Consulting"
-],
-"download_count": 1336,
-"series_name": "Compendium of plant genomes",
-"series_id": "https://openalex.org/S4210212246",
-"belongs_to_series": true,
-"mention_platforms": [
-"Hypothesis",
-"News"
-],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {
-"hypothesis": 2,
-"news": 5
-},
-"is_top1pct": false,
-"is_top10pct": true,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 6
-},
-{
-"label": "Government",
-"count": 6
-},
-{
-"label": "Facility",
-"count": 3
-},
-{
-"label": "Nonprofit",
-"count": 1
-},
-{
-"label": "Other",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "China",
-"count": 4
-},
-{
-"label": "Russia",
-"count": 3
-},
-{
-"label": "Spain",
-"count": 1
-},
-{
-"label": "United States",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "Institute of Cytology and Genetics",
-"count": 3
-},
-{
-"label": "Siberian Branch of the Russian Academy of Sciences",
-"count": 3
-},
-{
-"label": "University of Nebraska–Lincoln",
-"count": 1
-},
-{
-"label": "Shanxi Agricultural University",
-"count": 1
-},
-{
-"label": "Agricultural Research Service",
-"count": 1
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.1007/978-3-031-38294-9"
 ]
 },
 {
@@ -90152,4 +90156,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
-window.STORIES_STATS = {"total": 683, "total_articles": 286, "total_books": 310, "total_data": 61, "total_software": 26, "total_oa": 616, "pct_oa": 90, "total_citations": 1380085, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 683, "total_articles": 286, "total_books": 310, "total_data": 61, "total_software": 26, "total_oa": 616, "pct_oa": 90, "total_citations": 1380086, "num_disciplines": 30};
